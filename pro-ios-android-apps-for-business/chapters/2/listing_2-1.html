@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Example</title>
+    <style>
+      .cssDiv2 {
+        color : #ff0000;
+      }
+    </style>
+    <script>
+      function testme() {
+        // Change text of a div.
+        document.getElementById("divGreeting").innerHTML =
+          "Go away, I'm tired!";
+        // Make both div's bold.
+        var bodyNodes = document.body.childNodes;
+        for (var i = 0; i < bodyNodes.length; i++) {
+          if (bodyNodes[i].tagName == "DIV") {
+            bodyNodes[i].style.fontWeight = "bold";
+          }
+        }
+        // Insert a new div.
+        var e = document.createElement("div");
+        e.innerHTML = "I was inserted";
+        document.body.appendChild(e);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divGreeting">Hello!</div>
+    <div class="cssDiv2">Welcome to the book!</div>
+    <input type="button" onClick="testme();">
+  </body>
+</html>

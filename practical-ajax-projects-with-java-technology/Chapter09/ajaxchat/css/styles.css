@@ -1,0 +1,99 @@
+.cssHeading {
+  font-family      : verdana;
+  font-size        : 18pt;
+  font-weight      : bold;
+}
+
+.cssAppVersion {
+  font-family      : verdana;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+.cssMain {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+}
+
+.cssRoomMainTable {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  background-color : #e0e0ff
+}
+
+.cssUserInput {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 92%;
+  background       : url(../img/textBG.gif);
+}
+
+.cssUsernameInput {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  background       : url(../img/textBG.gif);
+}
+
+.cssButton {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  border-color     : #ffffff;
+  background-color : #c0c0c0;
+  background       : url(../img/buttonBG.gif);
+  color            : #000000;
+}
+
+.cssSelect {
+  font-family      : verdana;
+  font-weight      : bold;
+  font-size        : 12pt;
+  background-color : #f7f7f9;
+}
+
+.cssRoomHeader {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  background-color : #e0e0ff;
+}
+
+.cssRoomUserControl {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  background-color : #e0e0ff
+}
+
+.cssRoomUserList {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 200;
+  height           : 100%;
+  overflow         : scroll;
+  padding-top      : 4px;
+  padding-left     : 4px;
+  background-color : #e0e0ff
+}
+
+.cssRoomUserInput {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  background-color : #e0e0ff;
+}
+
+.cssRoomChatScroll {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 100%;
+  height           : 100%;
+  overflow         : scroll;
+  background-color : #f7f7f9;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<widget xmlns="http://www.w3.org/ns/widgets"
+  xmlns:gap="http://phonegap.com/ns/1.0"
+  id="com.etherient.MyMobileOrganizer"
+  version = "1.0.0">
+
+  <preference name="phonegap-version" value="2.9.0" />
+
+  <name>My Mobile Organizer</name>
+  <description>My Mobile Organizer</description>
+  <author href="http://www.etherient.com" email="fzammetti@etherient.com">
+    Frank W. Zammetti
+  </author>
+
+</widget>

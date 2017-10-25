@@ -1,0 +1,56 @@
+<html>
+
+  <head>
+
+    <style>
+      .myClass {
+        color : #ff0000;
+      }
+    </style>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var s = "";
+      function MyClass() {
+        this.myFunction1 = function() {
+          s += "myFunction1 called\n";
+        }
+        this.myFunction2 = function() {
+          s += "myFunction2 called\n";
+          dojo.publish("myMessage", [ "Hello!" ]);
+        }
+      }
+      function callback(inMsg) {
+        s += "Message received: " + inMsg + "\n";
+      }
+      var o = new MyClass();
+      o.myFunction1();
+      s + "----------\n";
+      var hndl = dojo.subscribe("myMessage", null, callback);
+      o.myFunction2();
+      s + "----------\n";
+      dojo.unsubscribe(hndl);
+      o.myFunction2();
+      s + "----------\n";
+      var hndl = dojo.subscribe("myMessage", null, callback);
+      dojo.connectPublisher("myMessage", o, "myFunction1");
+      o.myFunction1();
+      alert(s);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

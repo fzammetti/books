@@ -1,0 +1,10 @@
+{
+  "id": "com.etherient.twittermonitor",
+  "version": "1.0.0",
+  "vendor": "Etherient",
+  "type": "web",
+  "main": "index.html",
+  "title": "Twitter Monitor",
+  "icon": "icon.png",
+  "noWindow": "true"
+}

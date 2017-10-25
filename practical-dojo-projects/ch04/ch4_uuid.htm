@@ -1,0 +1,63 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.uuid._base");
+      dojo.require("dojox.uuid.Uuid");
+      dojo.require("dojox.uuid.generateRandomUuid");
+      dojo.require("dojox.uuid.generateTimeBasedUuid");
+
+      function testIt() {
+        var nuuid = dojox.uuid.generateNilUuid();
+        var ruuid = dojox.uuid.generateRandomUuid();
+        var tbuuid1 = dojox.uuid.generateTimeBasedUuid();
+        var tbuuid2 = dojox.uuid.generateTimeBasedUuid("0a023cffa8ea");
+        dojo.byId("divOutput").innerHTML += "<br>A nil UUID: " + nuuid;
+        dojo.byId("divOutput").innerHTML += "<br>A random UUID: " + ruuid;
+        dojo.byId("divOutput").innerHTML += "<br>A time-based (version 1) " +
+          "UUID with no node ID passed in: " + tbuuid1;
+        dojo.byId("divOutput").innerHTML += "<br>A time-based (version 1) " +
+          "UUID with node ID 0a023cffa8ea passed in: " + tbuuid2;
+        dojo.byId("divOutput").innerHTML += "<br>Node read back from 2nd " +
+          "time-based UUID: " + dojox.uuid.getNode(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Timestamp read back from " +
+          "2nd time-based UUID: " + dojox.uuid.getTimestamp(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Variant of 2nd " +
+          "time-based UUID: " + dojox.uuid.getVariant(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Version of 2nd time-based" +
+          " UUID: " + dojox.uuid.getVersion(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Is 2nd time-based UUID " +
+          "valid? " + dojox.uuid.isValid(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Are 1st and 2nd time-based " +
+          "UUIDs equal? " + new dojox.uuid.Uuid(tbuuid1).isEqual(tbuuid2);
+        dojo.byId("divOutput").innerHTML += "<br>Is random UUID valid? " +
+          new dojox.uuid.Uuid(ruuid).isValid();
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.uuid test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

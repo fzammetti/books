@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script>
+      dojo.require("dojo.fx");
+      function fxTest() {
+        dojo.fx.chain([
+          dojo.fx.wipeOut({node:"myDiv"}),
+          dojo.fx.combine([
+            dojo.fx.slideTo({node:"myDiv",left:"40",top:"40",unit:"px"}),
+            dojo.fx.wipeIn({node:"myDiv"})
+          ])
+        ]).play();
+      }
+    </script>
+  </head>
+  <body onLoad="fxTest();">
+    <div id="myDiv"
+      style="background-color:#ff0000;width:40px;top:5px;left:5px;position:absolute;">
+     Hello<br>from<br>myDiv</div>
+  </body>
+</html>

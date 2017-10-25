@@ -1,0 +1,49 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.Slider");
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.form.HorizontalSlider Dijit, created declaratively:
+        <br><br>
+        <div dojoType="dijit.form.HorizontalSlider"
+          value="30"
+          minimum="10"
+          maximum="60"
+          discreteValues="6"
+          showButtons="true">
+          <div dojoType="dijit.form.HorizontalRuleLabels"
+            container="topDecoration"
+            labels="10,20,30,40,50,60"
+            style="height:1.2em;font-size:10pt;color:#000000;"></div>
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

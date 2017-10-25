@@ -1,0 +1,55 @@
+/*
+    Local Business Search - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+*/
+
+
+/* Style for source of dialog animations. */
+.cssSource {
+  position : absolute;
+  left: 1px;
+  top : 1px;
+  width : 100%;
+  height : 1px;
+}
+
+
+/* Style for labels in details area. */
+.cssDetailLabel {
+  font-weight : bold;
+  font-size : 12pt;
+  font-family : arial;
+}
+
+
+/* Style for data in details area. */
+.cssDetailData {
+  font-size : 12pt;
+  font-family : arial;
+}
+
+
+/* Style for alternate row on Details tab. */
+.cssAltRow {
+  background-color : #eaeaea;
+}
+
+
+/* Override Ext JS table class so header table stretches across page. */
+.x-table-layout {
+  width : 100%;
+}

@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Listing 1-4</title>
+    <script>
+      function test() {
+        var i = 1;
+        if (1) {
+          var i = 2;
+          if (1) {
+            var i = 3;
+            alert(i);
+          }
+          alert(i);
+        }
+        alert(i);
+      }
+    </script>
+  </head>
+  <body onLoad="test();"></body>
+</html>

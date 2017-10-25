@@ -1,0 +1,72 @@
+/* Size main DIV to take up the whole browser viewport. */
+html, body, #mainDiv {
+  width               : 100%;
+  height              : 100%;
+  border              : 0;
+  padding             : 0;
+  margin              : 0;
+  font-size           : 10pt;
+}
+
+/* Styles for toolbar icons. */
+.icons {
+  background-repeat   : no-repeat;
+  background-position : 0px;
+  width               : 20px;
+  height              : 18px;
+  text-align          : center;
+}
+.iconAddCategory {
+  background-image    : url("../img/icon_category_add.gif");
+}
+.iconRenameCategory {
+  background-image    : url("../img/icon_category_rename.gif");
+}
+.iconDeleteCategory {
+  background-image    : url("../img/icon_category_delete.gif");
+}
+.iconAddSnippet {
+  background-image    : url("../img/icon_snippet_add.gif");
+}
+.iconDeleteSnippet {
+  background-image    : url("../img/icon_snippet_delete.gif");
+}
+.iconSearch {
+  background-image    : url("../img/icon_search.gif");
+}
+.iconSave {
+  background-image    : url("../img/icon_save.gif");
+}
+
+/* Styles for the content panes within the layout. */
+.cssContentPane {
+  padding-top         : 5px;
+  padding-left        : 5px;
+}
+
+/* Style for the toolbar container. */
+.cssToolbar {
+  height              : 24px;
+}
+
+/* Style for the snippets grid. */
+.cssSnippetsGrid {
+  width               : 97%;
+  height              : 90%;
+  border              : 1px solid #000000;
+}
+
+/* Style for the code and notes editor. */
+.cssEditor {
+  border              : 1px solid #000000;
+  width               : 97%;
+  height              : 80%;
+  overflow            : hidden;
+}
+
+/* Style for the search results grid. */
+.cssSearchGrid {
+  width               : 98%;
+  height              : 96%;
+  border              : 1px solid #000000;
+}

@@ -1,0 +1,50 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.timing.Sequence");
+
+      function writeText(msg) {
+        dojo.byId("divOutput").innerHTML += "<br>" + msg;
+      }
+
+      function testIt() {
+        var s = new dojox.timing.Sequence({});
+        var funcs = [
+          {func : [writeText, this, "About to pause for 2 seconds (after)"],
+            pauseAfter : 2000},
+          {func : [writeText, this, "Ok, now going to repeat this 5 times"],
+            repeat : 5, pauseAfter : 500},
+          {func : [writeText, this, "About to pause for 1 second (before)"]},
+          {func : [writeText, this, "Alrighty then"], pauseBefore : 1000}
+        ];
+        s.go(funcs, function() { writeText("Done"); });
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.timing.Sequence test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

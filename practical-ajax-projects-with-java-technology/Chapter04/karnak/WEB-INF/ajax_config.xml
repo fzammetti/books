@@ -1,0 +1,30 @@
+<ajaxConfig>
+  <!-- Define a custom request handler.  We could have used the -->
+  <!-- std:QueryString handler, but we wouldn't be able to have as much -->
+  <!-- control over keypress events that we need for this, so a custom -->
+  <!-- handler it is! -->
+  <handler name="CustomQueryString" type="request">
+    <function>CustomQueryString</function>
+    <location>js/CustomQueryString.js</location>
+  </handler>
+  <!-- Define a single form. -->
+  <form ajaxRef="TypeAheadSuggestionsForm">
+    <!-- Only the textbox is Ajax-enabled. -->
+    <element ajaxRef="enteredTextChange">
+      <!-- Any time a key is pressed (released actually), fire an event. -->
+      <event type="onkeyup">
+        <!-- We'll be using our custom request handler defined above. -->
+        <requestHandler type="CustomQueryString" method="get">
+          <target>/askKarnak</target>
+          <parameter>document.TypeAheadSuggestionsForm.enteredTextbox</parameter>
+        </requestHandler>
+        <!-- When we get back, just insert the returned results into the -->
+        <!-- div named suggestions on the page, which contains the -->
+        <!-- matching suggestions. -->
+        <responseHandler type="std:InnerHTML">
+          <parameter>suggestions</parameter>
+        </responseHandler>
+      </event>
+    </element>
+  </form>
+</ajaxConfig>

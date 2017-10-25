@@ -1,0 +1,23 @@
+/* Style for labels on fields that have a validation error. */
+.cssErrorField {
+  color            : #ff0000;
+  background-color : #d0ffd0;
+  font-weight      : bold;
+}
+
+/* Style for labels on fields that pass validations. */
+.cssOKField {
+  color            : #000000;
+  background-color : #d0ffd0;
+  font-weight      : bold;
+}
+
+/* Background for the table cells with the entry fields. */
+.cssEntryCell {
+  background-color : #f0f0f0;
+}
+
+/* Style for the table row with the reset and submit buttons. */
+.cssButtons {
+  background-color : #ffd0d0;
+}

@@ -1,0 +1,170 @@
+/* Style applied to tables. */
+table {
+  font-size         : 9pt;
+  font-family       : arial;
+}
+
+
+/* Style applied to links. */
+a:link {
+  color             : #6a78a7;
+}
+
+
+/* Style applied to visited links. */
+a:visited {
+  color             : #6a78a7;
+}
+
+
+/* Style applied to links that are being hovered over. */
+a:link:hover {
+  color             : #33305b;
+  background-color  : #f0f0f0;
+  font-weight       : bold;
+}
+
+
+/* Style applied to h1 elements. */
+h1 {
+  font-size         : 20pt;
+  color             : #000000;
+  font-weight       : bold;
+}
+
+
+/* Style applied to h2 elements. */
+h2 {
+  font-size         : 15pt;
+  color             : #8c9cd5;
+  margin-top        : 0px;
+  margin-left       : 20px;
+  margin-bottom     : 0px;
+  font-weight       : bold;
+}
+
+
+/* Style applied to menu dividers. */
+.cssDividers {
+  margin-top        : 2px;
+  margin-bottom     : 0px;
+  margin-left       : 20px;
+}
+
+
+/* Style applied to chatter text in the chat transcript window. */
+.cssChatterText {
+  font-size         : 12pt;
+  font-weight       : bold;
+  color             : #0000ff;
+}
+
+
+/* Style applied to support personnel text in the chat transcript window. */
+.cssSupportText {
+  font-size         : 12pt;
+  font-weight       : bold;
+  color             : #ff0000;
+}
+
+
+/* Style applied to header and footer sections. */
+.cssHeaderFooter {
+  color             : #222222;
+  background-image  : url(../img/headerFooter.gif);
+  background-repeat : repeat-x;
+  font-size         : 12pt;
+  font-weight       : bold;
+}
+
+
+/* Style applied to the left-hand side of things. */
+.cssLeftColumn {
+  background-image  : url(../img/borderLeft.gif);
+  background-repeat : repeat-y;
+}
+
+
+/* Style applied to the right-hand side of things. */
+.cssRightColumn {
+  background        : url(../img/borderRight.gif) repeat-y right;
+}
+
+
+/* Style applied to bottom of the chat box. */
+.cssBoxBottom {
+  background-image  : url(../img/footerBackground.gif);
+  background-repeat : repeat-x;
+}
+
+
+/* Style applied to the text at the top. */
+.cssTopText {
+  color             : #222222;
+  background-image  : url(../img/headerFooter.gif);
+  background-repeat : repeat-x;
+  font-size         : 12pt;
+  font-weight       : bold;
+  padding-top       : 4px;
+}
+
+
+/* Style applied to the chat transcription section. */
+.cssChatDiv {
+  overflow          : scroll;
+  width             : 96%;
+  height            : 270px;
+  padding           : 10px;
+}
+
+
+/* Section applied to the section where the chatter entry box is. */
+.cssChatterEntryDiv {
+  width             : 100%;
+  height            : 28px;
+  background-color  : #8c9cd5;
+}
+
+
+/* Style aplied to the table cell where the chatter entry box is. */
+.cssEntry {
+  height            : 30px;
+}
+
+
+/* Style applied to the Say It button. */
+.cssButton {
+  font-size         : 10pt;
+  font-weight       : bold;
+}
+
+
+/* Style used on the div which contains all content on initial logon page. */
+.cssDivOuter {
+  width             : 570px;
+  height            : 430px;
+  position          : absolute;
+  left              : 10px;
+  top               : 10px;
+}
+
+
+/* Style applied to the bubble image on the logon page. */
+.cssIndexImg {
+  position          : absolute;
+  left              : 10px;
+  top               : 10px;
+}
+
+
+/* Style for the div that contains the text content on the logon page. */
+.cssDivInner {
+  font-family       : arial;
+  font-size         : 10pt;
+  font-weight       : bold;
+  width             : 290px;
+  height            : 135px;
+  position          : absolute;
+  left              : 158px;
+  top               : 44px;
+}

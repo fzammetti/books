@@ -1,0 +1,133 @@
+/*
+    OrganizerExt - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+*/
+
+
+/* Default style for text in accordion panes. */
+.cssDefault {
+  font-size : 10pt;
+  font-family : arial;
+}
+
+
+/* Style for text in please wait dialog. */
+.cssPleaseWait {
+  font-size : 12pt;
+  font-weight : bold;
+  font-family : arial;
+}
+
+
+/* Style for text in about dialog. */
+.cssAbout {
+  font-size : 11pt;
+  font-weight : bold;
+  font-family : arial;
+}
+
+
+/* Style for source of dialog animations. */
+.cssSource {
+  position : absolute;
+  left: 1px;
+  top : 1px;
+  width : 1px;
+  height : 1px;
+}
+
+
+/* Style for table showing item details. */
+.cssDetailsTable {
+  border : 2px solid #99bbe8;
+  padding : 2px;
+}
+
+
+/* Style for field label in table showing item details. */
+.cssDetailsLabel {
+  background-color : #c7dffc;
+  font-weight : bold;
+  font-size : 10pt;
+  font-family : arial;
+}
+
+
+/* Style for field data in table showing item details. */
+.cssDetailsData {
+  background-color : #f4f4f4;
+  font-size : 10pt;
+  font-family : arial;
+}
+
+
+/* Style for dataview body (icon text mainly). */
+#listingCard .x-panel-body {
+  background : white;
+  font-size : 8pt;
+  font-family : arial;
+}
+
+
+
+/* Style for dataview thumbnails. */
+#listingCard .thumb-wrap {
+  float : left;
+  margin : 4px;
+  margin-right : 0;
+  padding : 5px;
+}
+
+
+/* Style for dataview item text. */
+#listingCard .thumb-wrap span {
+  display : block;
+  overflow : hidden;
+  text-align : center;
+}
+
+
+/* Style for when an icon in dataview is hovered over. */
+#listingCard .x-view-over {
+  border :1px solid #dddddd;
+  background : #efefef;
+  padding: 4px;
+}
+
+
+/* Style for when an icon in dataview is selected. */
+#listingCard .x-view-selected {
+  background : #eff5fb;
+  border : 1px solid #99bbe8;
+  padding : 4px;
+}
+
+
+/* Fix for ComboBox arrow moving error in v3.0. */
+.x-form-field-wrap {
+  position : static;
+}
+.x-form-field-wrap .x-form-trigger {
+  position : static;
+  top : auto;
+  vertical-align : middle;
+}
+.x-form-field-wrap .x-form-twin-triggers .x-form-trigger {
+  position : static;
+  top : auto;
+  vertical-align : middle;
+}

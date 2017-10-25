@@ -1,0 +1,25 @@
+<project name="seconddwr" basedir="." default="build">
+
+
+  <!-- Classpath for build. -->
+  <path id="classpath">
+    <pathelement path="servlet-api.jar" />
+    <pathelement path="../lib/dwr.jar" />
+  </path>
+
+
+  <!-- The default target.  Compile source, build WAR. -->
+  <target name="build">
+    <delete dir="../classes/app" />
+    <mkdir dir="../classes/app" />
+    <javac srcdir="." destdir="../classes" debug="true"
+     debuglevel="lines,vars,source" deprecation="on">
+      <compilerarg value="-Xlint:unchecked" />
+      <classpath refid="classpath" />
+    </javac>
+    <delete file="seconddwr.war" />
+    <jar destfile="seconddwr.war" basedir="../../" />
+  </target>
+
+
+</project>

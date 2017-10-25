@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        alert(dojo.style("myDiv", "color"));
+        dojo.style("myDiv", "color", "#0000ff");
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <div id="myDiv" style="color:#ff0000;">I am myDiv</div>
+  </body>
+
+</html>

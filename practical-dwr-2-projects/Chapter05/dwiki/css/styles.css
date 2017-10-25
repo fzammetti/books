@@ -1,0 +1,97 @@
+/* Global style. */
+* {
+	font-family         : arial;
+	font-size           : 10pt;
+	color               : #000000;
+}
+
+
+/* Style of top portion, where logo and logon/register is. */
+.cssTop {
+	padding-bottom      : 10px;
+	border-bottom-width : 1px;
+	border-bottom-style : solid;
+	border-bottom-color : #ff4000;
+}
+
+
+/* Style of top navigation bar. */
+.cssTopNav {
+	background-image    : url(../img/barBackground.gif);
+	background-repeat   : repeat-x;
+	border-right-width  : 1px;
+	border-left-width   : 1px;
+	border-right-style  : solid;
+	border-left-style   : solid;
+	border-right-color  : #999999;
+	border-left-color   : #999999;
+}
+
+
+/* Style of left navigation bar. */
+.cssLeftNav {
+	border-left-width   : 1px;
+	border-left-style   : solid;
+	border-left-color   : #999999;
+}
+
+
+/* Style of main article content area. */
+.cssArticle {
+	padding-left        : 10px;
+	padding-right       : 10px;
+	padding-top         : 10px;
+	padding-bottom      : 10px;
+	border-right-width  : 1px;
+	border-left-width   : 1px;
+	border-right-style  : solid;
+	border-left-style   : solid;
+	border-right-color  : #333333;
+	border-left-color   : #333333;
+}
+
+
+/* Style of footer bar. */
+.cssFooter {
+	color               : #333333;
+	background-image    : url(../img/barBackground.gif);
+	background-repeat   : repeat-x;
+	border-right-width  : 1px;
+	border-left-width   : 1px;
+	border-right-style  : solid;
+	border-left-style   : solid;
+	border-right-color  : #999999;
+	border-left-color   : #999999;
+}
+
+
+/* Style of links. */
+a:link {
+  color               : #000000;
+}
+
+
+/* Style of visited links. */
+a:visited {
+  color               : #000000;
+}
+
+
+/* Style of active links. */
+a:active {
+  color               : #000000;
+}
+
+
+/* Style of links being hovered over. */
+a:hover {
+  color               : #ff0000;
+  background-color    : #ffffa0;
+  cursor              : pointer;
+}
+
+
+/* Style for buttons on top and side that can be clicked. */
+.cssClickable {
+  cursor              : pointer;
+}

@@ -1,0 +1,444 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" href="styles.css" type="text/css">
+
+    <script src="jscript.array.js"></script>
+    <script src="jscript.browser.js"></script>
+    <script src="jscript.datetime.js"></script>
+    <script src="jscript.debug.js"></script>
+    <script src="jscript.dom.js"></script>
+    <script src="jscript.form.js"></script>
+    <script src="jscript.lang.js"></script>
+    <script src="jscript.math.js"></script>
+    <script src="jscript.page.js"></script>
+    <script src="jscript.storage.js"></script>
+    <script src="jscript.string.js"></script>
+
+    <script src="testFunctions.js"></script>
+
+  </head>
+
+  <body class="cssBody">
+
+    <br>
+    <h2>This page provides tests for all the packages in the Hodge Podge</h3>
+    Click on a package button to expand it and expose the tests for that package
+    <hr>
+    <br>
+
+
+    <!-- ************* -->
+    <!-- jscript.array -->
+    <!-- ************* -->
+    <h3>
+      <input type="button" id="jscript_array" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.array
+    </h3>
+    <div id="jscript_array_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.array.copyArray([4,5,6],[1,2,3]));">
+        copyArray()-Copy the array [4,5,6] into the array [1,2,3]
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert('McKay found at index '+jscript.array.findInArray(['Sheppard','Weir','McKay','Ronin','Teyla'],'McKay'));">
+        findInArray()-Find the value "McKay" in the array ["Sheppard","Weir",
+        "McKay","Ronin","Teyla"]
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.array.arrayAverage([10, 20, 30]));">
+        arrayAverage()-Display the average of an array of values (10, 20, 30);
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- *************** -->
+    <!-- jscript.browser -->
+    <!-- *************** -->
+    <h3>
+      <input type="button" id="jscript_browser" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.browser
+    </h3>
+    <div id="jscript_browser_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.browser.getBrowserIdentity());">
+        getBrowserIdentity()-Display browser identification information
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- **************** -->
+    <!-- jscript.datetime -->
+    <!-- **************** -->
+    <h3>
+      <input type="button" id="jscript_datetime" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.datetime
+    </h3>
+    <div id="jscript_datetime_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="alert('January='+jscript.datetime.getNumberDaysInMonth(1,2000));alert('February='+jscript.datetime.getNumberDaysInMonth(2,2000));alert('July='+jscript.datetime.getNumberDaysInMonth(7,2000));alert('November='+jscript.datetime.getNumberDaysInMonth(11,2000));">
+        getNumberDaysInMonth()-Show the number of days in January, February,
+        July and November in the year 2000
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert('2000='+jscript.datetime.isLeapYear(2000));alert('2006='+jscript.datetime.isLeapYear(2006));">
+        isLeapYear()-Tests the year 2000 (leap year) and 2006 (not a leap year)
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- ************* -->
+    <!-- jscript.debug -->
+    <!-- ************* -->
+    <h3>
+      <input type="button" id="jscript_debug" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.debug
+    </h3>
+    <div id="jscript_debug_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);" id="enumPropsLink"
+        onClick="jscript.debug.enumProps(document.getElementById('enumPropsLink'));">
+        enumProps()-Shows all the properties of this link
+      </a>
+      <br><br>
+
+      <div id="divLog" class="cssLog">Log message will appear here</div>
+      <script>
+        var log = new jscript.debug.DivLogger();
+        log.setTargetDiv(document.getElementById("divLog"));
+        log.setLevel(log.LEVEL_DEBUG);
+      </script>
+      <br>
+      <a href="javascript:void(0);"
+        onClick="log.trace('Were tracing along now');">
+        DivLogger.log.trace() - Try to add a TRACE message to the above DIV
+        (won't work because it's below the specified DEBUG level);
+      </a><br>
+      <a href="javascript:void(0);"
+        onClick="log.debug('Hmm, lets do some debugging');">
+        DivLogger.log.debug() - Try to add a DEBUG message to the above DIV
+      </a><br>
+      <a href="javascript:void(0);"
+        onClick="log.info('Just for your information');">
+        DivLogger.log.info() - Add a INFO message to the above DIV
+      </a><br>
+      <a href="javascript:void(0);"
+        onClick="log.warn('Warning!  Danger Will Robinson!');">
+        DivLogger.log.warn() - Add a WARN message to the above DIV
+      </a><br>
+      <a href="javascript:void(0);"
+        onClick="log.error('Dave, there is an error in the AE-35 module');">
+        DivLogger.log.error() - Add a ERROR message to the above DIV
+      </a><br>
+      <a href="javascript:void(0);"
+        onClick="log.fatal('Game over man, game over!!');">
+        DivLogger.log.fatal() - Add a FATAL message to the above DIV
+      </a><br>
+      <br><br>
+
+    </div>
+
+
+    <!-- *********** -->
+    <!-- jscript.dom -->
+    <!-- *********** -->
+    <h3>
+      <input type="button" id="jscript_dom" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.dom
+    </h3>
+    <div id="jscript_dom_div" class="cssPackageDIV">
+
+      <div id="centeredDiv" class="cssCenteredDIV">
+        I am a DIV that will be centered
+      </div>
+      <br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.dom.layerCenterH(document.getElementById('centeredDiv'));">
+        layerCenterH()-Horizontally center the red DIV at the top of the page
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.dom.layerCenterV(document.getElementById('centeredDiv'));">
+        layerCenterV()-Vertically center the red DIV at the top of the page
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.dom.execScripts('this is a string<script>alert(\'I am script within a string\');</script>more string');">
+        execScripts()-Execute the script blocks in a string
+      </a>
+      <br><br>
+
+      <div id="testElem1"></div>
+      <div id="testElem2"></div>
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.dom.getDOMElements('testElem1'));alert(jscript.dom.getDOMElements('testElem1','testElem2'));">
+        getDOMElements()-Get a single element, then multiple elements
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- ************ -->
+    <!-- jscript.form -->
+    <!-- ************ -->
+    <h3>
+      <input type="button" id="jscript_form" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.form
+    </h3>
+    <div id="jscript_form_div" class="cssPackageDIV">
+
+      <form id="testForm">
+        <input type="text" name="firstName" value="Frank"><br>
+        <input type="text" name="lastName" value="Zammetti"><br>
+        <select multiple id="numComputers">
+          <option value="1">I own one computer</option>
+          <option value="2">I own two computers</option>
+          <option value="2+">I own two or more computers</option>
+        </select>
+      </form>
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.form.formToXML(document.getElementById('testForm'),'Person'));">
+        formToXML()-Convert the above form to XML (note: multi-select not
+        supported)
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.form.selectLocateOption(document.getElementById('numComputers'),'2',false,true));">
+        selectLocateOption()-See if the value "2" is present in the above select
+        and select it if so
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.form.selectSelectAll(document.getElementById('numComputers'));">
+        selectSelectAll()-Select all the options in the above select element
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.form.selectUnselectAll(document.getElementById('numComputers'));">
+        selectUnselectAll()-Deselect all the options in the above select element
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- ************ -->
+    <!-- jscript.lang -->
+    <!-- ************ -->
+    <h3>
+      <input type="button" id="jscript_lang" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.lang
+    </h3>
+    <div id="jscript_lang_div" class="cssPackageDIV">
+
+      <script>
+        Obj1 = function() {
+          this.firstName = "Frank";
+          this.toString = function() {
+            return "My name is "+this.firstName+" "+this.lastName;
+          }
+        }
+        Obj2 = function() {
+          this.lastName = "Zammetti";
+        }
+        obj1 = new Obj1();
+        obj2 = new Obj2();
+      </script>
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.lang.copyProperties(obj2,obj1));">
+        copyProperties()-Copy properties from obj2 (lastName="Zammetti") into
+        obj1 (firstName="Frank")
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- ************ -->
+    <!-- jscript.math -->
+    <!-- ************ -->
+    <h3>
+      <input type="button" id="jscript_math" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.math
+    </h3>
+    <div id="jscript_math_div" class="cssPackageDIV">
+
+    <a href="javascript:void(0);"
+      onClick="alert(jscript.math.genRandomNumber(1,10));">
+      genRandomNumber()-Generate a random number between 1 and 10
+    </a>
+    <br><br>
+
+    </div>
+
+
+    <!-- ************ -->
+    <!-- jscript.page -->
+    <!-- ************ -->
+    <h3>
+      <input type="button" id="jscript_page" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.page
+    </h3>
+    <div id="jscript_page_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="jscript.page.printPage();">
+        printPage()-Pop a print dialog
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.page.getParameter());alert(jscript.page.getParameter('param1'));">
+        getParameter()-Display all parameters passed to this page
+        (param1=test1 and parm2=test2) and then just param1 again
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.page.breakOutOfFrames();">
+        breakOutOfFrames()-Break out of this frameset
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- *************** -->
+    <!-- jscript.storage -->
+    <!-- *************** -->
+    <h3>
+      <input type="button" id="jscript_storage" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.storage
+    </h3>
+    <div id="jscript_storage_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="var d=new Date();d.setDate(d.getDate()+7);jscript.storage.setCookie('chapter','HodgePodge',d);alert('Done');">
+        setCookie()-Set the cookie "chapter=HodgePodge"
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.storage.getCookie('chapter'));">
+        getCookie()-Get the cookie "chapter"
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="jscript.storage.deleteCookie('chapter');alert('Done');">
+        deleteCookie()-Delete the cookie "chapter"
+      </a>
+      <br><br>
+
+    </div>
+
+
+    <!-- ************** -->
+    <!-- jscript.string -->
+    <!-- ************** -->
+    <h3>
+      <input type="button" id="jscript_string" value="+"
+        onClick="expandCollapse(this);" class="CssButton">
+      jscript.string
+    </h3>
+    <div id="jscript_string_div" class="cssPackageDIV">
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.string.substrCount('How much wood would a woodchuck chuck if a woodchuck could chuck wood','wo'));">
+        substrCount()-Count how many times the string "wo" appears in the
+        string "How much wood would a woodchuck chuck if a woodchuck could
+        chuck wood" (5)
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.string.stripChars('Denny Crane is cool!','strip','aeio'));alert(jscript.string.stripChars('Denny Crane is cool!','allow','DenyCran'));">
+        stripChars()-Strip the characters 'aeio' from the string
+        "Denny Crane is cool!", then strip all characters EXCEPT
+        'DenyCran'
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.string.strContentValid('12345','1234567890','from_list'));alert(jscript.string.strContentValid('abc123','b','not_from_list'));">
+        strContentValid()-Validate that the string "12345" only contains
+        numbers (true), and then that the string "abc123" does not contain the
+        character b (false)
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.string.replace('How much wood would a woodchuck chuck if a woodchuck could chuck wood','wood','metal'));">
+        replace()-Replace "wood" with "metal" in the string
+        "How much wood would a woodchuck chuck if a woodchuck could chuck wood"
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert('  test'.length);alert(jscript.string.leftTrim('  test').length);">
+        leftTrim()-Trim leading spaces from the string "&nbsp;&nbsp;test" (will
+        display length before (6) and after (4)
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert('test  '.length);alert(jscript.string.rightTrim('test  ').length);">
+        rightTrim()-Trim trailing spaces from the string "test&nbsp;&nbsp;"
+        (will display length before (6) and after (4))
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert('  test  '.length);alert(jscript.string.fullTrim('  test  ').length);">
+        fullTrim()-Trim both leading and trailing spaces from the string
+        "&nbsp;&nbsp;test&nbsp;&nbsp;" (will display length before (8)
+        and after (4))
+      </a>
+      <br><br>
+
+      <a href="javascript:void(0);"
+        onClick="alert(jscript.string.breakLine('All work and no play makes Homer go crazy',10));">
+        breakLine()-Break up the string
+        "All work and no play makes Homer go crazy" into 10 character chunks
+      </a>
+      <br><br>
+
+    </div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Listing 1-3</title>
+    <script>
+
+      function Person1(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.toString = function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      function Person2(attrs) {
+        this.firstName = attrs["firstName"]
+        this.lastName = attrs["lastName"];
+        this.toString = function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+
+      function showPerson() {
+        var p1 = new Person1("Frank", "Zammetti");
+        var p2 = new Person2({"firstName":"Frank","lastName":"Zammetti"});
+        document.getElementById("divPerson").innerHTML = p1 + "<br><br>" + p2;
+      }
+
+    </script>
+  </head>
+  <body onLoad="showPerson();">
+    <div id="divPerson">&nbsp;</div>
+  </body>
+</html>

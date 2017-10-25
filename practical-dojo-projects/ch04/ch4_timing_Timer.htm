@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.timing._base");
+
+      var t = new dojox.timing.Timer();
+      function testIt() {
+        t.setInterval(1000);
+        t.onTick = function() {
+          dojo.byId("divOutput").innerHTML += "Next...";
+        }
+        t.start();
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.timing.Timer test:
+        <br><br>
+        <input type="button" onClick="t.stop();" value="Click to stop">
+        <br><br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

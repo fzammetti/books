@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function MyClass1() {
+        var firstName = "Mick";
+        this.getFirstName = function() {
+          return firstName;
+        }
+      }
+      function MyClass2() {
+        var lastName = "Foley";
+        this.getLastName = function() {
+          return lastName;
+        }
+      }
+      function MyClass3() {
+        this.sayName = function() {
+          alert("I am " + this.getFirstName() + " " + this.getLastName());
+        }
+      }
+      dojo.extend(MyClass3, new MyClass1(), new MyClass2());
+      var mc3 = new MyClass3();
+      mc3.sayName();
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

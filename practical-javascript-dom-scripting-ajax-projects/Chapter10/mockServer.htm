@@ -1,0 +1,129 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript" src="js/jscript.page.js"></script>
+    <script type="text/javascript" src="js/jscript.storage.js"></script>
+    <script type="text/javascript" src="js/CatalogItem.js"></script>
+    <script type="text/javascript" src="js/Catalog.js"></script>
+    <script type="text/javascript" src="js/CartItem.js"></script>
+    <script type="text/javascript" src="js/Cart.js"></script>
+
+    <script>
+
+
+      /**
+       * Process the requested operation.
+       */
+      function process() {
+
+        var func = jscript.page.getParameter("function");
+        if (func) {
+          func = "process" + func.substr(0, 1).toUpperCase() + func.substr(1);
+          if (eval("window." + func)) {
+            eval(func + "();");
+          } else {
+            alert("Unimplemented function received")
+          }
+        }
+
+      } // End process().
+
+
+      /**
+       * Redirects to the appropriate description page for a selected item.
+       */
+      function processViewDescription() {
+
+        var itemID = jscript.page.getParameter("itemID");
+        window.location = "descs/id" + itemID + ".htm";
+
+      } // End processViewDescription().
+
+
+      /**
+       * Adds an ite to the cart.
+       */
+      function processPurchase() {
+
+        // Add new item.
+        var newItemID = jscript.page.getParameter("itemID");
+        var newItemQuantity = jscript.page.getParameter("quantity");
+        var itemToAdd = new CartItem();
+        itemToAdd.setItemID(newItemID);
+        itemToAdd.setQuantity(parseInt(newItemQuantity));
+        cart.addItem(itemToAdd);
+
+        window.location = "viewCart.htm";
+
+      } // End processPurchase().
+
+
+      /**
+       * Updates the quantity of an item in the cart.
+       */
+      function processUpdateQuantity() {
+
+        var itemIndex = jscript.page.getParameter("itemIndex");
+        var newQuantity = jscript.page.getParameter("quantity");
+        if (newQuantity == 0) {
+          processDelete();
+        } else if (newQuantity > 0) {
+          cart.updateQuantity(itemIndex, newQuantity);
+        }
+
+        window.location = "viewCart.htm";
+
+      } // End processUpdateQuantity().
+
+
+      /**
+       * Deletes an item from the cart.
+       */
+      function processDelete() {
+
+        var itemIndex = jscript.page.getParameter("itemIndex");
+        cart.deleteItem(itemIndex);
+
+        window.location = "viewCart.htm";
+
+      } // End processDelete().
+
+
+      /**
+       * Redirects to the view cart page.
+       */
+      function processViewCart() {
+
+        window.location = "viewCart.htm";
+
+      } // End processViewCart().
+
+
+      /**
+       * Redirects to the view catalog page.
+       */
+      function processViewCatalog() {
+
+        window.location = "index.htm";
+
+      } // End processViewCatalog().
+
+
+      /**
+       * Redirects to the checkout page.
+       */
+      function processCheckout() {
+
+        window.location = "checkout.htm";
+
+      } // End processCheckout().
+
+
+    </script>
+
+  </head>
+
+  <body onLoad="process();"></body>
+
+</html>

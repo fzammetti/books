@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Example</title>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script>
+      function testme() {
+        var t = $("#myForm").find("input[name='text1']").val();
+        alert(t);
+        alert($("#myForm").serialize());
+        alert($("#myForm").serializeArray());
+      }
+    </script>
+  </head>
+  <body>
+    <form id="myForm">
+      Text1: <input type="text" name="text1">
+      <br><br>
+      Text2: <input type="text" name="text2">
+      <br><br>
+      <input type="button" onClick="testme();">
+    </form>
+  </body>
+</html>

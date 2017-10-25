@@ -1,0 +1,85 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.gfx");
+
+      function testIt() {
+        var tr1 = 130;
+        var tr2 = 80;
+        var trd1 = true;
+        var trd2 = true;
+        var s = dojox.gfx.createSurface("divSurface", 320, 240);
+        s.createLine({x1:10,y1:10, x2:310,y2:230})
+          .setStroke({color : "#ff0000"});
+        s.createLine({x1:310,y1:10, x2:10,y2:230})
+          .setStroke({color : "#0000ff"});
+        var t = s.createPolyline([ {x:160,y:15}, {x:110,y:65},
+          {x:210,y:65}, {x:160,y:15} ])
+          .setFill([0, 255, 0, 1]);
+        var r = s.createRect({ x : 15, y : 80, width : 60, height : 80})
+          .setStroke({color : "green"});
+        var c = s.createCircle({ cx : 265, cy : 120, r : 40})
+          .setFill(dojo.mixin(
+            { type : "radial", cx : 250, cy : 90},
+            { colors: [
+              { offset: 0,   color: [255, 0, 0, 0] },
+              { offset: 0.5, color: "orange" },
+              { offset: 1,   color: [0, 0, 255, 0] }
+            ]}
+          ));
+        var e = s.createEllipse({ cx : 160, cy : 190, rx : 30, ry : 40 })
+          .setFill([0, 255, 0, 0.5]);
+        var txt = s.createText({x: 90, y: 130, text: "DojoX GFX"});
+        txt.setFont({family : "Times", size : "20pt", weight : "bold"});
+        txt.setFill("yellow");
+        txt.setStroke("black");
+        window.setInterval(function() {
+          t.applyTransform(dojox.gfx.matrix.rotategAt(5, 155, 50));
+          r.applyTransform(dojox.gfx.matrix.rotategAt(-10, 45, 120));
+          e.applyTransform(dojox.gfx.matrix.rotategAt(25, 160, 190));
+          txt.applyTransform(dojox.gfx.matrix.rotategAt(-15, tr1, tr2));
+          if (trd1) {
+            tr1 = tr1 + 1;
+            if (tr1 > 280) { trd1 = false; }
+          } else {
+            tr1 = tr1 - 1;
+            if (tr1 < 40) { trd1 = true; }
+          }
+          if (trd2) {
+            tr2 = tr2 + 1;
+            if (tr2 > 200) { trd2 = false; }
+          } else {
+            tr2 = tr2 - 1;
+            if (tr2 < 40) { trd2 = true; }
+          }
+        }, 100);
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.gfx test:
+        <br><br>
+        <div id="divSurface" style="width:320px;height:240px;border:4px solid #000000;"></div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

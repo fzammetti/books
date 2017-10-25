@@ -1,0 +1,73 @@
+<conversation id="thief_3">
+  <node id="3" response="Is thou friend or foe?">
+    <reply id="1" karma="0" target="4">That depends on you</reply>
+    <reply id="2" karma="1" target="5">Friend</reply>
+    <reply id="3" karma="-2" target="12">Foe</reply>
+  </node>
+  <node id="4" response="I do not think I like thee">
+    <reply id="1" karma="-2" target="13">I feel the same way</reply>
+    <reply id="2" karma="0" target="12">Why not?</reply>
+    <reply id="3" karma="1" target="10">I will try to change your mind</reply>
+  </node>
+  <node id="5" response="Then give me your gold!">
+    <reply id="1" karma="0" target="7">What would you do if I was foe?</reply>
+    <reply id="2" karma="-1" target="14">Not a chance!</reply>
+    <reply id="3" karma="1" target="9">Maybe</reply>
+  </node>
+  <node id="6" response="Then I may have to kill thee">
+    <reply id="1" karma="-2" target="14">I shall unsheathed my sword</reply>
+    <reply id="2" karma="1" target="16">Please, calm down</reply>
+    <reply id="3" karma="0" target="3">Do you kill your friends?</reply>
+  </node>
+  <node id="7" response="Uuuhh, I don't really know">
+    <reply id="1" karma="1" target="11">We can figure it out together</reply>
+    <reply id="2" karma="0" target="4">Ok then</reply>
+    <reply id="3" karma="-1" target="15">I did not think that you did</reply>
+  </node>
+  <node id="8" response="Then this will be a short conversation">
+    <reply id="1" karma="1" target="6">Yes, I believe that is the case</reply>
+    <reply id="2" karma="-1" target="9">I was hoping so</reply>
+    <reply id="3" karma="0" target="5">Perhaps not</reply>
+  </node>
+  <node id="9" response="You are making me angry">
+    <reply id="1" karma="-1" target="4">Oh the horrors!</reply>
+    <reply id="2" karma="1" target="15">My apologies</reply>
+    <reply id="3" karma="0" target="7">So what?</reply>
+  </node>
+  <node id="10" response="That does not seem likely">
+    <reply id="1" karma="-1" target="6">Perhaps not</reply>
+    <reply id="2" karma="1" target="15">More likely than you think</reply>
+    <reply id="3" karma="0" target="11">I will consider that</reply>
+  </node>
+  <node id="11" response="That sounds good">
+    <reply id="1" karma="1" target="3">I quite agree</reply>
+    <reply id="2" karma="0" target="9">Yes, I guess it does</reply>
+    <reply id="3" karma="-1" target="4">No, it does not!</reply>
+  </node>
+  <node id="12" response="Then we are destined to fight">
+    <reply id="1" karma="0" target="5">I was hoping to avoid that</reply>
+    <reply id="2" karma="-1" target="6">It appears so</reply>
+    <reply id="3" karma="1" target="10">Maybe we can become friends?</reply>
+  </node>
+  <node id="13" response="We are kindred spirits">
+    <reply id="1" karma="1" target="11">I think so, yes</reply>
+    <reply id="2" karma="0" target="7">Maybe, maybe not</reply>
+    <reply id="3" karma="-1" target="8">No, definitely not!  I am no thief!</reply>
+  </node>
+  <node id="14" response="Why do you say that?">
+    <reply id="1" karma="1" target="3">It's how I feel</reply>
+    <reply id="2" karma="-1" target="4">It's what needs to be said</reply>
+    <reply id="3" karma="0" target="7">I think you know the answer to that</reply>
+  </node>
+  <node id="15" response="I am a thief, for better or worse">
+    <reply id="1" karma="1" target="13">More for better I think</reply>
+    <reply id="2" karma="-1" target="14">More for worse I fear</reply>
+    <reply id="3" karma="0" target="4">Whatever floats thy boat</reply>
+  </node>
+  <node id="16" response="I am trying">
+    <reply id="1" karma="-1" target="14">Try harder!</reply>
+    <reply id="2" karma="1" target="11">Yes, I believe you are</reply>
+    <reply id="3" karma="0" target="4">Ok then</reply>
+  </node>
+</conversation>
+

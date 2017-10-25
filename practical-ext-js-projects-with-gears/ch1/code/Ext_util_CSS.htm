@@ -1,0 +1,53 @@
+<!--
+    CSS - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Ext.util Namespace - CSS class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      function testIt() {
+
+        Ext.util.CSS.createStyleSheet(".cssDiv1{color:#ff0000;}", "ssDiv1");
+        var rule = Ext.util.CSS.getRule(".cssDiv1");
+        console.log(rule);
+        alert(rule);
+        Ext.util.CSS.updateRule(".cssDiv1", "color", "#00ff00");
+        Ext.util.CSS.removeStyleSheet("ssDiv1");
+
+      }
+
+      Ext.onReady(testIt);
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="div1" class="cssDiv1">This is div1</div>
+    <br>
+    <div id="div2">This is div2</div>
+  </body>
+
+</html>

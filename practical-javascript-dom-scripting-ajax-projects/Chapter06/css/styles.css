@@ -1,0 +1,85 @@
+/* Generic style applied to all elements */
+* {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+/* Style for body of document */
+body {
+  margin           : 0px;
+}
+
+/* Style for spacer between data boxes */
+.cssSpacer {
+  height           : 64px;
+}
+
+/* Non-hover state of contacts in the contact list */
+.cssContactListNormal {
+  background-color : #ffffff;
+}
+
+/* Non-hover state of contacts in the contact list, alternate row striping */
+.cssContactListAlternate {
+  background-color : #eaeaea;
+}
+
+/* Hover state of contacts in the contact list */
+.cssContactListOver {
+  background-color : #ffffa0;
+  cursor           : pointer;
+}
+
+/* Style for main container box */
+.cssMain {
+  width            : 100%;
+  height           : 580px;
+  z-index          : 0;
+}
+
+/* Style of the initializing message seen at startup */
+.cssInitializing {
+  width            : 920px;
+  height           : 2000px;
+  z-index          : 1000;
+}
+
+/* Style of selector tabs */
+.cssTab {
+  position         : relative;
+  left             : 2px;
+  _left            : 4px; /* Style for IE */
+}
+
+/* Style of the contact list container */
+.cssContactList {
+  padding          : 4px;
+  height           : 480px;
+  border           : 2px solid #000000;
+  overflow         : scroll;
+}
+
+/* Style of the box surrounding the data boxes */
+.cssMainOuter {
+  padding          : 4px;
+  height           : 480px;
+  border           : 2px solid #000000;
+  overflow         : scroll;
+}
+
+/* Style of a data box */
+.cssDataBox {
+  width            : 100%;
+  border           : 1px solid #000000;
+}
+
+/* Style for the header of a data box */
+.cssDataBoxHeader {
+  background-color : #e0e0f0;
+}
+
+/* Style for textboxes */
+.cssTextbox {
+  border : 1px solid #7f9db9;
+}

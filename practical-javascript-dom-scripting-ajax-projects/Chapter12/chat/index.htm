@@ -1,0 +1,52 @@
+<html>
+
+  <head>
+
+    <title>AJAX-Based One-On-One Support Chat</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script src="js/mootools.js" type="text/javascript"></script>
+    <script src="js/jscript.dom.js" type="text/javascript"></script>
+    <script src="js/SupportChat.js" type="text/javascript"></script>
+
+    <script>
+
+      /**
+       * Called on page load to do some setup.
+       */
+      function init() {
+
+        var divObj = $('divOuter');
+        jscript.dom.layerCenterH(divObj);
+        jscript.dom.layerCenterV(divObj);
+        $("logonForm").action = "server/chatServer." + chat.serverType;
+
+      } // End init().
+
+    </script>
+
+  </head>
+
+  <body onLoad="init();">
+
+    <div id="divOuter" class="cssDivOuter">
+      <img src="img/indexImage.gif" class="cssIndexImg">
+      <div class="cssDivInner">
+        Hello and welcome to our AJAX-based one-on-one support chat system!
+        <br><br>
+        To begin, please tell us who you are, and click the Begin button to
+        get some help.
+        <br><br>
+        <form id="logonForm">
+          <input type="hidden" name="func" value="logon">
+          <input type="hidden" name="chattype" value="customer">
+          Your name: <input type="text" name="chatname" size="20">
+          <input type="submit" value="Begin" class="cssButton">
+        </form>
+      </div>
+    </div>
+
+  </body>
+
+</html>

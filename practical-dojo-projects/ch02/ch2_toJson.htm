@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function MyClass() {
+        this.salary = 10000000;
+        this.age = 34;
+        this.isReality = false;
+      }
+      alert(dojo.toJson(new MyClass(), true));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

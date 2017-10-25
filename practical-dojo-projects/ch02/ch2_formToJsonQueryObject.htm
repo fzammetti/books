@@ -1,0 +1,35 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        alert("formToJson(): \n" +dojo.formToJson("myForm", true) + "\n\n" +
+          "formToObject(): \n" +dojo.formToObject("myForm") + "\n\n" +
+          "formToQuery(): \n" +dojo.formToQuery("myForm")
+        );
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <form name="myForm">
+      <input type="text" name="firstName" value="Steve">
+      <input type="text" name="lastName" value="Austin">
+    </form>
+  </body>
+
+</html>

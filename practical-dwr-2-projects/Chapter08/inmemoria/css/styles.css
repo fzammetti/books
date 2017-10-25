@@ -1,0 +1,35 @@
+/* Catch-all style. */
+* {
+  font-family      : arial;
+  font-size        : 12pt;
+  font-weight      : bold;
+  color            : #ffff00;
+}
+
+
+/* Style of document body. */
+.cssBody {
+  background-color : #ffffff;
+  margin           : 4px;
+  padding          : 0px;
+}
+
+
+/* Style of container that makes up screen. */
+.cssContainer {
+  background-color : #000000;
+  border           : 4px solid #ff0000;
+}
+
+
+/* Style of playfield grid headers. */
+.cssGridHeader {
+  background-color : #ffa0a0;
+  color            : #000000;
+}
+
+
+/* Style of divider between the two grids. */
+.cssGridDivider {
+  height           : 6px;
+}

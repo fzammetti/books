@@ -1,0 +1,76 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.collections.ArrayList");
+
+      function testIt() {
+        var al = new dojox.collections.ArrayList();
+        al.add("Riggs");
+        al.add("Murtaugh");
+        al.add("Leo");
+        al.add("Mr. Joshua");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList via toString():  " + al;
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList via iterator:<br>";
+        var it = al.getIterator();
+        while (!it.atEnd()) {
+          dojo.byId("divOutput").innerHTML += " - " + it.get() + "<br>";
+        }
+        dojo.byId("divOutput").innerHTML +=
+          "ArrayList contains Bill?  " + al.contains("Bill");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList contains Leo? " + al.contains("Leo");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Index of Murtaugh: " + al.indexOf("Murtaugh");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Item at index 3: " + al.item(3);
+        al.reverse();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after reversing:  " + al;
+        al.insert(1, "Lorna");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after inserting item at index 1:  " + al;
+        al.setByIndex(2, "McCallister");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after setByIndex(2):  " + al;
+        var o = al.item(2);
+        al.remove(o);
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after removing McCallister:  " + al;
+        al.sort();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after sorting (default function):  " + al;
+        al.clear();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>ArrayList after clearing:  " + al;
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.collections.ArrayList test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

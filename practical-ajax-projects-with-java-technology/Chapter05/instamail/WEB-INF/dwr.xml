@@ -1,0 +1,24 @@
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+  <allow>
+    <convert converter="bean" match="com.apress.ajaxprojects.instamail.MessageDTO" />
+    <convert converter="bean" match="com.apress.ajaxprojects.instamail.OptionsDTO" />
+    <convert converter="bean" match="com.apress.ajaxprojects.instamail.ContactDTO" />
+    <create creator="new" javascript="OptionsManager">
+      <param name="class" value="com.apress.ajaxprojects.instamail.OptionsManager" />
+    </create>
+    <create creator="new" javascript="MailRetriever">
+      <param name="class" value="com.apress.ajaxprojects.instamail.MailRetriever" />
+    </create>
+    <create creator="new" javascript="MailSender">
+      <param name="class" value="com.apress.ajaxprojects.instamail.MailSender" />
+    </create>
+    <create creator="new" javascript="MailDeleter">
+      <param name="class" value="com.apress.ajaxprojects.instamail.MailDeleter" />
+    </create>    
+    <create creator="new" javascript="AddressBookManager">
+      <param name="class" value="com.apress.ajaxprojects.instamail.AddressBookManager" />
+    </create>
+  </allow>
+</dwr>

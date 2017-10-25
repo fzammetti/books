@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Example</title>
+    <style>
+      .cssDiv2 {
+        color : #ff0000;
+      }
+    </style>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script>
+      function testme() {
+        $("#divGreeting").html("Go away, I'm tired!");
+        $("body div").css("fontWeight", "bold");
+        $("body").append("<div>I was inserted</div>");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divGreeting">Hello!</div>
+    <div class="cssDiv2">Welcome to the book!</div>
+    <input type="button" onClick="testme();">
+  </body>
+</html>

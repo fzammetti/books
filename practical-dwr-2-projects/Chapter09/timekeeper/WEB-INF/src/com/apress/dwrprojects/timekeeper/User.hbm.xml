@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <!-- User. -->
+  <class name="com.apress.dwrprojects.timekeeper.User" table="USERS">
+    <id name="id" column="USERS_ID">
+      <generator class="native" />
+    </id>
+    <property name="username" />
+    <property name="password" />
+    <property name="isAdministrator" />
+    <property name="isProjectManager" />
+  </class>
+
+</hibernate-mapping>

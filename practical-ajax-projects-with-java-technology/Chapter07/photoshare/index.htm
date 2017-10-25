@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>PhotoShare</title>
+<script>
+  function openWindow() {
+    // Open a window to display PhotoShare in.
+    var winWidth = 1000;
+    var winHeight = 750;
+    var winLeft = (screen.width) ? (screen.width - winWidth) / 2 : 0;
+    var winTop = (screen.height) ? (screen.height - winHeight) / 2 : 0;
+    winOpts = "resizeable,width=" + winWidth + ",height=" + winHeight +
+      ",top=" + winTop + ",left=" + winLeft;
+    window.open("index1.htm", "PhotoShare", winOpts);
+  }
+</script>
+</head>
+<body onload="openWindow();">
+The main PhotoShare window should have now appeared.  If it has not, please
+ensure that you have scripting enabled in your browser, and that you do not
+have a popup blocker that has blocked the window from opening.  You may need
+to create an exception for PhotoShare, or disable any popup blocker entirely.
+<br><br>
+Please note that PhotoShare is designed for a screen resolution of 1024x768.
+It will of course work at lower resolutions, but your experience will not
+be optimal.
+</body>
+</html>

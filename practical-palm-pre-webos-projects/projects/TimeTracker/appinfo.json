@@ -1,0 +1,9 @@
+{
+  "id": "com.etherient.timetracker",
+  "version": "1.0.0",
+  "vendor": "Etherient",
+  "type": "web",
+  "main": "index.html",
+  "title": "Time Tracker",
+  "icon": "icon.png"
+}

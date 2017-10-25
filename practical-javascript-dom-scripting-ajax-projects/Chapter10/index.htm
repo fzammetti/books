@@ -1,0 +1,223 @@
+<html>
+
+  <head>
+
+    <title>Shopping Cart</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script type="text/javascript" src="js/MochiKit/MochiKit.js"></script>
+    <script type="text/javascript" src="js/MochiKit/DragAndDrop.js"></script>
+
+    <script type="text/javascript" src="js/jscript.page.js"></script>
+    <script type="text/javascript" src="js/jscript.storage.js"></script>
+    <script type="text/javascript" src="js/CatalogItem.js"></script>
+    <script type="text/javascript" src="js/Catalog.js"></script>
+    <script type="text/javascript" src="js/CartItem.js"></script>
+    <script type="text/javascript" src="js/Cart.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </head>
+
+  <body class="cssBody" onLoad="init();">
+
+    <div id="divMain">
+
+      <table cellpadding="6" cellspacing="0" width="600" border="0"
+        align="center" class="cssInstructionsTable">
+        <tr>
+          <td align="center" valign="middle">
+            If JavaScript is enabled, drag an item you wish to purchase
+            to the shopping cart.  You will be able to select quantity at that
+            time.  To see the description, hover over the item.
+            <br><br>
+            If JavaScript is disabled, click the Description link to see the
+            description and purchase.
+            <br><br>
+            In either case, click the shopping cart to view the cart's contents
+            and modify it.
+          </tr>
+        </td>
+      </table>
+
+      <br>
+
+      <table cellpadding="6" cellspacing="0" width="600" border="1"
+        align="center" class="cssCatalogTable">
+
+        <tr>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Duo Diamond Ring
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_1">
+                <img src="img/item1.gif" id="img_1">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                299.09
+              </td></tr>
+              <tr id="desc1"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=1">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Seagate Hard Drive
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_2">
+                <img src="img/item2.gif" id="img_2">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                94.99
+              </td></tr>
+              <tr id="desc2"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=2">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Fisher-Price Rainforest Bouncer
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_3">
+                <img src="img/item3.gif" id="img_3">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                49.96
+              </td></tr>
+              <tr id="desc3"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=3">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Toastmaster 4-Slice Toaster Oven
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_4">
+                <img src="img/item4.gif" id="img_4">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                28.49
+              </td></tr>
+              <tr id="desc4"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=4">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Practical Ajax Projects
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_5">
+                <img src="img/item5.gif" id="img_5">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                32.99
+              </td></tr>
+              <tr id="desc5"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=5">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Images and Words CD
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_6">
+                <img src="img/item6.gif" id="img_6">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                10.09
+              </td></tr>
+              <tr id="desc6"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=6">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                HoMedics Atom Massager
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_7">
+                <img src="img/item7.gif" id="img_7">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                9.99
+              </td></tr>
+              <tr id="desc7"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=7">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+          <td align="center" valign="middle">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td height="40" align="center" valign="top">
+                Elebits for Nintendo Wii
+              </td></tr>
+              <tr><td height="100" align="center" valign="top" id="td_img_8">
+                <img src="img/item8.gif" id="img_8">
+              </td></tr>
+              <tr><td height="25" align="center" valign="top">
+                49.99
+              </td></tr>
+              <tr id="desc8"><td height="25" align="center" valign="top">
+                <a href="mockServer.htm?function=viewDescription&itemID=8">
+                  Description
+                </a>
+              </td></tr>
+            </table>
+          </td>
+
+        </tr>
+
+      </table>
+
+      <br>
+      <center>
+        <span id="spnItemCount"></span>
+        <a href="mockServer.htm?function=viewCart"><img
+          src="img/shoppingCart.gif" border="0"
+          id="shoppingCart" hspace="6" alt="Click to view cart"></a>
+        <span id="spnCartTotal"></span>
+      </center>
+
+    </div>
+
+  </body>
+
+</html>

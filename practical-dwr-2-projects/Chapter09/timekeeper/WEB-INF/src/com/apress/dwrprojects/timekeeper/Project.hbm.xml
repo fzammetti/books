@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <!-- Project. -->
+  <class name="com.apress.dwrprojects.timekeeper.Project" table="PROJECTS">
+    <id name="id" column="PROJECTS_ID">
+      <generator class="native" />
+    </id>
+    <property name="name" />
+    <property name="projectManager" />
+    <property name="allocatedHours" />
+    <property name="bookedHours" />
+    <property name="targetDate" type="timestamp" />
+    <property name="usersAssigned" />
+  </class>
+
+</hibernate-mapping>

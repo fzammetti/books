@@ -1,0 +1,74 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.string.Builder");
+      dojo.require("dojox.string.sprintf");
+
+      function testIt() {
+        var b = new dojox.string.Builder("Java");
+        var s = "Builder right after instantiation with &quot;Java&quot;: " + b;
+        b.clear();
+        s += "<br>Builder after clearing: " + b;
+        b.append("Hello, world!");
+        s += "<br>Builder after appending &quot;Hello, world!&quot;: " + b
+        b.append("--I like bunnies.");
+        s += "<br>Builder after appending &quot;--I like bunnies&quot;: " + b
+        b.replace("bunnies", "frogs");
+        s += "<br>Builder after replacing &quot;bunnies&quot; with " +
+          "&quot;frogs&quot;: " + b;
+        b.remove(0, 15);
+        s += "<br>Builder after removing &quot;Hello, world!--&quot;: " + b;
+        b.insert(2, "really ");
+        s += "<br>Builder after inserting &quot;really&quot; at index 2: " + b;
+        dojo.byId("divBuilderOutput").innerHTML = s;
+        s = "";
+        s += "dojox.string.sprintf(&quot;%.3e&quot;, 362525200) " +
+          "should be " +
+          "&quot;3.625e+08&quot; : " +
+          dojox.string.sprintf("%.3e", 362525200);
+        s += "<br>dojox.string.sprintf(&quot;%04d-%02d-%02d&quot;, 95, 2, 3) " +
+          "should be " +
+          "&quot;0095-02-03&quot; : " +
+          dojox.string.sprintf("%04d-%02d-%02d", 95, 2, 3);
+        s += "<br>dojox.string.sprintf(&quot;[%10s]&quot;, &quot;goat&quot;) " +
+          "should be " +
+          "&quot;[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goat]&quot; : " +
+          dojox.string.sprintf("[%10s]", "goat");
+        s += "<br>dojox.string.sprintf(&quot;%c&quot;, 65) " +
+          "should be " +
+          "&quot;A&quot; : " +
+          dojox.string.sprintf("%c", 65);
+        dojo.byId("divSPRINTFOutput").innerHTML = s;
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.string.Builder test:
+        <br><br>
+        <div id="divBuilderOutput">&nbsp;</div>
+        <br>
+        dojox.string.sprintf test:
+        <pre><div id="divSPRINTFOutput">&nbsp;</div></pre>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

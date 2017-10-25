@@ -1,0 +1,15 @@
+[
+  { 
+    "source" : "app/assistants/stage-assistant.js" 
+  }, 
+  { 
+    "source" : "app/assistants/gameScreen-assistant.js", "scenes" : "gameScreen" 
+  },
+  { 
+    "source" : "app/assistants/titleScreen-assistant.js", 
+      "scenes" : "titleScreen" 
+  },
+  { 
+    "source" : "app/assistants/gameOver-assistant.js"
+  }   
+]

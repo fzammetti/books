@@ -1,0 +1,257 @@
+.topstrip {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-image    : url(../img/topstrip.gif);
+  background-repeat   : repeat-x;
+ }
+
+.para3bg {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-image    : url(../img/paraheading3_bg.gif);
+  background-repeat   : repeat-x;
+  border-right-width  : 1px;
+  border-right-style  : solid;
+  border-right-color  : #ff7f00;
+}
+
+.textbox {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  padding             : 10px;
+  border-right-width  : 1px;
+  border-bottom-width : 1px;
+  border-right-style  : solid;
+  border-bottom-style : solid;
+  border-right-color  : #ff7f00;
+  border-bottom-color : #ff7f00;
+}
+
+.textboxborder {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-image    : url(../img/vertical_border.gif);
+  background-repeat   : repeat-y;
+}
+
+body {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-color    : #FFFFFF;
+}
+
+table {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #333333;
+}
+
+.msgDetailLabel {
+  font-size           : 14pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  margin-top          : 0px;
+  margin-bottom       : 2px;
+  color               : #000000;
+}
+
+.msgDetail {
+  font-size           : 14pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  margin-top          : 0px;
+  margin-bottom       : 2px;
+  color               : #000000;
+}
+
+.border {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  border-right-width  : 1px;
+  border-left-width   : 1px;
+  border-right-style  : solid;
+  border-left-style   : solid;
+  border-right-color  : #000000;
+  border-left-color   : #000000;
+  border-bottom-width : 1px;
+  border-bottom-style : solid;
+  border-bottom-color : #000000;
+}
+
+.rightcoltext {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  padding             : 15px;
+}
+
+.leftcolbg {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-color    : #dfe9ff;
+}
+
+.footer {
+  font-size           : 10pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #ffffff;
+  background-color    : #2661dd;
+  border-top-color    : #ff7f00;
+  border-top-width    : 2px;
+  border-top-style    : solid;
+  padding-top         : 2px;
+  padding-bottom      : 2px;
+}
+
+
+.footerHover {
+  font-size           : 10pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #000000;
+  cursor              : pointer;
+  background-color    : #ff7f00;
+  border-top-color    : #ff7f00;
+  border-top-width    : 2px;
+  border-top-style    : solid;
+  padding-top         : 2px;
+  padding-bottom      : 2px;  
+}
+
+.themecolor1 {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  background-color    : #2661dd;
+}
+
+.msgListHead {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #ffffff;
+  background-color    : #2661dd;
+}
+
+.msgListRow1 {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  color               : #000000;
+  background-color    : #ffffff;
+  cursor              : default;
+}
+
+.msgListRow2 {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  color               : #000000;
+  background-color    : #efeff7;
+  cursor              : default;
+}
+
+.msgCount {
+  font-size           : 12pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #000000;
+}
+
+.divShowing {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  display             : block;
+}
+
+.divHidden {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  display             : none;
+}
+
+.msgText {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+}
+
+.rowHover {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  cursor              : pointer;
+  background-color    : #ff7f00;
+}
+
+.divTitle {
+  font-size           : 14pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #000000;
+}
+
+.cssOptionLabel {
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  color               : #000000;
+}
+
+.editField {
+  padding             : 2px;
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  background-color    : #ffffff;
+  border-color        : #2161de;
+  border-style        : solid;
+}
+
+.currentEditField {
+  padding             : 2px;
+  font-size           : 12pt;
+  font-weight         : normal;
+  font-family         : Arial;
+  background-color    : #ffffc0;
+  border-color        : #0000ff;
+  border-style        : solid;
+}
+
+.cssPleaseWait {
+  font-size           : 16pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #ffffff;
+  position            : absolute;
+  left                : 1px;
+  top                 : 1px;
+  width               : 330px;
+  height              : 66px;
+  background-color    : #ff7f00;
+  display             : none;
+  z-index             : 1000;
+  border-top-width    : 4px;
+  border-right-width  : 4px;
+  border-left-width   : 4px;
+  border-bottom-width : 4px;
+  border-right-style  : solid;
+  border-bottom-style : solid;
+  border-top-style    : solid;
+  border-left-style   : solid;
+  border-right-color  : #2161de;
+  border-bottom-color : #2161de;
+  border-top-color    : #2161de;
+  border-left-color   : #2161de;
+}

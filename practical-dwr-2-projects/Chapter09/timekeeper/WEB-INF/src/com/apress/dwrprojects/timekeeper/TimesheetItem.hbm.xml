@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <!-- TimesheetItem. -->
+  <class name="com.apress.dwrprojects.timekeeper.TimesheetItem"
+    table="TIMESHEETS">
+    <id name="id" column="TIMESHEETS_ID">
+      <generator class="native" />
+    </id>
+    <property name="userID" />
+    <property name="projectID" />
+    <property name="reportDate" />
+    <property name="hours" />
+  </class>
+
+</hibernate-mapping>

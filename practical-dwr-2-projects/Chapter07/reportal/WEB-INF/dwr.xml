@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+
+    <!-- Converted for the Time class. -->
+    <convert converter="date" match="java.sql.Time" />
+
+    <!-- Converter for dealing with exceptions. -->
+    <convert match="java.lang.Exception" converter="exception" />
+
+    <!-- Convert StackTraceElement object too, to avoid console errors. -->
+    <convert converter="bean" match="java.lang.StackTraceElement"/>
+
+    <!-- VO representing a user. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.reportal.UserDescriptor" />
+
+    <!-- VO representing a group. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.reportal.GroupDescriptor" />
+
+    <!-- VO representing a report. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.reportal.ReportDescriptor" />
+
+    <!-- VO representing a scheduled report. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.reportal.ReportScheduleDescriptor" />
+
+    <!-- VO representing a data source. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.reportal.DataSourceDescriptor" />
+
+    <!-- Worker that provides services related to users. -->
+    <create creator="spring" javascript="UserWorker">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="userWorker" />
+    </create>
+
+    <!-- Worker that provides services related to groups. -->
+    <create creator="spring" javascript="GroupWorker">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="groupWorker" />
+    </create>
+
+    <!-- Worker that provides services related to reports. -->
+    <create creator="spring" javascript="ReportWorker">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="reportWorker" />
+    </create>
+
+    <!-- Worker that provides services related to favorites. -->
+    <create creator="spring" javascript="FavoritesWorker">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="favoritesWorker" />
+    </create>
+
+    <!-- Worker that deals with actually executing a report. -->
+    <create creator="spring" javascript="ReportRunner">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="reportRunner" />
+    </create>
+
+    <!-- Worker that deals with scheduling of reports. -->
+    <create creator="spring" javascript="ReportSchedulingWorker">
+      <param name="location" value="spring-beans.xml" />
+      <param name="beanName" value="reportSchedulingWorker" />
+    </create>
+
+  </allow>
+</dwr>

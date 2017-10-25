@@ -1,0 +1,27 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var a = [ "Shatner", "Nimoy", "Kelley", "Spiner", "Nimoy" ];
+      alert(dojo.indexOf(a, "Nimoy") + ", " + dojo.indexOf(a, "Stewart") +
+        ", " + dojo.indexOf(a, "Nimoy", 0, true));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+
+    <!-- VO representing a user. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.timekeeper.User" />
+
+    <!-- VO representing a project. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.timekeeper.Project" />
+
+    <!-- VO representing a timesheet item. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.timekeeper.TimesheetItem" />
+
+  </allow>
+</dwr>

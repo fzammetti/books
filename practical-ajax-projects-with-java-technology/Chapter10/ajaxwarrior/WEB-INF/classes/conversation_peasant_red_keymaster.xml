@@ -1,0 +1,138 @@
+<conversation id="peasant_red_keymaster">
+  <node id="3" response="Hello How are you this fine day?">
+    <reply id="1" karma="1" target="4">I am fine I hope you are fine as well</reply>
+    <reply id="2" karma="0" target="5">Well, I'm not doing so well today</reply>
+    <reply id="3" karma="-1" target="6">Why do you care, you poor, pitiful fool!</reply>
+  </node>
+  <node id="4" response="Yes, very well! Poor, but well!">
+    <reply id="1" karma="-2" target="7">Maybe if you got a job you'd have money</reply>
+    <reply id="2" karma="2" target="8">I have much money, perhaps I can help</reply>
+    <reply id="3" karma="0" target="9">I should really be going now</reply>
+  </node>
+  <node id="5" response="Why's that? Does thou have the plague?">
+    <reply id="1" karma="-1" target="6">Of course I don't have the plague!</reply>
+    <reply id="2" karma="0" target="10">Maybe, I haven't felt good lately</reply>
+    <reply id="3" karma="1" target="11">Nope, I am plague-free!</reply>
+  </node>
+  <node id="6" response="Well, that is terribly rude of you">
+    <reply id="1" karma="0" target="10">Sorry, my reaction was poor there</reply>
+    <reply id="2" karma="1" target="12">My apologies! Thy journey has been hard</reply>
+    <reply id="3" karma="-1" target="26">Like I care, you peasant!</reply>
+  </node>
+  <node id="7" response="How dare you insult my honor this way!">
+    <reply id="1" karma="0" target="15">I'm a mighty warrior, I do as I please</reply>
+    <reply id="2" karma="-2" target="6">You are a peasant and not worthy of me</reply>
+    <reply id="3" karma="1" target="12">Perhaps I was too hasty</reply>
+  </node>
+  <node id="8" response="I'd be forever in your debt kind sir!">
+    <reply id="1" karma="2" target="14">There is no debt, I only do what I can</reply>
+    <reply id="2" karma="-1" target="10">That's right, you owe me big-time!</reply>
+    <reply id="3" karma="0" target="18">My love is to serve</reply>
+  </node>
+  <node id="9" response="I understand, thy journey must go on">
+    <reply id="1" karma="-1" target="16">I have great deeds to accomplish</reply>
+    <reply id="2" karma="1" target="19">Thank you for understanding</reply>
+    <reply id="3" karma="0" target="27">I shouldn't be wasting my time here</reply>
+  </node>
+  <node id="10" response="Uhh, that doesn't make me comfortable">
+    <reply id="1" karma="-1" target="7">Your comfort is none of my concern</reply>
+    <reply id="2" karma="1" target="22">I'll set thy mind at ease from now on</reply>
+    <reply id="3" karma="0" target="27">That is the way it will have to be then</reply>
+  </node>
+  <node id="11" response="I will have to take you at your word">
+    <reply id="1" karma="2" target="18">Thy word is thy bond</reply>
+    <reply id="2" karma="-1" target="28">Some creatures' word means nothing</reply>
+    <reply id="3" karma="0" target="17">That is good</reply>
+  </node>
+  <node id="12" response="I can understand that I forgive thee">
+    <reply id="1" karma="1" target="21">Thank you, that means a great deal</reply>
+    <reply id="2" karma="-2" target="26">Forgiveness is not necessary</reply>
+    <reply id="3" karma="0" target="10">Your forgiveness is acceptable</reply>
+  </node>
+  <node id="13" response="I can understand that I forgive thee">
+    <reply id="1" karma="-1" target="6">It does not matter</reply>
+    <reply id="2" karma="1" target="25">I accept that</reply>
+    <reply id="3" karma="0" target="10">Enough of this useless banter</reply>
+  </node>
+  <node id="14" response="Then, I want nothing to do with thee!">
+    <reply id="1" karma="-2" target="22">Good riddance to bad rubbish I say!</reply>
+    <reply id="2" karma="0" target="26">Return to your home before I kill thee</reply>
+    <reply id="3" karma="1" target="21">That is a shame</reply>
+  </node>
+  <node id="15" response="I am grateful none the less">
+    <reply id="1" karma="0" target="20">Very well</reply>
+    <reply id="2" karma="1" target="23">Thank you very much</reply>
+    <reply id="3" karma="-1" target="16">You can be whatever you like</reply>
+  </node>
+  <node id="16" response="Has thou battled many monsters?">
+    <reply id="1" karma="1" target="11">More than I can count</reply>
+    <reply id="2" karma="0" target="19">A few, yes</reply>
+    <reply id="3" karma="-1" target="24">No, not many yet</reply>
+  </node>
+  <node id="17" response="Has thou battled many monsters?">
+    <reply id="1" karma="-2" target="10">I have killed many beasts, and peasants</reply>
+    <reply id="2" karma="1" target="29">Has thou encountered monsters here?</reply>
+    <reply id="3" karma="0" target="23">Monsters are of no concern to me</reply>
+  </node>
+  <node id="18" response="Perhaps you will defeat Mallizant?">
+    <reply id="1" karma="0" target="10">Perhaps, if there is sufficient reward</reply>
+    <reply id="2" karma="2" target="24">That is indeed my goal</reply>
+    <reply id="3" karma="-1" target="20">Live and let live is my motto</reply>
+  </node>
+  <node id="19" response="Sir, you are the only hope for us!">
+    <reply id="1" karma="-1" target="6">Yes I am It is good that thou knows it</reply>
+    <reply id="2" karma="0" target="28">I believe that may be true</reply>
+    <reply id="3" karma="1" target="24">I will do what I can</reply>
+  </node>
+  <node id="20" response="My wife will add you to her prayers">
+    <reply id="1" karma="-2" target="10">And I will add her to mine</reply>
+    <reply id="2" karma="0" target="5">That is generous of you</reply>
+    <reply id="3" karma="1" target="21">Does your wife pray often?</reply>
+  </node>
+  <node id="21" response="Life is short, we must savor it">
+    <reply id="1" karma="1" target="22">Yes, I agree</reply>
+    <reply id="2" karma="-1" target="25">That is my feeling as well</reply>
+    <reply id="3" karma="0" target="16">That is an interesting thought</reply>
+  </node>
+  <node id="22" response="Evil casts a shadow across the land">
+    <reply id="1" karma="2" target="17">The land shall be lit by good again</reply>
+    <reply id="2" karma="0" target="25">A deep foreboding haunts us all</reply>
+    <reply id="3" karma="-1" target="12">Really? I had not noticed</reply>
+  </node>
+  <node id="23" response="I will help in your noble effort">
+    <reply id="1" karma="-1" target="26">And what pray tell do you have to offer?</reply>
+    <reply id="2" karma="0" target="6">I do not need your assistance</reply>
+    <reply id="3" karma="1" target="18">I will accept whatever you may offer</reply>
+  </node>
+  <node id="24" response="If you'll help us, I can aid thy quest">
+    <reply id="1" karma="-1" target="27">In what way?</reply>
+    <reply id="2" karma="0" target="21">Your help is appreciated</reply>
+    <reply id="3" karma="2" target="25">I humbly accept</reply>
+  </node>
+  <node id="25" response="I wish I were a great warrior like thee">
+    <reply id="1" karma="0" target="16">With a little training, you may be</reply>
+    <reply id="2" karma="-1" target="7">Hehe, that's a good one!</reply>
+    <reply id="3" karma="1" target="11">I takes much training and dedication</reply>
+  </node>
+  <node id="26" response="I am glad I am no cad such as thee">
+    <reply id="1" karma="0" target="27">Too bad, there is good money in it</reply>
+    <reply id="2" karma="1" target="13">Perhaps I should change my ways</reply>
+    <reply id="3" karma="-2" target="7">I do not care</reply>
+  </node>
+  <node id="27" response="I do not know how to respond to that">
+    <reply id="1" karma="0" target="28">That is fine, I am not listening anyway</reply>
+    <reply id="2" karma="-2" target="7">Typical of peasants</reply>
+    <reply id="3" karma="1" target="12">My ways may seem strange to thee</reply>
+  </node>
+  <node id="28" response="I do not know how to respond to that">
+    <reply id="1" karma="0" target="14">Nor do I to that</reply>
+    <reply id="2" karma="-1" target="6">It will come to you</reply>
+    <reply id="3" karma="1" target="12">Then I apologize for my words</reply>
+  </node>
+  <node id="29" response="Oh yes, many!">
+    <reply id="1" karma="1" target="24">Perhaps I can slay some for you</reply>
+    <reply id="2" karma="-2" target="14">Well, I do not wish to be here then!</reply>
+    <reply id="3" karma="0" target="27">I hope it's not snakes I hate snakes</reply>
+  </node>
+</conversation>
+

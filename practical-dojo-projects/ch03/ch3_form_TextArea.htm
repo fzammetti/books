@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.Textarea");
+
+      function createProgrammatically() {
+        var myDijit = new dijit.form.Textarea({
+          value : "Hello, I am a textarea"
+        });
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra" onLoad="createProgrammatically();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.form.Textarea Dijit, created declaratively:
+        <br><br>
+        <textarea dojoType="dijit.form.Textarea"
+          style="width:200px;"></textarea>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <div id="divProgrammatic">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

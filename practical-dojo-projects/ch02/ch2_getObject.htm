@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function com() { }
+      com.omnytex = function() { };
+      com.omnytex.method1 = function() { return "method1 called"; }
+      alert(dojo.getObject("com.omnytex.method1")() + ", " +
+        dojo.getObject("com.omnytex.method2", true) + ", " +
+        dojo.getObject("com.omnytex.method2", false));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var c1 = new dojo.Color([255, 0, 0]);
+      var c2 = dojo.colorFromHex("#00ff00");
+      var c3 = dojo.clone(c1);
+      dojo.colorFromHex("#0000ff", c3);
+      alert("c1 = " + c1 + "\nc2 = " + c2 + "\nc3 = " + c3);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

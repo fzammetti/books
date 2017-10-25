@@ -1,0 +1,71 @@
+<html>
+
+  <head>
+
+    <title>Simple Non-Server AJAX Example</title>
+
+    <script>
+
+      // This is a reference to an XMLHttpRequest object.
+      xhr = null;
+
+      // This function is called any time a selection is made in the first
+      // <select> element.
+      function updateCharacters() {
+
+        // Instantiate an XMLHttpRequest object.
+        if (window.XMLHttpRequest) {
+          // Non-IE.
+          xhr = new XMLHttpRequest();
+        } else {
+          // IE.
+          xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange = callbackHandler;
+        url = document.getElementById("selShow").value + ".htm";
+        xhr.open("post", url, true);
+        xhr.send(null);
+
+      }
+
+      // This is the function that will repeatedly be called by our
+      // XMLHttpRequest object during the lifecycle of the request.
+      function callbackHandler() {
+
+        if (xhr.readyState == 4) {
+          document.getElementById("divCharacters").innerHTML = xhr.responseText;
+        }
+
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    Our first simple AJAX example
+    <br><br>
+
+    Make a selection here:
+    <br>
+    <select onChange="updateCharacters();" id="selShow">
+      <option value=""></option>
+      <option value="b5">Babylon 5</option>
+      <option value="bsg">Battlestar Galactica</option>
+      <option value="sg1">Stargate SG-1</option>
+      <option value="sttng">Star Trek The Next Generation</option>
+    </select>
+
+    <br><br>
+
+    In response, a list of characters will appear here:
+    <br>
+    <div id="divCharacters">
+      <select>
+      </select>
+    </div>
+
+  </body>
+
+</html>

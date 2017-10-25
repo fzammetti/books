@@ -1,0 +1,11 @@
+On page 270-271, the id field value of the database record being written was changed from 
+the current time to whatever is in the incoming record.  This is necessary so that the code 
+calling the createSnippet() method knows the ID being written and can update
+it immediately.
+
+On page 289-290, the way a new snippet in the Store is checked for was changed.
+Previously, the record with the ID "New Snippet" is checked for (even
+though the text says its the name being checked for, the code was checking
+for the ID).  Checking the name as the text sats is in fact correct and that's what
+the code does.  Also, the ID of the new Record is the current time, not the
+string "New Snippet".

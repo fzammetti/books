@@ -1,0 +1,148 @@
+<!--
+    Template - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Template/XTemplate Example</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+
+      function doMadlib1() {
+
+        var t = new Ext.Template(
+          "Dear {personName},<br><br>",
+          "It is with great regret that I inform you that your ",
+          "{color} {animalType} {petName} ",
+          "has met with an unfortunate accident that caused their ",
+          "{bodyPart} to be turned into a stalk of celery while {animalsName} ",
+          "was at {place}.<br><br>",
+          "Err, sorry 'bout that!<br><br>",
+          "Sincerely,<br>",
+          "Mom"
+        );
+        var vals = Ext.query("input[class=mlf1]");
+        t.overwrite("Madlib1Results", {
+          personName : vals[0].value,
+          color : vals[1].value,
+          animalType : vals[2].value,
+          petName : vals[3].value,
+          bodyPart : vals[4].value,
+          place : vals[5].value
+        });
+
+      }
+
+
+      function doMadlib2() {
+
+        var t = new Ext.XTemplate(
+          "The robot overlords from planet {planetName} have declared that as ",
+          "of this time, no human may acquire the following items:<br><ul>",
+          "<tpl for=\"bannedItems\">",
+          "<li>{itemName} - Reason: {noReason}</li>",
+          "</tpl>",
+          "</ul>"
+        );
+        var vals = Ext.query("input[class=mlf2]");
+        Ext.getDom("Madlib2Results").innerHTML = t.applyTemplate(
+          {
+            planetName : vals[0].value,
+            bannedItems : [
+              { itemName : vals[1].value, noReason : vals[2].value },
+              { itemName : vals[3].value, noReason : vals[4].value }
+            ]
+          }
+        );
+
+      }
+
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <h1>Template/XTemplate-based Madlibs</h1>
+    <table border="0" cellpadding="2" cellspacing="2">
+      <tr>
+        <td>
+          <form name="Madlib1Form">
+            A person's name: <input class="mlf1" type="text">
+            <br>
+            A color: <input class="mlf1" type="text">
+            <br>
+            A type of animal: <input class="mlf1" type="text">
+            <br>
+            A pet's name: <input class="mlf1" type="text">
+            <br>
+            A body part: <input class="mlf1" type="text">
+            <br>
+            A place: <input class="mlf1" type="text">
+            <br><br>
+            <input type="button" value="Create Madlib" onClick="doMadlib1();">
+            <br>
+          </form>
+        </td>
+        <td>
+          <div id="Madlib1Results"
+            style="border:1px solid #000000;width:400px;height:240px;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <br><hr><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <form name="Madlib2Form">
+            A planet name: <input class="mlf2" type="text">
+            <br>
+            An item: <input class="mlf2" type="text">
+            <br>
+            A reason to not allow it: <input class="mlf2" type="text">
+            <br>
+            Another item: <input class="mlf2" type="text">
+            <br>
+            Another reason to not allow it: <input class="mlf2" type="text">
+            <br><br>
+            <input type="button" value="Create Madlib" onClick="doMadlib2();">
+            <br>
+          </form>
+        </td>
+        <td>
+          <div id="Madlib2Results"
+            style="border:1px solid #000000;width:400px;height:240px;"></div>
+        </td>
+      </tr>
+    </table>
+
+
+
+  </body>
+
+</html>

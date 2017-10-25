@@ -1,0 +1,53 @@
+/* Style applied to everything on the page. */
+* {
+  font-size        : 10pt;
+  font-weight      : bold;
+  font-family      : arial;
+}
+
+
+/* Style applied to the body of the document. */
+.cssBody {
+  background-color : #ffffff;
+}
+
+
+/* Style applied to the left and right sections. */
+.cssSectionBorder {
+  border           : 2px solid #000000;
+}
+
+
+/* Style applied to the search results div. */
+.cssSearchResults {
+  width            : 100%;
+  height           : 400px;
+  overflow         : scroll;
+}
+
+
+/* Style applied to the popup area where hotel info is displayed. */
+.hotelInfo {
+  width            : 98%;
+  height           : 200px;
+  overflow         : scroll;
+  background-color : #eaeaea;
+}
+
+
+/* Style applied to buttons. */
+.cssButton {
+  width            : 40px;
+  border-color     : #ffffff;
+  background       : url(../img/buttonBG.gif);
+  color            : #000000;
+}
+
+
+/* Style applied to buttons when they are hovered over. */
+.cssButtonOver {
+  width            : 40px;
+  border-color     : #ff0000;
+  background       : url(../img/buttonBG.gif);
+  color            : #ff0000;
+}

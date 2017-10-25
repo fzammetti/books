@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script>
+      dojo.require("dojo.back");
+      dojo.back.setInitialState({
+        back : function() { alert("about to leave application") }
+      });
+      var content = [
+        "I am some content (app state 1)",
+        "I am some other content (app state 2)",
+        "I am yet other content (app state 3)"
+      ];
+      function gotoContent(inNum) {
+        var dc = dojo.byId("divContent");
+        dc.innerHTML = content[inNum - 1];
+        dojo.back.addToHistory({
+          num : inNum, changeUrl : true, back : function() {
+            dojo.byId("divContent").innerHTML = content[this.num - 1];
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <script>dojo.back.init();</script>
+    <div id="divContent"
+      style="width:300px;height:100px;border:1px solid #000000">
+      Hello, welcome to my applicaiton!
+    </div>
+    <br>
+    <input type="button" value="Goto Content 1" onClick="gotoContent(1);">&nbsp;
+    <input type="button" value="Goto Content 2" onClick="gotoContent(2);">&nbsp;
+    <input type="button" value="Goto Content 3" onClick="gotoContent(3);">&nbsp;
+  </body>
+</html>

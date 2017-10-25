@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title></title>
+
+    <script>
+
+      if (window.XMLHttpRequest) {
+        // Create an XML DOM object in non-IE browsers.  Set the root element
+        // <messages> and add it to the DOM.
+        create_xmlDoc = 
+          document.implementation.createDocument("", "messages", null);
+      } else {
+        // Create an XML DOM object in IE.
+        create_xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+        // Create the root element and add it to the DOM.
+        create_root = create_xmlDoc.createElement("messages");
+        create_xmlDoc.documentElement = create_root;
+      }
+        
+      // Create a <message> node, set the text attribute and add it to the DOM.
+      create_msg = create_xmlDoc.createElement("message");
+      create_msg.setAttribute("text", "Hello!");
+      create_xmlDoc.documentElement.appendChild(create_msg);
+      
+      // Create a <message> node, set the text attribute and add it to the DOM.
+      create_msg = create_xmlDoc.createElement("message");
+      create_msg.setAttribute("text", "I hope all is well with you!");
+      create_xmlDoc.documentElement.appendChild(create_msg);
+      
+      // Just to prove it's really an object reference.
+      xmlDoc = create_xmlDoc;
+      
+      // Parse the XML.  For each <message> element, display its text attribute.
+      root = xmlDoc.getElementsByTagName("messages")[0];
+      messages = root.getElementsByTagName("message");
+      for (i = 0; i < messages.length; i++) {
+        alert(messages[i].getAttribute("text"));
+      }
+
+    </script>
+
+  </head>
+  <body></body>
+</html>

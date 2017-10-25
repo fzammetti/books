@@ -1,0 +1,7 @@
+/* Style for source of dialog animations. */
+.cssSource {
+  position : absolute;
+  left: 1px;
+  width : 100%;
+  height : 1px;
+}

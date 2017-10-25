@@ -1,0 +1,57 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.CheckBox");
+      dojo.addOnLoad(createProgrammatically);
+
+      function createProgrammatically() {
+        var myDijit = new dijit.form.CheckBox({
+          id : "cb2", onClick : function(val) { alert("SUCKER!"); },
+          label : "I was created programmatically"
+        });
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+        dojo.byId("cb2Label").style.display = "";
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.form.CheckBox Dijit, created declaratively:
+        <br><br>
+        <input type="checkbox" id="cb1"
+          dojoType="dijit.form.CheckBox"
+        />&nbsp;<label for="cb1">Check me if you like Dojo</label>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <span id="divProgrammatic">&nbsp;</span>&nbsp;<label
+          style="display:none;" id="cb2Label"
+          for="cb2">Check me and you will be rich (kidding!)</label>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <display-name>AjaxChat</display-name>
+
+  <!-- Parameter for JSTL resource bundle usage. -->
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>app_resources</param-value>
+  </context-param>
+
+  <!-- Parameters related to application configuration. -->
+  <context-param>
+    <param-name>configFile</param-name>
+    <param-value>/WEB-INF/app-config.xml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>configClass</param-name>
+    <param-value>com.apress.ajaxprojects.ajaxchat.AjaxChatConfig</param-value>
+  </context-param>
+
+  <!-- The session checking filter. -->
+  <filter>
+    <filter-name>sessionCheckerFilter</filter-name>
+    <filter-class>com.apress.ajaxprojects.ajaxchat.filter.SessionCheckerFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>sessionCheckerFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+  <!-- Context and Session listeners. -->
+  <listener>
+    <listener-class>javawebparts.listener.AppConfigContextListener</listener-class>
+  </listener>
+  <listener>
+      <listener-class>com.apress.ajaxprojects.ajaxchat.listener.ContextListener</listener-class>
+  </listener>
+
+  <!-- Action Servlet. -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>app_resources</param-value>
+		</init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>5</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>5</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <!-- Session timeout config. -->
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+
+  <!-- Welcome file config. -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

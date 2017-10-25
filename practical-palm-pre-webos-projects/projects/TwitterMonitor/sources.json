@@ -1,0 +1,14 @@
+[
+  { 
+    "source" : "app/Base64.js" 
+  },
+  { 
+    "source" : "app/assistants/app-assistant.js" 
+  },
+  { 
+    "source" : "app/assistants/main-assistant.js", "scenes" : "main" 
+  },
+  { 
+    "source" : "app/assistants/settings-assistant.js", "scenes" : "settings" 
+  }
+]

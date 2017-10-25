@@ -1,0 +1,223 @@
+<div data-role="page" id="appointmentPage" data-dom-cache="true">
+
+  <script>
+    $(document).delegate("#appointmentPage", "pageshow", function(inEvent) {
+      pageShowHandler("appointment");
+    });
+  </script>
+
+  <!-- Menu. -->
+  <div data-role="popup" id="appointmentMenu">
+    <ul data-role="listview" data-inset="true" class="cssFunctionsMenu"
+      data-theme="b">
+      <li><a href="javascript:showListView('appointment');">List View</a></li>
+      <li id="appointmentNewLink">
+        <a href="javascript:newItem('appointment');">New</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header. -->
+  <div data-role="header" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <a href="index.html" class="cssHomeButton" data-icon="home"
+      data-theme="b">Home</a>
+    <h1>Appointments</h1>
+    <a href="#appointmentMenu" class="cssFunctionButton" data-icon="bars"
+      data-iconpos="notext" data-rel="popup" data-theme="b"></a>
+  </div>
+
+  <!-- Page content. -->
+  <div data-role="content">
+
+    <div class="ui-loader-background"></div>
+
+    <!-- List view. -->
+    <div id="appointmentList">
+
+      <!-- Advanced filters. -->
+      <div data-role="collapsible">
+        <h3>Advanced Filters</h3>
+        <form name="appointmentFilterForm" id="appointmentFilterForm">
+          <label for="appointmentFilterCategory" class="select">Category</label>
+          <select name="filterCategory" id="appointmentFilterCategory"
+            onChange="populateList('appointment', 'category', this.value);">
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+          </select>
+          <label for="appointmentFilterAllDay">All Day?</label>
+          <input type="checkbox" name="filterAllDay"
+            id="appointmentFilterAllDay"
+            onChange="populateList('appointment', 'allDay', this.value);" />
+        </form>
+      </div>
+
+      <!-- List. -->
+      <ul data-role="listview" data-inset="true" id="appointmentListUL"></ul>
+
+    </div>
+
+    <!-- Entry view. -->
+    <div id="appointmentEntry" style="display:none;">
+
+      <form name="appointmentEntryForm" id="appointmentEntryForm">
+
+        <!-- Category. -->
+        <label for="appointmentCategory" class="select">Category</label>
+        <select name="category" id="appointmentCategory">
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+        </select>
+
+        <!-- Title, description and location. -->
+        <label for="appointmentTitle" class="cssRequired">Title</label>
+        <input type="text" name="title" id="appointmentTitle"
+          data-clear-btn="true">
+        <label for="appointmentDescription">Description</label>
+        <input type="text" name="description" id="appointmentDescription"
+          data-clear-btn="true">
+        <label for="appointmentLocation">Location</label>
+        <input type="text" name="location" id="appointmentLocation"
+          data-clear-btn="true">
+
+        <!-- Date and time. -->
+        <label for="appointmentDate" class="cssRequired">Date</label>
+        <input name="date" id="appointmentDate" type="text" data-role="datebox"
+          data-options='{"mode":"datebox","enablePopup":true,"useFocus":true,"useButton":false,"useNewStyle":true}'>
+        <label for="appointmentAllDay">All Day?</label>
+        <input type="checkbox" name="allDay" id="appointmentAllDay" />
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Start Time</legend>
+          <select name="startTimeHour">
+            <option>Hour</option>
+            <option value="01">01</option><option value="02">02</option>
+            <option value="03">03</option><option value="04">04</option>
+            <option value="05">05</option><option value="06">06</option>
+            <option value="07">07</option><option value="08">08</option>
+            <option value="09">09</option><option value="10">10</option>
+            <option value="11">11</option><option value="12">12</option>
+          </select>
+          <select name="startTimeMinute">
+            <option>Minute</option>
+            <option value="00">00</option><option value="01">01</option>
+            <option value="02">02</option><option value="03">03</option>
+            <option value="04">04</option><option value="05">05</option>
+            <option value="06">06</option><option value="07">07</option>
+            <option value="08">08</option><option value="09">09</option>
+            <option value="10">10</option><option value="11">11</option>
+            <option value="12">12</option><option value="13">13</option>
+            <option value="14">14</option><option value="15">15</option>
+            <option value="16">16</option><option value="17">17</option>
+            <option value="18">18</option><option value="19">19</option>
+            <option value="20">20</option><option value="21">21</option>
+            <option value="22">22</option><option value="23">23</option>
+            <option value="24">24</option><option value="25">25</option>
+            <option value="26">26</option><option value="27">27</option>
+            <option value="28">28</option><option value="29">29</option>
+            <option value="30">30</option><option value="31">31</option>
+            <option value="32">32</option><option value="33">33</option>
+            <option value="34">34</option><option value="35">35</option>
+            <option value="36">36</option><option value="37">37</option>
+            <option value="38">38</option><option value="39">39</option>
+            <option value="40">40</option><option value="41">4</option>
+            <option value="42">4</option><option value="43">4</option>
+            <option value="44">4</option><option value="45">4</option>
+            <option value="46">4</option><option value="47">4</option>
+            <option value="48">4</option><option value="49">4</option>
+            <option value="50">15</option><option value="51">51</option>
+            <option value="52">52</option><option value="53">53</option>
+            <option value="54">54</option><option value="55">55</option>
+            <option value="56">56</option><option value="57">57</option>
+            <option value="58">58</option><option value="59">59</option>
+          </select>
+          <select name="startTimeMeridiem">
+            <option>Meridiem</option>
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>End Time</legend>
+          <select name="endTimeHour">
+            <option>Hour</option>
+            <option value="01">01</option><option value="02">02</option>
+            <option value="03">03</option><option value="04">04</option>
+            <option value="05">05</option><option value="06">06</option>
+            <option value="07">07</option><option value="08">08</option>
+            <option value="09">09</option><option value="10">10</option>
+            <option value="11">11</option><option value="12">12</option>
+          </select>
+          <select name="endTimeMinute">
+            <option>Minute</option>
+            <option value="00">00</option><option value="01">01</option>
+            <option value="02">02</option><option value="03">03</option>
+            <option value="04">04</option><option value="05">05</option>
+            <option value="06">06</option><option value="07">07</option>
+            <option value="08">08</option><option value="09">09</option>
+            <option value="10">10</option><option value="11">11</option>
+            <option value="12">12</option><option value="13">13</option>
+            <option value="14">14</option><option value="15">15</option>
+            <option value="16">16</option><option value="17">17</option>
+            <option value="18">18</option><option value="19">19</option>
+            <option value="20">20</option><option value="21">21</option>
+            <option value="22">22</option><option value="23">23</option>
+            <option value="24">24</option><option value="25">25</option>
+            <option value="26">26</option><option value="27">27</option>
+            <option value="28">28</option><option value="29">29</option>
+            <option value="30">30</option><option value="31">31</option>
+            <option value="32">32</option><option value="33">33</option>
+            <option value="34">34</option><option value="35">35</option>
+            <option value="36">36</option><option value="37">37</option>
+            <option value="38">38</option><option value="39">39</option>
+            <option value="40">40</option><option value="41">4</option>
+            <option value="42">4</option><option value="43">4</option>
+            <option value="44">4</option><option value="45">4</option>
+            <option value="46">4</option><option value="47">4</option>
+            <option value="48">4</option><option value="49">4</option>
+            <option value="50">15</option><option value="51">51</option>
+            <option value="52">52</option><option value="53">53</option>
+            <option value="54">54</option><option value="55">55</option>
+            <option value="56">56</option><option value="57">57</option>
+            <option value="58">58</option><option value="59">59</option>
+          </select>
+          <select name="endTimeMeridiem">
+            <option>Meridiem</option>
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select>
+        </fieldset>
+
+        <!-- Buttons. -->
+        <button type="button" data-theme="e" data-icon="plus"
+          onClick="doSave('appointment');"
+          id="appointmentSaveButton">Save</button>
+        <button type="button" data-theme="e" data-icon="minus"
+          onClick="doDelete('appointment');"
+          id="appointmentDeleteButton" disabled>Delete</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- Footer. -->
+  <div data-role="footer" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <div data-role="navbar" class="cssNavBar">
+      <ul>
+        <li><a href="javascript:void(0);"
+          class="cssNavAppointmentPage ui-btn-active ui-state-persist"
+          data-icon="custom"data-iconpos="notext"></a></li>
+        <li><a href="contactPage.html" class="cssNavContactPage"
+          data-icon="custom"data-iconpos="notext"></a></li>
+        <li><a href="notePage.html" class="cssNavNotePage"
+          data-icon="custom"data-iconpos="notext"></a></li>
+        <li><a href="taskPage.html" class="cssNavTaskPage"
+          data-icon="custom"data-iconpos="notext"></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

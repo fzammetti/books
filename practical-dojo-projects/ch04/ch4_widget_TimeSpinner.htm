@@ -1,0 +1,38 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+      dojo.require("dojo.parser");
+      dojo.require("dojox.widget.TimeSpinner");
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.widget.TimeSpinner test:
+        <br><br>
+        <input id="myTimeSpinner" dojoType="dojox.widget.TimeSpinner"
+          value="3:35 AM" smallDelta="1" />
+      </td></tr>
+    </table>
+  </body>
+
+</html>

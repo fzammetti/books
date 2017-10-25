@@ -1,0 +1,17 @@
+<BestBandsInTheWorld>
+  <Band name="Shadow Gallery">
+    <Bassists name="Carl Cadden-James" />
+    <Guitarist name="Brendt Allman" />
+    <Keyboardist name="Chris Ingles" />
+    <Guitarist name="Gary Wehrkamp" />
+    <Drummer name="Joe Nevolo" />
+    <Singer name="Mike Baker" />
+  </Band>
+  <Band name="Dream Theater">
+    <Drummer name="Mike Portnoy" />
+    <Singer name="James LaBrie" />
+    <Guitarist name="John Petrucci" />
+    <Bassist name="John Myung" />
+    <Keyboardist name="Jordan Rudess" />
+  </Band>
+</BestBandsInTheWorld>

@@ -1,0 +1,189 @@
+<div data-role="page" id="contactPage" data-dom-cache="true">
+
+  <script>
+    $(document).delegate("#contactPage", "pageshow", function(inEvent) {
+      pageShowHandler("contact");
+    });
+  </script>
+
+  <!-- Menu. -->
+  <div data-role="popup" id="contactMenu">
+    <ul data-role="listview" data-inset="true" class="cssFunctionsMenu"
+      data-theme="b">
+      <li><a href="javascript:showListView('contact');">List View</a></li>
+      <li id="contactNewLink">
+        <a href="javascript:newItem('contact');">New</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header. -->
+  <div data-role="header" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <a href="index.html" class="cssHomeButton" data-icon="home"
+      data-theme="b">Home</a>
+    <h1>Contacts</h1>
+    <a href="#contactMenu" class="cssFunctionButton" data-icon="bars"
+      data-iconpos="notext" data-rel="popup" data-theme="b"></a>
+  </div>
+
+  <!-- Page content. -->
+  <div data-role="content">
+
+    <div class="ui-loader-background"></div>
+
+    <!-- List view. -->
+    <div id="contactList">
+
+      <!-- Advanced filters. -->
+      <div data-role="collapsible">
+        <h3>Advanced Filters</h3>
+        <form name="contactFilterForm" id="contactFilterForm">
+          <label for="contactFilterCategory" class="select">Category</label>
+          <select name="category" id="contactFilterCategory"
+            onChange="populateList('contact', 'category', this.value);">
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+          </select>
+        </form>
+      </div>
+
+      <div>&nbsp;</div>
+
+      <!-- List. -->
+      <div>
+        <ul data-role="listview" data-filter="true" data-inset="true"
+          data-autodividers="true" id="contactListUL"></ul>
+      </div>
+
+    </div>
+
+    <!-- Entry view. -->
+    <div id="contactEntry" style="display:none;">
+
+    <form name="contactEntryForm" id="contactEntryForm">
+
+      <!-- Category. -->
+      <label for="contactCategory" class="select">Category</label>
+      <select name="category" id="contactCategory">
+        <option value="personal">Personal</option>
+        <option value="work">Work</option>
+      </select>
+
+      <!-- Name. -->
+      <label for="contactFirstName" class="cssRequired">First Name</label>
+      <input type="text" name="firstName" id="contactFirstName"
+        data-clear-btn="true">
+      <label for="contactLastName" class="cssRequired">Last Name</label>
+      <input type="text" name="lastName" id="contactLastName"
+        data-clear-btn="true">
+
+      <!-- Addresses. -->
+      <fieldset data-role="controlgroup" data-type="horizontal"
+        data-mini="true">
+        <legend>Address 1</legend>
+        <input type="radio" name="address1Type" id="contactAddress1TypeHome"
+          value="home" />
+        <label for="contactAddress1TypeHome">Home</label>
+        <input type="radio" name="address1Type" id="contactAddress1TypeWork"
+          value="work" />
+        <label for="contactAddress1TypeWork">Work</label>
+        <input type="radio" name="address1Type" id="contactAddress1TypeOther"
+          value="other" />
+        <label for="contactAddress1TypeOther">Other</label>
+      </fieldset>
+      <textarea cols="40" rows="4" name="address1"></textarea>
+      <fieldset data-role="controlgroup" data-type="horizontal"
+        data-mini="true">
+        <legend>Address 2</legend>
+        <input type="radio" name="address2Type" id="contactAddress2TypeHome"
+          value="home" />
+        <label for="contactAddress2TypeHome">Home</label>
+        <input type="radio" name="address2Type" id="contactAddress2TypeWork"
+          value="work" />
+        <label for="contactAddress2TypeWork">Work</label>
+        <input type="radio" name="address2Type" id="contactAddress2TypeOther"
+          value="other" />
+        <label for="contactAddress2TypeOther">Other</label>
+      </fieldset>
+      <textarea cols="40" rows="4" name="address2"></textarea>
+
+      <!-- Phone Numbers. -->
+      <fieldset data-role="controlgroup" data-type="horizontal"
+        data-mini="true">
+        <legend>Phone 1</legend>
+        <input type="radio" name="phone1Type" id="contactPhone1TypeHome"
+          value="home" />
+        <label for="contactPhone1TypeHome">Home</label>
+        <input type="radio" name="phone1Type" id="contactPhone1TypeWork"
+          value="work" />
+        <label for="contactPhone1TypeWork">Work</label>
+        <input type="radio" name="phone1Type" id="contactPhone1TypeCell"
+          value="cell" />
+        <label for="contactPhone1TypeCell">Cell</label>
+        <input type="radio" name="phone1Type" id="contactPhone1TypeFAX"
+          value="fax" />
+        <label for="contactPhone1TypeFAX">FAX</label>
+        <input type="radio" name="phone1Type" id="contactPhone1TypeOther"
+          value="other" />
+        <label for="contactPhone1TypeOther">Other</label>
+      </fieldset>
+      <input type="text" name="phone1" data-clear-btn="true">
+      <fieldset data-role="controlgroup" data-type="horizontal"
+        data-mini="true">
+        <legend>Phone 2</legend>
+        <input type="radio" name="phone2Type" id="contactPhone2TypeHome"
+          value="home" />
+        <label for="contactPhone2TypeHome">Home</label>
+        <input type="radio" name="phone2Type" id="contactPhone2TypeWork"
+          value="work" />
+        <label for="contactPhone2TypeWork">Work</label>
+        <input type="radio" name="phone2Type" id="contactPhone2TypeCell"
+          value="cell" />
+        <label for="contactPhone2TypeCell">Cell</label>
+        <input type="radio" name="phone2Type" id="contactPhone2TypeFAX"
+          value="fax" />
+        <label for="contactPhone2TypeFAX">FAX</label>
+        <input type="radio" name="phone2Type" id="contactPhone2TypeOther"
+          value="other" />
+        <label for="contactPhone2TypeOther">Other</label>
+      </fieldset>
+      <input type="text" name="phone2" data-clear-btn="true">
+
+      <!-- Web Presence. -->
+      <label for="contactEMail">eMail</label>
+      <input type="text" name="eMail" id="contactEMail" data-clear-btn="true">
+
+      <!-- Buttons. -->
+      <button type="button" data-theme="e" data-icon="plus"
+        onClick="doSave('contact');" id="contactSaveButton">Save</button>
+      <button type="button" data-theme="e" data-icon="minus"
+        onClick="doDelete('contact');"
+        id="contactDeleteButton" disabled>Delete</button>
+
+    </form>
+
+    </div>
+
+  </div>
+
+  <!-- Footer. -->
+  <div data-role="footer" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <div data-role="navbar" class="cssNavBar">
+      <ul>
+        <li><a href="appointmentPage.html" class="cssNavAppointmentPage"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="javascript:void(0);"
+          class="cssNavContactPage ui-btn-active ui-state-persist"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="notePage.html" class="cssNavNotePage"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="taskPage.html" class="cssNavTaskPage"
+          data-icon="custom" data-iconpos="notext"></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

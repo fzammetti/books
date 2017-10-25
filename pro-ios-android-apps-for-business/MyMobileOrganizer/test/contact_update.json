@@ -1,0 +1,16 @@
+{
+  "category" : "business", 
+  "firstName" : "Roger", 
+  "middleName" : "Edgar", 
+  "lastName" : "Miller", 
+  "address1" : "123 Fake Rd.\nFaketown, KY 11111", 
+  "address1Type" : "Work",
+  "address2" : "321 Fake Rd.\nFaketown, KY 22222", 
+  "address2Type" : "Home", 
+  "phone1" : "777-888-9999",
+  "phone1Type" : "home",  
+  "phone2" : "999-888-7777", 
+  "phone2Type" : "work",
+  "eMail" : "goaway@goaway.com", 
+  "webSite" : "www.domain.com"
+}

@@ -1,0 +1,10 @@
+{ label : "name",
+  identifier : "name",
+  items : [
+     { name : "Dream Theater", type :"category" },
+     { name : "Shadow Gallery", type : "category" },
+     { name : "Enchant", type : "category" },
+     { name : "Fates Warning", type : "category" },
+     { name : "Queensryche", type : "category" }
+  ]
+}

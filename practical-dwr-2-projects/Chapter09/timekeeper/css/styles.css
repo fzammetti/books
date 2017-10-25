@@ -1,0 +1,88 @@
+/* Catch-all style. */
+* {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+
+/* Style for body. */
+.cssBody {
+  margin           : 0px;
+  padding          : 0px;
+  background-image : url("../img/background.gif");
+}
+
+
+/* Style for outer container div. */
+.cssOuter {
+  margin           : 4px;
+  padding          : 4px;
+}
+
+
+/* Style for source of dialog animations. */
+.cssSource {
+  position         : absolute;
+  left             : 1px;
+  top              : 1px;
+  width            : 1px;
+  height           : 1px;
+}
+
+
+/* Style for heading on home page. */
+.cssHeader {
+  font-size        : 14pt;
+}
+
+
+/* Style of a table on the home page. */
+.cssTable {
+  background-color : #ffffff;
+}
+
+
+/* Style of container of tables on home page. */
+.cssHomeTableContainer {
+  border           : 3px solid #98c0f4;
+}
+
+
+/* Style for table headers. */
+.cssTableHeader {
+  background-color : #dfe8f6;
+}
+
+
+/* Style for regular table row. */
+.cssTableRow {
+  height           : 24px;
+}
+
+
+/* Style for alternate table row. */
+.cssTableAltRow {
+  height           : 24px;
+  background-color : #e0ffe0;
+}
+
+
+/* Styles for Ext widgets. */
+#toolbar {
+  margin-left      : 20px;
+  width            : 320px;
+}
+#menubutton {
+  margin-left      : 20px;
+}
+.msg .x-box-mc {
+  font-size        : 14px;
+}
+#msg-div {
+  position         : absolute;
+  left             : 35%;
+  top              : 0px;
+  width            : 250px;
+  z-index          : 20000;
+}

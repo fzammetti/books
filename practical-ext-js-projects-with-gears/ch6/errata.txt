@@ -1,0 +1,7 @@
+On page 352, referring to the listing of the file Details.js, the configuration for the 
+Panel with the ID "MapPane" now has the forceLayout:true option added to it in order 
+for the map to display the first time.
+
+On page 356-357, the call to the load() method was changed to doRequest() since load() 
+is now deprecated.  Also, doRequest() has two arguments before the parameters object. 
+The first is the method, "read" in this case, and the second is unusused, so null is passed.

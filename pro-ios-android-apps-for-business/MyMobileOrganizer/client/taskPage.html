@@ -1,0 +1,128 @@
+<div data-role="page" id="taskPage" data-dom-cache="true">
+
+  <script>
+    $(document).delegate("#taskPage", "pageshow", function(inEvent) {
+      pageShowHandler("task");
+    });
+  </script>
+
+  <!-- Menu. -->
+  <div data-role="popup" id="taskMenu">
+    <ul data-role="listview" data-inset="true" class="cssFunctionsMenu"
+      data-theme="b">
+      <li><a href="javascript:showListView('task');">List View</a></li>
+      <li id="taskNewLink">
+        <a href="javascript:newItem('task');">New</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header. -->
+  <div data-role="header" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <a href="index.html" class="cssHomeButton" data-icon="home"
+      data-theme="b">Home</a>
+    <h1>Tasks</h1>
+    <a href="#taskMenu" class="cssFunctionButton" data-icon="bars"
+      data-iconpos="notext" data-rel="popup" data-theme="b"></a>
+  </div>
+
+  <!-- Page content. -->
+  <div data-role="content">
+
+    <div class="ui-loader-background"></div>
+
+    <!-- List view. -->
+    <div id="taskList">
+
+      <!-- Advanced filters. -->
+      <div data-role="collapsible">
+        <h3>Advanced Filters</h3>
+        <form name="taskFilterForm" id="taskFilterForm">
+          <label for="taskFilterCategory" class="select">Category</label>
+          <select name="filterCategory" id="taskFilterCategory"
+            onChange="populateList('task', 'category', this.value);">
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+          </select>
+        </form>
+      </div>
+
+      <div>&nbsp;</div>
+
+      <!-- List. -->
+      <div>
+        <ul data-role="listview" data-filter="true" data-inset="true"
+          data-autodividers="true" id="taskListUL"></ul>
+      </div>
+
+    </div>
+
+    <!-- Entry view. -->
+    <div id="taskEntry" style="display:none;">
+
+      <form name="taskEntryForm" id="taskEntryForm">
+
+        <!-- Category. -->
+        <label for="taskCategory" class="select">Category</label>
+        <select name="category" id="taskCategory">
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+        </select>
+
+        <!-- Title and notes. -->
+        <label for="taskTitle" class="cssRequired">Title</label>
+        <input type="text" name="title" id="taskTitle" data-clear-btn="true">
+        <label for="taskNotes">Notes</label>
+        <textarea name="notes" id="taskNotes"></textarea>
+
+        <!-- Status. -->
+        <label for="taskCompleted">Completed</label>
+        <select name="completed" id="taskCompleted" data-role="slider">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <!-- Priority. -->
+        <label for="taskPriority">Priority</label>
+        <input type="range" name="priority" id="taskPriority"
+          value="1" min="1" max="5" step="1" data-highlight="true" />
+
+        <!-- Due date. -->
+        <label for="taskDueDate">Due Date</label>
+        <input name="dueDate" id="taskDueDate" type="text" data-role="datebox"
+          data-options='{"mode":"datebox","enablePopup":true,"useFocus":true,"useButton":false,"useNewStyle":true}'>
+
+        <!-- Buttons. -->
+        <button type="button" data-theme="e" data-icon="plus"
+          onClick="doSave('task');" id="taskSaveButton">Save</button>
+        <button type="button" data-theme="e" data-icon="minus"
+          onClick="doDelete('task');"
+          id="taskDeleteButton" disabled>Delete</button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <!-- Footer. -->
+  <div data-role="footer" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <div data-role="navbar" class="cssNavBar">
+      <ul>
+        <li><a href="appointmentPage.html" class="cssNavAppointmentPage"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="contactPage.html" class="cssNavContactPage"
+          data-icon="custom"data-iconpos="notext"></a></li>
+        <li><a href="notePage.html" class="cssNavNotePage"
+          data-icon="custom"data-iconpos="notext"></a></li>
+        <li><a href="javascript:void(0);"
+          class="cssNavTaskPage ui-btn-active ui-state-persist"
+          data-icon="custom"data-iconpos="notext"></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

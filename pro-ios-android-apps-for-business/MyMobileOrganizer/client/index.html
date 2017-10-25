@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="jq/jquery.mobile-1.3.1.min.css">
+    <link rel="stylesheet" href="jq/plugins/jqm-datebox.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="jq/jquery-1.9.1.min.js"></script>
+    <!-- Note: main.js must come before JQM to set defaults properly. -->
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="jq/jquery.mobile-1.3.1.min.js"></script>
+    <script type="text/javascript"
+      src="jq/plugins/jqm-datebox.core.min.js"></script>
+    <script type="text/javascript"
+      src="jq/plugins/jqm-datebox.mode.datebox.min.js"></script>
+
+  </head>
+  <body>
+
+
+    <!-- ================================================================== -->
+    <!-- HOME PAGE                                                          -->
+    <!-- ================================================================== -->
+    <div data-role="page" id="homePage">
+
+      <!-- About panel. -->
+      <div data-role="panel" data-position="right" data-display="overlay"
+        id="aboutPanel">
+        <h2>My Mobile Organizer</h2>
+        <h3>Frank W. Zammetti</h3>
+        <div class="cssHomeAboutSection">As presented in the Apress book</div>
+        <a href="http://www.apress.com">Practical iOS Apps For Business</a>
+        <div class="cssHomeAboutSection">Navbar icons courtesy of</div>
+        <a href="http://www.glyphish.com">Glyphish</a>
+        <div class="cssHomeAboutSection">Thanks to Jonathan Sage for</div>
+        <a href="http://dev.jtsage.com/jQM-DateBox">jQM DateBox</a>
+        <br><br>
+        <button data-icon="alert" data-theme="e"
+          onClick="$.mobile.changePage('#confirmClear');">Clear Data</button>
+      </div>
+
+      <!-- Header. -->
+      <div data-role="header" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <button class="cssHomeButton" data-icon="home"
+          disabled="disabled">Home</button>
+        <h1>Welcome!</h1>
+        <a href="#aboutPanel" class="cssFunctionButton" data-icon="bars"
+          data-theme="b">About</a>
+      </div>
+
+      <!-- Page content. -->
+      <div data-role="content">
+        <div class="ui-loader-background"></div>
+        <img src="img/title.png" class="cssHomeTitleHeader">
+      </div>
+
+      <!-- Footer. -->
+      <div data-role="footer" data-position="fixed">
+        <div class="ui-loader-background"></div>
+        <div data-role="navbar" class="cssNavBar">
+          <ul>
+            <li><a href="appointmentPage.html" class="cssNavAppointmentPage"
+              data-icon="custom" data-prefetch="true"
+              data-iconpos="notext"></a></li>
+            <li><a href="contactPage.html" class="cssNavContactPage"
+              data-icon="custom" data-prefetch="true"
+              data-iconpos="notext"></a></li>
+            <li><a href="notePage.html" class="cssNavNotePage"
+              data-icon="custom" data-prefetch="true"
+              data-iconpos="notext"></a></li>
+            <li><a href="taskPage.html" class="cssNavTaskPage"
+              data-icon="custom" data-prefetch="true"
+              data-iconpos="notext"></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ================================================================== -->
+    <!-- INFO DIALOG                                                        -->
+    <!-- ================================================================== -->
+    <div data-role="dialog" id="infoDialog" data-close-btn="none">
+      <div data-role="header">
+        <h1 id="infoDialogHeader"></h1>
+      </div>
+      <div data-role="content" id="infoDialogContent"></div>
+      <div data-role="footer" class="cssInfoDialogButtons">
+        <a href="javascript:void(0);" data-rel="back" data-role="button">Ok</a>
+      </div>
+    </div>
+
+
+    <!-- ================================================================== -->
+    <!-- CONFIRM DIALOG                                                     -->
+    <!-- ================================================================== -->
+    <div data-role="dialog" id="confirmClear">
+      <div data-role="content">
+        <p>Are you sure you want to clear ALL data from both the server and local cache?</p>
+        <a href="#" id="confirmClearYes" data-role="button" data-theme="b"
+          data-rel="back">Yes</a>
+        <a href="#" data-role="button" data-theme="c" data-rel="back">No</a>
+      </div>
+    </div>
+
+
+  </body>
+</html>

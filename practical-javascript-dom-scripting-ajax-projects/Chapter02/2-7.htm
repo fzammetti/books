@@ -1,0 +1,22 @@
+<html>
+  <head>
+
+    <script>
+
+      function test(inVal) {
+        try {
+          inVal = inVal.toLowerCase();
+        } catch(error) {
+          alert("An error has occurred.  Error was:\n\n" + error.message);
+        }
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <input type="button" value="Test" onClick="test(null);">
+  </body>
+
+</html>

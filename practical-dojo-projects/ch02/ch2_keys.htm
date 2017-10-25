@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      function noBackspace(e) {
+        var keyNum = null;
+        if (dojo.isIE != 0) {
+          keyNum = window.event.keyCode;
+        } else {
+          keyNum = e.which;
+        }
+        if (keyNum == dojo.keys.BACKSPACE) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="theField" onKeyDown="return noBackspace(event);">
+  </body>
+</html>

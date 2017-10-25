@@ -1,0 +1,191 @@
+<html>
+
+  <head>
+
+    <title>AJAX-Based One-On-One Support Chat</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script src="js/mootools.js" type="text/javascript"></script>
+    <script src="js/jscript.page.js" type="text/javascript"></script>
+    <script src="js/ChatMessage.js" type="text/javascript"></script>
+    <script src="js/SupportChat.js" type="text/javascript"></script>
+
+  </head>
+
+
+  <body onLoad="chat.init();">
+
+    <table width="100%" cellspacing="0" cellpadding="0"><tr><td>
+
+      <table width="98%" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+          <td>
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="46"><img src="img/topLeft.gif"></td>
+                <td width="64"><img src="img/spacer.gif"></td>
+                <td align="center" class="cssTopText"
+                  background="img/headerFooter.gif">
+                  AJAX-Based One-on-One Support Chat
+                </td>
+                <td width="55"><img src="img/topRight.gif"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="cssLeftColumn">
+                  <div align="center"><img src="img/logo.gif" vspace="10"></div>
+                </td>
+                <td class="cssRightColumn">
+                  <table width="100%" border="0" cellspacing="0"
+                    cellpadding="0">
+                    <tr>
+                      <td class="toptext" align="center">
+                        Welcome, <span id="spnChatname"></span>!
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td width="220" valign="top" class="cssLeftColumn">
+                  <div style="width:220px;height:300px;overflow:hidden;"
+                    <br>
+                    <h2>Main Menu</h2>
+                    <br>
+                    <div class="cssDividers"><img src="img/divider.gif"></div>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    * <a href="javascript:void(0);"
+                      onClick="chat.copyTranscript();">
+                      Copy Transcript To Clipboard
+                    </a><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    * <a href="javascript:void(0);"
+                      onClick="chat.printTranscript();">
+                      Print Transcript
+                    </a><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    * <a href="javascript:void(0);" onClick="chat.exitChat();">
+                      Exit Chat
+                    </a><br>
+                    <br>
+                    <div class="cssDividers"><img src="img/divider.gif"></div>
+                  </div>
+                </td>                
+                <td class="cssRightColumn">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="cssRightColumn">
+                        <table width="90%" align="center" cellpadding="0"
+                          cellspacing="0">
+                          <tr>
+                            <td>
+                              <table width="100%" cellpadding="0"
+                                cellspacing="0">
+                                <tr>
+                                  <td class="cssLeftColumn">
+                                    <div><img src="img/titlebar.gif"></div>
+                                  </td>
+                                  <td><img src="img/spacer.gif"></td>
+                                  <td width="100%" class="cssHeaderFooter"><img
+                                    src="img/heading.gif"></td>
+                                  <td class="cssRightColumn"><img
+                                    src="img/topRight.gif"></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="cssRightColumn">
+                              <table width="100%" cellspacing="0"
+                                cellpadding="0">
+                                <tr>
+                                  <td class="cssLeftColumn">&nbsp;</td>
+                                  <td>
+                                    <div class="cssChatDiv" id="divChat"></div>
+                                    <span class="cssChatterEntryDiv">
+                                      <table border="0" cellpadding="0"
+                                        cellspacing="0" width="100%"><tr>
+                                        <td valign="middle" class="cssEntry"
+                                          align="center">
+                                          <input type="text" size="62"
+                                            id="postMessage">
+                                          <input type="button" value="Say It"
+                                            class="cssButton"
+                                            onClick="chat.postMessage();">
+                                        </td>
+                                      </tr></table>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table width="100%" cellspacing="0"
+                                cellpadding="0">
+                                <tr>
+                                  <td width="55">
+                                    <img src="img/bottomLeft.gif">
+                                  </td>
+                                  <td class="cssBoxBottom">&nbsp;</td>
+                                  <td width="55">
+                                    <img src="img/bottomRight.gif">
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="55"><img src="img/bottomLeft.gif"></td>
+                <td class="cssBoxBottom">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="23"><img src="img/closerLeft.gif"></td>
+                      <td valign="middle" class="cssHeaderFooter">
+                        <div align="center">
+                          <div class="cssDividers" id="pDateTime"></div>
+                        </div>
+                      </td>
+                      <td><img src="img/closerRight.gif"></td>
+                    </tr>
+                  </table>
+                </td>
+                <td width="55"><img src="img/bottomRight.gif"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+
+    </td></tr></table>
+
+  </body>
+
+</html>

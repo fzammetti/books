@@ -1,0 +1,121 @@
+<html>
+  <head>
+
+    <title>The Monster Mash</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script src="js/prototype.js" type="text/javascript"></script>
+    <script src="js/scriptaculous.js" type="text/javascript"></script>
+
+    <script src="js/ApplicationState.js" type="text/javascript"></script>
+    <script src="js/Masher.js" type="text/javascript"></script>
+    <script src="js/Hotel.js" type="text/javascript"></script>
+    <script src="js/CallbackFuncs.js" type="text/javascript"></script>
+    <script src="js/SearchFuncs.js" type="text/javascript"></script>
+    <script src="js/MapFuncs.js" type="text/javascript"></script>
+    <script src="js/MiscFuncs.js" type="text/javascript"></script>
+
+    <script>
+      masher = new Masher();
+      appState = new ApplicationState();
+    </script>
+
+  </head>
+
+  <body class="cssBody">
+
+    <center>
+      <img src="img/title.gif" vspace="5">
+      <br>
+      <form onSubmit="search();return false;">
+      Zip Code:
+      &nbsp;
+      <input type="text" id="zipCodeField" value="">
+      &nbsp;
+      <input type="submit" value="Look Up Hotels"
+        class="cssButton" style="width:120px;"
+        onMouseOver="this.className='cssButtonOver';"
+        onMouseOut="this.className='cssButton';">
+      </form>
+      <br>
+    </center>
+
+    <table border="0" width="100%" cellpadding="4" cellspacing="0">
+      <tr>
+
+        <td align="left" height="420" class="cssSectionBorder">
+          <img width="1" height="1" src="img/pixel_of_destiny.gif">
+          <center>
+            <div id="pleaseWait" style="display:none;">
+              Please Wait, Retrieving Data...
+            </div>
+          </center>
+          <div id="searchResults" class="cssSearchResults" style="display:none;">
+          </div>
+        </td>
+
+        <td width="50" align="center">
+          <input type="button" value="1" onClick="zoomMap(1);" id="zoomButton1"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="2" onClick="zoomMap(2);" id="zoomButton2"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="3" onClick="zoomMap(3);" id="zoomButton3"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="4" onClick="zoomMap(4);" id="zoomButton4"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="5" onClick="zoomMap(5);" id="zoomButton5"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="6" onClick="zoomMap(6);" id="zoomButton6"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="7" onClick="zoomMap(7);" id="zoomButton7"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="8" onClick="zoomMap(8);" id="zoomButton8"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="9" onClick="zoomMap(9);" id="zoomButton9"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="10" onClick="zoomMap(10);" id="zoomButton10"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="11" onClick="zoomMap(11);" id="zoomButton11"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';"><br>
+          <input type="button" value="12" onClick="zoomMap(12);" id="zoomButton12"
+            class="cssButton"
+            onMouseOver="this.className='cssButtonOver';"
+            onMouseOut="this.className='cssButton';">
+        </td>
+
+        <td align="center" width="540" class="cssSectionBorder">
+          <img id="mapFiller" style="display:block;" width="520" height="400"
+            src="img/pixel_of_destiny.gif">
+          <img id="map" style="display:none;" width="520" height="400"
+            src="img/pixel_of_destiny.gif">
+        </td>
+
+      </tr>
+    </table>
+
+  </body>
+
+</html>

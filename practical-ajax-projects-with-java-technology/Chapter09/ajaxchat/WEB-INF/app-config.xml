@@ -1,0 +1,23 @@
+<config>
+
+  <!-- maxMessages is the maximum number of messages that will be stored in -->
+  <!-- the messages collection of each room.  Any time a message is posted -->
+  <!-- to a room, the number of messages in the collection is checked -->
+  <!-- against this value.  If the count exceeds this value, the collection -->
+  <!-- is cleared before the new messages is stored.  This is just a -->
+  <!-- memory-saving measure, and probably makes things a bit more -->
+  <!-- efficient too. -->
+  <maxMessages>250</maxMessages>
+
+  <!-- userInactivitySeconds is the maximum number of seconds that can -->
+  <!-- elapse between Ajax requests before a user is considered inactive. -->
+  <!-- When a user is considered inactive, they are forcibly removed -->
+  <!-- from all rooms and from the application.  This is to deal with the -->
+  <!-- case of a user closing the browser window without properly logging -->
+  <!-- out, or possibly a Javascript error that stops the Ajax request -->
+  <!-- timers.  Note that this was originally done in a SessionListener, -->
+  <!-- but because of problems seem in some containers, this had to be -->
+  <!-- done instead. -->
+  <userInactivitySeconds>15</userInactivitySeconds>
+
+</config>

@@ -1,0 +1,10 @@
+On page 395, foundTables was changed from a Store to a MixedCollection.  This
+resulted to changes to the way records are added to it.  Also, a new
+dbTablesStore is created and populated from the MixedCollection to back the
+Grid.  All if this is due to changes that made storing a Store as the field
+of a Record not work in v3 final.  Many argue that's a bad practice
+anyway as Records are suppose to remain lightweight, and storing a Store
+in them is not (arguably, neither is storing a MixedCollection).  Also, in
+TableDetailsWindow.js, anywhere that the table record for a given table
+is retrieved it is now done via the get() method instead of getById() since
+it's a MixedCollection now rather than a Store.

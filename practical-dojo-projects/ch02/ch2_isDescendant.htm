@@ -1,0 +1,31 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        alert(dojo.isDescendant(dojo.byId("div3"), dojo.byId("div1")) + "\n" +
+          dojo.isDescendant("div3", "div2"));
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <span id="div1"></span>
+    <span id="div2"><span id="div3"></span></span>
+  </body>
+
+</html>

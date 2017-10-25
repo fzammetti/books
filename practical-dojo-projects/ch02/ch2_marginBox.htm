@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      function testIt() {
+        alert(dojo.toJson(dojo.marginBox("myDiv")));
+        dojo.marginBox("myDiv",
+          { l : 75, t : 75, width : 100, height : 100 }
+        );
+        alert(dojo.toJson(dojo.marginBox("myDiv")));
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <div id="myDiv"
+      style="position:absolute;left:50px;top:50px;">
+      Hello
+    </myDiv>
+  </body>
+
+</html>

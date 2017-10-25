@@ -1,0 +1,9 @@
+{
+	"id": "com.etherient.codecabinet",
+	"version": "1.0.0",
+	"vendor": "Etherient",
+	"type": "web",
+	"main": "index.html",
+	"title": "CodeCabinet",
+	"icon": "icon.png"
+}

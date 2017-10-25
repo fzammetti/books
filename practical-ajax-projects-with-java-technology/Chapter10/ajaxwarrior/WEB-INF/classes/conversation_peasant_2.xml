@@ -1,0 +1,138 @@
+<conversation id="peasant_2">
+  <node id="3" response="Oh great, another mouth to feed">
+    <reply id="1" karma="0" target="22">I do not eat much</reply>
+    <reply id="2" karma="-1" target="23">I'll eat what I want</reply>
+    <reply id="3" karma="1" target="10">Do not worry about it</reply>
+  </node>
+  <node id="4" response="Yes, I think so too">
+    <reply id="1" karma="1" target="18">Then we are in agreement</reply>
+    <reply id="2" karma="0" target="15">Well, good then</reply>
+    <reply id="3" karma="-1" target="17">Ok then</reply>
+  </node>
+  <node id="5" response="No, never!">
+    <reply id="1" karma="0" target="23">Never is a long time</reply>
+    <reply id="2" karma="-1" target="12">That's pretty closed-minded</reply>
+    <reply id="3" karma="1" target="17">If that is the way you feel</reply>
+  </node>
+  <node id="6" response="Why do you talk in this way?">
+    <reply id="1" karma="2" target="16">Sorry, it is just my way</reply>
+    <reply id="2" karma="0" target="11">I do not know</reply>
+    <reply id="3" karma="-2" target="10">No one can stop me</reply>
+  </node>
+  <node id="7" response="Has thou found the keymasters?">
+    <reply id="1" karma="0" target="8">No  Any idea where they are?</reply>
+    <reply id="2" karma="1" target="22">Yes, I have</reply>
+    <reply id="3" karma="-1" target="19">I haven't been looking long</reply>
+  </node>
+  <node id="8" response="One is in the unnamed village">
+    <reply id="1" karma="-2" target="23">I should burn that village to the ground</reply>
+    <reply id="2" karma="2" target="19">Good info, thanks!</reply>
+    <reply id="3" karma="0" target="9">What a about the other?</reply>
+  </node>
+  <node id="9" response="I do not know where the other is">
+    <reply id="1" karma="-2" target="6">Then what good are you?</reply>
+    <reply id="2" karma="1" target="18">That's OK, I'll find him</reply>
+    <reply id="3" karma="0" target="17">Whatever</reply>
+  </node>
+  <node id="10" response="My life is so hard">
+    <reply id="1" karma="-1" target="17">Oh geez, another whiner</reply>
+    <reply id="2" karma="0" target="20">As is mine</reply>
+    <reply id="3" karma="1" target="4">Yes, I'm sure it is</reply>
+  </node>
+  <node id="11" response="The time of Mallizant is now">
+    <reply id="1" karma="0" target="14">I'm well aware</reply>
+    <reply id="2" karma="2" target="20">It will be over when I am done</reply>
+    <reply id="3" karma="-1" target="28">Really?  Do tell!</reply>
+  </node>
+  <node id="12" response="I fear the end is nigh">
+    <reply id="1" karma="-2" target="13">What does nigh mean anyway?</reply>
+    <reply id="2" karma="2" target="18">Yes, nigh is the end</reply>
+    <reply id="3" karma="0" target="11">That makes me nervous</reply>
+  </node>
+  <node id="13" response="I do not know the answer to that">
+    <reply id="1" karma="-1" target="10">Figures</reply>
+    <reply id="2" karma="0" target="23">Too bad</reply>
+    <reply id="3" karma="1" target="21">That's OK</reply>
+  </node>
+  <node id="14" response="Many have seeked to defeat him">
+    <reply id="1" karma="0" target="21">But none have, obviously</reply>
+    <reply id="2" karma="1" target="18">I will be the one to succeed</reply>
+    <reply id="3" karma="-1" target="3">I will try my best</reply>
+  </node>
+  <node id="15" response="Does thou have any food?">
+    <reply id="1" karma="1" target="24">Yes, here you go</reply>
+    <reply id="2" karma="0" target="6">Nope, just for me</reply>
+    <reply id="3" karma="-1" target="17">No, none at all</reply>
+  </node>
+  <node id="16" response="Could you spare some change?">
+    <reply id="1" karma="1" target="24">Yes, here you go</reply>
+    <reply id="2" karma="-1" target="23">Not for you, peasant!</reply>
+    <reply id="3" karma="0" target="17">Depends what can you do for me?</reply>
+  </node>
+  <node id="17" response="What?">
+    <reply id="1" karma="0" target="21">Never mind</reply>
+    <reply id="2" karma="-1" target="7">Figure it out genius</reply>
+    <reply id="3" karma="1" target="6">What?</reply>
+  </node>
+  <node id="18" response="Yes, I think so too">
+    <reply id="1" karma="1" target="21">I figured you might</reply>
+    <reply id="2" karma="-1" target="15">So what?  I don't care</reply>
+    <reply id="3" karma="0" target="22">Alrighty then</reply>
+  </node>
+  <node id="19" response="My home is humble, but thouh art welcome">
+    <reply id="1" karma="-2" target="5">Is it made out of mud?</reply>
+    <reply id="2" karma="2" target="22">It will do</reply>
+    <reply id="3" karma="0" target="24">Thank you for your kindness</reply>
+  </node>
+  <node id="20" response="Thou art a great warrior">
+    <reply id="1" karma="0" target="23">You know it!</reply>
+    <reply id="2" karma="1" target="7">I do my best</reply>
+    <reply id="3" karma="-1" target="17">Oh, shucks, I'm blushing</reply>
+  </node>
+  <node id="21" response="Enough of this, I have fields to tend">
+    <reply id="1" karma="1" target="16">I will leave you to it then</reply>
+    <reply id="2" karma="0" target="10">Do what you must</reply>
+    <reply id="3" karma="-2" target="12">Your fields are bare, why bother?</reply>
+  </node>
+  <node id="22" response="That is good to hear">
+    <reply id="1" karma="-1" target="29">Not really, but whatever you say</reply>
+    <reply id="2" karma="0" target="4">Ok</reply>
+    <reply id="3" karma="1" target="11">Yes it is</reply>
+  </node>
+  <node id="23" response="I do not think I like that reply">
+    <reply id="1" karma="1" target="25">Sorry</reply>
+    <reply id="2" karma="-1" target="27">That is your problem</reply>
+    <reply id="3" karma="0" target="12">I will try harder next time</reply>
+  </node>
+  <node id="24" response="Thank you!">
+    <reply id="1" karma="1" target="22">Your welcome</reply>
+    <reply id="2" karma="0" target="27">Whatever</reply>
+    <reply id="3" karma="-1" target="26">No, thank you!</reply>
+  </node>
+  <node id="25" response="I forgive thee">
+    <reply id="1" karma="0" target="26">Uhh, thanks</reply>
+    <reply id="2" karma="1" target="15">I am glad</reply>
+    <reply id="3" karma="-1" target="6">I couldn't care less</reply>
+  </node>
+  <node id="26" response="Thou art welcome">
+    <reply id="1" karma="-1" target="18">That's good news I guess</reply>
+    <reply id="2" karma="1" target="20">Great!</reply>
+    <reply id="3" karma="0" target="23">Sure</reply>
+  </node>
+  <node id="27" response="You are not honorable">
+    <reply id="1" karma="0" target="22">Oh, I am, you just don't know it</reply>
+    <reply id="2" karma="1" target="17">No, not in the least</reply>
+    <reply id="3" karma="-2" target="5">Shall I kill thee?</reply>
+  </node>
+  <node id="28" response="I need to trust you more first">
+    <reply id="1" karma="-1" target="13">Let's get to it then!</reply>
+    <reply id="2" karma="1" target="19">I completely understand</reply>
+    <reply id="3" karma="0" target="21">Sure, I get it pal</reply>
+  </node>
+  <node id="29" response="Thou art a strange one">
+    <reply id="1" karma="1" target="18">You bet your britches I am!</reply>
+    <reply id="2" karma="-1" target="23">You must not know many people</reply>
+    <reply id="3" karma="0" target="16">Some may think so, yes</reply>
+  </node>
+</conversation>
+

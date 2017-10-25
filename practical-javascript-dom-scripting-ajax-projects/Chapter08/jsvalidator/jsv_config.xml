@@ -1,0 +1,38 @@
+<JSValidatorConfig>
+
+  <validator id="dateValidator" src="jsvalidator/DateValidator.js" class="DateValidator"/>
+
+  <message id="requiredFieldError" text="#{fieldName}# is a required field"/>
+  <message id="fieldFormatError" text="#{fieldName}# must be in the form #{format}#"/>
+
+  <form name="testForm" noSubmitMessage="There are problems with the form that need to be corrected first.">
+    <validation field="firstName" startInvalid="true" event="onblur" type="required" failAction="alert">
+      <param name="message" value="requiredFieldError"/>
+      <param name="fieldName" value="First Name"/>
+    </validation>
+    <validation field="middleName" startInvalid="true" event="onblur" type="required" failAction="insert">
+      <param name="idToInsertInto" value="divErrors"/>
+      <param name="message" value="requiredFieldError"/>
+      <param name="fieldName" value="Middle Name"/>
+    </validation>
+    <validation field="lastName" startInvalid="true" event="onkeyup" type="minLength" failAction="highlight">
+      <param name="minLength" value="5"/>
+      <param name="idToHighlight" value="lastNameLabel"/>
+      <param name="errorStyleClass" value="cssErrorField"/>
+      <param name="okStyleClass" value="cssOKField"/>
+    </validation>
+    <validation field="dateOfBirth" startInvalid="false" event="onblur" type="dateValidator" failAction="insert">
+      <param name="idToInsertInto" value="divErrors"/>
+      <param name="message" value="fieldFormatError"/>
+      <param name="fieldName" value="Date Of Birth"/>
+      <param name="format" value="MM/DD/YYYY"/>
+    </validation>
+    <validation field="eMailAddress" startInvalid="false" event="onblur" type="regex" failAction="alert">
+      <param name="regex" value="^.+@[^\.].*\.[a-z]{2,}$"/>
+      <param name="message" value="fieldFormatError"/>
+      <param name="fieldName" value="eMail Address"/>
+      <param name="format" value="user@domain.com"/>
+    </validation>
+  </form>
+
+</JSValidatorConfig>

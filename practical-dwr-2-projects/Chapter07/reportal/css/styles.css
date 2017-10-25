@@ -1,0 +1,132 @@
+/* Catch-all style. */
+* {
+  font-family      : arial;
+  font-size        : 10pt;
+}
+
+
+/* Style for index.jsp's body element. */
+.cssBody {
+  background-color : #e0e0e0;
+  overflow         : scroll;
+}
+
+
+/* Style for any of the sections of the portal. */
+.cssSectionContainer {
+  overflow         : hidden;
+  width            : 100%;
+}
+
+/* Style of inner section... err... section! */
+.cssSection {
+  background       : #ffffff;
+}
+
+
+/* Styles for rounded corners. */
+.cssSectionTop div {
+  background       : url(../img/sectionCorner_tl.png) no-repeat top left;
+}
+
+
+/* Styles for rounded corners. */
+.cssSectionTop {
+  background       : url(../img/sectionCorner_tr.png) no-repeat top right;
+}
+
+
+/* Styles for rounded corners. */
+.cssSectionBottom div {
+  background       : url(../img/sectionCorner_bl.png) no-repeat bottom left;
+}
+
+
+/* Styles for rounded corners. */
+.cssSectionBottom {
+  background       : url(../img/sectionCorner_br.png) no-repeat bottom right;
+}
+
+
+/* Styles for rounded corners. */
+.cssSectionTop div, .cssSectionTop, .cssSectionBottom div, .cssSectionBottom {
+  height           : 10px;
+}
+
+
+/* Div the section control buttons are in. */
+.cssSectionButtons {
+  padding-top       : 9px;
+  padding-right     : 13px;
+}
+
+
+/* Style of a section control button. */
+.cssSectionButton {
+  margin-right     : 2px;
+  cursor           : pointer;
+}
+
+
+/* Style of the content of a section. */
+.cssSectionContent {
+  width            : 98%;
+  padding-top      : 4px;
+  margin-left      : 16px;
+  margin-right     : 16px;
+}
+
+
+/* Style of a section's title. */
+.cssSectionTitle {
+  position         : relative;
+  top              : 2px;
+  padding-left     : 16px;
+  font-weight      : bold;
+  font-size        : 14pt;
+}
+
+
+/* Style for the divider underneath a sectoin's title. */
+.cssSectionDivider {
+  padding-top      : 16px;
+  _padding-top     : 0px;
+}
+
+
+/* Style used on graphical buttons. */
+.cssButton {
+  margin-top       : 5px;
+  cursor           : pointer;
+}
+
+
+/* Style of select dropdowns. */
+.cssSelect {
+  width            : 215px;
+}
+
+
+/* Style of a table header row. */
+.cssTableHeader {
+  background-color : #e0e0ff;
+  font-weight      : bold;
+}
+
+
+/* Style for the section that gives the not logged in message. */
+.cssNotLoggedInMessage {
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 100%;
+  text-align       : center;
+}
+
+
+/* Pleease wait popup style. */
+.cssPleaseWait {
+  font-size        : 14pt;
+  font-weight      : bold;
+  text-align       : center;
+  width            : 100%;
+}

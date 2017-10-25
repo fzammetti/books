@@ -1,0 +1,108 @@
+<conversation id="thief_2">
+  <node id="3" response="So, what's your deal?">
+    <reply id="1" karma="0" target="5">I have no deal</reply>
+    <reply id="2" karma="1" target="14">I am on a quest</reply>
+    <reply id="3" karma="-1" target="15">Why should I tell you?</reply>
+  </node>
+  <node id="4" response="Do you carry much money?">
+    <reply id="1" karma="-2" target="6">No, not much at all</reply>
+    <reply id="2" karma="2" target="16">Yes, quite a bit</reply>
+    <reply id="3" karma="0" target="17">That is none of your concern</reply>
+  </node>
+  <node id="5" response="You looking rather menacing">
+    <reply id="1" karma="-1" target="16">I know</reply>
+    <reply id="2" karma="0" target="13">So do you  Are you a thief?</reply>
+    <reply id="3" karma="1" target="10">Much more so than thee</reply>
+  </node>
+  <node id="6" response="I definitely do not trust thee">
+    <reply id="1" karma="0" target="17">That is too bad</reply>
+    <reply id="2" karma="-1" target="12">I could care less</reply>
+    <reply id="3" karma="2" target="7">Well, I trust you</reply>
+  </node>
+  <node id="7" response="Mallizant has actually been good for me">
+    <reply id="1" karma="-2" target="18">You are a sicko</reply>
+    <reply id="2" karma="2" target="8">And why is that?</reply>
+    <reply id="3" karma="0" target="11">Many say that, none mean it</reply>
+  </node>
+  <node id="8" response="He leaves us thieves alone">
+    <reply id="1" karma="1" target="13">That is good for you thieves</reply>
+    <reply id="2" karma="0" target="11">That figures</reply>
+    <reply id="3" karma="-1" target="16">That's what I would expect</reply>
+  </node>
+  <node id="9" response="I could have stolen those artifacts">
+    <reply id="1" karma="1" target="13">Why didn't thou?</reply>
+    <reply id="2" karma="-2" target="10">No thou couldn't</reply>
+    <reply id="3" karma="0" target="21">Then thou would be thy enemy,</reply>
+  </node>
+  <node id="10" response="I do not agree">
+    <reply id="1" karma="-1" target="21">I did not think thou would</reply>
+    <reply id="2" karma="2" target="16">So what?  Go away</reply>
+    <reply id="3" karma="0" target="22">I am sorry to hear that</reply>
+  </node>
+  <node id="11" response="I agree">
+    <reply id="1" karma="2" target="12">Good</reply>
+    <reply id="2" karma="-2" target="5">Agree, disagree, I do not care</reply>
+    <reply id="3" karma="0" target="16">As do I with thee</reply>
+  </node>
+  <node id="12" response="I should be on my way">
+    <reply id="1" karma="0" target="20">Yes, that is wise</reply>
+    <reply id="2" karma="1" target="7">No, please stay a bit longer</reply>
+    <reply id="3" karma="-1" target="21">That is your decision</reply>
+  </node>
+  <node id="13" response="Who said I was a thief?">
+    <reply id="1" karma="1" target="19">Why, you did!</reply>
+    <reply id="2" karma="0" target="18">Uhh, someone told me</reply>
+    <reply id="3" karma="-1" target="3">You mean you aren't?</reply>
+  </node>
+  <node id="14" response="Well goody-goody for you">
+    <reply id="1" karma="0" target="11">That is a strange reply</reply>
+    <reply id="2" karma="-1" target="22">My anger grows</reply>
+    <reply id="3" karma="1" target="17">Yes, I suppose it is good for me</reply>
+  </node>
+  <node id="15" response="I could kill you, and take your gold">
+    <reply id="1" karma="-1" target="10">You can try, thief</reply>
+    <reply id="2" karma="0" target="21">Not a chance, little man</reply>
+    <reply id="3" karma="2" target="20">So you are a thief!</reply>
+  </node>
+  <node id="16" response="I see">
+    <reply id="1" karma="0" target="22">You see what?</reply>
+    <reply id="2" karma="-1" target="6">Do you really?</reply>
+    <reply id="3" karma="2" target="3">Good</reply>
+  </node>
+  <node id="17" response="Fine, be that way">
+    <reply id="1" karma="0" target="16">Fine, I will</reply>
+    <reply id="2" karma="-1" target="22">That is not very mature</reply>
+    <reply id="3" karma="1" target="23">I am sorry for my tone</reply>
+  </node>
+  <node id="18" response="Thou has insulted me for the last time!">
+    <reply id="1" karma="2" target="21">If I offended, I apologize</reply>
+    <reply id="2" karma="-1" target="22">Insult is thy game!</reply>
+    <reply id="3" karma="0" target="15">What are you going to do about it?</reply>
+  </node>
+  <node id="19" response="I did not!">
+    <reply id="1" karma="0" target="15">Yes you did!</reply>
+    <reply id="2" karma="1" target="16">Perhaps I misunderstood</reply>
+    <reply id="3" karma="-1" target="12">Ummm, whatever you say</reply>
+  </node>
+  <node id="20" response="I have better things to do">
+    <reply id="1" karma="-2" target="11">I doubt that very much</reply>
+    <reply id="2" karma="1" target="9">Perhaps you do</reply>
+    <reply id="3" karma="0" target="4">No you don't, you are a thief</reply>
+  </node>
+  <node id="21" response="Perhaps I was a bit hasty">
+    <reply id="1" karma="0" target="23">Yes, perhaps</reply>
+    <reply id="2" karma="-1" target="5">I couldn't agree more</reply>
+    <reply id="3" karma="1" target="11">No, it is I who was hasty</reply>
+  </node>
+  <node id="22" response="That makes me nervous">
+    <reply id="1" karma="1" target="20">Nervous is good</reply>
+    <reply id="2" karma="-1" target="11">Then you should be more careful</reply>
+    <reply id="3" karma="0" target="12">Sorry to hear that</reply>
+  </node>
+  <node id="23" response="Do not worry, it is OK">
+    <reply id="1" karma="1" target="11">I'm glad we got past that</reply>
+    <reply id="2" karma="0" target="18">Is it really OK?</reply>
+    <reply id="3" karma="-2" target="16">That's what I wanted thee to say</reply>
+  </node>
+</conversation>
+

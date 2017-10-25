@@ -1,0 +1,107 @@
+/*
+    Code Cabinet - From the book "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+*/
+
+
+/* Style for the Spinner on the category list and search results scenes. */
+.spinnerClass {
+	position : absolute;
+	left : 96px;
+	top : 110px;
+}
+	
+
+/* Style for the header of the preferences scene. */
+.header-icon.preferences {
+   background : url(../images/preferencesIcon.png) no-repeat;
+}
+
+
+/* Override the default background color for scenes to pure white. */
+body.palm-default {
+  background-color : #ffffff;
+}
+
+
+/* Style for the container the snippet count is in on the category list. */
+.categoryListSnippetCountContainer  {
+  position : relative;
+  left : 4px;
+}
+
+
+/* Style for the snippet count text on the category list. */
+.categoryListSnippetCount {
+  color : #ffffff;
+}
+
+
+/* Style for the container of the large icon on the category/snippet lists. */
+.catSnipListIconContainer {
+  height : 54px;
+  margin-top : 6px;
+  padding-right : 10px;
+}
+
+
+/* Style for the large icon on the category list. */
+.categoryListIcon {
+  background : url(../images/icoCategory.png) center no-repeat;
+}
+
+
+/* Style for the large icon on the snippet list. */
+.snippetListIcon {
+  background : url(../images/icoSnippet.png) center no-repeat;
+}
+
+
+/* Style for the cetegory title on the category list. */
+.categoryListTitle {
+  font-size : 18px;
+  color : #000000;
+  position : relative;
+  top : 4px;
+}
+
+
+/* Style for the snippet title on the snippet list. */
+.snippetListTitle {
+  font-size : 18px;
+  color : #000000;
+  position : relative;
+  top : -6px;
+}
+
+
+/* Style for the snippet description on the snippet list. */
+.snippetListDescription {
+  font-size : 14px;
+  color : #808080;
+  margin-top : -20px;
+  margin-bottom : -20px;
+  line-height : 16px;
+  position : relative;
+}

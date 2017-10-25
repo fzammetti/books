@@ -1,0 +1,91 @@
+<!--
+    Toolbar And Menu - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Toolbar And Menu Example</title>
+
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      Ext.onReady(function() {
+
+        var myMenu = new Ext.menu.Menu({
+          items : [
+            { text : "Menu Item 1" },
+            "-",
+            { text : "Menu Item 2", checked : true },
+            "-", "<b class=\"menu-title\">Choose an OS</b>",
+            { text : "Choose OS", menu : { items: [
+              { text : "Windows", checked : true, group : "os" },
+              { text : "Linux", checked : false, group : "os" }
+            ]}}
+          ]
+        });
+
+        new Ext.Panel({
+          renderTo : "panelTarget", layout : "fit", border : false,
+          items : [{
+            xtype : "toolbar", items : [
+              {
+                text : "Toolbar Item 1", icon : "toolbarItem1.gif",
+                cls : "x-btn-text-icon", handler : function() {
+                  alert("Toolbar Item 1 was clicked");
+                }
+              },
+              { xtype : "tbspacer" },
+              {
+                icon : "toolbarItem2.gif", cls : "x-btn-icon",
+                handler : function() {
+                  new Ext.Window({
+                    closable : true, modal : true, width : 300, height : 100,
+                    minimizable : false, resizable : false, draggable : false,
+                    html : "I am a window displayed from a toolbar button"
+                  }).show();
+                }
+              },
+              {xtype:"tbspacer"}, {xtype:"tbseparator"}, {xtype:"tbspacer"},
+              {
+                text : "Click for Menu", menu : myMenu/*, listeners : {
+                  "render" : function(b) {
+                    b.el.child(b.menuClassTarget).removeClass("x-btn-with-menu");
+                  }
+                }*/
+              }
+            ]
+          }]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body style="padding:10px;">
+    <div id="panelTarget"></div>
+  </body>
+
+</html>

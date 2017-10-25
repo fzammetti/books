@@ -1,0 +1,12 @@
+<project name="simplestruts" basedir="." default="build">
+
+  <target name="build">
+    <delete dir="../classes/com" />
+    <javac srcdir="." destdir="../classes" debug="true"
+     debuglevel="lines,vars,source" 
+     classpath="servlet-api.jar;../lib/struts.jar">
+    </javac>
+    <jar destfile="../../${ant.project.name}.war" basedir="../../" />
+  </target>    
+
+</project>

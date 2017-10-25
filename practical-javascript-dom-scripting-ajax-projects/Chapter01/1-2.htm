@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Listing 1-2</title>
+    <script>
+
+      function badTest() {
+        var startTime = new Date().valueOf();
+        var s = "";
+        for (var i = 0; i < 10000; i++) {
+          s += "This is a test string";
+        }
+        return new Date().valueOf() - startTime;
+      }
+
+      function goodTest() {
+        var startTime = new Date().valueOf();
+        var stringBuffer = new Array();
+        for (var i = 0; i < 10000; i++) {
+          stringBuffer.push("This is a test string");
+        }
+        var s = stringBuffer.join("");
+        return new Date().valueOf() - startTime;
+      }
+
+      function betterTest() {
+        var startTime = new Date().valueOf();
+        var stringBuffer = new Array();
+        for (var i = 0; i < 10000; i++) {
+          stringBuffer[stringBuffer.length] = "This is a test string";
+        }
+        var s = stringBuffer.join("");
+        return new Date().valueOf() - startTime;
+      }
+
+      function doTests() {
+        var htm = "";
+        htm += "Time badTest took: " + badTest() + "<br>";
+        htm += "Time goodTest took: " + goodTest() + "<br>";
+        htm += "Time betterTest took: " + betterTest();
+        document.getElementById("result").innerHTML = htm;
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <a href="javascript:void(0);" onClick="doTests();">Click here to test</a>
+    <br><br>
+    <div id="result">&nbsp;</div>
+  </body>
+
+</html>

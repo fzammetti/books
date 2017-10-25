@@ -1,0 +1,35 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function MyClass() {
+        this.sayHello = function(inName) {
+          alert("Hello, " + inName);
+        }
+      }
+      function interceptor(inName) {
+        alert("Just said hello to " + inName);
+      }
+      var myObject = new MyClass();
+      dojo.connect(myObject, "sayHello", null, interceptor);
+      myObject.sayHello("Hayden");
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

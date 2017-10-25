@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function doCoords() {
+        alert(dojo.toJson(dojo.coords("myDiv")));
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="doCoords();">
+    <div style="width:200px;height:100px;position:absolute;left:20px;top:30px;"
+      id="myDiv">
+      I am myDiv
+    </div>
+  </body>
+
+</html>

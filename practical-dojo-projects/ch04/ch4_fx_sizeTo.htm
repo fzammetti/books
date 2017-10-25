@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.fx._base");
+
+      function testIt() {
+        dojox.fx.sizeTo({
+          node:"divOutput", duration: 2000, width: 300, height: 300,
+          method: "chain"
+        }).play();
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.fx.sizeTo test:
+        <br><br>
+        <input type="button" onclick="testIt()" value="Click to sizeTo">
+        <br><br>
+        <div id="divOutput"
+          style="background-color:#f0f000;width:100px;height:100px;position:relative;top:0px;left:0px;">
+          I am going to be sized
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

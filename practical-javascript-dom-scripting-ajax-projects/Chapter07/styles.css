@@ -1,0 +1,30 @@
+.cssBody {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+.cssTitle {
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+  color            : #ff0000;
+}
+
+.cssXML {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  font-style       : italic;
+}
+
+.cssLog {
+  padding          : 4px;
+  background-color : #eaeaea;
+  width            : 75%;
+  height           : 180px;
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  overflow         : scroll;
+}

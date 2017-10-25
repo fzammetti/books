@@ -1,0 +1,108 @@
+<!--
+  Copyright (c) 2007 by Frank W. Zammetti.  This file is part of the DWR
+  File Manager (Fileman) project from the book Practical DWR 2 Projects
+  by Frank W. Zammetti, published by Apress, Inc. in 2008.
+
+  Fileman is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Fileman is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see
+  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+-->
+
+<html>
+  <head>
+    <title>Using DWR File Manager</title>
+  </head>
+  <body>
+    <h1>Using DWR File Manager</h1>
+    <hr>
+    <br>
+    Using the DWR File Manager (Fileman) is very much like using the ubiquitous
+    Windows Explorer. You can see a list of roots (or drives) available on the
+    server's file system on the left. You can expand the branches of this
+    directory tree, or click on a directory to view its contents.
+    <br><br>
+    On the right is the contents of the selected directory. You will see both
+    files and directories here. For files, you will see its type, if Fileman
+    recognized it, its size, and the date/time it was last modified. For
+    directories, the size is always 0 and the type is always "Directory".
+    <br><br>
+    On the right you can select a single file or directory to operate on.
+    When you do, the following toolbar icons are available:
+    <br><br>
+    <table border="0" cellpadding="2" cellspacing="2" width="100%">
+      <tr><td width="50"><img src="img/icoEditFile.gif"></td><td>
+        Edit the selected file.
+      </td></tr>
+      <tr><td><img src="img/icoDelete.gif"></td><td>
+        Delete the selected file or directory.
+      </td></tr>
+      <tr><td><img src="img/icoCopy.gif"></td><td>
+        Copy the selected file or directory to the clipboard for later pasting.
+        The original file or directory will not be deleted when pasted.
+      </td></tr>
+      <tr><td><img src="img/icoCut.gif"></td><td>
+        Cut the selected file or directory to the clipboard for later pasting.
+        The original file or directory WILL BE DELETED when pasted.
+      </td></tr>
+      <tr><td><img src="img/icoPaste.gif"></td><td>
+        Paste the file or directory currently on the clipboard, if any, to the
+        currently selected directory.
+      </td></tr>
+    </table>
+    <br>
+    The following toolbar icons are available whether a file or directory is
+    currently selected on the right or not:
+    <br><br>
+    <table border="0" cellpadding="2" cellspacing="2" width="100%">
+      <tr><td><img src="img/icoUpOneLevel.gif"></td><td>
+        Move up one level, i.e., the parent of the currently selected directory,
+        if there is a parent.
+      </td></tr>
+      <tr><td width="50"><img src="img/icoRefresh.gif"></td><td>
+        Refresh the current directory. Note this does nothing if no file system
+        root is yet selected.
+      </td></tr>
+      <tr><td><img src="img/icoNewFile.gif"></td><td>
+        Create a new file in the currently selected directory.
+      </td></tr>
+      <tr><td><img src="img/icoNewDirectory.gif"></td><td>
+        Create a new directory in the currently selected directory.
+      </td></tr>
+      <tr><td><img src="img/icoUpload.gif"></td><td>
+        Upload a file. File will be saved to the currently selected directory.
+      </td></tr>
+      <tr><td><img src="img/icoDownload.gif"></td><td>
+        Download the currently selected file.
+      </td></tr>
+    </table>
+    <br>
+    Note that all of these functions are also available from the menu bar.
+    Speaking of the menu bar, the following addition functions are available
+    there (these are not available on the toolbar):
+    <br>
+    <ul>
+      <li><b>Tools... Print Directory Contents</b> - Provides a printable
+        version of the file grid on the right.</li>
+      <li><b>Help... Using Fileman</b> - Views this help file.</li>
+      <li><b>Help... About</b> - Shows the About Fileman popup dialog.</li>
+    </ul>
+    To rename a file or directory, simply double-click the item to
+    rename in the file grid, or click F2 while the row is selected, and you
+    will be able to edit it in-place. The change occurs when you press Enter.
+    <br><br>
+    Lastly, the file grid can be sorted by clicking any of the column headers.
+    <br><br>
+    That's about it. Have a pleasent day!
+    <br>
+  </body>
+</html>

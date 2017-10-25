@@ -1,0 +1,164 @@
+<!--
+    Local Business Search - From the book 
+    "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+-->
+
+
+<!-- Header. -->
+<div id="main" class="palm-hasheader">
+  <div class="palm-header">Search</div>
+</div>
+
+<!-- Scrim. -->
+<div class="palm-scrim" id="search_divScrim" style="display:none;">
+  <div id="search_divSpinner" x-mojo-element="Spinner"></div>
+</div>
+
+<!-- Keyword. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Keyword</div>
+        <div id="search_txtKeyword" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Street. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Street</div>
+        <div id="search_txtStreet" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- City. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">City</div>
+        <div id="search_txtCity" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- State. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">State</div>
+        <div style="width:220px;" x-mojo-element="ListSelector" 
+          id="search_lsState"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Zip Code. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Zip Code</div>
+        <div id="search_txtZip" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Longitude. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Longitude</div>
+        <div id="search_txtLongitude" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Latitude. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Latitude</div>
+        <div id="search_txtLatitude" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Radius. -->
+<div class="palm-row" style="height:80px;">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label" style="position:relative;top:-4px;color:#babaff;"">
+          Radius (<span id="search_radius">5</span> miles)
+        </div>
+        <div x-mojo-element="Slider" id="search_sldRadius"
+          style="position:relative;top:44px;height:80px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sort By. -->
+<div class="palm-row" style="height:100px;">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group">
+      <div class="title">
+        <div class="label" 
+          style="position:relative;top:-4px;color:#babaff;"">Sort By</div>
+        <div x-mojo-element="RadioButton" id="search_rbSortBy"
+          style="position:relative;left:-10px;top:-14px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Minimum Rating. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group">
+      <div class="title">
+        <div class="label" style="color:#babaff;">Minimum Rating</div>
+        <div x-mojo-element="IntegerPicker" id="search_ipMinimumRating"
+          style="position:relative;top:-2px;"></div>
+      </div>
+    </div>
+  </div>
+</div>

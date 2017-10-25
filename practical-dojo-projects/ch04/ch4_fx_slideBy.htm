@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.fx._base");
+
+      function testIt() {
+        dojox.fx.slideBy({
+          node : "divOutput",
+          duration : 1000, top : 100, left: 100
+        }).play();
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.fx.slideTo test:
+        <br><br>
+        <input type="button" onclick="testIt()" value="Click to slideBy">
+        <br><br>
+        <div id="divOutput"
+          style="background-color:#f0f000;width:80px;height:60px;">
+          I am going to be slid
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

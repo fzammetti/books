@@ -1,0 +1,27 @@
+<appConfig>
+
+  <!-- Driver class for RePortal database. -->
+  <databaseDriver>org.apache.derby.jdbc.EmbeddedDriver</databaseDriver>
+
+  <!-- URI for RePortal database. -->
+  <databaseURI>jdbc:derby:reportal;create=true</databaseURI>
+
+  <!-- Username for RePortal database. -->
+  <databaseUsername></databaseUsername>
+
+  <!-- Password for RePortal database. -->
+  <databasePassword></databasePassword>
+
+  <!-- Data sources that reports can be run against. -->
+  <dataSources>
+    <dataSource>
+      <name>dvtest</name>
+      <description>Derby data source for test report</description>
+      <databaseDriver>org.apache.derby.jdbc.EmbeddedDriver</databaseDriver>
+      <databaseURI>jdbc:derby:dvtestdb</databaseURI>
+      <databaseUsername></databaseUsername>
+      <databasePassword></databasePassword>
+    </dataSource>
+  </dataSources>
+
+</appConfig>

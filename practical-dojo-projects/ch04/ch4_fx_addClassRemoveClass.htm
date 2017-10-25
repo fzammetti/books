@@ -1,0 +1,60 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <style>
+      .oldClass {
+        width            : 200px;
+        height           : 50px;
+        background-color : #eaeaea;
+      }
+      .newClass {
+        width            : 300px;
+        height           : 200px;
+      }
+    </style>
+
+    <script>
+
+      dojo.require("dojox.fx.style");
+
+      function testIt() {
+        dojox.fx.addClass({cssClass:"newClass", node:"div1"}).play();
+        dojox.fx.removeClass({cssClass:"newClass", node:"div2"}).play();
+      }
+
+      dojo.addOnLoad(testIt);
+
+    </script>
+
+  </head>
+
+  <body>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.fx.addClass/RemoveClass test:
+        <br><br>
+        <div id="div1"
+          class="oldClass">
+          Class will be added to me
+        </div>
+        <br>
+        <div id="div2"
+          class="newClass" style="background-color:#ffff00;">
+          Class will be removed from me
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

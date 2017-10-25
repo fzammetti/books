@@ -1,0 +1,50 @@
+/* Style applied to all elements. */
+* {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+
+/* Style for bodies of pages. */
+.cssBody {
+  background-color : #d0d0ff;
+}
+
+
+/* Style for instructions, and any other static text display areas. */
+.cssInstructionsTable {
+  background-color : #ffffff;
+}
+
+
+/* Style for the table used to display the catalog items. */
+.cssCatalogTable {
+  background-color : #ffffff;
+  border           : 0px none #d0d0ff;
+}
+
+
+/* Style for the text on the checkout page. */
+.cssCheckoutText {
+  font-size        : 12pt;
+}
+
+
+/* Style for the header and footer of the view cart page. */
+.cssHeaderFooter {
+  background-color : #ffd0d0;
+}
+
+
+/* Row for the alternate row on the view cart page. */
+.cssStripRow {
+  background-color  : #efefef;
+}
+
+
+/* Style for description in cart view. */
+.cssSmallDescription {
+  font-size         : 8pt;
+  font-weight       : normal;
+}

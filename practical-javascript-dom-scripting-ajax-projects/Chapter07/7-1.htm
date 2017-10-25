@@ -1,0 +1,63 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" href="styles.css" type="text/css">
+
+    <title>Simple JavaScript XML Parsing Example</title>
+
+    <script>
+
+      function doParsing() {
+
+        // This is the XML we will parse.
+        var xml = "<messages>";
+        xml += "<msg poster=\"Frank\">Hello!</msg>";
+        xml += "<msg poster=\"Traci\">I hope all is well with you!</msg>";
+        xml += "<msg poster=\"Andrew\">Well, I guess that's it.</msg>";
+        xml += "<msg poster=\"Ashley\">Have a good day!</msg>";
+        xml += "</messages>";
+
+        // Instantiate an XML parser (or DOM, dependiing on browser).
+        var xmlDoc = null;
+        if (window.XMLHttpRequest){
+          var parser = new DOMParser();
+          xmlDoc = parser.parseFromString(xml, "application/xml");
+        } else {
+          xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+          xmlDoc.async = false;
+          xmlDoc.loadXML(xml);
+        }
+
+        // Now iterate over the DOM created above, and construct an output
+        // string to display.
+        var strOut = "Root node = " + xmlDoc.documentElement.nodeName + "<br>";
+        for (var i = 0; i < xmlDoc.documentElement.childNodes.length; i++) {
+          strOut += "nodeName = " +
+            xmlDoc.documentElement.childNodes[i].nodeName + ", poster = " +
+            xmlDoc.documentElement.childNodes[i].getAttribute("poster") +
+            ", text = " +
+            xmlDoc.documentElement.childNodes[i].firstChild.nodeValue + "<br>";
+        }
+        document.getElementById("divOut").innerHTML = strOut;
+
+      }
+
+    </script>
+
+  </head>
+
+  <body class="cssBody">
+
+    <div class="cssTitle">JavaScript XML Parsing Example</div>
+    <br><br>
+    <input type="button" value="Click me to parse XML"
+      onClick="doParsing();" class="cssBody">
+    <br><br>
+    Info will appear here:
+    <br><br>
+    <div id="divOut" class="cssLog"></div>
+
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+
+<dwr>
+
+  <allow>
+
+    <convert converter="bean" match="app.MyBean" />
+    <convert converter="bean" match="app.Student" />
+
+    <create creator="new" javascript="ClassA">
+      <param name="class" value="app.ClassA" />
+    </create>
+
+    <create creator="new" javascript="SigTestClass">
+      <param name="class" value="app.SigTestClass" />
+    </create>
+
+    <create creator="new" javascript="MathDelegate">
+      <param name="class" value="app.MathDelegate" />
+    </create>
+
+    <create creator="new" javascript="StudentRegistry">
+      <param name="class" value="app.StudentRegistry" />
+    </create>
+
+    <create creator="new" javascript="RemoteClass">
+      <param name="class" value="app.RemoteClass" />
+    </create>
+
+    <create creator="new" javascript="RemoteClassDecoupled">
+      <param name="class" value="app.RemoteClassDecoupled" />
+    </create>
+
+    <create creator="new" javascript="BatchCallClass">
+      <param name="class" value="app.BatchCallClass" />
+    </create>
+
+  </allow>
+
+  <signatures>
+    <![CDATA[
+    import java.util.List;
+    import app.SigTestClass;
+    SigTestClass.getNames(final List<String> inList);
+    ]]>
+  </signatures>
+
+</dwr>

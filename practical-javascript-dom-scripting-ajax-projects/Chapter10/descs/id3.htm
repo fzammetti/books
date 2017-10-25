@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>id3</title>
+
+    <link rel="StyleSheet" href="../css/styles.css" type="text/css">
+
+    <script>
+    </script>
+
+  </head>
+
+  <body style="background-color:#a0a0ff;">
+    <table border="0" cellpadding="10" cellspacing="0" width="600"
+      align="center" style="background-color:#ffffff;"><tr><td>
+      <center>
+        <div style="font-size:14pt;">Fisher-Price Rainforest Bouncer</div>
+        <br><br>
+        <img src="../img/item3.gif">
+      </center>
+      <br><br>
+      <div style="font-size:12pt;">
+        A delightful bouncer for baby in a beautiful rainforest theme.  This
+        bouncer has 14 songs and three sound effects.
+      </div>
+      <br><br>
+      49.96 per unit
+      <br><br>
+      <form name="purchase" method="get" action="../mockServer.htm">
+        <input type="hidden" name="function" value="purchase">
+        <input type="hidden" name="itemID" value="3">
+        Quantity:
+        <input type="text" size="3" maxlength="2" name="quantity" value="1">
+        <input type="submit" value="Add To Cart">
+      </form>
+    </tr></tr>
+    <tr><td align="right">
+      <a href="../mockServer.htm?function=viewCatalog">Back To The Catalog</a>
+    </td></tr></table>
+
+  </body>
+
+</html>

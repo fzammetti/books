@@ -1,0 +1,76 @@
+/*
+    Local Business Search - From the book 
+    "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+*/
+
+
+/* Style for the header of the preferences scene. */
+.header-icon.preferences {
+   background : url(../images/icoPreferences.png) no-repeat;
+}
+
+
+/* Styles for fading the bottom of long scenes. */
+.cssSceneFadeBottom {
+  position : fixed;
+  bottom : 0px;
+  z-index : 50000;
+  height : 54px;
+  width : 100%;
+  background : url(../images/sceneFadeBottomDark.png) bottom center repeat-x !important;
+  -webkit-palm-mouse-target : ignore;
+}
+
+
+/* Style for the search results title. */
+.cssListTitle {
+  font-size : 18px;
+  color : #ffffff;
+  position : relative;
+  top : -10px;
+}
+
+
+/* Style for the search results description (distance and rating). */
+.cssListDetails {
+  font-size : 14px;
+  color : #d0d0d0;
+  margin-bottom : -20px;
+  line-height : 28px;
+  position : relative;
+  top : -22px;
+}
+
+
+/* Style for the labels on the details scene. */
+.cssDetailsLabel {
+  font-weight : bold;
+}
+
+
+/* Style for the business' URL on the details scene. */
+.cssDetailsURL {
+  font-size : 75%;
+}

@@ -1,0 +1,117 @@
+<!--
+    Ext Class - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Ext class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+      <script>
+
+        function testIt() {
+
+          var sOut = "";
+
+          sOut += "isAir: " + Ext.isAir + "<br>";
+          sOut += "isBorderBox: " + Ext.isBorderBox + "<br>";
+          sOut += "isStrict: " + Ext.isStrict + "<br>";
+          sOut += "isGecko: " + Ext.isGecko + "<br>";
+          sOut += "isGecko2: " + Ext.isGecko2 + "<br>";
+          sOut += "isGecko3: " + Ext.isGecko3 + "<br>";
+          sOut += "isIE: " + Ext.isIE + "<br>";
+          sOut += "isIE6: " + Ext.isIE6 + "<br>";
+          sOut += "isIE7: " + Ext.isIE7 + "<br>";
+          sOut += "isLinux: " + Ext.isLinux + "<br>";
+          sOut += "isWindows: " + Ext.isWindows + "<br>";
+          sOut += "isMac: " + Ext.isMac + "<br>";
+          sOut += "isOpera: " + Ext.isOpera + "<br>";
+          sOut += "isSafari: " + Ext.isSafari + "<br>";
+          sOut += "isSafari2: " + Ext.isSafari2 + "<br>";
+          sOut += "isSafari3: " + Ext.isSafari3 + "<br>";
+          sOut += "isReady: " + Ext.isReady + "<br>";
+          sOut += "isSecure: " + Ext.isSecure + "<br>";
+
+          Ext.addBehaviors({
+            "div@click" : function(e, t) {
+              alert("You clicked a div");
+            }
+          });
+
+          function Class1() {
+            this.field1 = "liberate me";
+          }
+          function Class2() {
+            this.field2 = "liberate tutame ex inferis";
+          }
+          var obj1 = new Class1();
+          var obj2 = new Class2();
+          Ext.apply(obj1, obj2);
+          sOut += "obj1.field1: " + obj1.field1 + "<br>";
+          sOut += "obj1.field2: " + obj1.field2 + "<br>";
+
+          var a = [ 2, 4, 6, 8];
+          Ext.each(a, function(elem) {
+            sOut += elem + " * 2: " + elem * 2 + "<br>";
+          });
+          sOut += "Ext.isArray(a): " + Ext.isArray(a) + "<br>";
+          sOut += "Ext.isDate(a): " + Ext.isDate(a) + "<br>";
+
+          var z = null;
+          sOut += "Ext.isEmpty(z): " + Ext.isEmpty(z) + "<br>";
+
+          sOut += "Ext.num(12, 5): " + Ext.num(12) + "<br>";
+          sOut += "Ext.num(\"Frank\", 123): " + Ext.num("Frank", 123) + "<br>";
+
+          sOut += "removeMe: " + Ext.getDom("removeMe") + "<br>";
+          Ext.removeNode(Ext.getDom("removeMe"));
+          sOut += "removeMe (after Ext.removeNode() call): " +
+            Ext.getDom("removeMe") + "<br>";
+
+          sOut += "Ext.type(new Function()): " +
+            Ext.type(new Function()) + "<br>";
+          sOut += "Ext.type(123): " + Ext.type(123) + "<br>";
+          sOut += "Ext.type(\"test\"): " + Ext.type("test") + "<br>";
+
+          sOut += "Ext.urlEncode({name:\"Frank\",last:\"Bunker\"}): " +
+            Ext.urlEncode({first:"Archie",last:"Bunker"}) + "<br>";
+          sOut += "Ext.urlDecode(first=Archie&last=Bunker): " +
+            Ext.urlDecode("first=Archie&last=Bunker") +
+            "<br>";
+
+          Ext.getDom("divOutput").innerHTML = sOut;
+
+        }
+
+        Ext.onReady(testIt);
+
+      </script>
+
+  </head>
+
+  <body>
+    <div id="divOutput"
+      style="width:580px;height:400px;border:1px solid #000000;padding:4px;overflow:auto;">
+    </div>
+    <div id="removeMe"></div>
+  </body>
+
+</html>

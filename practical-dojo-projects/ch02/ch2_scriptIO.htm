@@ -1,0 +1,58 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.io.script");
+
+      function myCallback(inMsg) {
+        alert(inMsg);
+      }
+
+      var sid = null;
+      function testAttach() {
+        sid = dojo.io.script.attach("scriptTag1", "ch2_scriptIOResponse1.htm");
+      }
+
+      function testGet() {
+        dojo.io.script.get({
+          callbackParamName : "functionName",
+          checkString : "isOK"
+        });
+      }
+
+      function testRemove() {
+        alert(testVar);
+        if (sid) {
+          dojo.io.script.remove(sid);
+        }
+        alert(testVar);
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <input type="button" value="Click me for Ajax (attach)"
+      onClick="testAttach();">
+    <br>
+    <input type="button" value="Click me for Ajax (get)"
+      onClick="testGet();">
+    <br>
+    <input type="button" value="Click me to remove script tag"
+      onClick="testRemove();">
+  </body>
+</html>

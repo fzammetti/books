@@ -1,0 +1,78 @@
+<!--
+    Data Example - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Data Example</title>
+
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      Ext.onReady(function() {
+
+        var PersonRecord = Ext.data.Record.create([
+          { name : "id", mapping : "id" },
+          { name : "firstName", mapping : "firstName" },
+          { name : "lastName", mapping : "lastName" }
+        ]);
+
+        var peopleStore = new Ext.data.Store({});
+
+        var people = [
+          { firstName : "James", lastName : "Cameron" },
+          { firstName : "Ron", lastName : "Howard" },
+          { firstName : "Uwe", lastName : "Bole" }
+        ];
+
+        for (var i = 0; i < people.length; i++) {
+          peopleStore.add(
+            new PersonRecord({
+              id : new Date().getTime(),
+              firstName : people[i].firstName, lastName : people[i].lastName
+            })
+          );
+        }
+
+        new Ext.grid.GridPanel({
+          store : peopleStore, renderTo : "panelTarget", width : 500,
+          height : 150, autoExpandColumn : "lastName", title : "List of people",
+          columns: [
+            { header : "ID", width : 120, dataIndex : "id"},
+            { header : "First Name", width : 150, dataIndex : "firstName" },
+            { id : "lastName", header : "Last Name", dataIndex : "lastName" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body style="padding:10px;">
+    <div id="panelTarget"></div>
+  </body>
+
+</html>

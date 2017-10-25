@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      function setup() {
+        dojo.byId("outerDiv").onclick = doOuterClick;
+        dojo.byId("innerDiv").onclick = doInnerClick;
+      }
+      function doOuterClick(e) {
+        dojo.byId("divOutput").innerHTML += "doOuterClick()<br>";
+      }
+      function doInnerClick(e) {
+        dojo.byId("divOutput").innerHTML += "doInnerClick()<br>";
+        dojo.stopEvent(e);
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="setup();">
+    <div id="outerDiv" style="background-color:#ff0000;width:100px;height:100px;">
+      &nbsp;
+      <div id="innerDiv" style="background-color:#00ff00;width:50px;height:40px;">
+        &nbsp;
+      </div>
+    </div>
+    <br><br>
+    <div id="divOutput" style="width:200px;height:200px;">&nbsp;</div>
+  </body>
+
+</html>

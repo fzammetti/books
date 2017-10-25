@@ -1,0 +1,58 @@
+<html>
+
+  <head>
+
+    <title>JSDigester Test</title>
+
+    <link rel="StyleSheet" href="styles.css" type="text/css">
+
+    <script src="jscript.debug.js"></script>
+
+    <script src="sax.js"></script>
+    <script src="JSDigester.js"></script>
+    <script src="testClasses.js"></script>
+    <script src="testScript.js"></script>
+
+
+  </head>
+
+  <body class="cssBody">
+
+    <div class="cssTitle">JSDigester Test Harness</div>
+    <br><br>
+    This is a quick test of JSDigester.  It will parse the following XML:
+    <br><br>
+
+    <div class="cssXML">
+      &lt;movies numMovies="2"&gt;<br>
+      &nbsp;&lt;movie&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Star Wars&lt;/title&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;actor
+        gender="male"&gt;Harrison Ford&lt;/actor&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;actor
+        gender="female"&gt;Carrie Fisher&lt;/actor&gt;<br>
+      &nbsp;&nbsp;&lt;/movie&gt;<br>
+      &nbsp;&nbsp;&lt;movie&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Real Genius&lt;/title&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;actor
+        gender="male"&gt;Val Kilmer&lt;/actor&gt;<br>
+      &nbsp;&nbsp;&lt;/movie&gt;<br>
+      &lt;/movies&gt;<br>
+    </div>
+
+    <br>
+    <input type="button" value="Click this button to test JSDigester"
+      onClick="testJSDigester();">
+    <br><br>
+    (Note: processing could take some time, 30-45 seconds perhaps, and your
+    browser will lock up during that time, all because of the logging
+    JSDigester does.  To have it run at full speed, comment out the call to
+    jsDigester.setLogger() in testScript.js).
+    <br><br>
+    Parse log will appear here, results will pop up in an alert:
+    <br><br>
+    <div id="divLog" class="cssLog"></div>
+
+  </body>
+
+</html>

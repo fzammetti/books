@@ -1,0 +1,9 @@
+{
+  "id": "com.etherient.localbusinesssearch",
+  "version": "1.0.0",
+  "vendor": "Etherient",
+  "type": "web",
+  "main": "index.html",
+  "title": "Local Business Search",
+  "icon": "icon.png"
+}

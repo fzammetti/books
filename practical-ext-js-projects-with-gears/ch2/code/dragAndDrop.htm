@@ -1,0 +1,169 @@
+<!--
+    Drag And Drop - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Drag And Drop Example</title>
+
+    <style>
+
+      /* Style for a drop zone container. */
+      .cssDDContainer {
+        border : 1px solid #000000;
+        width : 200px;
+        height : 422px;
+        background-color : #d0d0ff;
+        overflow : auto;
+        margin : 2px;
+      }
+
+      /* Style for a draggable item. */
+      .cssDDItem {
+        font-size : 8pt;
+        font-weight : bold;
+        font-family : arial;
+        margin : 2px;
+        border : 1px solid #000000;
+        background-color : #ffd0d0;
+        padding : 1px;
+        cursor : move;
+        z-index : 9999;
+      }
+
+      /* Style for when an item is hovering over a drop target. */
+      .cssDDHover {
+        background-color: #c0ffc0;
+      }
+
+    </style>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      var presidents = [ "George Washington", "John Adams", "Thomas Jefferson",
+        "James Madison", "James Monroe", "John Quincy Adams", "Andrew Jackson",
+        "Martin Van Buren", "William Harrison", "John Tyler", "James Polk",
+        "Zachary Taylor", "Millard Fillmore", "Franklin Pierce",
+        "James Buchanan", "Abraham Lincoln", "Andrew Johnson",
+        "Ulysses S. Grant", "Rutherford B. Hayes", "James Garfield",
+        "Chester A. Arthur", "Grover Cleveland", "Benjamin Harrison",
+        "Grover Cleveland", "William McKinley", "Theodore Roosevelt",
+        "William Howard Taft", "Woodrow Wilson", "Warren Harding",
+        "Calvin Coolidge", "Herbert Hoover", "Franklin Delano Roosevelt",
+        "Harry S. Truman", "Dwight D. Eisenhower", "John F. Kennedy",
+        "Lyndon B. Johnson",  "Richard Milhous Nixon",  "Gerald Ford",
+        "Jimmy Carter", "Ronald Reagan",  "George Bush",  "Bill Clinton",
+        "George W. Bush"
+      ];
+
+      // Override drag-and-drop events as necessary.
+      Ext.override(Ext.dd.DDProxy, {
+        // Event when the user starts dragging an item.
+        startDrag : function(inX, inY) {
+          // Show contents of item when dragging so it looks nicer.
+          var item = Ext.get(this.getDragEl());
+          var el = Ext.get(this.getEl());
+          item.update(el.dom.innerHTML);
+          item.addClass(el.dom.className + " dd-proxy");
+        },
+        // Event when an item hovers over a drop target.
+        onDragOver : function(inElement, inTargetID) {
+          // Only do something if item is over the drop target.
+          if (inTargetID == "destinationContainer") {
+            // Record this as the drop target for when dragging stops.
+            var dropTarget = Ext.get(inTargetID);
+            this.lastTarget = dropTarget;
+            // Style the drop target.
+            dropTarget.addClass("cssDDHover");
+          }
+        },
+        // Event when an item leaves a drop target.
+        onDragOut : function(inElement, inTargetID) {
+          // Clear the recorded drop target.
+          this.lastTarget = null;
+          if (inTargetID == "destinationContainer") {
+            // If leaving the destination container, remove the hover style.
+            Ext.get(inTargetID).removeClass("cssDDHover");
+          }
+        },
+        // Event when the user stops dragging an item.
+        endDrag : function() {
+          // Only do something if the item is over a drop target.
+          if (this.lastTarget) {
+            // Append the item to the drop target and remove the style.
+            var item = Ext.get(this.getEl());
+            Ext.get(this.lastTarget).appendChild(item);
+            this.lastTarget.removeClass("cssDDHover");
+            this.lastTarget = null;
+          }
+        }
+      });
+
+
+      /**
+       * The appInit() function fires when the page loads.  It creates all the
+       * draggable items and defines the drop zones.
+       */
+      function appInit() {
+
+        // Create items that can be dragged and insert them into the DOM.
+        var presidentsContainer = Ext.getDom("sourceContainer");
+        for (var i = 0; i < presidents.length; i++) {
+          var newDiv = document.createElement("div");
+          newDiv.className =  "cssDDItem";
+          newDiv.id = "president" + i;
+          newDiv.innerHTML = presidents[i];
+          presidentsContainer.appendChild(newDiv);
+          var divElem = Ext.getDom("president" + i);
+          divElem.dd = new Ext.dd.DDProxy("president" + i)
+        }
+
+        // Register drop zone.
+        var dz2 = new Ext.dd.DropZone("destinationContainer");
+
+      } // End appInit().
+
+       Ext.onReady(appInit);
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- List of available presidents. -->
+    <div style="position:absolute;left:2px;top:2px;">
+      <center><h2>U.S. Presidents</h2></center>
+      <div class="cssDDContainer" id="sourceContainer">
+    </div>
+
+    <!-- List of presidents the user likes. -->
+    <div style="position:absolute;left:230px;top:2px;">
+      <center><h2>The&nbsp;ones&nbsp;I&nbsp;like</h2></center>
+    <div class="cssDDContainer" id="destinationContainer">
+    </div>
+
+  </body>
+
+</html>

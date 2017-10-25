@@ -1,0 +1,27 @@
+<html>
+
+  <head>
+
+    <style>
+      .myClass {
+        color : #ff0000;
+      }
+    </style>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+  </head>
+
+  <body onLoad="alert(dojo.hasClass('myDiv', 'myClass'));">
+    <div class="myClass" id="myDiv">myDiv</div>
+  </body>
+
+</html>

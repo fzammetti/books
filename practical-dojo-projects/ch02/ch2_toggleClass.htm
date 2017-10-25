@@ -1,0 +1,42 @@
+<html>
+
+  <head>
+
+    <style>
+      .myClass {
+        color : #ff0000;
+      }
+    </style>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        dojo.toggleClass("myDiv", "myClass");
+        alert("Should now be red");
+        dojo.toggleClass("myDiv", "myClass");
+        alert("Should now NOT be red");
+        dojo.toggleClass("myDiv", "myClass", true);
+        alert("Should now be red");
+        dojo.toggleClass("myDiv", "myClass", false);
+        alert("Should now NOT be red");
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <div id="myDiv">I am myDiv</div>
+  </body>
+
+</html>

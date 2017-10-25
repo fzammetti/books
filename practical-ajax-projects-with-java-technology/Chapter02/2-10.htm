@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title></title>
+
+    <script>
+
+      function sayName() {
+        alert(this.name);
+      }
+
+      Object.prototype.sayMyName = sayName;
+      Object.prototype.name = "test";
+
+      var m = new Object();
+      m.sayMyName();
+
+    </script>
+
+  </head>
+  <body> </body>
+</html>

@@ -1,0 +1,13 @@
+Welcome to InMemoria!
+
+Playing the game is simple.  Begin by clicking the "Start A New Game" button.
+Then, simply click two tiles on the Player playfield grid trying to find two
+that match.  When you find them, they will explode and be cleared.  If the two
+you chose are not a match, they will flip back over.  Play continues until
+you clear all tiles.
+
+Of course, it's not *quite* that simple!  The server will be playing against
+you, and the thing is pretty good!  If it succeeds in clearing all its tiles
+before you, then you lose.
+
+So come on, beat that machine, the human race is counting on you!

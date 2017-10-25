@@ -1,0 +1,246 @@
+<!--
+    OrganizerExt - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>OrganizerExt</title>
+
+    <!-- Ext JS imports. -->
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <!-- Gears imports. -->
+    <script src="js/gears_init.js"></script>
+
+    <!-- Application imports. -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/DAO.js"></script>
+    <script type="text/javascript" src="js/OrganizerExt.js"></script>
+
+    <!-- Kick off application when DOM is loaded. -->
+    <script>
+      Ext.onReady(organizerExt.init);
+    </script>
+
+  </head>
+
+  <body>
+
+    <!-- Source point for window animations. -->
+    <div id="divSource" class="cssSource"></div>
+
+    <!-- Please wait dialog. -->
+    <div id="dialogPleaseWait" class="x-hidden">
+      <div class="x-window-header">Please Wait</div>
+      <div class="x-window-body">
+        <table width="100%" height="100%" border="0" cellpadding="0"
+          cellspacing="0" class="cssPleaseWait">
+          <tr><td align="center" valign="middle">
+            ... Initializing ...
+          </td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Dialog for when Gear is not available. -->
+    <div id="dialogNoGears" class="x-hidden">
+      <div class="x-window-header">Gears Not Available</div>
+      <div class="x-window-body" style="padding:8px;">
+        <br>
+        I'm sorry but Google Gears is not installed on your computer, or is
+        unavailable for some reason (like you disabled the browser plugin for
+        example).
+        <br><br>
+        If you do not have Gears installed, please visit
+        <a href="http://gears.google.com/" target="new">the Gears home page</a>
+        to install it.
+        <br><br>
+        If you do have it installed, please try enabling the plugin in whatever
+        fashion is applicable in the browser you are using, and reload this
+        application.
+      </div>
+    </div>
+
+    <!-- About dialog. -->
+    <div id="dialogAbout" class="x-hidden">
+      <div class="x-window-header">About OrganizerExt</div>
+      <div class="x-window-body">
+        <table width="100%" height="100%" border="0" cellpadding="0"
+          cellspacing="0" class="cssAbout">
+          <tr><td align="center" valign="middle">
+            OrganizerExt<br>
+            Version 1.0<br>
+            Frank W. Zammetti
+            <br><br>
+            Originally appeared in the book<br>
+            &quot;Practical Ext JS Projects With Gears&quot;<br>
+            Apress, 2009
+            <br><br>
+            All rights reserved<br>
+            (and vigorously defended by an army of microscopic
+            land-sharks with lasers mounted to their heads)
+          </td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Appointment details. -->
+    <div id="divAppointmentDetails" class="x-hidden">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        height="100%">
+        <tr><td align="center" valign="middle">
+          <table border="0" celpadding="2" cellspacing="2" align="center"
+            width="75%" class="cssDetailsTable">
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Title</td>
+              <td class="cssDetailsData" id="appointment_title"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Category</td>
+              <td class="cssDetailsData" id="appointment_category"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">When</td>
+              <td class="cssDetailsData" id="appointment_whendt"></td></tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Location</td>
+              <td class="cssDetailsData" id="appointment_location"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Note</td>
+              <td class="cssDetailsData" id="appointment_note"></td>
+            </tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr><td colspan="2" align="center"
+              id="tdAppointmentDetailsDeleteButton"></td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <!-- Note details. -->
+    <div id="divNoteDetails" class="x-hidden">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        height="100%">
+        <tr><td align="center" valign="middle">
+          <table border="0" celpadding="2" cellspacing="2" align="center"
+            width="75%" class="cssDetailsTable">
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Category</td>
+              <td class="cssDetailsData" id="note_category"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Content</td>
+              <td class="cssDetailsData" id="note_content"></td>
+            </tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr><td colspan="2" align="center"
+              id="tdNoteDetailsDeleteButton"></td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <!-- Task details. -->
+    <div id="divTaskDetails" class="x-hidden">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        height="100%">
+        <tr><td align="center" valign="middle">
+          <table border="0" celpadding="2" cellspacing="2" align="center"
+            width="75%" class="cssDetailsTable">
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Category</td>
+              <td class="cssDetailsData" id="task_category"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Status</td>
+              <td class="cssDetailsData" id="task_status"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Content</td>
+              <td class="cssDetailsData" id="task_content"></td>
+            </tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr>
+              <td align="left" id="tdTaskDetailsDeleteButton"></td>
+              <td align="right" id="tdTaskDetailsCompleteButton"></td>
+            </tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <!-- Contact details. -->
+    <div id="divContactDetails" class="x-hidden">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%"
+        height="100%">
+        <tr><td align="center" valign="middle">
+          <table border="0" celpadding="2" cellspacing="2" align="center"
+            width="75%" class="cssDetailsTable">
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Category</td>
+              <td class="cssDetailsData" id="contact_category"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Company</td>
+              <td class="cssDetailsData" id="contact_company"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">First Name</td>
+              <td class="cssDetailsData" id="contact_firstname"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Last Name</td>
+              <td class="cssDetailsData" id="contact_lastname"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Phone Number</td>
+              <td class="cssDetailsData" id="contact_phonenumber"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Cell Number</td>
+              <td class="cssDetailsData" id="contact_cellnumber"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">FAX Number</td>
+              <td class="cssDetailsData" id="contact_faxnumber"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">eMail Address</td>
+              <td class="cssDetailsData" id="contact_email"></td>
+            </tr>
+            <tr>
+              <td class="cssDetailsLabel" width="30%">Note</td>
+              <td class="cssDetailsData" id="contact_note"></td>
+            </tr>
+            <tr><td colspan="2">&nbsp;</td></tr>
+            <tr><td colspan="2" align="center"
+              id="tdContactDetailsDeleteButton"></td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+  </body>
+
+</html>

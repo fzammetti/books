@@ -1,0 +1,58 @@
+[
+  { 
+    "source" : "app/TimeTracker.js" 
+  },
+  { 
+    "source" : "app/DAO.js" 
+  },
+  { 
+    "source" : "app/assistants/stage-assistant.js" 
+  },
+  { 
+    "source" : "app/assistants/title-assistant.js", "scenes" : "title" 
+  },
+  { 
+    "source" : "app/assistants/welcome-assistant.js", "scenes" : "welcome" 
+  },
+  { 
+    "source" : "app/assistants/adminProject-assistant.js", 
+    "scenes" : "adminProject" 
+  },
+  { 
+    "source" : "app/assistants/adminResource-assistant.js", 
+    "scenes" : "adminResource" 
+  },
+  { 
+    "source" : "app/assistants/bookTime-assistant.js", "scenes" : "bookTime" 
+  },
+  { 
+    "source" : "app/assistants/projectDetails-assistant.js",
+    "scenes" : "projectDetails" 
+  },
+  { 
+    "source" : "app/assistants/resourceDetails-assistant.js", 
+    "scenes" : "resourceDetails" 
+  },
+  { 
+    "source" : "app/assistants/taskDetails-assistant.js", 
+      "scenes" : "taskDetails" 
+  },
+  { 
+    "source" : "app/assistants/summaries-assistant.js", "scenes" : "summaries" 
+  },
+  { 
+    "source" : "app/assistants/logIn-assistant.js" 
+  },
+  { 
+    "source" : "app/assistants/projectSummary-assistant.js", 
+      "scenes" : "projectSummary" 
+  },
+  { 
+    "source" : "app/assistants/taskSummary-assistant.js", 
+      "scenes" : "taskSummary" 
+  },
+  { 
+    "source" : "app/assistants/resourceSummary-assistant.js", 
+      "scenes" : "resourceSummary" 
+  }
+]

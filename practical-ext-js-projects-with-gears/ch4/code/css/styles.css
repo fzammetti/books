@@ -1,0 +1,75 @@
+/*
+    TimekeeperExt - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+*/
+
+
+/* Style for text in please wait dialog. */
+.cssPleaseWait {
+  font-size : 12pt;
+  font-weight : bold;
+  font-family : tahoma,arial,verdana,sans-serif;
+  color : #000000;
+}
+
+
+/* Style for text in about dialog. */
+.cssAbout {
+  font-size : 11pt;
+  font-family : tahoma,arial,verdana,sans-serif;
+}
+
+
+/* Style for source of dialog animations. */
+.cssSource {
+  position : absolute;
+  left: 1px;
+  top : 1px;
+  width : 1px;
+  height : 1px;
+}
+
+
+/* Style applied to header of a summary view. */
+.cssSummaryTitle {
+  width : 100%;
+  text-align : center;
+  font-size : 18pt;
+  font-family : tahoma,arial,verdana,sans-serif;
+}
+
+
+/* Style for the header of a summary view table. */
+.cssSummaryTableHeader {
+  background-color : #3f4d61;
+  color : #ffffff;
+  font-size : 11pt;
+  font-weight : bold;
+  font-family : tahoma,arial,verdana,sans-serif;
+  padding-left : 2px;
+}
+
+
+/* Style for filling up progress bars on summary views. */
+.cssProgressBarFill {
+  background : #3f4d61;
+  border-bottom : 1px solid #3f4d61;
+  border-right : 1px solid #3f4d61;
+  border-top : 1px solid #3f4d61;
+  float : left;
+  height : 18px;
+}

@@ -1,0 +1,79 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.Button");
+      dojo.require("dijit.Toolbar");
+
+      function createProgrammatically() {
+        var myDijit = new dijit.Toolbar({});
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+        myDijit.addChild(new dijit.form.Button({
+          iconClass : "dijitEditorIcon dijitEditorIconCut",
+          showLabel : "true", label : "Cut"
+        }));
+        myDijit.addChild(new dijit.form.Button({
+          iconClass : "dijitEditorIcon dijitEditorIconCopy",
+          showLabel : "true", label : "Copy"
+        }));
+        myDijit.addChild(new dijit.form.Button({
+          iconClass : "dijitEditorIcon dijitEditorIconPaste"
+        }));
+        myDijit.addChild(new dijit.ToolbarSeparator({}));
+        myDijit.addChild(new dijit.form.ToggleButton({
+          iconClass : "dijitEditorIcon dijitEditorIconBold"
+        }));
+        myDijit.startup();
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra" onLoad="createProgrammatically();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.Toolbar Dijit, created declaratively:
+        <br><br>
+          <div dojoType="dijit.Toolbar">
+            <div dojoType="dijit.form.Button"
+              iconClass="dijitEditorIcon dijitEditorIconCut"
+              showLabel="true">Cut</div>
+            <div dojoType="dijit.form.Button"
+              iconClass="dijitEditorIcon dijitEditorIconCopy"
+              showLabel="true">Copy</div>
+            <div dojoType="dijit.form.Button"
+              iconClass="dijitEditorIcon dijitEditorIconPaste"
+              showLabel="false">Paste</div>
+            <span dojoType="dijit.ToolbarSeparator"></span>
+            <div dojoType="dijit.form.ToggleButton"
+              iconClass="dijitEditorIcon dijitEditorIconBold"
+              showLabel="false">Bold</div>
+          </div>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <div id="divProgrammatic">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

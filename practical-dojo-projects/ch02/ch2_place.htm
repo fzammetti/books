@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        dojo.place("node2", "node1", "after");
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <div id="node1">Node1</div>
+    <div id="node3">Node3</div>
+    <br><br>
+    <div id="node2">Node2</div>
+  </body>
+
+</html>

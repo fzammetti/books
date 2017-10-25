@@ -1,0 +1,76 @@
+<!--
+    Local Business Search - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Local Business Search</title>
+
+    <!-- Ext JS imports. -->
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <!-- Gears imports. -->
+    <script src="js/gears_init.js"></script>
+
+    <!-- Application imports. -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/LocalBusinessSearch.js"></script>
+    <script type="text/javascript" src="js/StoresAndRecords.js"></script>
+    <script type="text/javascript" src="js/DAO.js"></script>
+    <script type="text/javascript" src="js/Viewport.js"></script>
+    <script type="text/javascript" src="js/Search.js"></script>
+    <script type="text/javascript" src="js/Favorites.js"></script>
+    <script type="text/javascript" src="js/Details.js"></script>
+    <script type="text/javascript" src="js/Header.js"></script>
+
+    <script>Ext.onReady(LocalBusinessSearch.init);</script>
+
+  </head>
+
+  <body>
+
+    <!-- Source point for window animations. -->
+    <div id="divSource" class="cssSource"></div>
+
+    <!-- Print dialog. -->
+    <div id="dialogPrint" class="x-hidden">
+      <div class="x-window-header">Local Business Search Ext</div>
+      <div class="x-window-body" style="background-color:#ffffff;padding:10px;">
+        <br>
+        Title:&nbsp;<span id="print_title"></span>
+        <br><br>
+        <img id="print_map">
+        <br><br>
+        Longitude:&nbsp;<span id="print_longitude"></span><br>
+        Latitude:&nbsp;<span id="print_latitude"></span><br>
+        Distance:&nbsp;<span id="print_distance"></span><br>
+        Phone:&nbsp;<span id="print_phone"></span><br>
+        Rating:&nbsp;<span id="print_rating"></span><br>
+        Address:&nbsp;<span id="print_address"></span><br>
+        City:&nbsp;<span id="print_city"></span><br>
+        State:&nbsp;<span id="print_state"></span><br>
+        Business Web Site:&nbsp;<span id="print_businessurl"></span><br>
+      </div>
+    </div>
+
+  </body>
+
+</html>

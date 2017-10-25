@@ -1,0 +1,88 @@
+<!--
+    Charts - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Charts Example</title>
+
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      Ext.onReady(function() {
+
+        // Data for the charts.
+        var B5Store = new Ext.data.JsonStore({
+          fields : [ "season", "awesomeness" ], data : [
+            { season : "Signs And Portents", awesomeness : 10 },
+            { season : "The Coming Of Shadows", awesomeness : 20 },
+            { season : "Point Of No Return", awesomeness : 40 },
+            { season : "No Surrender, No Retreat", awesomeness : 70 },
+            { season : "The Wheel Of Fire", awesomeness : 15 }
+          ]
+        });
+
+        // Line chart.
+        new Ext.Panel({
+          title : "The 'awesomeness' Of The Five Seasons Of Babylon 5 (line)",
+          renderTo : "divLineChart", width : 700, height : 400, layout : "fit",
+          items : [
+            { xtype : "linechart", store : B5Store, xField : "season",
+              yField : "awesomeness" }
+          ]
+        });
+
+        // Column chart.
+        new Ext.Panel({
+          title : "The 'awesomeness' Of The Five Seasons Of Babylon 5 (column)",
+          renderTo : "divColumnChart", width : 700, height : 400,
+          layout : "fit", items : [
+            { xtype : "columnchart", store : B5Store, xField : "season",
+              yField : "awesomeness" }
+          ]
+        });
+
+        // Pie chart.
+        new Ext.Panel({
+          title : "The 'awesomeness' Of The Five Seasons Of Babylon 5 (pie)",
+          renderTo : "divPieChart", width : 700, height : 400,
+          layout : "fit", items : [
+            { xtype : "piechart", store : B5Store, categoryField : "season",
+              dataField : "awesomeness" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="divLineChart" style="padding:10px;"></div>
+    <div id="divColumnChart" style="padding:10px;"></div>
+    <div id="divPieChart" style="padding:10px;"></div>
+  </body>
+
+</html>

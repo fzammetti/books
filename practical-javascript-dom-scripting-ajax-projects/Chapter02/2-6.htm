@@ -1,0 +1,26 @@
+<html>
+  <head>
+
+    <script>
+
+      window.onerror = handleError;
+      var s = null;
+      s.toString();
+
+      function handleError(desc, page, line) {
+        s = "An unexpected JavaScript error has occurred.  ";
+        s += "We apologize unreservedly!\n\n";
+        s += "Page 'test.htm', line " + line + "\n";
+        s += "Description: " + desc + "\n\n";
+        s += "Please contact customer support at 555-123-4567.";
+        alert(s);
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+  </body>
+
+</html>

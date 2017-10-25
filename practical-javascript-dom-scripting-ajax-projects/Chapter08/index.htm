@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>JSValidator</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script>
+      var JSVConfig = {
+        pathPrefix : "jsvalidator/",
+        configFile : "jsv_config.xml",
+        manualInit : false
+      };
+    </script>
+    <script src="jsvalidator/JSValidator.js"></script>
+
+  </head>
+  <body>
+
+    <table cellpadding="0" cellspacing="0" width="750" align="center">
+      <tr><td>
+        <h2>Welcome to the JSValidator test page!</h2>
+        The following form contains some fields which have had validations
+        attached to them.  You should note that the markup for this page doesn't
+        contain anything special, i.e., no special attributes, no script (asode
+        from the little tiny bit at the top to get it all started), etc.
+        <br/>
+        <h3>Summary of tests demonstrated below</h3>
+        <ul>
+          <li><b>First Name</b> - This is a required field and it will be
+            validated when it loses focus... error will be reported via alert
+            message... This uses the basic <i>RequiredValidator</i>.
+          </li>
+          <li><b>Middle Name</b> - This is a required field and it will be
+            validated when it loses focus... error will be reported by inserting
+            a message into a div below the form... this uses the basic
+            <i>RequiredValidator</i>.
+          </li>
+          <li><b>Last Name</b> - This is a field that requires a minimum sized
+            entry (5 characters) and it will be validated every time a key is
+            pressed and released.  Note that this field starts up invalid (its
+            label it highlighted in red) and will be made valid by entering 5
+            characters or more (label will revert to black) and will be made
+            invalid again if the length falls below this minimum... This uses
+            the basic <i>MinLengthValidator</i>.
+          </li>
+          <li><b>Date Of Birth</b> - This is a field that must be entered in
+            the form MM/DD/YYYY and is validated when it loses focus... error
+            will be reported by inserting a message into a div below the form.
+            This uses an add-on validator called <i>DateValidator</i>.
+          </i>.
+          </li>
+          <li><b>eMail Address</b> - This is a field that must be entered in
+            the form user@domain.com and is validated when it loses focus...
+            error will be reported via alert message.  This uses the basic
+            <i>RegexFalidator</i>.
+          </li>
+        </ul>
+        <br/>
+        <form name="testForm" method="post" action="submitTarget.htm">
+          <table border="0" cellpadding="2" cellpacing="0" align="center"
+            style="border:1px solid #000000;">
+            <!-- First Name -->
+            <tr>
+              <td width="40%" class="cssOKField">First Name:&nbsp;</td>
+              <td width="60%" class="cssEntryCell">
+                <input type="text" name="firstName" size="20" value="">
+              </td>
+            </tr>
+            <!-- Middle Name -->
+            <tr>
+              <td class="cssOKField">Middle Name:&nbsp;</td>
+              <td class="cssEntryCell">
+                <input type="text" name="middleName" size="20" value="">
+              </td>
+            </tr>
+            <!-- Last Name -->
+            <tr>
+              <td class="cssOkField" id="lastNameLabel">Last Name:&nbsp;</td>
+              <td class="cssEntryCell">
+                <input type="text" name="lastName" size="20" value="">
+              </td>
+            </tr>
+            <!-- Date Of Birth -->
+            <tr>
+              <td class="cssOKField">Date Of Birth:&nbsp;</td>
+              <td class="cssEntryCell">
+                <input type="text" name="dateOfBirth" maxlength="11" size="10"
+                  value="">
+              </td>
+            </tr>
+            <!-- eMail Address -->
+            <tr>
+              <td class="cssOKField">eMail Address:&nbsp;</td>
+              <td class="cssEntryCell">
+                <input type="text" name="eMailAddress"  maxlength="22"
+                  size="13" value="">
+              </td>
+            </tr>
+            <!-- Clear and Submit -->
+            <tr class="cssButtons">
+              <td colspan="2" align="center">
+                <input type="reset" value="Reset">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" value="Submit">
+              </td>
+            </tr>
+          </table>
+        </form>
+        <center><div id="divErrors"></div></center>
+      </td></tr>
+    </table>
+
+  </body>
+</html>

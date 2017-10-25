@@ -1,0 +1,128 @@
+<html>
+
+  <head>
+
+    <title>Shopping Cart</title>
+
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script type="text/javascript" src="js/jscript.page.js"></script>
+    <script type="text/javascript" src="js/jscript.storage.js"></script>
+    <script type="text/javascript" src="js/CatalogItem.js"></script>
+    <script type="text/javascript" src="js/Catalog.js"></script>
+    <script type="text/javascript" src="js/CartItem.js"></script>
+    <script type="text/javascript" src="js/Cart.js"></script>
+
+    <script>
+
+
+      /**
+       * Render the contents of the cart.  This would actually be done on the
+       * server-side, so pretend this isn't really here!
+       */
+      function viewCart() {
+
+        var cartItems = cart.getCartItems();
+        if (cartItems.length != 0) {
+          // Start the table and write the header.
+          var htmlOut = "<table width=\"100%\" border=\"0\" ";
+          htmlOut += "cellpadding=\"6\" cellspacing=\"2\"";
+          htmlOut += "<tr class=\"cssHeaderFooter\">";
+          htmlOut += "<td align=\"center\">&nbsp;</td>";
+          htmlOut += "<td align=\"center\">Quantity</td>";
+          htmlOut += "<td>Description</td>";
+          htmlOut += "<td align=\"right\">Total Price</td></tr>";
+          var rowStrip = false;
+          var cartTotal = 0;
+          // Iterate over items in the cart.
+          for (var i = 0; i < cartItems.length; i++) {
+            // Get the next item and its ID and quantity.
+            var nextItem = cartItems[i];
+            var nextItemID = nextItem.getItemID();
+            var nextItemQuantity = nextItem.getQuantity();
+            // Get the item from the catalog.
+            var catalogItem = catalog.getItem(nextItemID);
+            htmlOut += "<tr";
+            // If this row should be striped, apply the appropriate class.
+            if (rowStrip) {
+              htmlOut += " class=\"cssStripRow\"";
+            }
+            rowStrip = !rowStrip;
+            htmlOut += ">";
+            // Now just generate some straightforward markup.
+            htmlOut += "<td align=\"center\">";
+            htmlOut += "<a href=\"mockServer.htm?function=delete&" +
+              "itemIndex=" + i + "\">Delete</a>";
+            htmlOut += "</td>";
+            htmlOut += "<td align=\"center\">";
+            htmlOut += "<form name=\"updateQuantity\" method=\"get\" " +
+              "action=\"mockServer.htm\">";
+            htmlOut += "<input type=\"hidden\" name=\"function\" " +
+              "value=\"updateQuantity\">";
+            htmlOut += "<input type=\"hidden\" name=\"itemIndex\" value=\"" +
+              i + "\">";
+            htmlOut += "<input type=\"text\" size=\"3\" maxlength=\"2\" " +
+              "name=\"quantity\" value=\"" + nextItemQuantity + "\">";
+            htmlOut += "<input type=\"submit\" value=\"Update\">";
+            htmlOut += "</form>";
+            htmlOut += "</td>";
+            htmlOut += "<td>" + catalogItem.getItemTitle() + "<br>";
+            htmlOut += "<div class=\"cssSmallDescription\">";
+            htmlOut += catalogItem.getItemDescription() + "</div></td>";
+            // Now some math: the total dollar amount has to be rounded for
+            // proper display.  The basic logic harkens back to pre-algebra:
+            // * Multiply the number by 10^x
+            // * Apply Math.round() to the result
+            // * Divide the result by 10^x
+            var itemTotalAmount = nextItemQuantity * catalogItem.getItemPrice();
+            itemTotalAmount = Math.round(itemTotalAmount * 100) / 100;
+            htmlOut += "<td align=\"right\">" + itemTotalAmount + "</td>";
+            htmlOut += "</tr>";
+            // Add cart amount to cart total.
+            cartTotal += nextItemQuantity * catalogItem.getItemPrice();
+          }
+          htmlOut += "<tr class=\"cssHeaderFooter\">";
+          // Now some math: the total dollar amount has to be rounded for proper
+          // display.  The basic logic harkens back to pre-algebra:
+          // * Multiply the number by 10^x
+          // * Apply Math.round() to the result
+          // * Divide the result by 10^x
+          cartTotal = Math.round(cartTotal * 100) / 100;
+          htmlOut += "<td align=\"right\" colspan=\"4\">Total Of Cart: " +
+            "&nbsp;" + cartTotal + "</td>";
+          htmlOut += "</tr>";
+          htmlOut += "</table>";
+          document.getElementById("divCartContents").innerHTML = htmlOut;
+        } else {
+          // No items in cart, that's easy!
+          document.getElementById("divCartContents").innerHTML =
+            "<center><br>Your cart is empty<br></center>";
+        }
+
+      } // End viewCart().
+
+
+    </script>
+
+  </head>
+
+  <body class="cssBody" onLoad="viewCart();">
+
+    <table border="0" cellpadding="6" cellspacing="0" width="600"
+      align="center" class="cssInstructionsTable">
+      <tr><td colspan="2">
+        <div id="divCartContents"></div>
+      </td></tr>
+      <tr>
+        <td>
+          <a href="mockServer.htm?function=checkout">Checkout</a>
+        </td>
+        <td align="right">
+          <a href="mockServer.htm?function=viewCatalog">Back To The Catalog</a>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+
+</html>

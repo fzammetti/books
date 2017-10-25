@@ -1,0 +1,48 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.Menu");
+      dojo.require("dijit.form.Button");
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.form.ComboButton Dijit, created declaratively:
+        <br><br>
+        <div dojoType="dijit.form.ComboButton">
+          <span>All In The Family</span>
+          <div dojoType="dijit.Menu" toggle="fade" style="display:none;">
+            <div dojoType="dijit.MenuItem">Edith</div>
+            <div dojoType="dijit.MenuItem">Archie</div>
+            <div dojoType="dijit.MenuItem">Gloria</div>
+            <div dojoType="dijit.MenuItem">Meathead</div>
+          </div>
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

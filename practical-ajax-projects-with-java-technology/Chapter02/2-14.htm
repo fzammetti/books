@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>DOM manipulation examples</title>
+
+    <script>
+    
+      // These will be used by the moving text example.
+      textTimer = null;
+      textLeft = 0;
+      textMoveDir = 1;
+    
+      // This function makes the someText visible.
+      function showSomeText() {
+        document.getElementById("someText").style.visibility = "visible";
+      }
+    
+      // This function will start a timer that will fire and move
+      // the text in the movingText div back and forth;
+      function moveText() {
+        if (textTimer == null) {
+          textTimer = setTimeout("moveIt()", 0);
+        } else {
+          textTimer = null;
+        }
+      }
+      
+      // This is the function the timer will call periodically to update
+      // the position of the moving text.
+      function moveIt() {
+        // Moving right.
+        if (textMoveDir == 1) {
+          textLeft++;
+          if (textLeft > 300) {
+            textMoveDir = 0;
+          }
+        // Moving left.
+        } else {
+          textLeft--;
+          if (textLeft < 1) {
+            textMoveDir = 1;
+          }
+        }
+        // Show the current position.
+        document.getElementById("showLeft").innerHTML = textLeft;
+        // Update the position of the text.
+        document.getElementById("movingText").style.left = textLeft;
+        // Start the next iteration.
+        textTimer = setTimeout("moveIt()", 0);
+      }
+    
+      // This is called to change the background color of the page.
+      function changeBGColor() {
+        document.getElementById("thePage").style.backgroundColor = "#ff0000";
+      }
+    
+      // This function gets a collection of child elements under a given
+      // element, then changes each of their values.
+      function changeDivVals() {
+        o = document.getElementById("divCollection");
+        c = o.getElementsByTagName("div");
+        c[0].innerHTML = "20";
+        c[1].innerHTML = "30";
+        c[2].innerHTML = "10";
+        
+      }
+    
+    </script>
+
+  </head>
+
+  <body id="thePage">
+
+    <hr>
+    This shows how you can make this visible that were formerly invisible
+    via DOM manipulation (and it works the other way around too of course!)
+    <br><br>
+    <div id="someText" style="visibility:hidden;">Now you can see me!</div>
+    <br>
+    <input type="button" onClick="showSomeText();" 
+      value="Click to show some text">
+      
+    <hr><br><br>
+    
+    <hr>
+    This shows how you can do simple animation via DOM manipulation
+    <br><br>
+    <div id="movingText" style="position:absolute;left:0;">
+      This text moves!
+    </div>
+    <br><br>
+    <input type="button" onClick="moveText();" 
+      value="Click to move some text">
+    <br><br>
+    <div id="showLeft">&nbsp;</div>
+
+    <hr><br><br>
+    
+    <hr>
+    This shows how you can change style attributes on the fly.
+    <br><br>
+    <input type="button" onClick="changeBGColor();" 
+      value="Click to change the background color of the page">
+
+    <hr><br><br>
+    
+    This shows how you can get a collection of elements under a given element
+    and access members of the collection to change their text.
+    <br><br>
+    <div id="divCollection">
+      <b>First value:</b><br>
+      <div>10</div>
+      <b>Second value:</b><br>
+      <div>20</div>
+      <b>Third value:</b><br>
+      <div>30</div>
+    </div>
+    <br>
+    <input type="button" onClick="changeDivVals();" 
+      value="Click to change order of the above values">
+    <hr>
+
+  </body>
+
+</html>

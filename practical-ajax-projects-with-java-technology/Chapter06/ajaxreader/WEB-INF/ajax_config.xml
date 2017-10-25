@@ -1,0 +1,65 @@
+<ajaxConfig>
+
+  <!-- Events within the feedForm. -->
+  <form ajaxRef="feedForm" isPage="false">
+
+    <!-- onClick event for the Add Feed button. -->
+    <element ajaxRef="saveFeed">
+      <event type="onclick">
+        <requestHandler type="std:SimpleXML" method="post">
+          <target>/saveFeed</target>
+          <parameter>feed,feedTitle=feedTitleEdit,feedURL=feedURLEdit</parameter>
+        </requestHandler>
+        <responseHandler type="std:CodeExecuter">
+          <parameter />
+        </responseHandler>
+      </event>
+    </element>
+    <!-- onClick event for the Delete Feed button. -->
+    <element ajaxRef="deleteFeed">
+      <event type="onclick">
+        <requestHandler type="std:SimpleXML" method="post">
+          <target>/deleteFeed</target>
+          <parameter>feed,feedTitle=feedTitle</parameter>
+        </requestHandler>
+        <responseHandler type="std:CodeExecuter">
+          <parameter />
+        </responseHandler>
+      </event>
+    </element>
+
+  </form>
+
+  <!-- Events outside any real HTML form. -->
+  <form ajaxRef="page" isPage="true">
+
+    <!-- This configuration is used to set up a manual Ajax function -->
+    <!-- that will be used when a feed in the feed list is clicked -->
+    <!-- as well as when the Refresh Headlines button is clicked. -->
+    <element ajaxRef="showHeadlines">
+      <event type="manual" form="feedForm">
+        <requestHandler type="std:SimpleXML" method="post">
+          <target>/listHeadlines</target>
+          <parameter>feed,feedTitle=feedTitle</parameter>
+        </requestHandler>
+        <responseHandler type="std:IFrameDisplay">
+          <parameter>ifContent</parameter>
+        </responseHandler>
+      </event>
+    </element>
+    <!-- Timer event for the feeds list update. -->
+    <element ajaxRef="listFeeds">
+      <event type="timer" form="not_applicable">
+        <requestHandler type="std:SimpleRequest" method="get">
+          <target>/listFeeds</target>
+          <parameter />
+        </requestHandler>
+        <responseHandler type="std:InnerHTML">
+          <parameter>divFeedList</parameter>
+        </responseHandler>
+      </event>
+    </element>
+
+  </form>
+
+</ajaxConfig>

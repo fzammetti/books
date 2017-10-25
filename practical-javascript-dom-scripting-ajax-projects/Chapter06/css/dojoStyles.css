@@ -1,0 +1,14 @@
+/* Style for the fisheye listbar */
+.dojoHtmlFisheyeListBar {
+  margin           : 0 auto;
+  text-align       : center;
+}
+
+/* Style for the fisheye container */
+.outerbar {
+  text-align       : center;
+  position         : absolute;
+  left             : 0px;
+  top              : 0px;
+  width            : 100%;
+}

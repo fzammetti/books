@@ -1,0 +1,54 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.CheckBox");
+      dojo.addOnLoad(createProgrammatically);
+
+      function createProgrammatically() {
+        var myDijit = new dijit.form.RadioButton({
+          id : "cb2",
+          label : "I was created programmatically"
+        });
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.form.RadioButton Dijit, created declaratively:
+        <br><br>
+        <input type="radio" id="rb1"
+          dojoType="dijit.form.RadioButton"
+        />&nbsp;<label for="rb1">Select me if you like Dojo</label>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <span id="divProgrammatic"></span>&nbsp;<label>Another</label>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

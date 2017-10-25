@@ -1,0 +1,83 @@
+<project name="inmemoria" basedir="." default="build">
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Build properties.                                            ** -->
+  <!-- ****************************************************************** -->
+
+  <!-- Define runtime classpath.  These JARs are needed to run the -->
+  <!-- application, as well as build it. -->
+  <path id="runtime_classpath">
+    <pathelement path="../lib/commons-logging.jar" />
+    <pathelement path="../lib/dwr.jar" />
+  </path>
+
+  <!-- Define build classpath.  These JARs are needed to build the -->
+  <!-- application, they are provided by the container at runtime. -->
+  <path id="buildtime_classpath">
+    <pathelement path="build_libs/jsp-api.jar" />
+    <pathelement path="build_libs/servlet-api.jar" />
+  </path>
+
+
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- Everything above this is project-specific, everything below        -->
+  <!-- is meant to be generic.  Generally, nothing below this should      -->
+  <!-- need to be modified.                                               -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Default target that should usually be executed.              ** -->
+  <!-- ****************************************************************** -->
+  <target name="build">
+    <echo message="Building ${ant.project.name}..." />
+    <antcall target="clean" inheritRefs="true" />
+    <antcall target="compile" inheritRefs="true" />
+    <antcall target="war" inheritRefs="true" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Clean up after a build (i.e., remove build-transient         ** -->
+  <!-- ** artifacts from the directory structure.  This should ALWAYS  ** -->
+  <!-- ** be executed before checking in to source control.            ** -->
+  <!-- ****************************************************************** -->
+  <target name="clean">
+    <echo message="Cleaning..." />
+    <delete file="${ant.project.name}.war" />
+    <delete dir="../classes/com" />
+    <echo message="Done" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Compile everything.                                          ** -->
+  <!-- ****************************************************************** -->
+  <target name="compile">
+    <echo message="Compiling..." />
+    <delete dir="../classes/com" />
+    <mkdir dir="../classes/com" />
+    <javac srcdir="." destdir="../classes" debug="true"
+     debuglevel="lines,vars,source" deprecation="on">
+      <compilerarg value="-Xlint:unchecked" />
+      <classpath refid="runtime_classpath" />
+      <classpath refid="buildtime_classpath" />
+    </javac>
+    <echo message="Done" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** This target makes a WAR file.                                   -->
+  <!-- ****************************************************************** -->
+  <target name="war">
+    <echo message="Making WAR..." />
+    <jar destfile="${ant.project.name}.war" basedir="../../" />
+    <echo message="Done" />
+  </target>
+
+
+</project>

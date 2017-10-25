@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      dojo.registerModulePath("dojo.customPackage", "../../..");
+      dojo.require("dojo.customPackage.myFunc");
+      dojo.customPackage.myFunc();
+    </script>
+  </head>
+  <body></body>
+</html>

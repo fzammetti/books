@@ -1,0 +1,81 @@
+<!--
+    SQL Workbench - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>SQL Workbench</title>
+
+    <!-- Ext JS imports. -->
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <!-- Gears imports. -->
+    <script src="js/gears_init.js"></script>
+
+    <!-- Application imports. -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/SQLWorkbench.js"></script>
+    <script type="text/javascript" src="js/StoresAndRecords.js"></script>
+    <script type="text/javascript" src="js/CreateTableWindow.js"></script>
+    <script type="text/javascript" src="js/DatabasesWindow.js"></script>
+    <script type="text/javascript" src="js/TableDetailsWindow.js"></script>
+    <script type="text/javascript" src="js/TablesWindow.js"></script>
+    <script type="text/javascript" src="js/QueryToolWindow.js"></script>
+    <script type="text/javascript" src="js/Help.js"></script>
+
+    <script>Ext.onReady(SQLWorkbench.init);</script>
+
+  </head>
+
+  <body style="overflow:hidden;">
+
+    <!-- Source point for window animations. -->
+    <div id="divSource" class="cssSource"></div>
+
+    <!-- The container the toolbar will be rendered into. -->
+    <div id="divToolbar"
+      style="width:100%;height:32px;position:absolute;left:0px;top:0px;"></div>
+
+    <!-- About dialog. -->
+    <div id="dialogAbout" class="x-hidden">
+      <div class="x-window-header">About SQLWorkbench</div>
+      <div class="x-window-body">
+        <table width="100%" height="100%" border="0" cellpadding="0"
+          cellspacing="0" class="cssAbout">
+          <tr><td align="center" valign="middle">
+            SQLWorkbench<br>
+            Version 1.0<br>
+            Frank W. Zammetti
+            <br><br>
+            Originally appeared in the book<br>
+            &quot;Practical Ext JS Projects With Gears&quot;<br>
+            Apress, 2009
+            <br><br>
+            All rights reserved<br>
+            (Rights?!?  What rights, you damned dirty ape?!?)
+          </td></tr>
+        </table>
+      </div>
+    </div>
+
+  </body>
+
+</html>

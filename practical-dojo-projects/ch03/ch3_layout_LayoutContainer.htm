@@ -1,0 +1,49 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.layout.ContentPane");
+      dojo.require("dijit.layout.LayoutContainer");
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.layout.LayoutContainer Dijit, created declaratively:
+        <br><br>
+        <div dojoType="dijit.layout.LayoutContainer"
+          style="width:250px;height:100px;">
+          <div dojoType="dijit.layout.ContentPane" layoutAlign="top"
+            style="background-color:#e0e0e0;">Heading</div>
+          <div dojoType="dijit.layout.ContentPane" layoutAlign="left"
+            style="width:75px;background-color:#ffe0e0;">Side menu</div>
+          <div dojoType="dijit.layout.ContentPane" layoutAlign="client"
+            style="background-color:#ffffe0;">Main content</div>
+        </div>
+        <br><br>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

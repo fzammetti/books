@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+
+    <convert converter="bean" match="com.apress.dwrprojects.dwiki.Article" />
+    <convert converter="bean"
+      match="com.apress.dwrprojects.dwiki.ArticleComment" />
+
+    <!-- Lock down the methods of the ArticleDAO that can only be executed -->
+    <!-- by registered users. -->
+    <create creator="new" javascript="ArticleDAO">
+      <param name="class" value="com.apress.dwrprojects.dwiki.ArticleDAO" />
+      <auth method="addArticle" role="dwiki_user" />
+      <auth method="updateArticle" role="dwiki_user" />
+      <auth method="addComment" role="dwiki_user" />
+    </create>
+
+  </allow>
+</dwr>

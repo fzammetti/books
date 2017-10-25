@@ -1,0 +1,40 @@
+<html>
+
+  <head>
+
+    <style>
+      .myStyle {
+        color : #ff0000;
+      }
+    </style>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function testIt() {
+        alert(dojo.query(".myStyle") + "\n" +
+          dojo.query(".myStyle", "parentDiv"));
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <div id="div1" class="myStyle">&nbsp;</div>
+    <div id="div2">&nbsp;</div>
+    <div id="parentDiv">
+      <div id="div3" class="myStyle">&nbsp;</div>
+    </div>
+  </body>
+
+</html>

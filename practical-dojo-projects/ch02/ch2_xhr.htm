@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script>
+      function doAjax() {
+        dojo.xhrGet({ url : "ch2_xhrMockServer.htm",
+        content : { var1 : "val1", var2 : "val2" },
+          load : function(resp) {
+            var o = dojo.fromJson(resp);
+            dojo.byId("ajaxResponse").innerHTML = "response1 = " +
+              o.response1 + "<br>response2 = " + o.response2;
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onLoad="">
+    <input type="button" value="Click for Ajax" onClick="doAjax();">
+    <br>
+    <div id="ajaxResponse"></div>
+  </body>
+</html>

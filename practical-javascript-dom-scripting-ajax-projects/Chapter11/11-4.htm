@@ -1,0 +1,48 @@
+<html>
+
+  <head>
+
+    <title>DOM/Array Access Test</title>
+
+    <script>
+
+      function testit() {
+
+        // Time 1000 direct DOM accesses
+        var timeStart = new Date();
+        for (var i = 0; i < 5000; i++) {
+          var elem = document.getElementById("myDiv");
+          elem.innerHTML = i;
+        }
+        var directDOMTime = new Date() - timeStart;
+
+        // Time 1000 accesses via array lookup
+        var a = new Array();
+        a[0] = document.getElementById("myDiv");
+        timeStart = new Date();
+        for (var i = 0; i < 5000; i++) {
+          var elem = a[0];
+          elem.innerHTML = i;
+        }
+        var arrayTime = new Date() - timeStart;
+
+        // Display results
+        document.getElementById("myDiv").innerHTML =
+          "Time for direct DOM access: " + directDOMTime + "<br>" +
+          "Time for array access: " + arrayTime;
+
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <input type="button" onClick="testit();" value="Test">
+    <br/>
+    <div id="myDiv"></div>
+
+  </body>
+
+</html>

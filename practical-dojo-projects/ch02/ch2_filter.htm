@@ -1,0 +1,28 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function checkFunc(inItem, inIndex, inArray) {
+        return (inItem > 10);
+      }
+      alert(dojo.filter([2, 5, 71, 19, 99], checkFunc));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

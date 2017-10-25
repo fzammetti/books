@@ -1,0 +1,78 @@
+<!--
+    DomHelper - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Ext.util Namespace - EXT.DomHelper class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <style>
+      .cssTable {
+        color : #ff0000;
+        border : 1px solid #000000;
+      }
+      .cssCell {
+        background-color : #eaeaea;
+      }
+    </style>
+
+    <script>
+
+      function testIt() {
+
+        Ext.DomHelper.append("divTable", {
+          id : "tblTable", tag : "table", cls : "cssTable", children : [
+            { tag : "tr", id : "row1", children : [
+                { tag : "td", cls : "cssCell", id : "row1_cell1", html : "1_1"},
+                { tag : "td", cls : "cssCell", id : "row1_cell2", html : "1_2"},
+                { tag : "td", cls : "cssCell", id : "row1_cell3", html : "1_3"}
+              ]
+            },
+            { tag : "tr", id : "row2", children : [
+                { tag : "td", cls : "cssCell", id : "row2_cell1", html : "2_1"},
+                { tag : "td", cls : "cssCell", id : "row2_cell2", html : "2_2"},
+                { tag : "td", cls : "cssCell", id : "row2_cell3", html : "2_3"}
+              ]
+            }
+          ]
+        });
+        Ext.DomHelper.applyStyles(Ext.getDom("row2_cell2"), "color:#00ff00");
+        Ext.DomHelper.insertAfter(Ext.getDom("tblTable"), {
+          tag : "div", id : "divDiv1", html : "I am divDiv1"
+        });
+        alert(Ext.DomHelper.markup({
+          tag : "div", id : "divDiv1", html : "I am divDiv1"
+        }));
+
+      }
+
+      Ext.onReady(testIt);
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="divTable"></div>
+  </body>
+
+</html>

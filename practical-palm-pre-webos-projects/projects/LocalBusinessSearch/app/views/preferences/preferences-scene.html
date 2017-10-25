@@ -1,0 +1,113 @@
+<!--
+    Local Business Search - From the book 
+    "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+-->
+
+
+<div class="palm-page-header">
+  <div class="header-icon preferences"></div>
+  <div class="header-text">Preferences</div>
+</div>
+
+<!-- Tiled Backgrounds. -->
+<table class="palm-divider collapsible" x-mojo-tap-highlight="momentary">
+  <tbody>
+    <tr>
+      <td class="left">&nbsp;</td>
+      <td class="label" style="color:#ffffff;">Tiled</td>
+      <td class="line" width="100%"></td>
+      <td><div class="palm-arrow-closed arrow_button" 
+        id="preferences_btnTiled"></div></tr>
+      <td class="right">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<div id="preferences_drwTiled" x-mojo-element="Drawer"
+  style="position:relative;top:-30px;">>
+  <div class="palm-list">
+    <div class="palm-row single">
+      <div class="palm-row-wrapper textfield-group" 
+        x-mojo-focus-highlight="true">
+        <div class="title">
+          <div id="preferences_lstTiled" x-mojo-element="List"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full-Screen Backgrounds. -->
+<table class="palm-divider collapsible" x-mojo-tap-highlight="momentary">
+  <tbody>
+    <tr>
+      <td class="left">&nbsp;</td>
+      <td class="label" style="color:#ffffff;">Full-Screen</td>
+      <td class="line" width="100%"></td>
+      <td><div class="palm-arrow-closed arrow_button" 
+        id="preferences_btnFullScreen"></div></tr>
+      <td class="right">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<div id="preferences_drwFullScreen" x-mojo-element="Drawer"
+  style="position:relative;top:-30px;">>
+  <div class="palm-list">
+    <div class="palm-row single">
+      <div class="palm-row-wrapper textfield-group" 
+        x-mojo-focus-highlight="true">
+        <div class="title">
+          <div id="preferences_lstFullScreen" x-mojo-element="List"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Animated Backgrounds. -->
+<table class="palm-divider collapsible" x-mojo-tap-highlight="momentary">
+  <tbody>
+    <tr>
+      <td class="left">&nbsp;</td>
+      <td class="label" style="color:#ffffff;">Animated</td>
+      <td class="line" width="100%"></td>
+      <td><div class="palm-arrow-closed arrow_button" 
+        id="preferences_btnAnimated"></div></tr>
+      <td class="right">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<div id="preferences_drwAnimated" x-mojo-element="Drawer"
+  style="position:relative;top:-30px;">
+  <div class="palm-list">
+    <div class="palm-row single">
+      <div class="palm-row-wrapper textfield-group" 
+        x-mojo-focus-highlight="true">
+        <div class="title">
+          <div id="preferences_lstAnimated" x-mojo-element="List"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

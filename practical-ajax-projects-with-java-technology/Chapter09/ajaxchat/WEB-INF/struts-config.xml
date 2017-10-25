@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+
+  <!-- Form Beans -->
+  <form-beans>
+
+    <form-bean name="LobbyActionForm" type="com.apress.ajaxprojects.ajaxchat.actionform.LobbyActionForm" />
+    <form-bean name="LoginActionForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="username" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="ajaxPostMessageActionForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="msgText" type="java.lang.String" />
+    </form-bean>
+
+  </form-beans>
+
+
+  <!-- Mappings -->
+  <action-mappings>
+
+    <!-- ***** These are our normal Struts mappings. ***** -->
+
+    <!-- Used when the user clicks Login on the welcome screen. -->
+    <action path="/login" type="com.apress.ajaxprojects.ajaxchat.action.LoginAction" name="LoginActionForm" scope="request" validate="false">
+      <forward name="gotoLobby" path="/lobby.do" />
+      <forward name="fail" path="/index.jsp" />
+    </action>
+
+    <!-- Used when the user clicks Logout on the lobby screen. -->
+    <action path="/logout" type="com.apress.ajaxprojects.ajaxchat.action.LogoutAction">
+      <forward name="gotoWelcome" path="/index.jsp" />
+    </action>
+
+    <!-- Used to show the lobby. -->
+    <action path="/lobby" type="com.apress.ajaxprojects.ajaxchat.action.LobbyAction" name="LobbyActionForm" scope="request" validate="false">
+      <forward name="showLobby" path="/lobby.jsp" />
+    </action>
+
+    <!-- Used when the user clicks on a room on the lobby screen. -->
+    <action path="/joinRoom" type="com.apress.ajaxprojects.ajaxchat.action.JoinRoomAction" name="LobbyActionForm" scope="request" validate="false">
+      <forward name="showRoom" path="/room.jsp" />
+    </action>
+
+    <!-- Used when the user clicks the Leave Room on the room screen. -->
+    <action path="/leaveRoom" type="com.apress.ajaxprojects.ajaxchat.action.LeaveRoomAction">
+      <forward name="gotoLobby" path="/lobby.do" />
+    </action>
+
+    <!-- ***** These are our Ajax-related mappings. ***** -->
+
+    <!-- Used to list all the users in the room. -->
+    <action path="/ajaxListUsersInRoom" type="com.apress.ajaxprojects.ajaxchat.action.ListUsersInRoomAction" />
+
+    <!-- Used to post a message to the room. -->
+    <action path="/ajaxPostMessage" type="com.apress.ajaxprojects.ajaxchat.action.PostMessageAction" name="ajaxPostMessageActionForm" scope="request" validate="false" />
+
+    <!-- Used to get messages in the room. -->
+    <action path="/ajaxGetMessages" type="com.apress.ajaxprojects.ajaxchat.action.GetMessagesAction" />
+
+    <!-- Used to get messages in the room. -->
+    <action path="/ajaxLobbyUpdateStats" type="com.apress.ajaxprojects.ajaxchat.action.LobbyUpdateStatsAction" />
+
+  </action-mappings>
+
+
+  <!-- Message Resources -->
+  <message-resources parameter="app_resources" />
+
+
+</struts-config>

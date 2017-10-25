@@ -1,0 +1,62 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.collections.Stack");
+
+      function testIt() {
+        var st = new dojox.collections.Stack();
+        st.push("Romeo");
+        st.push("Juliet");
+        st.push("Sam");
+        st.push("Diane");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Stack via toArray() after 4 push()'s:  " + st.toArray();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Stack via iterator:<br>";
+        var it = st.getIterator();
+        while (!it.atEnd()) {
+          dojo.byId("divOutput").innerHTML += " - " + it.get() + "<br>";
+        }
+        var ret = st.pop();
+        dojo.byId("divOutput").innerHTML +=
+          "Stack after pop'ing:  " + st.toArray();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Item returned from pop():  " + ret;
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Item returned from peek():  " + st.peek();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Stack after peek'ing:  " + st.toArray();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Stack contains Romeo? " + st.contains("Romeo");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Stack contains Cleopatra? " + st.contains("Cleopatra");
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.collections.Stack test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

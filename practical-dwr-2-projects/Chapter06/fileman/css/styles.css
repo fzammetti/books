@@ -1,0 +1,77 @@
+/*
+  Copyright (c) 2007 by Frank W. Zammetti.  This file is part of the DWR
+  File Manager (Fileman) project from the book Practical DWR (Ajax) Web 2.0
+  Projects by Frank W. Zammetti, published by Apress, Inc. in 2008.
+
+  Fileman is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Fileman is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see
+  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+*/
+
+/* Style applied to the body of the main index.jsp page. */
+.cssBody {
+  padding          : 0px;
+  margin           : 0px;
+  overflow         : hidden;
+}
+
+
+/* Style applied to the div housing the menubar. */
+.cssMenu {
+  width            : 100%;
+  height           : 22px;
+  background-color : #eaeaea;
+}
+
+
+/* Style applied to the div housing the toolbar. */
+.cssToolbar {
+  width            : 100%;
+  height           : 38px;
+}
+
+
+/* Style applied to the vertical divider between the directory tree and */
+/* the file grid. */
+.cssDivider {
+  background-color : #d4d0c8;
+}
+
+
+/* Style applied to the div housing the directory tree. */
+.cssDirectories {
+  width            : 100%;
+  height           : 100%;
+  overflow         : hidden;
+}
+
+
+/* Style applied to the div housing the file grid. */
+.cssFiles {
+  width            : 100%;
+  height           : 100%;
+  overflow         : hidden;
+}
+
+
+/* Style applied to the file upload and file editor divs. */
+.cssFullScreenDiv {
+  width            : 100%;
+  height           : 100%;
+  background-color : #ffffff;
+  display          : none;
+  z-index          : 1000;
+  position         : absolute;
+  left             : 0px;
+  top              : 0px;
+}

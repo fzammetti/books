@@ -1,0 +1,234 @@
+<!--
+    Code Cabinet - From the book "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+-->
+
+
+<!-- Header. -->
+<div id="main" class="palm-hasheader">
+  <div class="palm-header">Snippet Details</div>
+</div>
+
+<!-- Info Button and Drawer. -->
+<div id="snippetDetails_btnInfoDrawer" class="palm-button">Info</div>
+<div id="snippetDetails_drwInfo" x-mojo-element="Drawer">
+  <!-- Name. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Name</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtName" x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Description. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Description</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtDescription" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Author. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Author</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtAuthor" x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- eMail. -->
+  <div class="palm-group">
+    <div class="palm-group-title">eMail</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtEMail" x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Web Link. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Web Link</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtWebLink" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Code Button and Drawer. -->
+<div id="snippetDetails_btnCodeDrawer" class="palm-button">Code</div>
+<div id="snippetDetails_drwCode" x-mojo-element="Drawer">
+  <!-- Code. -->
+  <div class="palm-list">
+    <div class="palm-row single">
+      <div class="palm-row-wrapper textfield-group" 
+        x-mojo-focus-highlight="true">
+        <div class="title">
+          <div id="snippetDetails_rteCode" 
+            x-mojo-element="RichTextEdit" style="height:200px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notes Button and Drawer. -->
+<div id="snippetDetails_btnNotesDrawer" class="palm-button">Notes</div>
+<div id="snippetDetails_drwNotes" x-mojo-element="Drawer">
+  <!-- Notes. -->
+  <div class="palm-list">
+    <div class="palm-row single">
+      <div class="palm-row-wrapper textfield-group" 
+        x-mojo-focus-highlight="true">
+        <div class="title">
+          <div id="snippetDetails_rteNotes" 
+            x-mojo-element="RichTextEdit" style="height:200px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Keywords Button and Drawer. -->
+<div id="snippetDetails_btnKeywordsDrawer" class="palm-button">Keywords</div>
+<div id="snippetDetails_drwKeywords" x-mojo-element="Drawer">
+  <!-- Keywords 1. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Keyword 1</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtKeyword1" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Keywords 2. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Keyword 2</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtKeyword2" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Keywords 3. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Keyword 3</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtKeyword3" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Keywords 4. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Keyword 4</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtKeyword4" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Keywords 5. -->
+  <div class="palm-group">
+    <div class="palm-group-title">Keyword 5</div>
+    <div class="palm-list">
+      <div class="palm-row single">
+        <div class="palm-row-wrapper textfield-group" 
+          x-mojo-focus-highlight="true">
+          <div class="title">
+            <div id="snippetDetails_txtKeyword5" 
+              x-mojo-element="TextField"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<!-- Save/Send/Delete Buttons. -->
+<table width="100%">
+  <tr>
+    <td width="33%"><div id="snippetDetails_btnSave" 
+      x-mojo-element="Button"></div></td>
+    <td width="34%"><div id="snippetDetails_btnSend" 
+      x-mojo-element="Button"></div></td>
+    <td width="33%"><div id="snippetDetails_btnDelete" 
+      x-mojo-element="Button"></div></td>
+  </tr>
+</table> 

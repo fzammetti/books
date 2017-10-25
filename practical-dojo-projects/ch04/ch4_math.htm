@@ -1,0 +1,54 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.math._base");
+
+      function testIt() {
+        dojo.byId("divOutput").innerHTML += "<br>90 degrees in radians = " +
+          dojox.math.degreesToRadians(90);
+        dojo.byId("divOutput").innerHTML += "<br>1.5707963267948966 radians " +
+          "in degrees = " + dojox.math.radiansToDegrees(1.5707963267948966);
+        dojo.byId("divOutput").innerHTML += "<br>Distance between " +
+          "2,2 & 4,2 = " + dojox.math.distance([2,2],[4,2]);
+        dojo.byId("divOutput").innerHTML += "<br>Distance between " +
+          "18,-23 & -9,4 = " + dojox.math.distance([18,-23],[-9,4]);
+        dojo.byId("divOutput").innerHTML += "<br>10 factoral = " +
+          dojox.math.factoral(10);
+        dojo.byId("divOutput").innerHTML += "<br>A Gaussian random number = " +
+          dojox.math.gaussian();
+        dojo.byId("divOutput").innerHTML += "<br>Midpoint between " +
+          "2,2 & 8,2 = " + dojox.math.midpoint([2,2],[8,2]);
+        dojo.byId("divOutput").innerHTML += "<br>A range from 10 to 100 by " +
+          "5's = " + dojox.math.range(10, 100, 5);
+        dojo.byId("divOutput").innerHTML += "<br>The standard deviation of " +
+          "99,45,-17,62 = " + dojox.math.sd([99,45,-17,62]);
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.math test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

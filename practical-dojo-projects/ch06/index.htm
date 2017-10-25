@@ -1,0 +1,488 @@
+<html>
+
+  <head>
+
+    <title>Dojo Code Cabinet</title>
+
+    <!-- Stylesheet imports. -->
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojox/grid/_grid/grid.css">
+    <link rel="StyleSheet" type="text/css" href="css/styles.css">
+
+    <!-- Import Google Gears. -->
+    <script src="js/gears_init.js"></script>
+
+    <!-- Configure and import Dojo. -->
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script>
+      // Import all require Dojo components.
+      dojo.require("dojo.parser");
+      dojo.require("dijit.layout.ContentPane");
+      dojo.require("dijit.layout.LayoutContainer");
+      dojo.require("dijit.layout.SplitContainer");
+      dojo.require("dijit.layout.TabContainer");
+      dojo.require("dijit.Editor");
+      dojo.require("dojo.data.ItemFileWriteStore");
+      dojo.require("dijit.Tree");
+      dojo.require("dijit.form.TextBox");
+      dojo.require("dijit.form.Button");
+      dojo.require("dojox.grid.Grid");
+      dojo.require("dijit.Toolbar");
+      dojo.require("dijit.Dialog");
+      dojo.require("dojo.string");
+    </script>
+
+    <!-- Import application JavaScript. -->
+    <script type="text/javascript" src="js/CodeCabinet.js"></script>
+
+    <script>
+      // Bootstrap initialization.
+      dojo.addOnLoad(function() {
+        codeCabinet.init();
+      });
+    </script>
+
+  </head>
+
+  <body class="tundra">
+
+    <!-- Add Category dialog. -->
+    <div dojoType="dijit.Dialog" id="AddCategoryDialog"
+      title="Add Category" style="display:none;">
+      Please enter the name of the category to add:
+      <br><br>
+      <input type="textbox" dojoType="dijit.form.TextBox"
+        id="AddCategoryName">
+      <button dojoType="dijit.form.Button"
+        iconClass="icons iconAddCategory"
+        onClick="codeCabinet.addCategory();">
+        Add
+      </button>
+    </div>
+
+    <!-- Confirm Delete dialog. -->
+    <div dojoType="dijit.Dialog" id="ConfirmDeleteDialog"
+      title="Confirm Deletion" style="display:none;">
+      Are you sure you want to delete the <span id="confirmDeleteType"></span>?
+      <br><br>
+      <center>
+        <button dojoType="dijit.form.Button"
+          onClick="codeCabinet.confirmDelete(true);">
+          Yes
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button dojoType="dijit.form.Button"
+          onClick="codeCabinet.confirmDelete(false);">
+          No
+        </button>
+      </center>
+    </div>
+
+    <!-- Duplicate Category dialog. -->
+    <div dojoType="dijit.Dialog" id="DuplicateCategoryDialog"
+      title="Duplicate Category" style="display:none;">
+      A category with that name already exists.
+      <br><br>
+      <center>
+        <button dojoType="dijit.form.Button"
+          onClick="dijit.byId('DuplicateCategoryDialog').hide();">
+          Ok
+        </button>
+      </center>
+    </div>
+
+    <!-- No Gears dialog. -->
+    <div dojoType="dijit.Dialog" id="NoGearsDialog"
+      title="No Gears" style="display:none;">
+      Google Gears does not appear to be installed.<br><br>
+      Please go <a href="http://gears.google.com/?action=install&message=Google Gears for Dojo Code Cabinet installation">HERE</a>
+      to install it, then reload this application.<br><br>
+      You can still use this application, but data <b>WILL NOT</b>
+      be saved between browser sessions!
+      <br><br>
+      <center>
+        <button dojoType="dijit.form.Button"
+          onClick="dijit.byId('NoGearsDialog').hide();">
+          Ok
+        </button>
+      </center>
+    </div>
+
+    <!-- Bad Search Criteria dialog. -->
+    <div dojoType="dijit.Dialog" id="BadSearchCriteriaDialog"
+      title="Bad Search Criteria" style="display:none;">
+      To perform a search you must specify at least one search criteria.
+      <br><br>
+      <center>
+        <button dojoType="dijit.form.Button"
+          onClick="dijit.byId('BadSearchCriteriaDialog').hide();">
+          Ok
+        </button>
+      </center>
+    </div>
+
+    <!-- Main layout container. -->
+    <div dojoType="dijit.layout.LayoutContainer" id="mainDiv">
+
+      <!-- Toolbar. -->
+      <div dojoType="dijit.layout.ContentPane" layoutAlign="top"
+        class="cssToolbar">
+        <div dojoType="dijit.Toolbar">
+          <div dojoType="dijit.form.Button"
+            iconClass="icons iconAddCategory"
+            onClick="codeCabinet.addCategoryClicked();"
+            showLabel="true">Add Category</div>
+          <div dojoType="dijit.form.Button" id="toolbarDeleteCategory"
+            iconClass="icons iconDeleteCategory"
+            onClick="codeCabinet.deleteCategoryClicked();"
+            showLabel="true" disabled="true">Delete Category</div>
+          <span dojoType="dijit.ToolbarSeparator"></span>
+          <div dojoType="dijit.form.Button" id="toolbarAddSnippet"
+            iconClass="icons iconAddSnippet"
+            onClick="codeCabinet.addSnippetClicked();"
+            showLabel="true" disabled="true">Add Snippet</div>
+          <div dojoType="dijit.form.Button" id="toolbarDeleteSnippet"
+            iconClass="icons iconDeleteSnippet"
+            onClick="codeCabinet.deleteSnippetClicked();"
+            showLabel="true" disabled="true">Delete Snippet</div>
+        </div>
+      </div>
+
+      <!-- Main content. -->
+      <div dojoType="dijit.layout.SplitContainer" persist="true"
+        orientation="horizontal" sizerWidth="8" activeSizing="true"
+        layoutAlign="client">
+
+        <!-- Category tree. -->
+        <div dojoType="dijit.layout.ContentPane"
+          class="cssContentPane" sizeShare="3">
+          <div dojoType="dijit.Tree" store="codeCabinet.categoriesStore"
+            labelAttr="label" label="Snippet Categories">
+            <script type="dojo/method" event="onClick" args="item">
+              codeCabinet.categoryClicked(item);
+            </script>
+          </div>
+        </div>
+
+        <!-- Content/search split container. -->
+        <div dojoType="dijit.layout.SplitContainer" persist="true"
+          orientation="vertical" sizerWidth="8" activeSizing="true"
+          sizeShare="7">
+
+          <!-- Content. -->
+          <div dojoType="dijit.layout.ContentPane" style="padding-top:5px;"
+            sizeShare="6">
+
+            <!-- Tabs. -->
+            <div dojoType="dijit.layout.TabContainer" id="tabs">
+
+              <!-- Snippets list tab. -->
+              <div dojoType="dijit.layout.ContentPane" title="Snippets"
+                class="cssContentPane" id="tabSnippets">
+                <div id="snippetsGrid" dojoType="dojox.Grid"
+                  structure="codeCabinet.gridLayout"
+                  class="cssSnippetsGrid">
+                  <script type="dojo/method" event="onRowClick" args="e">
+                    codeCabinet.snippetClicked(e.rowIndex);
+                  </script>
+                </div>
+                <div id="noSnippetsInCategory" style="display:none;">
+                  <center>
+                    <br><br><br><br>
+                    This category currently has no snippets in it.
+                  </center>
+                </div>
+                <div id="noCategorySelected">
+                  <center>
+                    <br><br><br><br>
+                    Select a category to view the snippets in it.
+                  </center>
+                </div>
+              </div>
+
+              <!-- Info tab. -->
+              <div dojoType="dijit.layout.ContentPane" title="Info"
+                class="cssContentPane" id="tabInfo">
+                <form id="infoForm">
+                  <table border="0" cellpadding="0" cellspacing="4">
+                    <tr>
+                      <td nowrap>Snippet Name:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="infoName">
+                      </td>
+                    </td>
+                    <tr>
+                      <td nowrap>Description&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="infoDescription">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Author:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="infoAuthor">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>eMail&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="infoEMail">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Web Link&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="infoWebLink">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>&nbsp;</td>
+                      <td nowrap>
+                        <button dojoType="dijit.form.Button" id="btnInfoSave"
+                          iconClass="icons iconSave" disabled="true"
+                          onClick="codeCabinet.saveSnippet();">
+                          Save
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+
+              <!-- Code tab. -->
+              <div dojoType="dijit.layout.ContentPane" title="Code"
+                class="cssContentPane">
+                <form id="codeForm">
+                  <div class="cssEditor">
+                    <textarea dojoType="dijit.Editor"
+                      width="100%" height="90%" id="codeArea"></textarea>
+                  </div>
+                  <button dojoType="dijit.form.Button" id="btnCodeSave"
+                    iconClass="icons iconSave" disabled="true"
+                    onClick="codeCabinet.saveSnippet();">
+                    Save
+                  </button>
+                </form>
+              </div>
+
+              <!-- Notes tab. -->
+              <div dojoType="dijit.layout.ContentPane" title="Notes"
+                class="cssContentPane">
+                <form id="notesForm">
+                  <div class="cssEditor">
+                    <textarea dojoType="dijit.Editor"
+                      width="100%" height="90%" id="notesArea"></textarea>
+                  </div>
+                  <button dojoType="dijit.form.Button" id="btnNotesSave"
+                    iconClass="icons iconSave" disabled="true"
+                    onClick="codeCabinet.saveSnippet();">
+                    Save
+                  </button>
+                </form>
+              </div>
+
+              <!-- Keywords tab. -->
+              <div dojoType="dijit.layout.ContentPane" title="Keywords"
+                class="cssContentPane">
+                <form id="keywordsForm">
+                  <table border="0" cellpadding="0" cellspacing="4"
+                    width="90%" align="center">
+                    <tr><td colspan="2" align="center">
+                      The following keywords are associated with this snippet:
+                      <br><br>
+                    </td></tr>
+                    <tr>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword0">
+                      </td>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword1">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword2">
+                      </td>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword3">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword4">
+                      </td>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword5">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword6">
+                      </td>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword7">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword8">
+                      </td>
+                      <td align="center">
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="keyword9">
+                      </td>
+                    </tr>
+                    <tr><td colspan="2" align="center">
+                      <button dojoType="dijit.form.Button" id="btnKeywordsSave"
+                        iconClass="icons iconSave" disabled="true"
+                        onClick="codeCabinet.saveSnippet();">
+                        Save
+                      </button>
+                    </td></tr>
+                  </table>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Search. -->
+          <div dojoType="dijit.layout.ContentPane" sizeShare="4">
+
+            <div dojoType="dijit.layout.SplitContainer" persist="true"
+              orientation="horizontal" sizerWidth="8" activeSizing="true"
+              layoutAlign="client">
+
+              <!-- Search form. -->
+              <div dojoType="dijit.layout.ContentPane"
+                class="cssContentPane" sizeShare="6">
+                <form id="searchForm">
+                  <table border="0" cellpadding="0" cellspacing="4">
+                    <tr><td colspan="2" nowrap>
+                      <b><u>Search</u><b>
+                      <br><br>
+                    </td></tr>
+                    <tr>
+                      <td nowrap>Keywords:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchKeywords" disabled="true">
+                      </td>
+                    </td>
+                    <tr>
+                      <td nowrap>Code:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchCode" disabled="true">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Name:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchName" disabled="true">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Description:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchDescription" disabled="true">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Author:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchAuthor" disabled="true">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>Notes:&nbsp;</td>
+                      <td nowrap>
+                        <input type="textbox" dojoType="dijit.form.TextBox"
+                          id="searchNotes" disabled="true">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td nowrap>&nbsp;</td>
+                      <td nowrap>
+                        <button dojoType="dijit.form.Button" disabled="true"
+                          iconClass="icons iconSearch" id="btnSearch"
+                          onClick="codeCabinet.searchClicked();">
+                          Search
+                        </button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button dojoType="dijit.form.Button" disabled="true"
+                          iconClass="icons iconDeleteSnippet" id="btnClear"
+                          onClick="codeCabinet.searchClearClicked();">
+                          Clear
+                        </button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+
+              <!-- Search results. -->
+              <div dojoType="dijit.layout.ContentPane" class="cssContentPane"
+                sizeShare="4">
+                <div id="searchGrid" dojoType="dojox.Grid"
+                  structure="codeCabinet.gridLayout">
+                  <script type="dojo/method" event="onRowClick" args="e">
+                    codeCabinet.searchResultClicked(e.rowIndex);
+                  </script>
+                </div>
+                <div id="searchResultsMessage">
+                  <center>
+                    <br><br><br><br>
+                    Search results will appear here
+                    <br>
+                    (Hint: select a category to do a search)
+                  </center>
+                </div>
+                <div id="searchNoResults" style="display:none;">
+                  <center>
+                    <br><br><br><br>
+                    No snippets were founding matching your search criteria
+                  </center>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+
+<dwr>
+  <allow>
+    <create creator="new" javascript="MathDelegate">
+      <param name="class" value="app.MathDelegate" />
+    </create>
+  </allow>
+</dwr>

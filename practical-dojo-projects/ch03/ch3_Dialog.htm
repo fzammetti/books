@@ -1,0 +1,46 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.Dialog");
+      dojo.addOnLoad(showDialogs);
+
+      function showDialogs() {
+        dijit.byId("dialog1").show();
+        var myDijit = new dijit.Dialog();
+        myDijit.setContent("Dialogs are fun!");
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+        myDijit.show();
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra">
+    <br>
+    Dojo's dijit.Dialog Dijit.  The first one seen was created
+    declaratively, the second programmatically.  Notice how the screen is
+    greyed out when a dialog is shown.
+    <div dojoType="dijit.Dialog" id="dialog1" title="dialog1"
+      href="ch3_layout_ContentPane_content1.htm"></div>
+    <div id="divProgrammatic">&nbsp;</div>
+  </body>
+
+</html>

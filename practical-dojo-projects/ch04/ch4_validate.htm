@@ -1,0 +1,85 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.validate.web");
+      dojo.require("dojox.validate._base");
+      dojo.require("dojox.validate.creditCard");
+      dojo.require("dojox.validate.isbn");
+
+      function testIt() {
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is john.glenn@nasa.gov a valid eMail address? " +
+          dojox.validate.isEmailAddress("john.glenn@nasa.gov");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is bert_and_ernie@sesame_street_com a valid eMail address? " +
+          dojox.validate.isEmailAddress("bert_and_ernie@sesame_street_com");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 6 within the range 3-9? " +
+          dojox.validate.isInRange(6, { min : 3, max : 9});
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 5 within the range 10-20? " +
+          dojox.validate.isInRange(5, { min : 10, max : 20});
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 127.0.0.63 a valid IP address? " +
+          dojox.validate.isIpAddress("127.0.0.63");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 256.1.1.10 a valid IP address? " +
+          dojox.validate.isIpAddress("256.1.1.10");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 901-21-3409 a valid Social Security Number? " +
+          dojox.validate.isNumberFormat("901-21-3409",
+            { format : "###-##-####" });
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is (a12)/610-2838 a valid phone number? " +
+          dojox.validate.isNumberFormat("(a12)/610-2838",
+            { format : "(###)/###-####" });
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 4111-1111-1111-1111 a valid credit card number (Visa, should " +
+          "return 'vi')? " +
+          dojox.validate.isValidCreditCardNumber("4111-1111-1111-1111");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 1111-1111-1111-1114 a valid credit card number? " +
+          dojox.validate.isValidCreditCardNumber("1111-1111-1111-1114");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 978-1-4302-1066-5 a valid ISBN number? " +
+          dojox.validate.isValidIsbn("978-1-4302-1066-5");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 1-4302-1066-57 a valid ISBN number? " +
+          dojox.validate.isValidIsbn("1-4302-1066-57");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 4552 7204 1234 5677 a valid LUHN number? " +
+          dojox.validate.isValidLuhn("4552 7204 1234 5677");
+        dojo.byId("divOutput").innerHTML += "<br>" +
+          "Is 5353535353535353 a valid LUHN number? " +
+          dojox.validate.isValidLuhn("5353535353535353");
+
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.validate test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

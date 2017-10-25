@@ -1,0 +1,8 @@
+{
+  "category" : "personal", 
+  "title" : "Test title", 
+  "text" : "Test text", 
+  "completed" : false, 
+  "priority" : 1, 
+  "dueDate" : "Tue Apr 16 2013 16:24:42 GMT-0400 (Eastern Daylight Time)"
+}

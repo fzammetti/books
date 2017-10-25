@@ -1,0 +1,58 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.ProgressBar");
+
+      function createProgrammatically() {
+        var myDijit = new dijit.ProgressBar({
+          id : "pb2", places : 0, progress : "50%", maximum : 100
+        });
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+        window.setInterval(function () {
+          var pb1 = dijit.byId("pb1");
+          var pb2 = dijit.byId("pb2");
+          pb1.update({progress : ++pb1.progress});
+          pb2.update({progress : ++pb2.progress});
+        }, 500);
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra" onLoad="createProgrammatically();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.ProgressBar Dijit, created declaratively:
+        <br><br>
+        <div dojoType="dijit.ProgressBar" id="pb1"
+          places="0" progress="0" maximum="100">
+        </div>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <div id="divProgrammatic">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

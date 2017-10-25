@@ -1,0 +1,31 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+      function doOnLoad() {
+        var originalNode = dojo.byId("originalNode");
+        var clonedNode = dojo.clone(originalNode);
+        clonedNode.innerHTML = "I am the cloned node";
+        dojo.body().appendChild(clonedNode);
+      }
+    </script>
+
+  </head>
+
+  <body onLoad="doOnLoad();">
+    <div id="originalNode">I am the original node</div>
+    <br>
+  </body>
+
+</html>

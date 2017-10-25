@@ -1,0 +1,41 @@
+<html>
+
+  <head>
+
+    <title></title>
+
+    <style></style>
+
+    <script>
+
+      var fauxConstant = "123";
+
+      function badFunction() {
+        fauxConstant = "456";
+      }
+
+      function goodFunction() {
+       var fauxConstant = "456";
+      }
+
+      function testIt() {
+        alert(fauxConstant);
+        goodFunction();
+        alert(fauxConstant);
+        badFunction();
+        alert(fauxConstant);
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    Three alerts will follow... the first should and does say "123",
+    The second should and does say "123" again, and the third should say
+    "1234" but instead said "456".
+    <br><br>
+    <input type="button" value="Click to test scoping" onClick="testIt();">
+  </body>
+
+</html>

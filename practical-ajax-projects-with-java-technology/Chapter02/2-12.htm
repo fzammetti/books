@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title></title>
+
+    <script>
+
+      function MySuperclass() { }
+      MySuperclass.prototype.name = "";
+      MySuperclass.prototype.sayMyName = function() { alert(this.name); }
+
+      function MySubclass() { 
+        this.name = "I am a subclass";
+      }
+      MySubclass.prototype = MySuperclass.prototype;
+
+      var m = new MySubclass();
+      m.sayMyName();
+
+    </script>
+
+  </head>
+  <body> </body>
+</html>

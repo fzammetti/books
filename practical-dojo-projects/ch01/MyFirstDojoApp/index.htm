@@ -1,0 +1,51 @@
+<html>
+
+  <head>
+
+    <title>My First Dojo App</title>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true,
+        extraLocale: ['en-us', 'zh-cn']
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      dojo.require("dojo.parser");
+      dojo.require("dijit.form.Button");
+      dojo.require("dijit._Calendar");
+    </script>
+
+  </head>
+
+  <body class="tundra">
+
+    <div style="position:relative;top:10px;left:10px;width:80%;">
+      <button dojoType="dijit.form.Button" id="myButton">
+        Press me, NOW!
+        <script type="dojo/method" event="onClick">
+          alert('You pressed the button');
+        </script>
+      </button>
+      <br><br>
+      <table border="0"><tr>
+        <td valign="top">
+          <input id="calEnglish" dojoType="dijit._Calendar" lang="en-us" />
+        </td>
+        <td width="25">&nbsp;</td>
+        <td valign="top"
+          <input id="calChinese" dojoType="dijit._Calendar" lang="zh-cn" />
+        </td>
+      </table>
+    </div>
+
+  </body>
+
+</html>

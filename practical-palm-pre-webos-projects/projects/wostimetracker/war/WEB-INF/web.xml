@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
+  <!-- Define servlets. -->
+  <servlet>
+    <servlet-name>ProjectServlet</servlet-name>
+    <servlet-class>com.etherient.timetracker.ProjectServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TaskServlet</servlet-name>
+    <servlet-class>com.etherient.timetracker.TaskServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResourceServlet</servlet-name>
+    <servlet-class>com.etherient.timetracker.ResourceServlet</servlet-class>
+  </servlet>  
+  
+  <!-- Map servlets. -->
+  <servlet-mapping>
+    <servlet-name>ProjectServlet</servlet-name>
+    <url-pattern>/wostimetracker/project/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TaskServlet</servlet-name>
+    <url-pattern>/wostimetracker/task/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResourceServlet</servlet-name>
+    <url-pattern>/wostimetracker/resource/*</url-pattern>
+  </servlet-mapping>  
+
+</web-app>

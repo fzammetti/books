@@ -1,0 +1,75 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.collections.Dictionary");
+
+      function testIt() {
+        var dy = new dojox.collections.Dictionary();
+        dy.add("Bat Man", "Robin");
+        dy.add("Captain America", "Bucky");
+        dy.add("Blue Falcon", "Dynomutt");
+        dy.add("Scooby", "Scrappy");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary via iterator:<br>";
+        var it = dy.getIterator();
+        while (!it.atEnd()) {
+          dojo.byId("divOutput").innerHTML += " - " + it.get() + "<br>";
+        }
+        dojo.byId("divOutput").innerHTML +=
+          "Dictionary via keyList:<br>";
+        var keys = dy.getKeyList();
+        for (var i = 0; i < keys.length; i++) {
+          dojo.byId("divOutput").innerHTML += " - " + keys[i] + "<br>";
+        }
+        dojo.byId("divOutput").innerHTML +=
+          "Dictionary via valueList:<br>";
+        var vals = dy.getValueList();
+        for (var i = 0; i < vals.length; i++) {
+          dojo.byId("divOutput").innerHTML += " - " + vals[i] + "<br>";
+        }
+        dojo.byId("divOutput").innerHTML +=
+          "Dictionary contains key Ralph? " + dy.containsKey("Ralph");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary contains key Scooby? " + dy.containsKey("Scooby");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary contains value Roger? " + dy.containsValue("Roger");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary contains value Bucky? " + dy.containsValue("Bucky");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Value of key Bat Man: " + dy.entry("Bat Man");
+        dy.remove("Blue Falcon");
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary size after removing Blue Falcon:  " + dy.count;
+        dy.clear();
+        dojo.byId("divOutput").innerHTML +=
+          "<br>Dictionary size after clearing:  " + dy.count;
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="testIt();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.collections.Dictionary test:
+        <br>
+        <div id="divOutput">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

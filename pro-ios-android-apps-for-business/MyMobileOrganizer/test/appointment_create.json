@@ -1,0 +1,14 @@
+{ 
+  "category" : "personal", 
+  "title" : "Test title", 
+  "description" : "Test description", 
+  "location" : "Test location", 
+  "date" : "Tue Apr 16 2013 16:24:42 GMT-0400 (Eastern Daylight Time)", 
+  "allDay" : false, 
+  "startTimeHour" : 12, 
+  "startTimeMinute" : 30, 
+  "startTimeMeridiem" : "pm", 
+  "endTimeHour" : 3, 
+  "endTimeMinute" : 45, 
+  "endTimeMeridiem" : "am" 
+}

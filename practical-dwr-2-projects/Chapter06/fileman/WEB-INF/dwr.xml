@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2007 by Frank W. Zammetti.  This file is part of the DWR
+  File Manager (Fileman) project from the book Practical DWR (Ajax) Web 2.0
+  Projects by Frank W. Zammetti, published by Apress, Inc. in 2008.
+
+  Fileman is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  Fileman is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see
+  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+-->
+
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+  "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+  <allow>
+
+    <!-- Need to be able to receive FileVO and DirectoryVO objects from -->
+    <!-- the server into Javascript objects. -->
+    <convert converter="bean"
+      match="com.apress.dwrprojects.fileman.DirectoryVO" />
+    <convert converter="bean" match="com.apress.dwrprojects.fileman.FileVO" />
+
+    <!-- Converter for dealing with exceptions. -->
+    <convert match="java.lang.Exception" converter="exception" />
+
+    <!-- Only a single class is necessary for this application. -->
+    <create creator="new" javascript="FileSystemFunctions">
+      <param name="class"
+        value="com.apress.dwrprojects.fileman.FileSystemFunctions" />
+      <!-- By default, because this is a potentially dangerous application, -->
+      <!-- we want to exclude all methods of the FileSystemFunctions class. -->
+      <!-- Therefore, we need to "expose" the methods that are needed -->
+      <!-- by the client.  In addition, each will be secured via J2EE -->
+      <!-- security for added safety. -->
+      <include method="listFiles" />
+      <auth method="listFiles" role="fileman_user" />
+      <include method="listRoots" />
+      <auth method="listRoots" role="fileman_user" />
+      <include method="listDirectories" />
+      <auth method="listDirectories" role="fileman_user" />
+      <include method="renameFile" />
+      <auth method="renameFile" role="fileman_user" />
+      <include method="copyMoveFile" />
+      <auth method="copyMoveFile" role="fileman_user" />
+      <include method="deleteFile" />
+      <auth method="deleteFile" role="fileman_user" />
+      <include method="createFile" />
+      <auth method="createFile" role="fileman_user" />
+      <include method="createDirectory" />
+      <auth method="createDirectory" role="fileman_user" />
+      <include method="editFile" />
+      <auth method="editFile" role="fileman_user" />
+      <include method="saveFile" />
+      <auth method="saveFile" role="fileman_user" />
+    </create>
+
+  </allow>
+</dwr>

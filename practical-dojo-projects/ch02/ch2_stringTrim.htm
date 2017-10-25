@@ -1,0 +1,33 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      dojo.require("dojo.string");
+
+      var s = "   I am an untrimmed string";
+      if (s == "I am an untrimmed string") {
+        alert("Matched without trim");
+      }
+      if (dojo.string.trim(s) == "I am an untrimmed string") {
+        alert("Matched with trim");
+      }
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

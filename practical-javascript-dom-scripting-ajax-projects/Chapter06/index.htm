@@ -1,0 +1,642 @@
+<html>
+
+  <head>
+
+    <title>Contact Manager</title>
+
+    <link rel="StyleSheet" href="css/dojoStyles.css" type="text/css">
+    <link rel="StyleSheet" href="css/styles.css" type="text/css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        isDebug : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      dojo.require("dojo.widget.FisheyeList");
+      dojo.require("dojo.storage.*");
+    </script>
+
+    <script type="text/javascript" src="js/Contact.js"></script>
+    <script type="text/javascript" src="js/EventHandlers.js"></script>
+    <script type="text/javascript" src="js/DataManager.js"></script>
+    <script type="text/javascript" src="js/ContactManager.js"></script>
+
+    <script>
+
+      // Shorthand function to get a reference to a DOM element.
+      function $(inID) {
+        return document.getElementById(inID);
+      } // End $().
+
+      // The contactManager instance that is the core of this application.
+      var contactManager = new ContactManager();
+
+      // Connect init() function in ContactManager to onLoad event.
+      dojo.event.connect(window, "onload", contactManager.init);
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <center>
+
+      <!-- The initializing startup message -->
+      <div id="divInitializing" class="cssInitializing">
+        <br><br><br><br><br><br><br><br><br><br>
+        <center>...Initializing Contact Manager, please wait...</center>
+      </div>
+
+      <div id="divMain" class="cssMain" style="width:100%;">
+
+        <!-- The fisheye menu bar -->
+        <div class="outerbar">
+          <div class="dojo-FisheyeList"
+            dojo:itemWidth="64" dojo:itemHeight="64"
+            dojo:itemMaxWidth="128" dojo:itemMaxHeight="128"
+            dojo:orientation="horizontal" dojo:effectUnits="1"
+            dojo:itemPadding="10" dojo:attachEdge="top"
+            dojo:labelEdge="bottom" dojo:enableCrappySvgSupport="false">
+            <div class="dojo-FisheyeListItem"
+              onClick="contactManager.doNewContact();"
+              dojo:iconsrc="img/icon_new.gif" caption="New Contact">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              dojo:iconsrc="img/transPix.gif" caption="">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              onClick="contactManager.doSaveContact();"
+              dojo:iconsrc="img/icon_save.gif" caption="Save Contact">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              dojo:iconsrc="img/transPix.gif" caption="">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              onClick="contactManager.doDeleteContact()"
+              dojo:iconsrc="img/icon_delete.gif" caption="Delete Contact">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              dojo:iconsrc="img/transPix.gif" caption="">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              onClick="contactManager.doClearContacts()"
+              dojo:iconsrc="img/icon_clear.gif" caption="Clear Contacts">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              dojo:iconsrc="img/transPix.gif" caption="">
+            </div>
+            <div class="dojo-FisheyeListItem"
+              onClick="contactManager.doExit();"
+              dojo:iconsrc="img/icon_exit.gif" caption="Exit Contact Manager">
+            </div>
+          </div>
+        </div>
+
+        <div class="cssSpacer"></div>
+
+        <form>
+
+          <table border="0" cellpadding="0" cellspacing="0"
+            width="900" align="center">
+
+              <!-- Selector -->
+              <td width="44" align="right" valign="top">
+                <br>
+                <img src="img/sel_xx_over.gif" id="sel_XX" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_09.gif" id="sel_09" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_ac.gif" id="sel_ac" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_df.gif" id="sel_df" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_gi.gif" id="sel_gi" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_jl.gif" id="sel_jl" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_mo.gif" id="sel_mo" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_pr.gif" id="sel_pr" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_su.gif" id="sel_su" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_vx.gif" id="sel_vx" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+                <img src="img/sel_yz.gif" id="sel_yz" class="cssTab"
+                  onClick="contactManager.eventHandlers.stClick(this);"
+                  onMouseOver="contactManager.eventHandlers.stOver(this);"
+                  onMouseOut="contactManager.eventHandlers.stOut(this);"><br>
+              </td>
+
+              <!-- List -->
+              <td width="200" valign="top">
+                <div class="cssContactList" id="contactList">
+                </div>
+              </td>
+
+              <!-- Main -->
+              <td width="620" valign="top">
+
+                <div class="cssMainOuter">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    align="center">
+
+                    <tr>
+                      <!-- Contact Identity -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Contact Identity
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Title:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="title"
+                                  maxlength="3" size="4" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">First Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="firstName"
+                                  maxlength="15" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Middle Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="middleName"
+                                  maxlength="15" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Last Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="lastName"
+                                  maxlength="20" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Suffix:</td>
+                              <td valign="middle">
+                                <input type="text" id="suffix"
+                                  maxlength="3" size="4" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                      <!-- Divider -->
+                      <td width="2%">&nbsp;</td>
+                      <!-- Work Identity -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Work Identity
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Job Title:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="jobTitle"
+                                  maxlength="24" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Company:</td>
+                              <td valign="middle">
+                                <input type="text" id="company"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Department:</td>
+                              <td valign="middle">
+                                <input type="text" id="department"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Manager's Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="managerName"
+                                  maxlength="30" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Assistant's Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="assistantName"
+                                  maxlength="30" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr><td colspan="2">&nbsp;</td></tr>
+
+                    <tr>
+                      <!-- Personal Phone Numbers -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Home Phone Numbers
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Home Phone:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="homePhone"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Cell Phone:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeCellPhone"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">FAX:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeFAX"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Pager:</td>
+                              <td valign="middle">
+                                <input type="text" id="homePager"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                      <!-- Divider -->
+                      <td width="2%">&nbsp;</td>
+                      <!-- Work Phone Numbers -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Work Phone Numbers
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Work Phone:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="workPhone"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Cell Phone:</td>
+                              <td valign="middle">
+                                <input type="text" id="workCellPhone"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">FAX:</td>
+                              <td valign="middle">
+                                <input type="text" id="workFAX"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Pager:</td>
+                              <td valign="middle">
+                                <input type="text" id="workPager"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr><td colspan="2">&nbsp;</td></tr>
+
+                    <tr>
+                      <!-- Home Address -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Home Address
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Line 1:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="homeAddressLine1"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Line 2:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeAddressLine2"
+                                maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">City:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeCity"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">State:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeState"
+                                  maxlength="2" size="3" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Zip Code:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeZipCode"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                      <!-- Divider -->
+                      <td width="2%">&nbsp;</td>
+                      <!-- Work Address -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Work Address
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Line 1:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="workAddressLine1"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Line 2:</td>
+                              <td valign="middle">
+                                <input type="text" id="workAddressLine2"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">City:</td>
+                              <td valign="middle">
+                                <input type="text" id="workCity"
+                                  maxlength="25" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">State:</td>
+                              <td valign="middle">
+                                <input type="text" id="workState"
+                                  maxlength="2" size="3" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Zip Code:</td>
+                              <td valign="middle">
+                                <input type="text" id="workZipCode"
+                                  maxlength="10" size="11" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr><td colspan="2">&nbsp;</td></tr>
+
+                    <tr>
+                      <!-- Personal Web Info -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Home Web Info
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">eMail:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="homeEMail"
+                                  maxlength="40" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Web Site:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeWebSite"
+                                  maxlength="50" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">IM Nickname:</td>
+                              <td valign="middle">
+                                <input type="text" id="homeIMNickname"
+                                  maxlength="15" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                      <!-- Divider -->
+                      <td width="2%">&nbsp;</td>
+                      <!-- Work Web Info -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Work Web Info
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">eMail:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="workEMail"
+                                  maxlength="40" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Web Site:</td>
+                              <td valign="middle">
+                                <input type="text" id="workWebSite"
+                                  maxlength="50" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">IM Nickname:</td>
+                              <td valign="middle">
+                                <input type="text" id="workIMNickname"
+                                  maxlength="15" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr><td colspan="2">&nbsp;</td></tr>
+
+                    <tr>
+                      <!-- Family Info -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Family Info
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Spouse Name:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="spouseName"
+                                  maxlength="15" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Children's Name:</td>
+                              <td valign="middle">
+                                <input type="text" id="childrenName"
+                                  maxlength="75" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Anniversary:</td>
+                              <td valign="middle">
+                                <input type="text" id="anniversary"
+                                  maxlength="8" size="9" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                      <!-- Divider -->
+                      <td width="2%">&nbsp;</td>
+                      <!-- Miscellaneous Info -->
+                      <td width="49%" valign="top">
+                        <div class="cssDataBox">
+                          <table border="0" cellpadding="1" cellspacing="1"
+                            width="100%">
+                            <tr>
+                              <td colspan="2" class="cssDataBoxHeader">
+                                Miscellaneous Info
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="50%" valign="middle">Birthday:</td>
+                              <td width="50%" valign="middle">
+                                <input type="text" id="birthday"
+                                  maxlength="8" size="9" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">High School Info:</td>
+                              <td valign="middle">
+                                <input type="text" id="highSchoolInfo"
+                                  maxlength="50" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">College Info:</td>
+                              <td valign="middle">
+                                <input type="text" id="collegeInfo"
+                                  maxlength="50" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Custom 1:</td>
+                              <td valign="middle">
+                                <input type="text" id="custom1"
+                                  maxlength="80" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="middle">Custom 2:</td>
+                              <td valign="middle">
+                                <input type="text" id="custom2"
+                                  maxlength="80" size="15" class="cssTextbox">
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+
+                  </table>
+                </div>
+
+              </td>
+
+            </tr>
+
+          </table>
+
+        </form>
+
+      </div>
+
+    </center>
+
+  </body>
+
+</html>

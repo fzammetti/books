@@ -1,0 +1,60 @@
+/* Generic style applied to all elements. */
+* {
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 8pt;
+  font-weight      : bold;
+}
+
+
+/* Entire page (body element). */
+.cssPage {
+  background-color : #000000;
+}
+
+
+/* Style for div the title screen and game selection screens are */
+/* contained in. */
+.cssTitleGameSelection {
+  border           : 1px solid #ffffff;
+  position         : absolute;
+  width            : 240px;
+  height           : 320px;
+}
+
+
+/* Style for div the mini-games are contained in. */
+.cssMiniGame {
+  border           : 1px solid #000000;
+  position         : absolute;
+  width            : 240px;
+  height           : 320px;
+}
+
+
+/* Style for the area where a mini-game takes place. */
+.cssGameArea {
+  position         : absolute;
+  left             : 20px;
+  top              : 20px;
+  width            : 200px;
+  height           : 200px;
+  overflow         : hidden;
+}
+
+/* Style for the status area below the game console. */
+.cssStatusArea {
+  position         : absolute;
+  left             : 0px;
+  top              : 302px;
+  width            : 240px;
+  height           : 20px;
+  text-align       : center;
+}
+
+
+/* Style applied to all game console images. */
+.cssConsoleImage {
+  position         : absolute;
+  display          : none;
+}

@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      dojo.require("dojo.behavior");
+
+      dojo.behavior.add({
+        "#myDiv" : {
+          found : function (elem) {
+            alert("Found the div: " + elem);
+          },
+          onmouseover: function (evt) {
+            alert("onMouseOver fired");
+          },
+          onmouseout: function (evt) {
+            alert("onMouseOut fired");
+          }
+        }
+       });
+      dojo.behavior.apply();
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="myDiv" style="width:200px;height:100px;background-color:#ff0000;">
+      Hover over me, then go away
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,133 @@
+<project name="ajaxreader" basedir="." default="build">
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Build properties.                                            ** -->
+  <!-- ****************************************************************** -->
+  <!-- "proxy_host" is the address of the proxy server that will be -->
+  <!-- used to download dependencies, if a proxy is required on your -->
+  <!-- network.  If no proxy is required, leave this blank (but note -->
+  <!-- that the property MUST be defined either way! -->
+  <property name="proxy_host" value="" />
+  <!-- "proxy_port" is the port of the proxy server that will be -->
+  <!-- used to download dependencies, if a proxy is required on your -->
+  <!-- network.  If no proxy is required, leave this set to "80". -->
+  <property name="proxy_port" value="80" />
+  <!-- "distro_dir" is the directory where the generated distribution -->
+  <!-- file will be placed as a result of executing the optional distro -->
+  <!-- target.  This should be an absolute path, NOT relative to the -->
+  <!-- basedir of this script.  Note that the directory named here -->
+  <!-- WILL BE RECREATED PRIOR TO THE DISTRO BEING BUILT, so don't set -->
+  <!-- this to something stupid like c:\windows or something that -->
+  <!-- otherwise has content you don't want to lose!! -->
+  <property name="distro_dir" value="c:\temp\${ant.project.name}" />
+  <!-- "package_root" is the first level of the package hierarchy for -->
+  <!-- this app.  For instance, in com.omnytex.myapp, this value -->
+  <!-- would be "com". -->
+  <property name="package_root" value="com" />
+
+  <!-- Define runtime classpath.  These JARs are needed to run the -->
+  <!-- application, as well as build it. -->
+  <path id="runtime_classpath">
+    <pathelement path="../lib/commons-logging-1.0.4.jar" />
+    <pathelement path="../lib/commons-beanutils-1.7.0.jar" />
+    <pathelement path="../lib/commons-digester-1.7.0.jar" />
+    <pathelement path="../lib/commons-lang-2.1.jar" />
+    <pathelement path="../lib/javawebparts_core_v1.0_beta4.jar" />
+    <pathelement path="../lib/javawebparts_taglib_v1.0_beta4.jar" />
+    <pathelement path="../lib/javawebparts_request_v1.0_beta4.jar" />
+    <pathelement path="../lib/jdom-1.0.jar" />
+    <pathelement path="../lib/rome-0.7.jar" />
+  </path>
+
+
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- Everything above this is project-specific, everything below        -->
+  <!-- is meant to be generic.  Generally, nothing below this should      -->
+  <!-- need to be modified.  The only exception may be the dependencies   -->
+  <!-- to download.                                                       -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+  <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Default target that should usually be executed.              ** -->
+  <!-- ****************************************************************** -->
+  <target name="build">
+    <echo message="Building ${ant.project.name}..." />
+    <get_dependencies />
+    <antcall target="clean" inheritRefs="true" />
+    <antcall target="compile" inheritRefs="true" />
+    <antcall target="war" inheritRefs="true" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Define the macro to download dependencies from Maven         ** -->
+  <!-- ** repository.  This also populates the compiletime_classpath,  ** -->
+  <!-- ** which is the collection of JARs needed to build the app,     ** -->
+  <!-- ** but not to run it.                                           ** -->
+  <!-- ****************************************************************** -->
+  <macrodef name="get_dependencies">
+    <sequential>
+      <echo message="Retrieving compile-time dependencies..." />
+      <setproxy proxyhost="${proxy_host}" proxyport="${proxy_port}" />
+      <typedef classpath="ant-dependencies.jar"
+       resource="dependencies.properties" />
+        <dependencies pathId="compiletime_classpath" verbose="true">
+          <!-- Servlet/JSP dependencies -->
+	        <dependency group="servletapi" version="2.3" />
+        </dependencies>
+      <echo message="Done" />
+    </sequential>
+  </macrodef>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Clean up after a build (i.e., remove build-transient         ** -->
+  <!-- ** artifacts from the directory structure.  This should ALWAYS  ** -->
+  <!-- ** be executed before checking in to source control.            ** -->
+  <!-- ****************************************************************** -->
+  <target name="clean">
+    <echo message="Cleaning..." />
+    <delete dir="../classes/${package_root}" />
+    <delete file="build_log.xml" />
+    <echo message="Done" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** Compile everything.                                          ** -->
+  <!-- ****************************************************************** -->
+  <target name="compile">
+    <echo message="Compiling..." />
+    <delete dir="../classes/${package_root}" />
+    <mkdir dir="../classes/${package_root}" />
+    <javac srcdir="." destdir="../classes" debug="true"
+     debuglevel="lines,vars,source">
+      <classpath refid="runtime_classpath" />
+      <classpath refid="compiletime_classpath" />
+    </javac>
+    <echo message="Done" />
+  </target>
+
+
+  <!-- ****************************************************************** -->
+  <!-- ** This target makes a WAR file.                                   -->
+  <!-- ****************************************************************** -->
+  <target name="war">
+    <echo message="Making WAR..." />
+    <delete dir="${distro_dir}" />
+    <mkdir dir="${distro_dir}" />
+    <jar destfile="${distro_dir}/${ant.project.name}.war" basedir="../../" />
+    <zip destfile="${distro_dir}/${ant.project.name}.zip"
+      basedir="${distro_dir}">
+      <include name="${ant.project.name}.war" />
+    </zip>
+    <delete file="${distro_dir}/${ant.project.name}.war" />
+    <echo message="Done" />
+  </target>
+
+
+</project>

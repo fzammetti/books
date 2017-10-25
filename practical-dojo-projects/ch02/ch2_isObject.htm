@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var s1 = "string";
+      var s2 = new String("string object");
+      var i = 1;
+      var o = new Object();
+      var a = new Array();
+      alert(dojo.isObject(s1) + "\n" + dojo.isObject(s2) + "\n" +
+        dojo.isObject(i) + "\n" + dojo.isObject(o) + "\n" +
+        dojo.isObject(a));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

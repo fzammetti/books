@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var myObj = {
+        myProp : 123,
+        myFunc : { }
+      };
+      alert(dojo.exists("myObj.myFunc") + ", " +
+        dojo.exists("myFunc", myObj) + ", " +
+        dojo.exists("myObj.myFunc2") + ", " +
+        dojo.exists("myProp", myObj));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,139 @@
+/*
+    Engineer - From the book "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+*/
+
+
+/* Override the default background color for scenes to black. */
+body.palm-default {
+  background-color : #000000;
+}
+
+
+/* Override the default styling of the progress portion of a progress bar. */
+/* This is the part that usually is blue and is what "fills up". */
+/* We're doing this because the image here is a mask such that any */
+/* background-color would shine through, allowing us to programmatically */
+/* change the color of the progress bar. */
+.progress-pill-progress {
+  width : 100%;
+  height : 11px;
+  border-width : 0px 6px 0 6px;
+  -webkit-border-image : url(../images/progress_bar_progress.png) 0 6 0 6 repeat repeat;
+  -webkit-box-sizing : border-box;
+  position : absolute;
+}
+
+
+/* Style for the Engineer logo. */
+.cssEngineerLogo {
+  position : absolute;
+  left : 21px;
+  top : 16px;
+}
+
+
+/* Style for the div where our game instructions are on the title screen. */
+.cssHighScore {
+  font-size : 70%;
+  width : 320px;
+  height : 20px;
+  position : absolute;
+  left : 0px;
+  top : 72px;
+  color : #ffffff;
+}
+
+
+/* Style for the div where our game instructions are on the title screen. */
+.cssHowToPlay {
+	overflow : hidden;
+  padding : 4px;
+  font-size : 80%;
+  width : 290px;
+  height : 188px;
+  position : absolute;
+  left : 7px;
+  top : 96px;
+  color : #ffffff;
+  border : 4px groove #00ff00;
+}
+
+
+/* Style for the "Click scroller to begin game" div. */
+.cssClickToBeginDiv {
+  position : absolute;
+  left : 0px;
+  top : 306px;
+  width : 100%;
+  color : #ffffff;
+}
+
+
+/* Style for the information at the bottom of the title scene. */
+.cssTitleInfo {
+  font-size : 70%;
+  position : absolute;
+  left : 0px;
+  top : 354px;
+  width : 100%;
+  color : #ffffff;
+}
+
+
+/* Style for the Game Paused graphic seen when the app is "minimized". */
+.cssGamePaused {
+  position : absolute;
+  left : 15px;
+  top : 190px;
+}
+
+
+/* Style for the canvas on which the game runs.  Note that width and height */
+/* are not specified here because doing so (indeed, specifying width and */
+/* and height with CSS at all) leads to rendering issues on the canvas. */
+.cssMainCanvas {
+	position : absolute;
+	left : 40px;
+	top : 76px;
+}
+
+
+/* Style for the engine overheat progress bar. */
+.cssOverheatProgress {
+  position : absolute;
+  left : 25px;
+  top : 390px;
+  width : 270px;
+}
+
+
+/* Style for the area where the current score is shown. */
+.cssScoreArea {
+  position : absolute;
+  left : 0px;
+  top : 412px;
+  width : 100%;
+  color:#ffffff;
+}

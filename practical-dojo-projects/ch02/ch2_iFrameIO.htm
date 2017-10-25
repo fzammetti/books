@@ -1,0 +1,33 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.io.iframe");
+
+      function testCreate() {
+        dojo.io.iframe.create("if1", "alert('loaded');",
+          "ch2_iFrameIOResponse1.htm");
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <input type="button" value="Click me for Ajax (iFrame)"
+      onClick="testCreate();">
+  </body>
+</html>

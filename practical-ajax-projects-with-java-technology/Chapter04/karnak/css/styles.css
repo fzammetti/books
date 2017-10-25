@@ -1,0 +1,18 @@
+/* This style will be applied to our suggestions div. */
+.cssSuggestionsDiv {
+  border           : 1px solid #000000;
+  background-color : #f0f0f0;
+  width            : 300px;
+  text-align       : left;
+  padding          : 4px;
+  visibility       : hidden;
+}
+
+/* This style will be applied to the user input textbox. */
+.cssUserInput {
+  font-family      : verdana;
+  font-size        : 12pt;
+  font-weight      : bold;
+  width            : 92%;
+  background       : url(../img/textBG.gif);
+}

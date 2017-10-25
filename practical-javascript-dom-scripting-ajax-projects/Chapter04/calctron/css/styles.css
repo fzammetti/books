@@ -1,0 +1,43 @@
+/* Style applied to all elements */
+* {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+/* Style applied to the outer calculator container */
+.cssCalculatorOuter {
+  position         : absolute;
+  background-color : #c6c3de;
+}
+
+/* Style applied to the table cell where command buttons are placed */
+.cssSpanCB {
+  width            : 110px;
+}
+
+/* Style applied to the table cell where input buttons are placed */
+.cssSpanB {
+  width            : 60px;
+}
+
+/* Style applied to input buttons */
+.cssInputButton {
+  width            : 50px;
+  display          : none;
+}
+
+/* Style applied to command buttons */
+.cssInputCommandButton {
+  width            : 100px;
+  display          : none;
+}
+
+/* Style applied to the mode switch popup DIV */
+.cssDivMode {
+  display          : none;
+  z-index          : 100;
+  position         : absolute;
+  border           : 2px solid #000000;
+  background-color : #efefef;
+}

@@ -1,0 +1,27 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.cookie");
+      dojo.cookie("myCookie", "This is my cookie", { expires : 5 });
+      alert(dojo.cookie("myCookie"));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

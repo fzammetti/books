@@ -1,0 +1,80 @@
+<!--
+    Date - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Date class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      function testIt() {
+
+        var sOut = "";
+        var d = new Date("02/17/1973");
+        sOut += "Starting date: " +
+          Date.getShortDayName(d.getDay()) + " " +
+          Date.getShortMonthName(d.getMonth()) + " " +
+          d.getDate() + ", " + d.getFullYear() + "<br>";
+        var dFormatted = d.format("D M j, Y");
+        var d1 = d.add(Date.DAY, 4);
+        sOut += dFormatted + " + 4 days: " +
+          d1.format("D M j, Y") + "<br>";
+        var d2 = d.add(Date.MONTH, -1);
+        sOut += dFormatted + " - 1 month: " +
+          d2.format("D M j, Y") + "<br>";
+        sOut += "isLeapYear() of " + dFormatted + ": " +
+          d.isLeapYear() + "<br>";
+        sOut += "getDayOfYear() of " + d2.format("D M j, Y") + ": " +
+          d2.getDayOfYear() + "<br>";
+        sOut += "getDaysInMonth() of " + d2.format("D M j, Y") + ": " +
+          d2.getDaysInMonth() + "<br>";
+        var d3 = new Date("02/19/1973");
+        sOut += d3.format("D M j, Y") + ".between(" +
+          d.format("D M j, Y") + ", " + d1.format("D M j, Y") + "): " +
+          d3.between(d, d1) + "<br>";
+        sOut += d.format("D M j, Y") + ".getElapsed(" +
+          d1.format("D M j, Y") + "): " +
+          d.getElapsed(d1) + "<br>";
+        sOut += "The day of " + d.format("D M j, Y") + " is the " +
+          d.getDate() + d.getSuffix() + " (used getSuffix() to get th)<br>";
+        sOut += d.format("D M j, Y") + ".getWeekOfYear(): " +
+          d.getWeekOfYear() + "<br>";
+        sOut += "Date.parseDate('1973-02-17 12:14:06AM', 'Y-m-d h:i:sA')" +
+          ": " + Date.parseDate("1973-02-17 12:14:06AM", "Y-m-d h:i:sA");
+        Ext.getDom("divOutput").innerHTML = sOut;
+
+      }
+
+      Ext.onReady(testIt);
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="divOutput"
+      style="width:580px;height:400px;border:1px solid #000000;padding:4px;">
+    </div>
+  </body>
+
+</html>

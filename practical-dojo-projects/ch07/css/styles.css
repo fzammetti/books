@@ -1,0 +1,88 @@
+/* Styles for button icons. */
+.icons {
+  background-repeat   : no-repeat;
+  background-position : 0px;
+  width               : 20px;
+  height              : 18px;
+  text-align          : center;
+}
+.iconUp {
+  background-image    : url("../img/up.gif");
+}
+.iconDown {
+  background-image    : url("../img/down.gif");
+}
+.iconLeft {
+  background-image    : url("../img/left.gif");
+}
+.iconRight {
+  background-image    : url("../img/right.gif");
+}
+
+/* Style for outer border. */
+.cssOuterBorder {
+  position            : absolute;
+  top                 : 2px;
+  left                : 2px;
+  border              : 2px solid #a0a0ff;
+  width               : 780px;
+  _width              : 784px;
+  height              : 484px;
+  _height             : 488px;
+}
+
+/* Hide close icon on dialog #1. */
+#WelcomeOneDialog .dijitDialogCloseIcon {
+  display             : none;
+}
+
+/* Hide close icon on dialog #2. */
+#WelcomeTwoDialog .dijitDialogCloseIcon {
+  display             : none;
+}
+
+/* Style for dialog #1.  Note IE hack. */
+.cssDialog1 {
+  _width              : 565px;
+  _height             : 480px;
+}
+
+/* Style for dialog #2.  Note IE hack. */
+.cssDialog2 {
+  _width              : 555px;
+  _height             : 380px;
+}
+
+/* Style for the difficulty slider. */
+.cssSlider {
+  width               : 350px;
+}
+
+/* Style for the labels on the difficulty slider. */
+.cssSliderLabels {
+  height              : 1.2em;
+  font-size           : 10pt;
+  color               : #000000;
+}
+
+/* Style for the play area container. */
+.cssPlayArea {
+  position            : absolute;
+  left                : 6px;
+  top                 : 6px;
+}
+
+/* Style for the side area parts (info, control buttons, New Game button. */
+.cssSideAreaPart {
+  position            : absolute;
+  left                : 648px;
+  width               : 134px;
+  background-image    : url(../img/marble.gif);
+}
+
+/* Style for the info boxes in the side area. */
+.cssInfoBoxes {
+  font-weight         : bold;
+  font-size           : 10pt;
+  background-color    : #ffffa0;
+}

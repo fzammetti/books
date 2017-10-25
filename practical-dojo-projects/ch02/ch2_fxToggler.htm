@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+    <script>
+      dojo.require("dojo.fx");
+      var toggler = null;
+      function fxTest() {
+        toggler = new dojo.fx.Toggler({
+          node : "myDiv",
+          showFunc : dojo.fx.wipeIn,
+          hideFunc : dojo.fx.wipeOut
+        });
+        toggler.hide();
+      }
+    </script>
+  </head>
+  <body onLoad="fxTest();">
+    <div id="myDiv"
+      style="background-color:#ff0000;width:40px;top:5px;left:5px;position:absolute;">
+     Hello<br>from<br>myDiv</div>
+     <br><br><br><br>
+     <input type="button" value="Click to show" onClick="toggler.show();">
+  </body>
+</html>

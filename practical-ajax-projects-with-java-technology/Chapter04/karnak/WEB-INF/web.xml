@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <!-- This parameter is needed to initialize AjaxTags.  It points to the -->
+  <!-- context-relative configuration file. -->
+  <context-param>
+    <param-name>ajaxTagsConfig</param-name>
+    <param-value>/WEB-INF/ajax_config.xml</param-value>
+  </context-param>
+
+  <!-- This listener is needed to initialize AjaxTags.  It uses the -->
+  <!-- above parameter. -->
+  <listener>
+    <listener-class>javawebparts.taglib.ajaxtags.AjaxInit</listener-class>
+  </listener>
+
+  <!-- This is a simple servlet for this example that returns the HTML for -->
+  <!-- the second select element.  It might be nice to have a special -->
+  <!-- handler for populating an existing select, since it comes up so -->
+  <!-- often, but for now you can do it this way out-of-the-box. -->
+  <servlet>
+    <servlet-name>KarnakServlet</servlet-name>
+    <servlet-class>com.apress.ajaxprojects.karnak.KarnakServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KarnakServlet</servlet-name>
+    <url-pattern>/askKarnak</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>

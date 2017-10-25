@@ -1,0 +1,283 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+  <xwork>
+
+   <include file="webwork-default.xml"/>
+
+   <package name="default" extends="webwork-default">
+
+     <default-interceptor-ref name="completeStack"/>
+
+
+      <!-- *********************** -->
+      <!-- Miscellaneous mappings. -->
+      <!-- *********************** -->
+
+
+      <!-- Attempt to log on. -->
+      <action name="logon"
+        class="com.apress.ajaxprojects.theorganizer.actions.LogonAction">
+        <result name="success">main.jsp</result>
+        <result name="error">index.jsp</result>
+      </action>
+
+      <!-- Log off. -->
+      <action name="logoff"
+        class="com.apress.ajaxprojects.theorganizer.actions.LogoffAction">
+        <result name="success">index.jsp</result>
+      </action>
+
+      <!-- Day at a glance. -->
+      <action name="dayAtAGlance"
+        class="com.apress.ajaxprojects.theorganizer.actions.DayAtAGlanceAction">
+        <result name="success">dayAtAGlance.jsp</result>
+      </action>
+
+      <!-- Action called when OK pressed after an account is created. -->
+      <action name="accountCreatedOK"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">main.jsp</result>
+      </action>
+
+
+      <!-- ***************************** -->
+      <!-- Account maintenance mappings. -->
+      <!-- ***************************** -->
+
+      <!-- Show account creation screen. -->
+      <action name="accountCreateShow"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">accountCreate.jsp</result>
+      </action>
+
+      <!-- Create a new account. -->
+      <action name="accountCreate"
+        class="com.apress.ajaxprojects.theorganizer.actions.AccountAction"
+        method="create">
+        <result name="success">accountCreateOK.jsp</result>
+        <result name="error">accountCreate.jsp</result>
+      </action>
+
+      <!-- Retrieve an account for review/edit/delete. -->
+      <action name="accountRetrieve"
+        class="com.apress.ajaxprojects.theorganizer.actions.AccountAction"
+        method="retrieve">
+        <result name="success">accountEdit.jsp</result>
+      </action>
+
+      <!-- Update account screen. -->
+      <action name="accountUpdateSave"
+        class="com.apress.ajaxprojects.theorganizer.actions.AccountAction"
+        method="update">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">accountEdit.jsp</result>
+      </action>
+
+      <!-- Delete account. -->
+      <action name="accountDelete"
+        class="com.apress.ajaxprojects.theorganizer.actions.AccountAction"
+        method="delete">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">accountEdit.jsp</result>
+      </action>
+
+
+      <!-- *********************** -->
+      <!-- Notes-related mappings. -->
+      <!-- *********************** -->
+
+      <!-- Retrieve a list of all notes (initial notes view). -->
+      <action name="noteList"
+        class="com.apress.ajaxprojects.theorganizer.actions.NoteAction"
+        method="list">
+        <result name="success">noteList.jsp</result>
+      </action>
+
+      <!-- Show the create note view. -->
+      <action name="noteCreateShow"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">noteEdit.jsp</result>
+      </action>
+
+      <!-- Create (create) a new note. -->
+      <action name="noteCreate"
+        class="com.apress.ajaxprojects.theorganizer.actions.NoteAction"
+        method="create">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">noteEdit.jsp</result>
+      </action>
+
+      <!-- Retrieve a specific note for review/edit. -->
+      <action name="noteRetrieve"
+        class="com.apress.ajaxprojects.theorganizer.actions.NoteAction"
+        method="retrieve">
+        <result name="success">noteEdit.jsp</result>
+      </action>
+
+      <!-- Update an existing note. -->
+      <action name="noteUpdate"
+        class="com.apress.ajaxprojects.theorganizer.actions.NoteAction"
+        method="update">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">noteEdit.jsp</result>
+      </action>
+
+      <!-- Delete a specified note. -->
+      <action name="noteDelete"
+        class="com.apress.ajaxprojects.theorganizer.actions.NoteAction"
+        method="delete">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">noteEdit.jsp</result>
+      </action>
+
+
+      <!-- *********************** -->
+      <!-- Tasks-related mappings. -->
+      <!-- *********************** -->
+
+      <!-- Retrieve a list of all tasks (initial tasks view). -->
+      <action name="taskList"
+        class="com.apress.ajaxprojects.theorganizer.actions.TaskAction"
+        method="list">
+        <result name="success">taskList.jsp</result>
+      </action>
+
+      <!-- Show the create task view. -->
+      <action name="taskCreateShow"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">taskEdit.jsp</result>
+      </action>
+
+      <!-- Create (create) a new task. -->
+      <action name="taskCreate"
+        class="com.apress.ajaxprojects.theorganizer.actions.TaskAction"
+        method="create">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">taskEdit.jsp</result>
+      </action>
+
+      <!-- Retrieve a specific task for review/edit. -->
+      <action name="taskRetrieve"
+        class="com.apress.ajaxprojects.theorganizer.actions.TaskAction"
+        method="retrieve">
+        <result name="success">taskEdit.jsp</result>
+      </action>
+
+      <!-- Update an existing task. -->
+      <action name="taskUpdate"
+        class="com.apress.ajaxprojects.theorganizer.actions.TaskAction"
+        method="update">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">taskEdit.jsp</result>
+      </action>
+
+      <!-- Delete a specified task. -->
+      <action name="taskDelete"
+        class="com.apress.ajaxprojects.theorganizer.actions.TaskAction"
+        method="delete">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">taskEdit.jsp</result>
+      </action>
+
+
+      <!-- ************************** -->
+      <!-- Contacts-related mappings. -->
+      <!-- ************************** -->
+
+      <!-- Retrieve a list of contacts -->
+      <action name="contactList"
+        class="com.apress.ajaxprojects.theorganizer.actions.ContactAction"
+        method="list">
+        <result name="success">contactList.jsp</result>
+      </action>
+
+      <!-- Show the create contact view. -->
+      <action name="contactCreateShow"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">contactEdit.jsp</result>
+      </action>
+
+      <!-- Create (create) a new contact. -->
+      <action name="contactCreate"
+        class="com.apress.ajaxprojects.theorganizer.actions.ContactAction"
+        method="create">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">contactEdit.jsp</result>
+      </action>
+
+      <!-- Retrieve a specific contact for review/edit. -->
+      <action name="contactRetrieve"
+        class="com.apress.ajaxprojects.theorganizer.actions.ContactAction"
+        method="retrieve">
+        <result name="success">contactEdit.jsp</result>
+      </action>
+
+      <!-- Update an existing contact. -->
+      <action name="contactUpdate"
+        class="com.apress.ajaxprojects.theorganizer.actions.ContactAction"
+        method="update">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">contactEdit.jsp</result>
+      </action>
+
+      <!-- Delete a specified contact. -->
+      <action name="contactDelete"
+        class="com.apress.ajaxprojects.theorganizer.actions.ContactAction"
+        method="delete">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">contactEdit.jsp</result>
+      </action>
+
+
+      <!-- ****************************** -->
+      <!-- Appointments-related mappings. -->
+      <!-- ****************************** -->
+
+      <!-- Show appointments for the current day, half hour breaks. -->
+      <action name="appointmentList"
+        class="com.apress.ajaxprojects.theorganizer.actions.AppointmentAction"
+        method="list">
+        <result name="success">appointmentList.jsp</result>
+      </action>
+
+      <!-- Show the create appointment view. -->
+      <action name="appointmentCreateShow"
+        class="com.apress.ajaxprojects.theorganizer.actions.ForwardAction">
+        <result name="success">appointmentEdit.jsp</result>
+      </action>
+
+      <!-- Create (create) a new appointment. -->
+      <action name="appointmentCreate"
+        class="com.apress.ajaxprojects.theorganizer.actions.AppointmentAction"
+        method="create">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">appointmentEdit.jsp</result>
+      </action>
+
+      <!-- Retrieve the specific appointment for review/edit. -->
+      <action name="appointmentRetrieve"
+        class="com.apress.ajaxprojects.theorganizer.actions.AppointmentAction"
+        method="retrieve">
+        <result name="success">appointmentEdit.jsp</result>
+      </action>
+
+      <!-- Update an existing appointment. -->
+      <action name="appointmentUpdate"
+        class="com.apress.ajaxprojects.theorganizer.actions.AppointmentAction"
+        method="update">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">appointmentEdit.jsp</result>
+      </action>
+
+      <!-- Delete a specific appointment. -->
+      <action name="appointmentDelete"
+        class="com.apress.ajaxprojects.theorganizer.actions.AppointmentAction"
+        method="delete">
+        <result name="success">opResponse.jsp</result>
+        <result name="error">appointmentEdit.jsp</result>
+      </action>
+
+
+   </package>
+
+  </xwork>

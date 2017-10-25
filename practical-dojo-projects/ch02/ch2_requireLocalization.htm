@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      dojo.require("dojo.i18n");
+      dojo.requireLocalization("dijit", "common",
+        dojo.i18n.normalizeLocale("fr"));
+      alert("buttonCancel = " +
+        dojo.i18n.getLocalization("dijit", "common",
+          dojo.i18n.normalizeLocale("fr")).buttonCancel);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

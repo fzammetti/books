@@ -1,0 +1,60 @@
+<html>
+
+  <head>
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.fx._base");
+
+      function testIt() {
+        dojox.fx.crossFade({ nodes : ["node1", "node2"], duration:1000}).play();
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.fx.crossFade test:
+        <br><br>
+        <input type="button" onclick="testIt()" value="Click to cross-fade">
+        <br><br>
+        <div style="width:200px;height:100px;position:relative;border:1px solid #ff0000;">
+          <center>
+            <div id="node1"
+              style="width:100%;height:100%;position:absolute;top:0px;left:0px;background-color:#e0e0e0;">
+              <br>
+              I am the first box
+              <br>
+              I have some content
+              <br>
+              Click button to cross-fade
+            </div>
+            <div id="node2"
+              style="width:100%;height:100%;position:absolute;top:0px;left:0px;opacity:0;background-color:#ffff00;">
+              <br>
+              I am the second box
+              <br>
+              I have some different content
+              <br>
+              Nice cross-fade, huh?!?
+            </div>
+          </center>
+        </div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

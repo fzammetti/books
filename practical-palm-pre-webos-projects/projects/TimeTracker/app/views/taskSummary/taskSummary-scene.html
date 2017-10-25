@@ -1,0 +1,75 @@
+<!--
+    Time Tracker - From the book "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+-->
+
+
+<!-- Header. -->
+<div class="palm-page-header">
+  <div class="header-icon taskDetails"></div>
+  <div class="header-text">Task Summary</div>
+</div>
+
+<!-- Task Details. -->
+<center>
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" 
+    style="padding:10px;">
+    <tr>
+      <td width="120" valign="middle" 
+        class="cssSummaryLabel">Name:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_name"></td>
+    </tr>
+    <tr>
+      <td width="1" valign="middle" 
+        class="cssSummaryLabel">Parent&nbsp;Project:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_parentProject"></td>
+    </tr>
+    <tr>
+      <td valign="middle" 
+        class="cssSummaryLabel">Complete:&nbsp;&nbsp;</td>
+      <td><div x-mojo-element="ProgressBar" id="taskSummary_percentComplete" 
+        style="width:180px;"></div></td>
+    </tr>
+    <tr>
+      <td valign="middle" 
+        class="cssSummaryLabel">Start&nbsp;Date:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_startDate"></td>
+    </tr>
+    <tr>
+      <td valign="middle" 
+        class="cssSummaryLabel">Target&nbsp;Date:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_targetDate"></td>
+    </tr>
+    <tr>
+      <td valign="middle" 
+        class="cssSummaryLabel">Allocated&nbsp;Hours:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_allocatedHours"></td>
+    </tr>
+    <tr>
+      <td valign="middle" 
+        class="cssSummaryLabel">Booked&nbsp;Hours:&nbsp;&nbsp;</td>
+      <td class="cssSummaryData" id="taskSummary_bookedHours"></td>
+    </tr>
+  </table>
+</center>

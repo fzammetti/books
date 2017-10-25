@@ -1,0 +1,66 @@
+<html>
+
+  <head>
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojox/grid/_grid/grid.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojox.grid.Grid");
+      dojo.require("dojox.grid._data.model");
+      dojo.require("dojo.parser");
+
+      var data = [
+        [ "Car Alarm", "It's a nice gift idea", 99.95, true ],
+        [ "Portable DVD Player", "Needed with kids in a car", 129.99, false ],
+        [ "Bagpipes", "Does anyone actually like bagpipes?!?", 429.89, true ],
+        [ "Cabbage Patch Kid", "Remember the lines?", 39.99, false ],
+        [ "Trident Chewing Gum", "Is that still made?", .69, true ],
+        [ "1Gb SD Card", "Too small, too small!", 8.99, false ],
+        [ "Tooth Paste", "5 out of 10 dentists recommend it!", 2.96, true ],
+        [ "Ice Cream", "Why can't prices be whole dollars?!?", 4, false ]
+    ];
+
+    var model = new dojox.grid.data.Table(null, data);
+
+    var view = {
+      cells: [
+        [
+          { name : "Item", width : "150px"},
+          { name : "Description", width : "175px"},
+          { name : "Price", width : "75px"},
+          { name : "In Stock?", width : "75px"}
+      ]]
+    };
+
+    var layout = [ view ];
+
+    </script>
+
+  </head>
+
+  <body>
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        dojox.grid test:
+        <br><br>
+        <div id="myGrid" dojoType="dojox.Grid"
+          structure="layout" model="model"
+          style="font-size:10pt;font-weight:bold;width:540px;height:200px;" />
+      </td></tr>
+    </table>
+  </body>
+
+</html>

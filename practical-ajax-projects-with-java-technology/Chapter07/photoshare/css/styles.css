@@ -1,0 +1,137 @@
+.cssMain {
+  font-family         : arial;
+  font-size           : 10pt;
+  font-weight         : bold;
+  color               : #000000;
+}
+
+.cssPleaseWait {
+  font-size           : 16pt;
+  font-weight         : bold;
+  font-family         : Arial;
+  color               : #000000;
+  position            : absolute;
+  left                : 1px;
+  top                 : 1px;
+  width               : 330px;
+  height              : 66px;
+  background-color    : #ffa0a0;
+  display             : none;
+  z-index             : 1000;
+	border-top-width    : 4px;
+	border-right-width  : 4px;
+	border-left-width   : 4px;
+	border-bottom-width : 4px;
+	border-right-style  : solid;
+	border-bottom-style : solid;
+	border-top-style    : solid;
+	border-left-style   : solid;
+	border-right-color  : #ffff00;
+	border-bottom-color : #ffff00;
+	border-top-color    : #ffff00;
+	border-left-color   : #ffff00;
+}
+
+.cssInfoRowHeader {
+  background-color    : #efefef;
+  font-size           : 10pt;
+  font-weight         : bold;
+  font-family         : arial;
+  color               : #000000;
+}
+
+.cssMessage {
+  color               : #ff0000;
+}
+
+.cssMainNoPadding {
+  margin-right        : 0px;
+  margin-left         : 0px;
+  margin-bottom       : 0px;
+  margin-top          : 0px;
+  font-family         : arial;
+  font-size           : 10pt;
+  font-weight         : bold;
+  color               : #000000;
+}
+
+.cssUpButton {
+  position            : absolute;
+  top                 : 18px;
+  left                : 23px;
+  z-index             : 400;
+}
+
+.cssDownButton {
+  position            : absolute;
+  top                 : 418px;
+  left                : 23px;
+  z-index             : 400;
+}
+
+.cssFilmstripTopHide {
+  position            : absolute;
+  top                 : 8px;
+  left                : 6px;
+  z-index             : 300;
+}
+
+.cssFilmstripBottomHide {
+  position            : absolute;
+  top                 : 408px;
+  left                : 6px;
+  z-index             : 300;
+}
+
+.cssImageGrowing {
+  display             : none;
+  position            : absolute;
+  top                 : 0px;
+  left                : 0px;
+  z-index             : 500;
+}
+
+.cssLandingPad {
+  position            : absolute;
+  left                : 116px;
+  top                 : 10px;
+  width               : 640px;
+  height              : 480px;
+  background-color    : #eaeaea;
+  z-index             : 10;
+}
+
+.cssFilmTile0 {
+  position            : absolute;
+  top                 : 8px;
+  left                : 6px;
+  z-index             : 100;
+}
+
+.cssFilmTile1 {
+  position            : absolute;
+  top                 : 88px;
+  left                : 6px;
+  z-index             : 100;
+}
+
+.cssFilmTile2 {
+  position            : absolute;
+  top                 : 168px;
+  left                : 6px;
+  z-index             : 100;
+}
+
+.cssFilmTile3 {
+  position            : absolute;
+  top                 : 248px;
+  left                : 6px;
+  z-index             : 100;
+}
+
+.cssFilmTile4 {
+  position            : absolute;
+  top                 : 328px;
+  left                : 6px;
+  z-index             : 100;
+}

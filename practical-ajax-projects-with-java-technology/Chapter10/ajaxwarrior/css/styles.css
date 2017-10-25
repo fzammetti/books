@@ -1,0 +1,215 @@
+/* Entire page (body element). */
+.cssPage {
+  background-color : #000000;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The div the game is contained in. */
+.cssGame {
+  position         : absolute;
+  width            : 632px;
+  height           : 432px;
+  background-color : #000000;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The border around the game area. */
+.cssBorder {
+  position         : absolute;
+  left             : 0px;
+  top              : 0px;
+}
+
+
+/* The game map area. */
+.cssMap {
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  width            : 416px;
+  height           : 416px;
+  display          : block;
+}
+
+
+/* Style applied to the character headshot <img> tag/ */
+.cssImgCharacter {
+  position         : absolute;
+  top              : 8px;
+  left             : 8px;
+  z-index          : 500;
+}
+
+
+/* Style for the character secondary view. */
+.cssTalkingReplies {
+  position         : absolute;
+  width            : 419px;
+  height           : 64px;
+  left             : 7px;
+  top              : 350px;
+  border-top       : 1px solid #ffffff;
+  border-bottom    : 1px solid #ffffff;
+  background-color : #1478ff;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  display          : none;
+  z-index          : 1000;
+}
+
+
+/* Style for the help secondary view. */
+.cssHelp {
+  width            : 416px;
+  height           : 416px;
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  overflow         : hidden;
+  background-color : #000000;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  z-index          : 1000;
+}
+
+
+/* Style used for the key column in the help display. */
+.cssHelpKey {
+  background-color : #7a7a7a;
+}
+
+
+/* Style for the inventory secondary view. */
+.cssInventory {
+  width            : 416px;
+  height           : 416px;
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  overflow         : hidden;
+  background-color : #000000;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  z-index          : 1000;
+}
+
+
+/* Style for the game end secondary view. */
+.cssGameEnd {
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  width            : 416px;
+  height           : 416px;
+  display          : none;
+}
+
+
+/* The warrior name section. */
+.cssWarriorName {
+  position         : absolute;
+  left             : 438px;
+  top              : 13px;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The warrior health section. */
+.cssWarriorHealth {
+  position         : absolute;
+  left             : 438px;
+  top              : 53px;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The warrior hit points section. */
+.cssWarriorHitPoints {
+  position         : absolute;
+  left             : 438px;
+  top              : 93px;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The warrior gold section. */
+.cssWarriorGold {
+  position         : absolute;
+  left             : 438px;
+  top              : 133px;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+}
+
+
+/* The activity scroll section. */
+.cssActivityScroll {
+  position         : absolute;
+  left             : 438px;
+  top              : 172px;
+  width            : 194px;
+  height           : 252px;
+  color            : #ffffff;
+  font-family      : arial;
+  font-size        : 14pt;
+  font-weight      : bold;
+  overflow         : hidden;
+}
+
+
+/* The spell casting view. */
+.cssSpellCasting {
+  width            : 416px;
+  height           : 416px;
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  overflow         : hidden;
+}
+
+
+/* The weapon swithching view. */
+.cssWeaponSwitching {
+  width            : 416px;
+  height           : 416px;
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  overflow         : hidden;
+}
+
+
+/* The store view. */
+.cssStore {
+  position         : absolute;
+  left             : 8px;
+  top              : 8px;
+  width            : 416px;
+  height           : 416px;
+  display          : block;
+}

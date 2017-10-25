@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <form-beans>
+    <form-bean name="mainForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="firstName" type="java.lang.String" />
+      <form-property name="lastName" type="java.lang.String" />
+    </form-bean>
+  </form-beans>
+
+  <global-forwards>
+    <forward name="showMainPage" path="/main.jsp" />
+  </global-forwards>
+  
+  <action-mappings>
+    <action path="/greetPerson" type="com.apress.ajaxprojects.simplestruts.GreetPersonAction" name="mainForm" scope="request" validate="false">
+      <forward name="default" path="/greeting.jsp" />
+    </action>
+  </action-mappings>
+
+  <message-resources parameter="MessageResources" />
+
+</struts-config>

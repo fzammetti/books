@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      function Class1() {
+        this.firstName = "Robert";
+      }
+      function Class2() {
+        this.lastName = "Redford";
+      }
+      var o = dojo.mixin(new Class1(), new Class2());
+      alert(dojo.toJson(o));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,46 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function MyClass1() {
+        var firstName = "Mick";
+        this.getFirstName = function() {
+          return firstName;
+        }
+      }
+      function MyClass2() {
+        var lastName = "Foley";
+        this.getLastName = function() {
+          return lastName;
+        }
+      }
+      dojo.declare("com.omnytex.AnotherClass", [ MyClass1, MyClass2],
+        { middleName : "William",
+          getMiddleName : function() {
+            return this.middleName;
+           }
+         }
+       );
+       var o = new com.omnytex.AnotherClass();
+       alert(o.getFirstName() + " " + o.getMiddleName() + " " +
+         o.getLastName());
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

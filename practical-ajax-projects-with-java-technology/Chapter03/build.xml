@@ -1,0 +1,32 @@
+<project name="ASimpleBuildScript" default="compile" basedir=".">
+
+  <description>
+    This is an example of a simple Ant build script.
+  </description>
+
+  <property name="src" location="src" />
+  <property name="temp" location="temp" />
+  <property name="jar_dest" location="jardest" />
+
+  <target name="init">
+    <echo message="Build starting..." />
+    <delete dir="${temp}" />
+    <delete dir="${jar_dest}" />
+    <mkdir dir="${temp}" />
+    <mkdir dir="${jar_dest}" />
+  </target>
+
+  <target name="compile" depends="init" description="Compile app">
+    <javac srcdir="${src}" destdir="${temp}" />
+  </target>
+
+  <target name="make_jar" depends="compile" description="Makes JAR file">
+    <jar jarfile="${jar_dest}/app.jar" basedir="${temp}" />
+  </target>
+
+  <target name="clean" description="Clean up">
+    <delete dir="${temp}" />
+    <delete dir="${jar_dest}" />
+  </target>
+
+</project>

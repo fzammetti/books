@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      var s = dojo.objectToQuery({
+        chipmunk1 : "Alvin Chipmunk",
+        chipmunk2 : "Simon Chipmunk",
+        chipmunk3 : "Theodore Chipmunk"
+      });
+      alert(dojo.toJson(dojo.queryToObject(s)));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

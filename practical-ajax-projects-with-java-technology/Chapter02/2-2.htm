@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title></title>
+
+    <script>
+
+      var v = 123;
+      v = 6;
+      v = document.getElementById("someDiv");
+      v = "hello";
+
+      function test() {
+        a = "a set";
+        var b = "b set";
+      }
+
+      function showVars(dummyVar) {
+        test();
+        alert(v);
+        alert(a);
+        alert(b); 
+      }
+
+    </script>
+
+  </head>
+  <body onLoad="showVars();">
+    <div id="someDiv"></div>
+  </body>
+</html>

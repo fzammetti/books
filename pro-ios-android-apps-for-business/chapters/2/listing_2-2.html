@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Example</title>
+    <style>
+      #divGreeting {
+        color : #ff0000;
+        position : absolute;
+        left : 50px;
+        top : 50px;
+      }
+    </style>
+    <script src="jq/jquery-1.9.1.js"></script>
+    <script src="jq/plugins/jquery.animate-colors.js"></script>
+    <script>
+      function testme() {
+        $("#divGreeting").animate({ color : "#00ff00" }, 1000,
+          function() {
+            $(this).animate({ left : "250px" }, 1000,
+              function() {
+                $(this).hide(
+                  function () {
+                    $(this).slideDown(
+                      function() {
+                        $(this).fadeOut(500,
+                          function() {
+                            $(this).fadeIn(500);
+                          }
+                        );
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="divGreeting">Hello!</div>
+    <input type="button" onClick="testme();">
+  </body>
+</html>

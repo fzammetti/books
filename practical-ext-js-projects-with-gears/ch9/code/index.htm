@@ -1,0 +1,71 @@
+<!--
+    Finance Master - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Finance Master</title>
+
+    <!-- Base Ext JS imports. -->
+    <link rel="stylesheet" type="text/css"
+      href="../../ext/resources/css/ext-all.css">
+    <link rel="stylesheet" type="text/css"
+      href="../../ext/resources/css/xtheme-gray-extend.css">
+    <script type="text/javascript"
+      src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <!-- Portal Extension imports. -->
+    <link rel="stylesheet" type="text/css" href="css/portal.css">
+    <script src="js/PortalExtension.js"></script>
+
+    <!-- Any other extension or plugins required. -->
+    <script src="js/MessageBus.js"></script>
+
+    <!-- Gears imports. -->
+    <script src="js/gears_init.js"></script>
+
+    <!-- Create namespaces for application code. -->
+    <script>
+      Ext.namespace("FinanceMaster");
+      Ext.namespace("FinanceMaster.Portlets");
+      Ext.namespace("FinanceMaster.Data");
+    </script>
+
+    <!-- Base Application imports. -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/FinanceMaster.js"></script>
+    <script src="js/DataAccess.js"></script>
+    <script src="js/StoresAndRecords.js"></script>
+    <script src="js/OpenPortfolioWindow.js"></script>
+
+    <!-- Portlet Imports. -->
+    <script src="js/PortfolioOverviewPortlet.js"></script>
+    <script src="js/PortfolioDistributionPortlet.js"></script>
+    <script src="js/AccountActivityPortlet.js"></script>
+    <script src="js/AccountHistoryPortlet.js"></script>
+
+    <script>Ext.onReady(FinanceMaster.init);</script>
+
+  </head>
+
+  <!-- Source point for window animations. -->
+  <body><div id="divSource" class="cssSource"></div></body>
+
+</html>

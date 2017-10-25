@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Style switch example</title>
+
+    <style>
+      .style1 {
+        color : #000000;
+        font-weight : normal;
+        font-size : 12pt;
+      }
+      .style2 {
+        color : #ff0000;
+        font-weight : bold;
+        font-size : 20pt;
+      }
+    </style>
+
+    <script>
+      function switchStyle() {
+        o = document.getElementById("myText");
+        if (o.className == "style1") {
+          o.className = "style2";
+        } else {
+          o.className = "style1";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="style1" id="myText">Some text</div>
+    <br>
+    <input type="button" value="Click to switch styles" 
+     onClick="switchStyle();">
+  </body>
+
+</html>

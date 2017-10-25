@@ -1,0 +1,30 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      function doOnLoad() {
+        var o = dojo.byId("myDiv");
+        alert(dojo.getComputedStyle(o).borderWidth);
+      }
+
+    </script>
+
+  </head>
+
+  <body onLoad="doOnLoad();">
+    <div id="myDiv">I am myDiv</div>
+  </body>
+
+</html>

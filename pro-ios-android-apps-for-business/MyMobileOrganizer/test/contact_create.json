@@ -1,0 +1,16 @@
+{
+  "category" : "personal", 
+  "firstName" : "Frank", 
+  "middleName" : "William", 
+  "lastName" : "Zammetti", 
+  "address1" : "666 Mockingbird Lane\nNowheresville, AZ 12345", 
+  "address1Type" : "Home",
+  "address2" : "999 Forget It Drive\nSomewhere, NY 54321", 
+  "address2Type" : "Work", 
+  "phone1" : "111-222-3333",
+  "phone1Type" : "cell",  
+  "phone2" : "444-555-6666", 
+  "phone2Type" : "fax",
+  "eMail" : "none@none.com", 
+  "webSite" : "www.nothing.com"
+}

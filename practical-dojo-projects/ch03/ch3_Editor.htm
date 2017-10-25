@@ -1,0 +1,56 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.Editor");
+
+      function createProgrammatically() {
+        var descField = document.createElement("textarea");
+        descField.cols = 42;
+        dojo.byId("divProgrammatic").appendChild(descField);
+        var descEditor = new dijit.Editor({id : "description"}, descField);
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra" onLoad="createProgrammatically();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.Editor Dijit, created declaratively:
+        <br><br>
+        <div style="border:1px solid #000000;">
+          <textarea name="field" width="200px" height="100px"
+            dojoType="dijit.Editor">
+            Buy more books by Frank W. Zammetti, he has a six-bag a day
+            Gummi Bear habit.
+          </textarea>
+        </div>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <div id="divProgrammatic" style="border:1px solid #000000;"></div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

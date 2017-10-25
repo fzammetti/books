@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>id1</title>
+
+    <link rel="StyleSheet" href="../css/styles.css" type="text/css">
+
+    <script>
+    </script>
+
+  </head>
+
+  <body style="background-color:#a0a0ff;">
+    <table border="0" cellpadding="10" cellspacing="0" width="600"
+      align="center" style="background-color:#ffffff;"><tr><td>
+      <center>
+        <div style="font-size:14pt;">Duo Diamond Ring</div>
+        <br><br>
+        <img src="../img/item1.gif">
+      </center>
+      <br><br>
+      <div style="font-size:12pt;">
+        This 10K gold Duo ring features two round diamonds in prong settings with
+        round diamond accents.  Duo Jewelry is designed to celebrate a couple's
+        love.
+      </div>
+      <br><br>
+      299.09 per unit
+      <br><br>
+      <form name="purchase" method="get" action="../mockServer.htm">
+        <input type="hidden" name="function" value="purchase">
+        <input type="hidden" name="itemID" value="1">
+        Quantity:
+        <input type="text" size="3" maxlength="2" name="quantity" value="1">
+        <input type="submit" value="Add To Cart">
+      </form>
+    </tr></tr>
+    <tr><td align="right">
+      <a href="../mockServer.htm?function=viewCatalog">Back To The Catalog</a>
+    </td></tr></table>
+
+  </body>
+
+</html>

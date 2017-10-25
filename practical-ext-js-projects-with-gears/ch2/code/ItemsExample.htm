@@ -1,0 +1,54 @@
+<!--
+    Items Example - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+
+  <head>
+
+    <title>Chapter 2 Items Example</title>
+
+    <link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-all.css">
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      Ext.onReady(function() {
+
+        new Ext.Panel({
+          renderTo : "panelTarget", layout : "fit",
+          title : "My First Panel",
+          items : [
+            { xtype : "htmleditor", height : 200 }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body style="padding:10px;">
+    <div id="panelTarget"
+      style="width:600px;border:2px solid #ff0000;padding:4px;"></div>
+  </body>
+
+</html>

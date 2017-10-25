@@ -1,0 +1,117 @@
+<div data-role="page" id="notePage" data-dom-cache="true">
+
+  <script>
+    $(document).delegate("#notePage", "pageshow", function(inEvent) {
+      pageShowHandler("note");
+    });
+  </script>
+
+  <!-- Menu. -->
+  <div data-role="popup" id="noteMenu">
+    <ul data-role="listview" data-inset="true" class="cssFunctionsMenu"
+      data-theme="b">
+      <li><a href="javascript:showListView('note');">List View</a></li>
+      <li id="noteNewLink">
+        <a href="javascript:newItem('note');">New</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Header. -->
+  <div data-role="header" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <a href="index.html" class="cssHomeButton" data-icon="home"
+      data-theme="b" id="noteHomeButton">Home</a>
+    <h1>Notes</h1>
+    <a href="#noteMenu" class="cssFunctionButton" data-icon="bars"
+      data-iconpos="notext" data-rel="popup" data-theme="b"></a>
+  </div>
+
+  <!-- Page content. -->
+  <div data-role="content">
+
+    <div class="ui-loader-background"></div>
+
+    <!-- List view. -->
+    <div id="noteList">
+
+      <!-- Advanced filters. -->
+      <div data-role="collapsible">
+        <h3>Advanced Filters</h3>
+        <form name="noteFilterForm" id="noteFilterForm">
+          <label for="noteFilterCategory" class="select">Category</label>
+          <select name="category" id="noteFilterCategory"
+            onChange="populateList('note', 'category', this.value);">
+            <option value="all">All</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+          </select>
+        </form>
+      </div>
+
+      <div>&nbsp;</div>
+
+      <!-- List. -->
+      <div>
+        <ul data-role="listview" data-filter="true" data-inset="true"
+          data-autodividers="true" id="noteListUL"></ul>
+      </div>
+
+    </div>
+
+    <!-- Entry view. -->
+    <div id="noteEntry" style="display:none;">
+
+      <form name="noteEntryForm" id="noteEntryForm">
+
+        <!-- Category. -->
+        <label for="noteCategory" class="select">Category</label>
+        <select name="category" id="noteCategory">
+          <option value="personal">Personal</option>
+          <option value="work">Work</option>
+        </select>
+
+        <!-- Title and text. -->
+        <label for="noteTitle" class="cssRequired">Title</label>
+        <input type="text" name="title" id="noteTitle" data-clear-btn="true">
+        <label for="noteText" class="cssRequired">Text</label>
+        <textarea name="text" id="noteText"></textarea>
+        <label for="noteGeolocation">Geolocation At Time Of Creation</label>
+        <input type="text" name="geoLatLong" id="noteGeoLatLong"
+          readonly="true">
+
+        <!-- Buttons. -->
+        <button type="button" data-theme="e" data-icon="plus"
+          onClick="doSave('note');" id="noteSaveButton">Save</button>
+        <button type="button" data-theme="e" data-icon="minus"
+          onClick="doDelete('note');"
+          id="noteDeleteButton" disabled>Delete</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Footer. -->
+  <div data-role="footer" data-position="fixed">
+    <div class="ui-loader-background"></div>
+    <div data-role="navbar" class="cssNavBar">
+      <ul>
+        <li><a href="appointmentPage.html" class="cssNavAppointmentPage"
+          onClick="navigator.notification.vibrate(500);"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="contactPage.html" class="cssNavContactPage"
+          onClick="navigator.notification.vibrate(500);"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="javascript:void(0);"
+          onClick="navigator.notification.vibrate(500);"
+          class="cssNavNotePage ui-btn-active ui-state-persist"
+          data-icon="custom" data-iconpos="notext"></a></li>
+        <li><a href="taskPage.html" class="cssNavTaskPage"
+          onClick="navigator.notification.vibrate(500);"
+          data-icon="custom" data-iconpos="notext"></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

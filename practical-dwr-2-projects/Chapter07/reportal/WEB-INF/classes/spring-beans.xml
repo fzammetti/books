@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+  <!-- A DatabaseWorker instance will be injection by Spring into all the -->
+  <!-- other workers providing services to the UI. -->
+  <bean id="databaseWorker"
+	  class="com.apress.dwrprojects.reportal.DatabaseWorker">
+  </bean>
+
+  <!-- Worker that provides services related to users. -->
+  <bean id="userWorker"
+	  class="com.apress.dwrprojects.reportal.UserWorker">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+  <!-- Worker that provides services related to groups. -->
+  <bean id="groupWorker"
+	  class="com.apress.dwrprojects.reportal.GroupWorker">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+  <!-- Worker that provides services related to reports. -->
+  <bean id="reportWorker"
+	  class="com.apress.dwrprojects.reportal.ReportWorker">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+  <!-- Worker that provides services related to favorites. -->
+  <bean id="favoritesWorker"
+	  class="com.apress.dwrprojects.reportal.FavoritesWorker">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+  <!-- Worker that deals with actually executing a report. -->
+  <bean id="reportRunner"
+	  class="com.apress.dwrprojects.reportal.ReportRunner">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+    <!-- Worker that deals with scheduling of reports. -->
+  <bean id="reportSchedulingWorker"
+	  class="com.apress.dwrprojects.reportal.ReportSchedulingWorker">
+	  <property name="databaseWorker" ref="databaseWorker" />
+  </bean>
+
+</beans>

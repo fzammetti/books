@@ -1,0 +1,34 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      var f1 = function() { };
+      var f2 = new Function();
+      function func() {
+      }
+      var f3 = func;
+      var f4 = "test";
+      var f5 = 1;
+      alert(dojo.isFunction(f1) + "\n" + dojo.isFunction(f2) + "\n" +
+        dojo.isFunction(f3) + "\n" + dojo.isFunction(f4) + "\n" +
+        dojo.isFunction(f5));
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

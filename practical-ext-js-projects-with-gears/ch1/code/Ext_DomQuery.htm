@@ -1,0 +1,93 @@
+<!--
+    DOM Query - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Ext.util Namespace - EXT.DomQuery class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <style>
+      .cssRow1 {
+        color : #ff0000;
+      }
+      .cssRow2 {
+        color : #0000ff;
+      }
+      .cssCell {
+        background-color : #00ff00;
+      }
+      .cssCellAlt {
+        background-color : #eaeaea;
+      }
+    </style>
+
+    <script>
+
+      function testIt() {
+
+        var query = "td[class=\"cssCell\"]";
+        var elems = Ext.DomQuery.select(query);
+        for (var i = 0; i < elems.length; i++) {
+          console.log(query + " = elems[" + i + "].firstChild.nodeValue = " +
+            elems[i].firstChild.nodeValue);
+        }
+        query = "td[class=\"cssCellAlt\"]";
+        var f = Ext.DomQuery.compile(query);
+        elems = f(Ext.getDom("row1"));
+        for (var i = 0; i < elems.length; i++) {
+          console.log(query + " = elems[" + i + "].firstChild.nodeValue = " +
+            elems[i].firstChild.nodeValue);
+        }
+        query = "tr[class=\"cssRow2\"]";
+        console.log("Ext.DomQuery.is(Ext.getDom(\"row2\"), " + query + ") = " +
+          Ext.DomQuery.is(Ext.getDom("row2"), query));
+        query = "td";
+        elems = Ext.DomQuery.select(query);
+        console.log("Filtered list = " +
+          Ext.DomQuery.filter(elems, "td[class=\"cssCell\"]").length);
+
+      }
+
+      Ext.onReady(testIt);
+
+    </script>
+
+  </head>
+
+  <body>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr id="row1" class="cssRow1">
+        <td class="cssCell">row1_cell1</td>
+        <td class="cssCellAlt">row1_cell2</td>
+        <td class="cssCell">row1_cell3</td>
+        <td class="cssCellAlt">row1_cell4</td>
+      </tr>
+      <tr id="row2" class="cssRow2">
+        <td>row2_cell1</td>
+        <td>row2_cell2</td>
+        <td>row2_cell3</td>
+        <td>row2_cell4</td>
+      </tr>
+    </table>
+  </body>
+
+</html>

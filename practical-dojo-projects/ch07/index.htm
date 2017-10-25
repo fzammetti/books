@@ -1,0 +1,159 @@
+<html>
+
+  <head>
+
+    <title>Idiot Blob: The Game!</title>
+
+    <!-- Stylesheets. -->
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/soria/soria.css">
+    <link rel="StyleSheet" type="text/css" href="css/styles.css">
+
+    <!-- Dojo config and load. -->
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <!-- Load application code. -->
+    <script type="text/javascript" src="js/GraphicsSubsystem.js"></script>
+    <script type="text/javascript" src="js/LevelMaps.js"></script>
+    <script type="text/javascript" src="js/GameClass.js"></script>
+
+    <script>
+
+      // Import Dojo components.
+      dojo.require("dojox.gfx");
+      dojo.require("dojox.timing._base");
+      dojo.require("dijit.Dialog");
+      dojo.require("dijit.form.Button");
+      dojo.require("dijit.form.Slider");
+      dojo.require("dojo.parser");
+
+      // The one and only instance of the GameClass.
+      var game = new GameClass();
+
+      // Startup tasks.
+      dojo.addOnLoad(function() {
+        game.init();
+      });
+
+    </script>
+
+  </head>
+
+  <body class="soria">
+
+    <div class="cssOuterBorder"></div>
+
+    <!-- Welcome Dialog One. -->
+    <div dojoType="dijit.Dialog" id="WelcomeOneDialog" dragable="false"
+      title="Welcome - Page One" class="cssDialog1" style="display:none;">
+      <div id="divWelcomeOneSurface"></div>
+      <center>
+        <button dojoType="dijit.form.Button"
+          onClick="dijit.byId('WelcomeOneDialog').hide();dijit.byId('WelcomeTwoDialog').show();">
+          Continue
+        </button>
+      </center>
+    </div>
+
+    <!-- Welcome Dialog Two. -->
+    <div dojoType="dijit.Dialog" id="WelcomeTwoDialog"
+      title="Welcome - Page Two" class="cssDialog2" style="display:none;">
+      <div id="divWelcomeTwoSurface"></div>
+      <center>
+        <div dojoType="dijit.form.HorizontalSlider" class="cssSlider"
+          value="2" minimum="1" maximum="3" discreteValues="3"
+          showButtons="true" id="sldDifficulty">
+          <div dojoType="dijit.form.HorizontalRuleLabels"
+            container="topDecoration" labels="Easy,Medium,Hard"
+            class="cssSliderLabels">
+          </div>
+        </div>
+        <br><br>
+        <button dojoType="dijit.form.Button"
+          onClick="dijit.byId('WelcomeTwoDialog').hide();game.startGame();">
+          Start Game
+        </button>
+      </center>
+    </div>
+
+    <!-- Play area. -->
+    <div id="divContainer" class="cssPlayArea">
+      <!-- Main surface. -->
+      <div id="divSurface" style="display:none;"></div>
+      <!-- Blob image. -->
+      <img src="img/blob.gif" id="imgBlob"
+        style="position:absolute;display:none;">
+    </div>
+
+    <!-- In-game data display areas. -->
+    <div class="cssSideAreaPart" style="top:6px;height:164px;">
+      <table cellpadding="4" cellspacing="4" width="100%">
+        <tr>
+          <td width="1" class="cssInfoBoxes">Countdown:&nbsp;</td>
+          <td width="100%" class="cssInfoBoxes"
+            id="countdownDisplay">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="1" class="cssInfoBoxes">Next&nbsp;move:&nbsp;</td>
+          <td width="100%" class="cssInfoBoxes" id="nextMoveDisplay">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Control buttons. -->
+    <div class="cssSideAreaPart" style="top:170px;height:230px;">
+      <table align="center" border="0" width="100%">
+        <tr>
+          <td valign="middle" align="center" colspan="2">
+            <button dojoType="dijit.form.Button" iconClass="icons iconUp"
+              onClick="game.setNextMove('up');" showLabel="false"
+              label="up"></button>
+          </td>
+        </tr>
+        <tr>
+          <td valign="middle" align="left" width="50%">
+            <button dojoType="dijit.form.Button" iconClass="icons iconLeft"
+              onClick="game.setNextMove('left');" showLabel="false"
+              label="left"></button>
+          </td>
+          <td valign="middle" align="right" width="50%">
+            <button dojoType="dijit.form.Button" iconClass="icons iconRight"
+              onClick="game.setNextMove('right');" showLabel="false"
+              label="right"></button>
+          </td>
+        </tr>
+        <tr>
+          <td valign="middle" align="center" colspan="2">
+            <button dojoType="dijit.form.Button" iconClass="icons iconDown"
+              onClick="game.setNextMove('down');" showLabel="false"
+              label="down"></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- New Game button. -->
+    <div class="cssSideAreaPart" style="top:400px;height:86px;">
+      <table width="100%" align="center">
+        <tr><td align="center">
+            <br><br>
+            <button dojoType="dijit.form.Button"
+              onClick="game.commonGameOverWork();dijit.byId('WelcomeOneDialog').show();">
+              New Game
+            </button>
+          </a>
+        </tr><tr>
+      </table>
+    </div>
+
+  </body>
+
+</html>

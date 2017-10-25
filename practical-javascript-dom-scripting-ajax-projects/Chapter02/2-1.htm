@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script>
+
+      function doSubmit(inForm) {
+        if (inForm.firstName.value == "") {
+          alert("You must enter a first name");
+          return false;
+        }
+        if (inForm.lastName.value == "") {
+          alert("You must enter a Last name");
+          return false;
+        }
+        inForm.submit();
+        return true;
+      }
+
+    </script>
+
+  </head>
+  <body>
+
+    <form name="test" action="#" method="post">
+      First name: <input type="test" name="firstName">
+      <br>
+      Last name: <input type="test" name="lastName">
+      <br>
+      <input type="button" onClick="doSubmit(this.form);" value="Submit">
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title></title>
+
+    <script>
+
+      function sayName() {
+        alert(this.name);
+      }
+
+      function MyClass(inName) {
+        this.name = inName;
+        this.sayMyName = sayName;
+      }
+
+      var m = new MyClass("Babe Ruth");
+      m.sayMyName();
+
+    </script>
+
+  </head>
+  <body> </body>
+</html>

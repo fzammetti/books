@@ -1,0 +1,36 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/"
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+
+      dojo.require("dojo.AdapterRegistry");
+
+      var ar = new dojo.AdapterRegistry();
+      ar.register("stringRule", dojo.isString, function(inString) {
+        return inString.toLowerCase();
+      });
+      ar.register("arrayRule", dojo.isArray, function(inArray) {
+        return inArray.toString();
+      });
+      alert(ar.match("HeLlO"));
+      alert(ar.match(["John", "Connor"]));
+      ar.unregister("arrayRule");
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

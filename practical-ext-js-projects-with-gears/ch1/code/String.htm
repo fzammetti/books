@@ -1,0 +1,45 @@
+<!--
+    String - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - String class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+      <script>
+
+        alert(String.escape("This\\is'a test"));
+        alert(String.format("Hello {0}, my name is {1}", "Barack", "Michelle"));
+        alert(String.leftPad("1234", 8, "0"));
+        var s = "Republican";
+        alert(s.toggle("Republican", "Democrat"));
+        s = "     Trimmed String     ";
+        alert("\"" + s.trim() + "\"");
+
+      </script>
+
+  </head>
+
+  <body>
+  </body>
+
+</html>

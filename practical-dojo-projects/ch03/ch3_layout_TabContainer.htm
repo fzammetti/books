@@ -1,0 +1,77 @@
+<html>
+
+  <head>
+
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dojo/resources/dojo.css">
+    <link rel="StyleSheet" type="text/css"
+      href="js/dojo/dijit/themes/tundra/tundra.css">
+
+    <script type="text/javascript">
+      var djConfig = {
+        baseScriptUri : "js/dojo/",
+        parseOnLoad : true
+      };
+    </script>
+    <script type="text/javascript" src="js/dojo/dojo/dojo.js"></script>
+
+    <script>
+
+      dojo.require("dojo.parser");
+      dojo.require("dijit.layout.ContentPane");
+      dojo.require("dijit.layout.TabContainer");
+
+      function createProgrammatically() {
+        var myDijit = new dijit.layout.TabContainer({
+          style : "width:500px;height:200px;"
+        });
+        dojo.byId("divProgrammatic").appendChild(myDijit.domNode);
+        var myPane1 = new dijit.layout.ContentPane({
+          title : "CreatedTab1", closable : true });
+        myPane1.setContent("I was added programmatically #1");
+        myDijit.addChild(myPane1);
+        var myPane2 = new dijit.layout.ContentPane({
+          title : "CreatedTab2" });
+        myPane2.setContent("I was added programmatically #2");
+        myDijit.addChild(myPane2);
+        var myPane3 = new dijit.layout.ContentPane({
+          title : "CreatedTab3", selected : true,
+          href : "ch3_layout_ContentPane_content1.htm" });
+        myDijit.addChild(myPane3);
+        myDijit.startup();
+      }
+
+    </script>
+
+  </head>
+
+  <body class="tundra" onLoad="createProgrammatically();">
+    <br>
+    <table border="0" cellpadding="0" cellspacing="0"
+      width="800" align="center" style="border:1px solid #000000;padding:6px;">
+      <tr><td>
+        Dojo's dijit.layout.TabContainer Dijit, created declaratively:
+        <br><br>
+        <div dojoType="dijit.layout.TabContainer"
+          style="width:400px;height:150px">
+          <div dojoType="dijit.layout.ContentPane" title="Mike Tyson">
+            Tyson would win because he'd devour his opponent... LITERALLY.
+          </div>
+          <div dojoType="dijit.layout.ContentPane" title="Ali" closable="true"
+            selected="true">
+            Ali would win because he would simply talk his opponent to death.
+          </div>
+          <div dojoType="dijit.layout.ContentPane" title="Joe Frazier">
+            Come on, is there really any doubt Frazier is the best?  Err, ok,
+            you're right, Ali is.  Sorry Joe!
+          </div>
+        </div>
+        <br><br>
+        Programmatically-created Dijit:
+        <br>
+        <div id="divProgrammatic">&nbsp;</div>
+      </td></tr>
+    </table>
+  </body>
+
+</html>

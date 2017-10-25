@@ -1,0 +1,84 @@
+calcTron.currentMode.init(
+
+  {
+
+    "mainWidth" : "480", "mainHeight" : "268",
+
+    "commandButtons" : [
+      { "enabled"   : "false", "caption" : ""           },
+      { "enabled"   : "true",  "caption" : "Hex"        },
+      { "enabled"   : "true",  "caption" : "Dec"        },
+      { "enabled"   : "true",  "caption" : "Backspace"  },
+      { "enabled"   : "true",  "caption" : "Clear"      },
+      { "enabled"   : "false", "caption" : ""           },
+      { "enabled"   : "true",  "caption" : "Oct"        },
+      { "enabled"   : "true",  "caption" : "Bin"        },
+      { "enabled"   : "false", "caption" : ""           },
+    ],
+
+    "buttons" : [
+      [
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "true",  "caption" : "7"          },
+        { "enabled" : "true",  "caption" : "8"          },
+        { "enabled" : "true",  "caption" : "9"          },
+        { "enabled" : "true",  "caption" : "/"          },
+        { "enabled" : "false", "caption" : ""           }
+      ],
+      [
+        { "enabled" : "false",  "caption" : ""          },
+        { "enabled" : "false",  "caption" : ""          },
+        { "enabled" : "false",  "caption" : ""          },
+        { "enabled" : "false",  "caption" : ""          },
+        { "enabled" : "false",  "caption" : ""          },
+        { "enabled" : "true",   "caption" : "4"         },
+        { "enabled" : "true",   "caption" : "5"         },
+        { "enabled" : "true",   "caption" : "6"         },
+        { "enabled" : "true",   "caption" : "*"         },
+        { "enabled" : "false",  "caption" : ""          }
+      ],
+      [
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "true",  "caption" : "1"          },
+        { "enabled" : "true",  "caption" : "2"          },
+        { "enabled" : "true",  "caption" : "3"          },
+        { "enabled" : "true",  "caption" : "-"          },
+        { "enabled" : "false", "caption" : ""           }
+      ],
+      [
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "true",  "caption" : "0"          },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "true",  "caption" : "+"          },
+        { "enabled" : "true",  "caption" : "="          }
+      ],
+      [
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "false", "caption" : ""           },
+        { "enabled" : "true",  "caption" : "A"          },
+        { "enabled" : "true",  "caption" : "B"          },
+        { "enabled" : "true",  "caption" : "C"          },
+        { "enabled" : "true",  "caption" : "D"          },
+        { "enabled" : "true",  "caption" : "E"          },
+        { "enabled" : "true",  "caption" : "F"          }
+      ]
+    ]
+
+  }
+
+);

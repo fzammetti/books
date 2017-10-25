@@ -1,0 +1,41 @@
+[
+  { 
+    "source" : "app/assistants/stage-assistant.js" 
+  },
+  { 
+    "source" : "app/assistants/welcome-assistant.js", "scenes" : "welcome" 
+  },
+  { 
+    "source" : "app/assistants/categoryAdd-assistant.js", 
+    "scenes" : "categoryAdd" 
+  },
+  { 
+    "source" : "app/assistants/categoryList-assistant.js", 
+    "scenes" : "categoryList" 
+  },
+  { 
+    "source" : "app/assistants/snippetDetails-assistant.js", 
+    "scenes" : "snippetDetails" 
+  },
+  { 
+    "source" : "app/assistants/snippetList-assistant.js", 
+    "scenes" : "snippetList" 
+  },
+  { 
+    "source" : "app/assistants/search-assistant.js", "scenes" : "search" 
+  },
+  { 
+    "source" : "app/assistants/preferences-assistant.js", 
+      "scenes" : "preferences" 
+  },
+  { 
+    "source" : "app/assistants/searchResults-assistant.js", 
+    "scenes" : "searchResults" 
+  },  
+  { 
+    "source" : "app/CodeCabinet.js" 
+  },
+  { 
+    "source" : "app/DAO.js" 
+  }
+]

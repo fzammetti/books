@@ -1,0 +1,90 @@
+<!--
+    Time Tracker - From the book "Practical webOS Projects With the Palm Pre"
+    Copyright (C) 2009 Frank W. Zammetti
+    fzammetti@etherient.com
+
+    Licensed under the terms of the MIT license as follows:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to 
+    deal in the Software without restriction, including without limitation the 
+    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+    sell copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+    FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+    IN THE SOFTWARE.
+-->
+
+
+<!-- Header. -->
+<div class="palm-page-header">
+  <div class="header-icon projectDetails"></div>
+  <div class="header-text">Project Details</div>
+</div>
+
+<!-- Scrim. -->
+<div class="palm-scrim" id="projectDetails_divScrim" style="display:none;">
+  <div id="projectDetails_divSpinner" x-mojo-element="Spinner"></div>
+</div>
+
+<!-- Name. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div id="projectDetails_txtName" x-mojo-element="TextField"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Start Date. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label">Start</div>
+        <div id="projectDetails_dtpStartDate" x-mojo-element="DatePicker"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Target Date. -->
+<div class="palm-row">
+  <div class="palm-row-wrapper">
+    <div class="textfield-group" x-mojo-focus-highlight="true">
+      <div class="title">
+        <div class="label">Target</div>
+        <div id="projectDetails_dtpTargetDate" 
+          x-mojo-element="DatePicker"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- Project Manager. -->
+<div class="palm-row">
+  <div x-mojo-element="ListSelector" 
+    id="projectDetails_lssProjectManager"></div>
+</div>
+
+<!-- Tasks. -->
+<div class="palm-group" id="projectDetails_divTasks">
+  <div class="palm-group-title">Task</div>
+  <div class="palm-list">
+    <div id="projectDetails_lstTasks" x-mojo-element="List"></div>
+  </div>
+</div>
+
+<!-- Save Button. -->
+<div id="projectDetails_btnSave" x-mojo-element="Button"></div>

@@ -1,0 +1,43 @@
+.cssBody {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+.cssButton {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+}
+
+.cssPackageDIV {
+  font-family      : arial;
+  font-size        : 10pt;
+  font-weight      : bold;
+  display          : none;
+  background-color : #ffffe0;
+  padding          : 4px;
+}
+
+.cssCenteredDIV {
+  font-family      : arial;
+  font-size        : 12pt;
+  font-weight      : bold;
+  position         : absolute;
+  top              : 0px;
+  left             : 0px;
+  background-color : #ffa0a0;
+  width            : 240px;
+  height           : 24px;
+}
+
+.cssLog {
+  font-family      : arial;
+  font-size        : 12pt;
+  padding          : 4px;
+  background-color : #ffffff;
+  border           : 1px solid #000000;
+  width            : 50%;
+  height           : 300px;
+  overflow         : scroll;
+}

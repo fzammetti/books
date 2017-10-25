@@ -1,0 +1,77 @@
+.cssTopNav {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+	background-image  : url(../img/topstrip.gif);
+	background-repeat : repeat-x;
+}
+
+.cssSideNav {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+}
+
+.cssMain {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+	padding-top       : 10px;
+	padding-right     : 20px;
+	padding-bottom    : 5px;
+	padding-left      : 14px;
+}
+
+.cssDAAGItem {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+	padding-left      : 12px;
+}
+
+.cssDAAGHeading {
+	font-family       : Arial;
+	font-size         : 14pt;
+	font-weight       : bold;
+	text-decoration   : underline;
+	color             : #000000;
+	padding-bottom    : 10px;
+}
+
+.cssScrollContent {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+  height            : 400px;
+  overflow          : auto;
+}
+
+.cssError {
+	font-family       : Arial;
+	font-size         : 14pt;
+	font-weight       : bold;
+	color             : #ff0000;
+}
+
+.cssInput0 {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+	border            : solid 1px #40a0ff;
+	background-color  : #ffffff;
+}
+
+.cssInput1 {
+	font-family       : Arial;
+	font-size         : 10pt;
+	font-weight       : bold;
+	color             : #000000;
+	border            : solid 1px #40a0ff;
+	background-color  : #fff0c0;
+}

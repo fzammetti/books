@@ -1,0 +1,2 @@
+On page 47, Figure 1-27 is incorrect.  It should be a screenshot of an alert() with the
+contents "I am ..."

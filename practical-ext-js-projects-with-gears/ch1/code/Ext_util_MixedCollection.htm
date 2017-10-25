@@ -1,0 +1,83 @@
+<!--
+    MixedCollection - From the book "Practical Ext JS Projects With Gears"
+    Copyright (C) 2008 Frank W. Zammetti
+    fzammetti@omnytex.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses.
+-->
+
+
+<html>
+  <head>
+    <title>Chapter 1 - Ext.util Namespace - MicedCollection class</title>
+
+    <script type="text/javascript" src="../../ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext/ext-all.js"></script>
+
+    <script>
+
+      function testIt() {
+
+        var mc = new Ext.util.MixedCollection();
+        mc.add("John", "Resig");
+        mc.addAll(
+          { "Alex" : "Russell", "Joe" : "Walker", "Jack" : "Slocum" }
+        );
+        console.log(mc);
+
+        alert(mc.containsKey("John"));
+        alert(mc.contains("Walker"));
+
+        mc.each(function(item, idx, len) {
+          alert(idx + "/" + len + ": " + item);
+        });
+        mc.eachKey(function(key, item) {
+          alert(key + " = " + item);
+        });
+
+        alert(mc.find(function(item) {
+          if (item == "Slocum") {
+            return true;
+          } else {
+            return false;
+          }
+        }));
+
+        alert(mc.first());
+        alert(mc.getCount());
+        alert(mc.indexOfKey("Joe"));
+
+        alert(mc.get(1) + " - " + mc.get("Alex"));
+
+        mc.removeKey("Joe");
+        alert(mc.getCount());
+
+        mc.replace("John", "Sheridan" );
+        console.log(mc);
+
+        mc.remove("Joe");
+        mc.removeAt(0);
+        console.log(mc);
+
+      }
+
+      Ext.onReady(testIt);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

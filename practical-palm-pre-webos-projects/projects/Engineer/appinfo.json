@@ -1,0 +1,9 @@
+{
+  "id": "com.etherient.engineer",
+  "version": "1.0.0",
+  "vendor": "Etherient",
+  "type": "web",
+  "main": "index.html",
+  "title": "Engineer",
+  "icon": "icon.png"
+}
