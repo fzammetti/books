@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>excelviewer</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ rows : [
+          { view : "excelbar", id : "toolbar" },
+          { view : "excelviewer", toolbar : "toolbar", excelHeader : true,
+            url : "binary->excel.xlsx"
+          }
+        ] });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

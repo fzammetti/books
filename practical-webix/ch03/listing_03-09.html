@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>unitlist</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "unitlist", width : 300, height : 280, type : { height : 30 }, template : "#title#",
+          borderless : false, css : { margin : "10px" },
+          uniteBy : function(inObj) {
+            return inObj.title.substr(0,1);
+          },
+          data : [
+            { id : 1, title : "Images and Words (Dream Theater)" },
+            { id : 2, title : "Dark Side of the Moon (Pink Floyd)" },
+            { id : 3, title : "Jagged Little Pill (Alanis Morrissette)" },
+            { id : 4, title : "Ten (Pearl Jam)" },
+            { id : 5, title : "The Stranger (Billy Joel)" },
+            { id : 6, title : "Thriller (Michael Jackson)" },
+            { id : 7, title : "21 (Adele)" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

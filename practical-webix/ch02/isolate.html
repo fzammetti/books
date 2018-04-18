@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>portlet</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          type : "space",
+          rows : [
+            { view : "portlet", isolate : true, id : "portlet1",
+              body : { view : "button", id : "myButton", value : "myButton"
+            }},
+            { view : "portlet", isolate : true, id : "portlet2",
+              body : { view : "button", id : "myButton", value : "myButton"
+            }}
+          ]
+        });
+
+        $$("portlet1").$$("myButton").disable();
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

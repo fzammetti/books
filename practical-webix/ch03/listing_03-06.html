@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>dataview</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "dataview", xCount : 4, type : { height : 100 }, width : 640, height : 250,
+            borderless : false, css : { margin : "10px" }, select : true, multiselect : true,
+            template : "<div class=\"webix_strong\" style=\"background-color:#ffeaea;\">" +
+              "#title#</div> Year: #year#<br>System: #system#",
+            data : [
+              {  title : "Pitfall", year : 1982, system : "Atari 2600" },
+              {  title : "Pick Axe Pete", year : 1982, system : "Odyssey2" },
+              {  title : "Ladybug", year : 1981, system : "Colecovision" },
+              {  title : "Altered Beast", year : 1988, system : "Sega Genesis" },
+              {  title : "Halo", year : 2001, system : "Xbox" },
+              {  title : "Crash Bandicoot", year : 1996, system : "Playstation" },
+              {  title : "Guitar Hero", year : 2005, system : "Playstation 2" }
+            ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

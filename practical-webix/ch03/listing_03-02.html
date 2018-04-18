@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>htmlform</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        let frm = webix.ui({ id : "myFormView", view : "htmlform", content : "myForm" });
+        frm.setValues({ firstname : "Frank", lastname : "Zammetti" });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="myForm">
+      <div>
+        <label for="firstName">First Name</label><br/>
+        <input type="text" name="firstName" placeholder="Required" />
+      </div>
+      <div>
+        <label for="lastName">Last Name</label><br/>
+        <input type="text" name="lastName" placeholder="Required" />
+      </div>
+    </div>
+  </body>
+
+</html>

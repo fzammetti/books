@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>portlet</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          type : "space",
+          cols : [
+            { view : "portlet", body : { template : "Portlet #1" }},
+            { view : "portlet", body : { template : "Portlet #2" }},
+            { view : "portlet", body : { template : "Portlet #3" }},
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

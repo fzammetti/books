@@ -1,0 +1,5 @@
+.cssPlayfield {
+  background-image : url("img/background.png");
+  overflow : hidden;
+  position : relative;
+}

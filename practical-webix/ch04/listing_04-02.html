@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>menu</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "menu", type : { subsign : true },
+          data : [
+            {value : "Man Tactical", submenu : [ "Worf", "Data", "Riker" ] },
+            {value : "Fire Phasers" },
+            {value : "Fire Torpedoes" }
+          ]
+        });
+
+        webix.ui({ height : 20 });
+
+        webix.ui({
+          view : "menu", layout : "y", width : 180, height : 300,
+          select : true, type : { subsign : true },
+          data : [
+            {value : "Man Tactical", submenu : [ "Worf", "Data", "Riker" ] },
+            {value : "Fire Phasers" },
+            {value : "Fire Torpedoes" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

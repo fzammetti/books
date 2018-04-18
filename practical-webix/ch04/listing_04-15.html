@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Drag-And-Drop</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.DragControl.addDrag("src", {
+          $dragCreate : function(inSource, inEvent) {
+            return inSource;
+          },
+          $dragDestroy : function(inDrag) { }
+        });
+        webix.DragControl.addDrop("dest", {
+          $drop : function(inSource, inTarget, inEvent) {
+            console.log("You dropped:", inSource);
+          }
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div style="width:100px;height:100px;">
+      <div id="src" title="I am the source"
+        style="width:100px;height:100px;background-color:#ff0000;">
+      </div>
+    </div>
+
+    <div style="height:100px;"></div>
+
+    <div id="dest" title="I am the destination"
+      style="width:200px;height:200px;background-color:#00ff00;">
+    </div>
+
+  </body>
+
+</html>

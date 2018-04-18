@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>property</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "property", width : 260, height : 112, nameWidth : 120, borderless : false,
+          css : { margin : "10px" },
+          elements : [
+            { label : "Baseball Player", type : "label"},
+            { label : "Name", type : "text" },
+            { label : "Position", type : "select",
+              options : ["1B", "2B", "3B", "LF", "CF", "RF", "SS", "C", "P" ]
+            },
+            { label : "Injured?", type : "checkbox" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>sidemenu</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        let sideMenu = webix.ui({
+          view : "sidemenu", width : 200, position : "left",
+          body : {
+            view : "list", borderless : true, scroll : false,
+            template : "<span class='webix_icon fa-#icon#'></span> #value#",
+            data : [
+              { value : "New", icon : "file" },
+              { value : "Open", icon : "folder-open" },
+              { value : "Close", icon : "window-close" }
+            ]
+          }
+        });
+
+        webix.ui({
+          rows : [
+            { cols : [
+              { },
+              { view : "button", type : "iconButton", width : 36, height : 50, icon : "bars",
+                click : function() {
+                  sideMenu.isVisible() ? sideMenu.hide() : sideMenu.show();
+                }
+              }
+            ] },
+            { }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

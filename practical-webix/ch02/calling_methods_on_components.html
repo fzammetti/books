@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Calling methods on components</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        var myComponent = webix.ui({
+          rows : [
+            { id : "row1", template : "row1" }, { id : "row2", template : "row2" }
+          ]
+        });
+
+        $$("row1").disable();
+        myComponent.getChildViews()[1].disable();
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

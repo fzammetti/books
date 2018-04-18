@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>window</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          id : "myWindow", view : "window", width : 300, height : 200, left : 100, top : 100,
+          move : true, resize : true,
+          head : {
+            view : "toolbar",
+            cols : [
+              { view : "label", label : "A window unto the world" },
+              { view : "icon", icon : "times-circle",
+                click : function() { $$("myWindow").close(); }
+              }
+            ]
+          },
+          body : {
+            template :
+              `<br>We can show HTML here, or other Webix components - we could,
+              in fact, build an entire application UI in a window!`
+          }
+        }).show();
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Header Layout</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ view : "headerlayout", cols : [
+          { header : "Column 1", body : "Hello from column 1", width : 200 },
+          { header : "Column 2", body : "Hello from column 2", width : 300 },
+          { header : "Column 3", body : "Hello from column 3" }
+        ] });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

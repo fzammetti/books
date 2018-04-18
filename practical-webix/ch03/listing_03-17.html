@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>rangechart</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        let salesData = [];
+        for (let i = 0; i <= 100; i++) {
+          salesData.push({ days : i, sales : Math.round(Math.random() * 3000) });
+        }
+
+        webix.ui({
+          type : "wide", width : 1400, height : 600, borderless : false,
+          css : { margin : "10px", border : "2px solid #00ff00" },
+          rows : [
+            { view : "chart", type : "barH", id : "myChart",
+              value : "#sales#", yAxis : { template : "#days#" }
+            },
+            { view : "rangechart", height : 100, type : "line", value : "#sales#", padding : 0,
+              frameId : "days", item : { radius : 4 }, data : salesData,
+              range : { start : 40, end : 60 },
+              line : { color : "#ff0000" },
+              on : {
+                onAfterRangeChange : function() {
+                  let mc = $$("myChart");
+                  mc.clearAll();
+                  mc.parse(this.getFrameData());
+                }
+              }
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

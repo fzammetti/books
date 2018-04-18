@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>googlemap</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "google-map", width : 640, height : 480, borderless : false, css : { margin : "10px" },
+          key : "AIzaSyAi0oVNVO-e603aUY8SILdD4v9bVBkmiTg", zoom : 11, mapType : "HYBRID",
+          center : [ 40.758896, -73.985130 ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>multiview</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          type : "clean", width : 600, height : 400, css : { "border" : "2px solid #ff0000" },
+          rows : [
+            { view : "segmented", value : "left", multiview : true,
+              options : [
+                { value : "Rick", id : "rick"}, { value : "Morty", id : "morty" }
+              ]
+            },
+            { cells : [
+              { id : "rick", template : "Alcoholic<br>Science Genius<br>Father of Beth" },
+              { id : "morty", template : "14 years old<br>Mortiest Morty<br>Sidekick" }
+            ] }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

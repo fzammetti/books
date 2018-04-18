@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>chart</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      let chartData = [
+        { count : 65, dollars : 130, color : "#ff0000", type : "AA" },
+        { count : 120, dollars : 280, color : "#00ff00", type : "BB" },
+        { count : 50, dollars : 98, color : "#0000ff", type : "CC" },
+        { count : 90, dollars : 110, color : "#ffff00", type : "DD" }
+      ];
+
+      webix.ready(function() {
+
+        webix.ui({
+          rows : [
+            { height : 10 },
+            /* Row 1 */
+            { cols : [
+              { width : 10 },
+              /* Area chart. */
+              { view : "chart", type : "area", value : "#count#", label : "#count#",
+                width : 300, height : 200, data : chartData
+              },
+              { width : 10 },
+              /* Bar chart. */
+              { view : "chart", type : "bar", value : "#count#", label : "#count#", barWidth : 100,
+                radius : 10, gradient : "3d", width : 300, height : 200, data : chartData
+              },
+              { width : 10 },
+              /* Horizontal bar chart. */
+              { view : "chart", type : "barH", value : "#count#", label : "#count#", barWidth : 20,
+                gradient : "falling", width : 300, height : 200, data : chartData, padding : 40
+              },
+              { }
+            ]},
+            { height : 10 },
+            /* Row 2 */
+            { cols : [
+              { width : 10 },
+              /* Donut chart. */
+              { view : "chart", type : "donut", value : "#count#", color : "#color#", label : "#count#",
+                shadow : 20, data : chartData,
+                pieInnerText :
+                  "<span style=\"color:#82c0ff;font-weight:bold;padding:10px;\">#type#</span>",
+              },
+              { width : 10 },
+              /* Line chart. */
+              { view : "chart", type : "line", value : "#count#", label : "#count#",
+                width : 300, height : 200, data : chartData,
+                line : { color : "#ffa0d0", width : 10 }
+              },
+              { width : 10 },
+              /* Pie chart. */
+              { view : "chart", type : "pie", value : "#count#", color : "#color#", label : "#count#",
+                shadow : 20, data : chartData,
+                legend : { width : 90, align:"right",
+                  values: [
+                    { text : "AA", color : "#ff0000" },
+                    { text : "BB", color : "#00ff00" },
+                    { text : "CC", color : "#0000ff" },
+                    { text : "DD", color : "#ffff00" },
+                  ]
+                }
+              },
+              { }
+            ]},
+            { height : 10 },
+            /* Row 3 */
+            { cols : [
+              { width : 10 },
+              /* 3D pie chart. */
+              { view : "chart", type : "pie3D", value : "#count#", color : "#color#", label : "#count#",
+                data : chartData
+              },
+              { width : 10 },
+              /* Stacked area chart. */
+              { view : "chart", type : "stackedArea", value : "#count#", label : "#count#",
+                width : 300, height : 200, data : chartData
+              },
+              { width : 10 },
+              /* Spline chart. */
+              { view : "chart", type : "spline", value : "#count#", label : "#count#",
+                width : 300, height : 200, data : chartData
+              },
+              { }
+            ]},
+            { height : 10 },
+            /* Row 4 */
+            { cols : [
+              { width : 10 },
+              /* Stacked horizontal bar chart. */
+              { view : "chart", type : "stackedBarH", value : "#count#", label : "#count#",
+                radius : 10, gradient : "falling", width : 300, height : 200, data : chartData
+              },
+              { }
+            ]},
+            { }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body style="overflow:auto;"></body>
+
+</html>

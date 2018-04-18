@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>context</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "context", master : "div1", width : 250, height : 150,
+          body : { template : "Exterminate the Doctor! Exterminate! Exterminate!" }
+        });
+
+        webix.ui({
+          view : "contextmenu", master : "div2",
+          data : [
+            { value : "Send To...", submenu : [ "Clara", "Billie", "Rose" ] },
+            { value : "Add Companion" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+    <div id="div1" style=" background-color:#ff0000;width:200px;height:200px;"></div>
+    <br>
+    <div id="div2" style=" background-color:#00ff00;width:200px;height:200px;"></div>
+  </body>
+
+</html>

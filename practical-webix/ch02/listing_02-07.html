@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>carousel</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "carousel", width : 400, height : 300,
+          cols : [
+            { css : { "background-color" : "#ff0000", "color" : "#ffff00" }, template : "Gilligan" },
+            { css : { "background-color" : "#00ff00", "color" : "#000000" }, template : "Professor" },
+            { css : { "background-color" : "#0000ff", "color" : "#ffffff" }, template : "Mary Ann" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

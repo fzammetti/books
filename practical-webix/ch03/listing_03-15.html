@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>bullet</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ view : "bullet", minRange : 0, maxRange : 240, value : 150, color : "#ffff00",
+          label : "Monthly Sales", placeholder : "Count: #value#", marker : 200,
+          borderless : false, css : { margin : "10px" }, width : 800, height : 100,
+          bands : [
+            { value : 240, color : "#00ff00"},
+            { value : 100, color : "#ff0000"},
+            { value : 50, color : "#0000ff"}
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

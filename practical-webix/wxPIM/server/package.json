@@ -1,0 +1,14 @@
+{
+  "name" : "wxPIM",
+  "version" : "1.0.0",
+  "description" : "wxPIM app from the book Practical Webix",
+  "repository" : "https://github.com/fzammetti/wxpim",
+  "main" : "server.js",
+  "author" : "Frank W. Zammetti",
+  "license" : "MIT",
+  "dependencies" : {
+    "body-parser" : "*",
+    "express" : "*",
+    "nedb" : "*"
+  }
+}

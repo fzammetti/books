@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>treemap</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <style>
+      .level1 { background-color : #ff0000; }
+      .level2 { background-color : #00ff00; }
+      .level3 { background-color : #a0a0ff; }
+    </style>
+
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "treemap", template : function(inItem) { return inItem.curriculum || ""; },
+          value : "#students#", width : 400, height : 400, borderless : false, css : { margin : "10px" },
+          type : {
+            cssClass : function(inItem){
+              let className = "";
+              if (inItem.students <= 20) {
+                className = "level1";
+              } else if(inItem.students <= 40) {
+                className = "level2";
+              } else if(inItem.students <= 60) {
+                className = "level3";
+              }
+              return className;
+            }
+          },
+          data: [
+            { id : "stem", curriculum: "STEM",
+              data : [ { students : "20" }, { students : "40" }, { students : "90" } ]
+            },
+            { id : "theArts", curriculum: "The Arts",
+              data : [ { students : "60" }, { students : "15" }, { students : "40" } ]
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

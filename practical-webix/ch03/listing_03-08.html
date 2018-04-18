@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>grouplist</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "grouplist", scroll : true, width : 300, height : 100, borderless : false,
+          css : { margin : "10px" },
+          data : [
+            { value : "Movies", open : true, data : [
+              { value : "Star Trek", open : true, data : [
+                { value : "The Motion Picture" },
+                { value : "The Wrath of Khan"},
+                { value : "The Search for Spock"}
+              ]},
+              { value : "Star Wars", open : true, data : [
+                { value : "A New Hope" },
+                { value : "The Empire Strikes Back"},
+                { value : "Return of the Jedi"}
+              ]}
+            ]},
+            { value : "Books", open : true, data : [
+              { value : "Harry Potter", open : true, data : [
+                { value : "The Sorcerer's Stone" },
+                { value : "The Chamber of Secrets"},
+                { value : "The Prisoner of Azkaban"}
+              ]},
+              { value : "The Dark Tower", open : true, data : [
+                { value : "The Gunslinger" },
+                { value : "The Drawing of the Three"},
+                { value : "The Waste Lands"}
+              ]}
+            ]}
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

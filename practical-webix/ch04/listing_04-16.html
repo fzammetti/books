@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>jQuery Integration</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+
+    <script type="text/javascript" src="../jQuery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+    <script type="text/javascript" src="../jQuery/adapter.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        $(".caldiv").webix_calendar();
+
+      });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="caldiv"></div>
+    <div class="caldiv"></div>
+
+  </body>
+
+</html>

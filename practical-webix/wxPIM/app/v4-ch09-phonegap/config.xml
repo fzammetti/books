@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+  xmlns:gap="http://phonegap.com/ns/1.0"
+  id="com.etherient.wxPIM"
+  version="1.0.0">
+
+  <name>wxPIM</name>
+  <description>wxPIM fom the book Practical Webix by Frank W. Zammetti</description>
+  <author href="http://www.zammetti.com" email="fzammetti@etherient.com">Frank W. Zammetti</author>
+  <preference name="phonegap-version" value="cli-6.5.0" />
+  <plugin name="cordova-plugin-vibration" spec="2.1.5" />
+
+</widget>

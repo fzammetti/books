@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>abslayout</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <style>
+      .container { background-color : #ff0000; }
+      .corner { background-color : #ffff00; }
+    </style>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "abslayout", width : 200, height : 200, css : "container",
+          cells : [
+              { template : "UL", top : 5, left : 5, width : 30, height : 30, css : "corner" },
+              { template : "UR", top : 5, left : 165, width : 30, height : 30, css : "corner" },
+              { template : "LL", top : 165, left : 5, width : 30, height : 30, css : "corner" },
+              { template : "LR", top : 165, left : 165, width : 30, height : 30, css : "corner" },
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

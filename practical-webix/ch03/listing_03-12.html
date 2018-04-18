@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>treetable</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "treetable", width : 550, height : 300, borderless : true, css : { margin : "10px" },
+          columns : [
+            { id : "id", header : "", width : 50, sort : "string" },
+            { id : "value", header : "Candy Bars", width : 300,
+              template : "{common.treetable()} #value#", sort : "string"
+            },
+            { id : "nutsOrNot", header : "Nuts?", width : 180, sort : "string" }
+          ],
+          data : [
+            { id : "1", value : "Hershey", open : true,
+              data : [
+                { id : 1.1, value : "Almond Joy", nutsOrNot : "Has Nuts" },
+                { id : 1.2, value : "Hershey's Kisses", nutsOrNot : "No Nuts", open : true,
+                  data : [
+                    { id : "1.2.1", value : "Milk Chocolate With Almonds",
+                      nutsOrNot : "Oh Yeah, Except These" }
+                  ]
+                }
+              ]
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

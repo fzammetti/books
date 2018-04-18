@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Form and data entry controls</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        let dataObj = [
+          { id : "1", value : "Dream Theater" },
+          { id : "2", value : "Kamelot" },
+          { id : "3", value : "Circus Maximus" }
+        ];
+
+        webix.ui({
+          view : "form", id : "form1", width : 1000, height : 820,
+          css : { "border" : "2px solid #000000", "margin" : "10px" },
+          elementsConfig : { labelWidth : 120 },
+          elements : [ {
+            cols : [
+              /* Column 1 */
+              { width : 420, rows : [
+                { view : "button", label : "button" },
+                { view : "checkbox", label : "checkbox" },
+                { view : "colorpicker", label : "colorpicker" },
+                { view : "combo", label : "combo", value : "2", options : dataObj, required : true },
+                { view : "counter", label : "counter" },
+                { view : "datepicker", label : "datepicker" },
+                { view : "dbllist", height : 200, value : "1,3",
+                  css : { "margin-top" : "10px!important" }, data : dataObj
+                },
+                { view : "label", label : "This is a label, and below is an icon", align : "center" },
+                { view : "icon", icon: "envelope", align : "left" }
+/*
+                ,{ view : "fieldset", label : "Pro-Only Widgets",
+                  body : { rows : [
+                    { view : "daterangepicker", label : "daterangepicker" },
+                    { view : "multicombo", label : "multicombo", value : "1,3", options : dataObj },
+                    { view : "multiselect", label : "multiselect", value : "2,3", options : dataObj },
+                    { view : "multitext", label : "multitext" }
+                  ] }
+                }
+*/
+              ] },
+              /* Column 2 */
+              { },
+              /* Column 3 */
+              { width : 520, rows : [
+                { view : "radio", label : "radio", value : "1", options : dataObj },
+/*                { view : "rangeslider", label : "rangeslider" },*/
+                { view : "richselect", label : "richselect", value : "2", options : dataObj },
+                { view : "richtext", label : "richtext", height : 150 },
+                { view : "search", label : "search" },
+                { view : "segmented", label : "segmented", value : "3", options : dataObj },
+                { view : "select", label : "select", value : "1", options : dataObj },
+                { view : "slider", label : "slider" },
+                { view : "text", id : "myText", name : "myText", label : "text", validate : webix.rules.isNumber,
+                  invalidMessage : "Must be a number", bottomPadding : 20,
+                  on : {
+                    onBlur : function() { $$("form1").validate() }
+                  }
+                },
+                { view : "textarea", label : "textarea", height : 220 },
+                { view : "toggle", onLabel : "toggle ON", offLabel : "toggle",
+                  width : 100, align : "right"
+                }
+              ] }
+            ]
+          } ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body style="overflow:auto;"></body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Layout types</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ type : "clean", rows : [
+          { type : "line", cols : [
+            { template : "line-1" }, { template : "line-2" }, { template : "line-3"  }
+          ] },
+          { type : "wide", cols : [
+            { template : "wide-1" }, { template : "wide-2" }, { template : "wide-3"  }
+          ] },
+          { type : "space", cols : [
+            { template : "space-1" }, { template : "space-2" }, { template : "space-3"  }
+          ] },
+          { type : "head", cols : [
+            { template : "head-1" }, { template : "head-2" }, { template : "head-3"  }
+          ] },
+          { type : "form", cols : [
+            { template : "form-1" }, { template : "form-2" }, { template : "form-3"  }
+          ] }
+        ] });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

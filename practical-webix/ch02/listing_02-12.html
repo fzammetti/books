@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>toolbar</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "toolbar", height : 50,
+          cols : [
+            { view : "button", label : "New", width : 90, type : "iconButton", icon : "file" },
+            { view : "button", label : "Open", width : 90, type : "iconButton", icon : "folder-open" },
+            { view : "button", label : "Close", width : 90, type : "iconButton", icon : "window-close" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

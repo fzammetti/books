@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>datatable</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      let colorTemplate = function(inValue) {
+				return "<span style=\"background-color:" + inValue + ";border-radius:4px;padding-right:10px;\">&nbsp&nbsp</span> ";
+			};
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "datatable", width : 460, height : 216, editable : true,
+          css : { margin : "10px" }, borderless : false,
+          columns : [
+            { id : "marker", header : "", width : 38, editor : "color",
+              template : function(inObj) {
+                return "<span style=\"background-color:" + inObj.marker +
+                  ";border-radius:20px;padding-right:10px;\">&nbsp&nbsp</span>";
+              }
+            },
+            { id : "title", header : "Show Title", width : 140, sort : "string" },
+            { id : "network", header : "Network", width : 100, editor : "text" },
+            { id : "seasons", header : "Seasons", fillspace : true }
+          ],
+          data : [
+            { marker : "#ff0000", title : "Star Trek: TOS", network : "CBS", seasons : 3 },
+            { marker : "#00ff00", title : "Firefly", network : "Fox", seasons : "TOO FEW!!" },
+            { marker : "#0000ff", title : "Cheers", network : "NBC", seasons : 11 },
+            { marker : "#ffff00", title : "Suits", network : "USA", seasons : "7 (and counting)" },
+            { marker : "#ff00ff", title : "Babylon 5", network : "PTN", seasons : "5" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

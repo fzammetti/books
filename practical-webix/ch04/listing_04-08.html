@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>scrollview</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "scrollview", scroll : "xy", height : 200, width: 200,
+          css : { "border" : "2px solid #ff0000" },
+          body : {
+            rows : [
+              { width : 500, height : 26, template : "2001: A Space Odyssey" },
+              { width : 500, height : 26, template : "Rambo: First Blood Part II" },
+              { width : 500, height : 26,
+                template : "Doctor Strangelove or: How I Learned To Stop Worrying And Love The Bomb"
+              },
+              { width : 500, height : 26, template : "The Godfather" },
+              { width : 500, height : 26, template : "Thor: The Dark World" },
+              { width : 500, height : 26, template : "Guardians Of The Galaxy" },
+              { width : 500, height : 26, template : "Die Hard" },
+              { width : 500, height : 26, template : "Star Wars" },
+              { width : 500, height : 26, template : "Real Genius" }
+            ]
+          }
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

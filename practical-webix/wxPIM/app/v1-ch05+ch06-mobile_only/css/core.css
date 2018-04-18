@@ -1,0 +1,15 @@
+/* Background color of side menuu. */
+.cssSideMenu .webix_view {
+  background-color : #eceff1;
+}
+
+/* Sizing and coloring of sidemenu items. */
+.cssSideMenu .webix_list_item {
+  line-height : 35px;
+  border-bottom-color : #d0d0d0;
+}
+
+/* Make shadow of windows extend in all directions and be more pronounced than the default. */
+.webix_window {
+  box-shadow : 0 0 40px #202020;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>tree</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "tree", select : true, borderless : false,
+          css : { margin : "10px" }, width : 240, height : 200,
+          editable : true, editor : "text", editValue : "value",
+          data : [
+            { value : "Songs", open : true,
+              data : [
+                { open : true, value : "Metallica",
+                  data : [
+                    { value : "Enter Sandman" },
+                    { value : "Ride the Lightning" },
+                    { value : "Hero of the Day" }
+                  ]
+                },
+                { value : "Billy Joel",
+                  data : [
+                    { value : "Movin' Out" },
+                    { value : "Piano Man" }
+                  ]
+                }
+              ]
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

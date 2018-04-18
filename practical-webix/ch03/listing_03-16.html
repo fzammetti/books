@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>organogram</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        new webix.ui({
+          view : "organogram", borderless : false, css : { margin : "10px" }, width : 600, height : 240,
+          data : [
+            { value : "Gru",
+              data : [
+                { value : "Dr. Nefario",
+                  data : [
+                    { value : "Minion Kevin", data : [] },
+                    { value : "Minion Stuart", data : [] }
+                  ]
+                },
+                { value : "Minion Carl", data : [] },
+                { value : "Minion Dave",
+                  data : [
+                    { value : "Kyle", data : [] }
+                  ]
+                }
+              ]
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

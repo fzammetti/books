@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>gage</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "gage", width : 400, height : 340, borderless : false, css : { margin : "10px" },
+          value : 72, minRange : 0, maxRange : 120, label : "Police RADAR", placeholder : "MPH",
+          animation : true, stroke : 6
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

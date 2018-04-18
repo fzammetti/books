@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>pdfviewer</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ type : "space", rows : [
+          { view : "pdfbar", id : "pdftoolbar" },
+          { view : "pdfviewer", toolbar : "pdftoolbar", url : "binary->pdf.pdf" }
+        ] });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

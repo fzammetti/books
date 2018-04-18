@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>tabview</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <style>
+      .entry { background-color: #faeaea; }
+      .results { background-color: #eafaea; }
+    </style>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "tabview", width : 400, height : 300,
+          cells : [
+            { header : "Entry", template : "Some form controls here", css : "entry" },
+            { header : "Results", template : "Show results of the data entry here", css : "results" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

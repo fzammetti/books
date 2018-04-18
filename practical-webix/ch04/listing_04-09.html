@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>template</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          width : 400, height : 120, padding : 20, css : { "border" : "2px solid #000000" },
+          rows : [
+            { view : "template", type : "section", template : "Snarky Greeting" },
+            { view : "template", type : "clean", template : "Hello there, ugly bag of mostly water!" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

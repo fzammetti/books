@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>forminput</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        let myDataTable = {
+          view : "datatable", height : 200,
+          columns : [
+            { id : "name", header : "Employee Name" },
+            { id : "position", header : "Position" },
+            { id : "phone", header : "Phone Number", fillspace : 1 },
+          ],
+          data : [
+            { name : "Jack", position : "Dillon", phone : "111-222-3333" },
+            { name : "Susan", position : "Everest", phone : "444-555-6666" },
+            { name : "Charlie", position : "Jackson", phone : "777-888-9999" }
+          ]
+        };
+
+        webix.ui({
+          view : "form",
+          elementsConfig : { labelWidth: 120 },
+          rows : [
+            { view : "text", width : 300, label : "Manager ID" },
+            { view : "forminput", label : "Employees Grid", body : myDataTable },
+            { view : "button", value : "Save", inputWidth : 200, align : "right" }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

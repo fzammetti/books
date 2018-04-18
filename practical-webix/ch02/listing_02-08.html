@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>datalayout</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "datalayout", type : "wide",
+          rows : [
+            { name : "$value", type : "header", template : "Alien species: #name#" },
+            { name : "data", view : "list", template : "Eyes: #eyes#, Arms: #arms#" }
+          ],
+          data : [
+            { name : "Krelmacians",
+              data : [
+                { eyes : "2 (at adulthood)", arms : 2 },
+                { eyes : "1 (at birth)", arms : 2 }
+              ]
+            },
+            { name : "Gentooans",
+              data : [
+                { eyes : 4, arms : 8 }
+              ]
+            }
+          ]
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

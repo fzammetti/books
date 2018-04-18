@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>tooltip</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({
+          view : "tooltip", template : "Hello! I am a tooltip that says: '#value#'"
+        }).show({ value : "Webix rocks!"}, { x : 25, y : 25 });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <title>Nested layouts</title>
+
+    <link rel="stylesheet" type="text/css" href="../webix/codebase/webix.css">
+    <script type="text/javascript" src="../webix/codebase/webix_debug.js"></script>
+
+    <script>
+
+      webix.ready(function() {
+
+        webix.ui({ type : "wide", cols : [
+          { view : "headerlayout", type : "wide", width : 200, rows : [
+            { header : "Row1", body : "Row1" },
+            { header : "Row2", body : "Row2" },
+            { header : "Row3", body : "Row3" }
+          ] },
+          { type : "wide", rows : [
+            { template : "Row-1" },
+            { template : "Row-2" },
+            { template : "Row-3" },
+            { template : "Row-4" }
+          ] }
+        ] });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
