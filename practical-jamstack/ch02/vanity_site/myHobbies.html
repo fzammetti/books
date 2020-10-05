@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>All About Me - My Hobbies</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <style>
+
+      a { color : #ff0000; }
+
+      a:hover {
+        color : #ff0000;
+        background-color : #ffff00;
+        cursor : pointer;
+      }
+
+      .background {
+        background : url(img/myHobbiesBackground.jpg);
+        background-size : cover;
+      }
+
+      .heading { font-size : 24px; }
+
+      .subHeading { font-size : 18px; }
+
+      hr { margin-bottom : 20px; }
+
+    </style>
+
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+      app.currentPage = "myHobbies";
+      app.toggleSection = function(inID) {
+        const e = document.getElementById(inID);
+        if (e.style.display === "none") {
+          e.style.display = "";
+        } else {
+          e.style.display = "none";
+        }
+      };
+    </script>
+
+  </head>
+
+  <body onload="app.start();">
+
+    <div id="content" class="content background">
+      <div class="contentInner">
+        <div class="pageHeader">My Hobbies</div>
+
+        <a href="javascript:void(0);" class="heading"
+          onclick="app.toggleSection('music');">Frank's Musical "Career"</a>
+        <p>Yes, in addition to being a computer nerd, writer, husband, parent and all-around incredibly awesome person
+        (continue reading once you stop laughing at me) I was a musician for a number of years. I was in a number of
+        bands, chief among them was Cydonia. Although I haven't been in a band for some time and only play a little when
+        the mood strikes me, it's a period in my life I'm proud of so I figured I'd share.</p>
+
+        <div id="music" style="display:none;">
+          <div class="heading">In The Beginning</div>
+          <p>I began my musical "career", such as it is, when I was very young, maybe 6 or 7, when my grandparents gave
+          me an old electronic organ. I remember it well: it was not much more than a very noisy fan that, when you
+          pressed down on a key, would move a whistle of varying sizes in front of the fan to make the appropriate
+          note.</p>
+
+          <p>It was pure garbage, but I remember that, without any formal training whatsoever, how I would sit there
+          and create a story with music. Usually, the story revolved around a woman and a man falling in love. I'd play
+          a few random low notes, to represent the man talking, then the woman would reply with some random high notes.
+          Like the organ itself, this was pure garbage! But, it began my love of creating music.</p>
+
+          <p>The real first, important step was around 1985 when my best friend at the time, Jason Viglietta, began to
+          take piano lessons. Around that time, he and I began tinkering with a crappy little Yamaha keyboard and his
+          piano doing almost entirely improvised newage-type music. We'd literally sit there, he on keyboard and me on
+          piano, or vice-versa, hit record on a tape deck, and just try and make something that didn't sound horrible.
+          As you can guess, 99.9999% of the time, it indeed did sound horrible! But, over time we got to know each
+          others' playing style (while at the same time actually learning how to play!) and it actually began to sound
+          like something.</p>
+
+          <p>I still had no formal training whatsoever, so I was always a "by-ear" musician (and that's true to this
+          day). I simply learned, over time, what combinations of keys sounded good together, what notes could be played
+          over others, etc. Eventually I did teach myself a little bit of theory, but even now, while I know some scales
+          and chords, it's still not natural for me like for most musicians, and I still cannot read music!</p>
+
+          <p>We decided to call ourselves ITSOD, an acronym for In the Shadows Of Dreams. Of course, having a pretty
+          cool name (in my opinion anyway) was as far as we ever got.</p>
+
+          <p>Jason and I eventually got pretty good, although we still were entirely improvisational, which means a
+          couple of things. First, our recording sessions were just jam sessions that we recorded. Second, a lot of
+          what we did still didn't work at all, although more and more did as we played together more. Third, when we
+          did actually do something cool, it was often hard, sometimes pretty much impossible, to do it again! That
+          made for trying to write an album, which we eventually tried to do, very difficult. It also means that there
+          were A LOT of mistakes mixed in with the decent stuff.
+
+          <div class="heading">The Cydonia Years</div>
+          <p>For a while after I got back from my stint in the military, I bounced around between a couple of different
+          bands. None you'd know, none of any note, but they were valuable experiences because it was the first time,
+          aside from two minor instances my senior year of high school, that I was in a real, working (to some
+          approximation of the word "working"!) band.</p>
+
+          <p>After that free-agency period though I settled down, as it were, with a couple of guys from Brooklyn,
+          Jason Donnelly and Dimitri "Duke" Borisov. Jason is a guitarist and Duke is a drummer. They had worked
+          together before and were looking for a couple of band mates at the same time I was. A few ads in the
+          Island Ear and a phone call or two later and we hooked up to form the band Cydonia.</p>
+
+          <p>Initially it was just the three of us, but we eventually hooked up with a singer named Anthony (I don't
+          recall his last name). Before long, we began to record an album and about this time we started playing live
+          gigs, which is one of the highlights of my life! If you've never been on stage in front of 100+ people
+          cheering for you, lemme tell you, it's something special! We always got great crowd reactions because we were
+          nearly always obviously better than the other bands on that night, and we usually closed the night out because
+          the club owners knew we were going to seal the deal strong. Now, interestingly, we dumped Anthony before we
+          started playing out, which is part of the reason we were well-received! (I don't mean to bash Anthony because
+          he was a real good guy and got us free food as Taco Bell where he worked, it's just that he really wasn't a
+          great singer.) In order to play out we need a singer though, and we found a temporary fix by the name of
+          John Henry, a friend of Jeremy. He was pretty good, but was off doing his own band thing, so it was always
+          just temporary. In fact, if you want to have a look at him, along with the rest of us and a lot of weird
+          stuff, check out our web site for the early years! Incidentally, this is also one of the very first web site
+          I ever made (umm, and it seriously shows!) Surprisingly, the guestbook seems to still be out there!
+          WOO-HOO!</p>
+
+          <p>Eventually, we found a good, permanent singer by the name of James (who's last name again I don't recall!).
+          He was quite a bit better, although the recordings here don't quite demonstrate how good he actually was
+          (there's unfortunately a lot of audio artifacts from having been transferred between various tapes over the
+          years). Unfortunately, he had some personal issues that would eventually contribute to the downfall of the
+          band, but regardless, he was a good singer and we made beautiful music together, as the saying goes!</p>
+
+          <p>The good news is that Jason, who it the godfather of my son, is still one of my best friends, and both
+          Jeremy and Duke and I still talk every now and again too. We've even made jokes over the years about an
+          "inevitable Cydonia reunion", so you never know ;) In any case, I'm proud of the few songs we did, I thought
+          we had a real chance as a band and I have a lot of happy memories from that period in my life.</p>
+
+          <div class="heading">More Recently</div>
+          <p>If you're interested in seeing more recent stuff,
+          <a href="javascript:void(0);"
+            onclick="window.location='https://www.youtube.com/watch?v=kx6J8EvKsA4';">here's a link</a>
+          to a quick video I recorded on YouTube. It's just a couple minutes of random jamming with my Korg Krome, which
+          I had recently gotten at the time I recorded this.</p>
+
+          <div class="heading">In Conclusion</div>
+          <p>So, there you have it: an almost superstar musician :) Look, we were never going to be Bon Jovi and I was
+          never going to be Rick Wakeman, but I had a lot of fun and I think produced some decent tunes. You can be the
+          judge of course, but just remember: whatever you think is wrong and I'm right :)</p>
+
+          <hr/>
+
+        </div>
+
+        <a href="javascript:void(0);" class="heading"
+          onclick="app.toggleSection('fiction');">Frank's Fiction Writing</a>
+        <p>In addition to my technical writing, I also churn out fiction! (not nearly as prodigiously, but give
+        me some time!)</p>
+        <div id="fiction" style="display:none;">
+          <a href="javascript:void(0);" class="subHeading"
+            onclick="window.location='https://www.thedarknessbeyondthelight.com';">The Darkness Beyond the Light</a>
+          <h3>Book I of The Infinite Universe Saga</h3>
+          <p>When light gives way to darkness, only terror remains!</p>
+          <p>An unfathomably advanced alien technology slowly gains sentience over thousands of years roaming the galaxy
+          on a secret, ancient and malevolent mission.</p>
+          <p>The first test of a new military "hyperstealth" system, based on technology and physics theories far beyond
+          anything previously dreamed of, irrevocably changes the course of humanity's future, opening doors that would
+          better remain closed.</p>
+          <p>And at the intersection of these events is husband and wife team Alex and Melissa Wakeman, the very
+          definition of a "power couple": Alex a veteran special military operator turned Air Force test pilot who likes
+          to keep things light with humor but who is highly capable in any situation; Melissa a world-class scientific
+          mind, perhaps the smartest person on Earth in fact, specializing in advanced military aircraft design.</p>
+          <p>They, along with their superior and friend Brendan Alcheck, wage an apocalyptic battle against a horrific
+          alien hybrid, born of death and decidedly deadlier than any creature on Earth. Together, they must race
+          against time to stop the creature from completing its mission: the return of the hyperstealth technology to
+          its masters, a highly advanced malevolent race who, unbeknownst to the human race, sow death and destruction
+          throughout the galaxy. Unimaginable sacrifices are made and a final, impossible battle fought on multiple
+          fronts will determine the fate of the human race, and that of thousands of as yet unknown species.</p>
+          <p>The Darkness Beyond the Light, book I of the Infinite Universe Saga, is a tense, action-packed sci-fi
+          thriller, an adventure you will not want to miss!</p>
+
+          <a href="javascript:void(0);" class="subHeading"
+            onclick="window.location='https://zammetti.com/booksarticles/alternate_realities.htm';">Alternate Realities</a>
+          <p>You know, most people would bury this sort of horrid, early writing and just pretend it never existed. But
+          I'm not most people :) I'm a glutton for punishment it seems! This story is very much like The Darkness Beyond
+          the Light in that I wrote it around the age of 16 or so and it's a similar creation in that it's a terrible,
+          awful, teen-angsty sci-fi/fantasy ode to young love. Worse still, I don't even know what girlfriend was in my
+          life at the time I wrote this! Also like that other story, this was scanned in from an old (hand-written this
+          time) stack of papers and run through OCR. So, I did a very minimal amount of cleanup without altering the
+          story, poor word choices, clumsy writing or anything else aside from fixing obvious errors caused by the OCR
+          process itself. So it's still loaded with errors, totally illogical and frankly stupid plot points... you
+          know, where there actually IS a plot anyway... and all manner of other disgustingly bad stuff... so, when I
+          say it's unadulterated crap you know I'm not kidding! But, it again represents a part of my history so what
+          the hell, here it is world!</p>
+
+          <a href="javascript:void(0);" class="subHeading"
+            onclick="window.location='https://zammetti.com/booksarticles/the_darkness_beyond_the_light.htm';">The Darkness Beyond the Light (Old Short Story)</a>
+          <p>Note that this is completely different from The Darkness Beyond the Night novel above! Yes, I recycled the
+          name, sue me! :)</p>
+
+          <p>This is a short story I wrote when I was about 16-17 and discovering love for the first time. It's a sappy,
+          sci-fi/new-age mish-mosh about ancient aliens battling through time, evil ruling the universe and how two
+          humans overcome it through the power of love. Yes, it's about as corny as that makes it sound! But hey, I was
+          young and experiencing many things for the first time, so sue me! This was OCR'd from an old printout I
+          happened upon one day. I've done some editing of it to try and correct as much grammar and spelling and OCR
+          errors as I can but (a) I didn't change anything of substance, for good or bad, and (b) there's still a lot of
+          problems that you'll notice it you're a grammar-police type. There's also ample plot holes, contradictions,
+          plot threads that never get paid off, plot twists that are AT BEST huge logical stretches, things happening
+          for no apparent reason and just flat-out stupid stuff. But I left all that in so it's as accurate a
+          reproduction of the original material as it can be. Make no mistake, this is pretty bad writing (and I
+          certainly hope not representative of my current writing ability!), but hey, it's part of my history, so if
+          you're so inclined, check it out... but you were warned!</p>
+
+          <hr/>
+
+        </div>
+
+        <a href="javascript:void(0);" class="heading"
+          onclick="window.location='https://www.twitter.com/fzammetti';">Frank's Twitter Feed</a>
+        <p>Yes, I've finally given up all personal pride in myself and joined Twitter. Now I'm as lame as everyone else.
+        Follow me... if you dare. However, before you do, please be very aware that this is my personal feed and I will
+        discuss anything and everything at any time and it will frequently be NSFW (Not Safe For Work). The views
+        expressed here in no way, shape or form represent those of my employer.</p>
+
+        <a href="javascript:void(0);" class="heading"
+          onclick="window.location='https://www.facebook.com/fzammetti';">Frank's Facebook Page</a>
+        <p>Like virtually everyone else on the planet, I have a Facebook page... unlike everyone else though, or so it
+        seems at least, I don't constantly hang out there! The same warning applies here as for Twitter.</p>
+
+      </div>
+      <br>
+    </div>
+
+  </body>
+
+</html>

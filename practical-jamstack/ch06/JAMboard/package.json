@@ -1,0 +1,40 @@
+{
+  "name": "jamboard",
+  "private": true,
+  "description": "A shared workspace for marking up documents together",
+  "version": "1.0.0",
+  "author": "Frank W. Zammetti <fzammetti@etherient.com>",
+  "dependencies": {
+    "@material-ui/core": "^4.10.1",
+    "axios": "^0.19.2",
+    "faunadb": "^2.14.2",
+    "gatsby": "^2.22.17",
+    "gatsby-image": "^2.4.6",
+    "gatsby-plugin-manifest": "^2.4.10",
+    "gatsby-plugin-offline": "^3.2.8",
+    "gatsby-plugin-sharp": "^2.6.10",
+    "gatsby-source-filesystem": "^2.3.10",
+    "gatsby-transformer-remark": "^2.8.14",
+    "gatsby-transformer-sharp": "^2.5.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}

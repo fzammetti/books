@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>All About Me - My Family Life</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <style>
+
+      .familyContainer {
+        display : grid;
+        grid-template-columns : repeat(2, 1fr);
+        grid-template-rows : repeat(3, 1fr);
+        grid-column-gap : 0;
+        grid-row-gap : 40px;
+      }
+
+      .traciPic { grid-area : 1 / 1; }
+
+      .traciText {
+        grid-area : 1 / 2;
+        padding-top : 20px;
+        font-size : 24px;
+      }
+
+      .andrewPic { grid-area : 2 / 2; }
+
+      .andrewText {
+        grid-area : 2 / 1;
+        padding-top : 20px;
+        font-size : 24px;
+      }
+
+      .ashleyPic { grid-area : 3 / 1; }
+
+      .ashleyText {
+        grid-area : 3 / 2;
+        padding-top : 60px;
+        font-size : 24px;
+      }
+
+      .background {
+        background : url(img/myFamilyBackground.jpg);
+        background-size : cover;
+      }
+
+    </style>
+
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>app.currentPage = "myFamily";</script>
+
+  </head>
+
+  <body onload="app.start();">
+
+    <div id="content" class="content background">
+      <div class="contentInner">
+        <div class="pageHeader">My Family Life</div>
+
+        <div class="familyContainer">
+
+          <div class="traciPic"><img src="img/traci.png" width="480" height="680" alt="Traci"></div>
+          <div class="traciText">
+            Traci is a trained, professional chef, providing personal chef and catering services to clients of all
+            sizes and needs.
+            <br><br>
+            She loves to feed her family great food (as evidenced by her husband's not insubstantial midsection) and
+            they serve as frequent guinea pigs for her culinary creations.
+            <br><br>
+            Traci is also a crafts person, using her talents to create a wide variety of unique creations for any
+            occasion.
+          </div>
+
+          <div class="andrewPic"><img src="img/andrew.png" width="480" height="680" alt="Andrew"></div>
+          <div class="andrewText">
+            Andrew is a prodigious multi-instrumental musician whose band, Catharsis Theory, has been writing and
+            playing together for several years.
+            <br><br>
+            He is also a lover of video games, having bested his dad in a Guitar Hero tournament as a child, and beating
+            every version of Halo on the nearly-impossible-to-beat Legendary difficulty level.
+            <br><br>
+            Andrew is currently in school working towards his Computer Science degree.
+          </div>
+
+          <div class="ashleyPic"><img src="img/ashley.png" width="480" height="680" alt="Ashley"></div>
+          <div class="ashleyText">
+            Ashley is a Broadway-bound, permanent fixture on the local theater scene across Pennsylvania, frequently
+            appearing and starring in various musicals.
+            <br><br>
+            She is also a part-time employee of the S.A.L.T. Performing Arts center where she fulfills numerous roles
+            outside of performing as she transitions into the world of show production.
+            <br><br>
+            Ashley is an expert Mindcrafter, a creator (and destroyer, 'cause that's how it goes!) of virtual worlds.
+          </div>
+
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>All About Me</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <style>
+
+      .contentInner2 { height : 571px; }
+
+      .background {
+        background : url(img/homeBackground.jpg);
+        background-size : cover;
+      }
+
+      .headshot {
+        float : left;
+        padding-right : 20px;
+      }
+
+    </style>
+
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>app.currentPage = "home";</script>
+
+  </head>
+
+  <body onload="app.start();">
+
+    <div id="content" class="content background">
+      <div class="contentInner contentInner2">
+        <img src="img/headshot.png" alt="Frank W. Zammetti" width="640" height="571" class="headshot" />
+        <h1>Hello!</h1>
+        <h2>Welcome to the personal website of<br>Frank W. Zammetti.</h2>
+        <h3>(He's a handsome devil, ain't he?)</h3>
+        <p>This is the sample app from the second chapter of the book Practical JAMstack from Apress by
+        Frank W. Zammetti.</p>
+        <p>It's a very simple personal website that demonstrates basic JAMstack concepts, specifically the J and
+        the M in JAMstack: JavaScript and Markup (APIs come later in the book) as well as hosting a site on
+        a CDN (GitHub Pages specifically).</p>
+        <p>To get around the site, move your cursor to the four edges of the screen. Navigation bars will appear that
+        you can click to move to other pages of the site to get to know me a bit, including info about my
+        professional life (My Work), my family life (My Family), my personal life (My Hobbies) and how to get in touch
+        with me (Contact Me).</p>
+      </div>
+    </div>
+
+  </body>
+
+</html>

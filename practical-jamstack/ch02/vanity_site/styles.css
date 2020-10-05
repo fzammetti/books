@@ -1,0 +1,92 @@
+/* Styles to apply to the body. */
+body {
+  padding : 0;
+  margin : 0;
+  overflow : hidden;
+  color : #ffffff;
+  font-weight : bold;
+}
+
+
+/* Shared styles for the nav bars. */
+.navBar {
+  position : absolute;
+  z-index : 1000;
+  text-align : center;
+  line-height : 40px;
+  font-size : 20px;
+  color : #ffffff;
+}
+
+
+/* Styles for the "My Work" nav bar. */
+.myWork {
+  width : 100%;
+  height : 40px;
+  background-color: rgba(255, 0, 0, 0.75);
+}
+
+
+/* Styles for the "My Hobbies" nav bar. */
+.myHobbies {
+  width : 40px;
+  height : 100%;
+  background-color: rgba(0, 255, 0, 0.75);
+  writing-mode : vertical-rl;
+}
+
+
+/* Styles for the "Contact Me" nav bar. */
+.contactMe {
+  width : 100%;
+  height : 40px;
+  background-color: rgba(0, 0, 255, 0.75);
+}
+
+
+/* Styles for the "My Family" nav bar. */
+.myFamily {
+  width : 40px;
+  height : 100%;
+  background-color: rgba(255, 255, 0, 0.75);
+  writing-mode : vertical-rl;
+  /* Flip text so that it reads more "naturally", to me anyway! */
+  transform : scaleX(-1) scaleY(-1);
+}
+
+
+/* Styles for the main content area. */
+.content {
+  position : fixed;
+  width : 100%;
+  height : 100%;
+  left : 0;
+  top : 0;
+  overflow : auto;
+}
+
+
+/* Style for the content inside the main content area. */
+.contentInner {
+  margin-top : 20px;
+  margin-left : auto;
+  margin-right : auto;
+  width : 1024px;
+  font-size : 14px;
+  color : #ffffff;
+  background-color : rgba(0, 0, 0, 0.5);
+  border-color : rgba(0, 0, 0, 0.5);
+  padding : 20px;
+  border-width : 4px;
+  border-radius : 20px;
+}
+
+
+/* Style for the page header text. */
+.pageHeader {
+  font-size : 80px;
+  font-family : cursive;
+  font-weight : bold;
+  text-align : center;
+  padding-bottom : 20px;
+}

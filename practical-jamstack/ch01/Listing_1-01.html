@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+
+    <title>U.S. 2018 Population Grabber</title>
+
+    <style>
+      #result { color : #ff0000; }
+    </style>
+
+    <script>
+      async function getData() {
+        let response = await fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population");
+        response = await response.json();
+        const us2018 = response.data.filter(inValue => inValue.Year === "2018")[0];
+        document.getElementById("result").innerHTML = us2018.Population;
+      }
+    </script>
+
+  </head>
+
+  <body>
+
+    <input type="button" value="Get U.S. 2018 Population" onClick="getData();">
+    <h1 id="result"></h1>
+
+  </body>
+
+</html>

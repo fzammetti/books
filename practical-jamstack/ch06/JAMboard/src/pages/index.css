@@ -1,0 +1,26 @@
+/* Styles for the outer container div. */
+.outerContainer {
+  margin : auto;
+  width : 600px;
+  text-align : center;
+}
+
+/* Style for the document list label text above the list. */
+.documentListLabel {
+  color : #0000ff;
+  font-weight : bold;
+  margin-top : 20px;
+  margin-bottom : 20px;
+}
+
+/* Style for the div surrounding each document in the list. */
+.documentDiv {
+  width : 600px;
+  margin-bottom : 10px;
+  background-color : #eaeaea;
+}
+
+/* Text color hover for document list links. */
+a:hover {
+  color : #ffff00;
+}

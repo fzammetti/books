@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3bc6d28-3930-405d-badf-f965489911f6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1a8G6YGCvzDG8NSdx1UWhDivP1X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="PluginDummyText.Genre" value="scifi" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/sdk" />
+    <property name="jdk.selected.JAVA_MODULE" value="OpenJDK" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../../Program Files/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS\practical_jamstack\code\ch02\img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PROJECTS\practical_jamstack\code\ch02" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\fzammetti\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\PROJECTS\practical_jamstack\code\ch02" />
+          <option name="myCopyRoot" value="C:\PROJECTS\practical_jamstack\code\ch02" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\PROJECTS\practical_jamstack\code\ch02" />
+          <option name="myCopyRoot" value="C:\PROJECTS\practical_jamstack\code\ch02" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1129" y="505" key="#Project_Structure" timestamp="1586109730638">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1129" y="505" key="#Project_Structure/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586109730638" />
+    <state x="836" y="162" width="1334" height="1350" key="CommitChangelistDialog2" timestamp="1586630545565">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1156" y="442" key="CommitChangelistDialog2/3840.229.1536.844/-1920.209.1920.1080/0.0.3072.1688@0.0.3072.1688" timestamp="1586126786986" />
+    <state x="836" y="162" width="1334" height="1350" key="CommitChangelistDialog2/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586630545565" />
+    <state x="93" y="93" width="2886" height="1502" key="DiffContextDialog" timestamp="1586119547089">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="93" y="93" width="2886" height="1502" key="DiffContextDialog/3840.229.1536.844/-1920.209.1920.1080/0.0.3072.1688@0.0.3072.1688" timestamp="1586119547089" />
+    <state x="1317" y="601" key="FileChooserDialogImpl" timestamp="1586109716319">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1317" y="601" key="FileChooserDialogImpl/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586109716319" />
+    <state x="1322" y="546" key="RollbackChangesDialog" timestamp="1586548173328">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1322" y="546" key="RollbackChangesDialog/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586548173328" />
+    <state width="498" height="528" key="SwitcherDM" timestamp="1586556199318">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state width="498" height="528" key="SwitcherDM/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586556199318" />
+    <state x="1362" y="704" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586111597908">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1362" y="704" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586111597908" />
+    <state x="1193" y="470" key="new project wizard" timestamp="1586132931941">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1193" y="470" key="new project wizard/3840.229.1536.844/-1920.209.1920.1080/0.0.3072.1688@0.0.3072.1688" timestamp="1586132931941" />
+    <state x="1193" y="470" key="new project wizard/3840.229.1536.844/0.0.3072.1688/-1920.209.1920.1080@0.0.3072.1688" timestamp="1586109665178" />
+    <state x="1199" y="387" width="672" height="678" key="search.everywhere.popup" timestamp="1586126408093">
+      <screen x="0" y="0" width="3072" height="1688" />
+    </state>
+    <state x="1199" y="387" width="672" height="678" key="search.everywhere.popup/3840.229.1536.844/-1920.209.1920.1080/0.0.3072.1688@0.0.3072.1688" timestamp="1586126408093" />
+  </component>
+</project>
