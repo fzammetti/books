@@ -1,16 +1,9 @@
-# Apress Source Code
+Januart 13, 2023
 
-This repository accompanies [*Modern Full-Stack Development 2nd ed.*](https://www.link.springer.com/book/10.1007/978-1-4842-8811-5) by Frank Zammetti (Apress, 2022).
+This is the source bundle for the book Modern Full-Stack Development, Second Edition by
+Frank W. Zammetti.  The chapters that have code associated with them have
+their own directories, and then the two apps that are built later in the book,
+MailBag, BattleJong and Fooderator, have their own directories.
 
-[comment]: #cover
-![Cover image](978-1-4842-8810-8.jpg)
-
-Download the files as a zip using the green button, or clone the repository to your machine using Git.
-
-## Releases
-
-Release v1.0 corresponds to the code in the published book, without corrections or updates.
-
-## Contributions
-
-See the file Contributing.md for more information on how you can contribute to this repository.
+Thanks for reading!
+Frank
