@@ -20,6 +20,7 @@ data = [
     (getRandomID(), "Chris", 23)
 ]
 conn.executemany(sql, data)
+conn.commit()
 data = conn.execute("SELECT * FROM users WHERE age <= 22")
 for row in data:
     print(row)
